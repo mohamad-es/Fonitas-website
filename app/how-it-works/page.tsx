@@ -1,3 +1,11 @@
-import { MarketingPage } from "@/components/marketing/marketing-page";
+import { Header } from "@/components/layout/header";
+import { HowItWorksPage } from "@/components/how-it-works/how-it-works-page";
 
-export default function HowItWorksPage() { return <MarketingPage eyebrow="The lifecycle" title="From request to settlement." intro="Fonitas connects the operational steps around an application into one explicit lifecycle, from collaboration and registration through publishing and financial settlement." sections={[{number:"01",title:"Collaboration & application",text:"A developer or organization starts with a collaboration request, then creates and manages an application draft before submitting it for review."},{number:"02",title:"Evaluation & approval",text:"Admins review the application, request changes when needed, and approve or reject it through explicit state transitions."},{number:"03",title:"Contract & publishing rights",text:"An approved application moves into a contract workflow where scope, stores, geography, revenue share and other terms are defined, signed and activated."},{number:"04",title:"QA & compliance",text:"The release is checked before submission. Builds can be scanned, reviewed for integrity and permissions, and assessed for compliance."},{number:"05",title:"Publishing",text:"A publishing request selects the store, completes its checklist, validates assets and records the store submission. MVP publishing remains human-in-the-loop."},{number:"06",title:"Revenue to settlement",text:"Store revenue is imported and reconciled with costs and contractual rules before settlement, statement generation and payment."}]} />; }
+export default function HowItWorks() {
+  return (
+    <>
+      <Header />
+      <HowItWorksPage />
+    </>
+  );
+}
