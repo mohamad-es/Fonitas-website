@@ -2,17 +2,12 @@ import { Header } from "@/components/layout/header";
 import { HeroOrbit } from "@/components/home/hero-orbit";
 import { ProjectShowcase } from "@/components/home/project-showcase";
 import { AboutProcess } from "@/components/home/about-process";
+import { InsightsShowcase } from "@/components/home/insights-showcase";
 
 const solutions = [
   ["01", "Strategy", "We turn ambitious ideas into clear digital direction, defining what to build and why it matters."],
   ["02", "Design", "Human-centered interfaces and experiences that make complex products feel simple and intuitive."],
   ["03", "Development", "Fast, scalable digital products engineered for real users, real businesses and long-term growth."],
-];
-
-const insights = [
-  "Designing products people understand",
-  "Why strategy comes before pixels",
-  "Building digital products for scale",
 ];
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -61,7 +56,18 @@ export default function Home() {
 
       <AboutProcess />
 
-      <section id="insights" className="border-y border-white/[0.08] bg-[#0b0b0b]"><div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-32"><div className="mb-12"><p className="mb-4 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Insights</p><h2 className="font-display text-4xl font-semibold sm:text-6xl">Ideas worth sharing.</h2></div><div className="grid gap-5 md:grid-cols-3">{insights.map((title, i) => <article key={title} className="group border-t border-white/10 py-7"><p className="text-xs text-white/30">0{i + 1} / INSIGHT</p><h3 className="mt-16 text-xl leading-7 transition group-hover:text-[#ff6a2a]">{title}</h3><p className="mt-6 text-xs uppercase tracking-[.15em] text-white/25">Read article <Arrow /></p></article>)}</div></div></section>
+      <section id="insights" className="border-y border-white/[0.08] bg-[#0b0b0b]">
+        <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
+          <div className="mb-14 flex items-end justify-between gap-6">
+            <div>
+              <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Insights</p>
+              <h2 className="font-display text-5xl font-semibold leading-[.95] sm:text-7xl">Ideas worth<br />sharing.</h2>
+            </div>
+            <a href="#contact" className="hidden text-sm text-white/45 transition hover:text-white sm:block">All insights <Arrow /></a>
+          </div>
+          <InsightsShowcase />
+        </div>
+      </section>
 
       <section id="contact" className="relative overflow-hidden px-6 py-32 text-center lg:py-48"><div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-[130px]" /><div className="relative"><p className="mb-7 text-xs uppercase tracking-[.3em] text-[#ff5a1f]">Have an idea?</p><h2 className="font-display text-[clamp(4rem,11vw,10rem)] font-semibold leading-[.82]">Let&apos;s build<br /><span className="text-white/30">what&apos;s next.</span></h2><a href="mailto:hello@foonitas.com" className="mt-12 inline-flex rounded-full bg-[#ff5a1f] px-7 py-4 text-sm font-semibold text-black transition hover:bg-[#ff7a3d] hover:shadow-[0_0_40px_rgba(255,90,31,.2)]">Start a project <span className="ml-2"><Arrow /></span></a></div></section>
 
