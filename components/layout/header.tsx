@@ -15,8 +15,8 @@ export function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/[0.07] bg-[#070707]/75 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-6 lg:px-10">
-        <a href="#" className="text-xl font-bold tracking-[-0.05em]">
-          Foonitas<span className="text-[#ff5a1f]">.</span>
+        <a href="#" aria-label="Foonitas home" className="block w-[122px] sm:w-[138px]">
+          <img src="/foonitas-logo.svg" alt="Foonitas" className="h-auto w-full" />
         </a>
 
         <nav className="hidden items-center gap-9 text-sm text-white/60 md:flex">
