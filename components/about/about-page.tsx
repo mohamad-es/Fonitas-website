@@ -19,14 +19,42 @@ export function AboutPage() {
       <section className="relative min-h-[86vh] border-b border-white/[0.08] pt-20">
         <div className="absolute inset-0 grid-bg opacity-25" />
         <div className="absolute -right-40 top-10 h-[620px] w-[620px] rounded-full bg-[#ff5a1f]/10 blur-[150px]" />
-        <div className="relative mx-auto grid min-h-[calc(86vh-80px)] max-w-[1400px] items-end gap-14 px-6 pb-20 pt-24 lg:grid-cols-[1.25fr_.75fr] lg:px-10 lg:pb-28">
+        <div className="relative mx-auto grid min-h-[calc(86vh-80px)] max-w-[1400px] items-center gap-14 px-6 pb-20 pt-24 lg:grid-cols-[1.05fr_.95fr] lg:px-10 lg:pb-28">
           <div>
             <p className="reveal-up text-xs font-semibold uppercase tracking-[0.3em] text-[#ff5a1f]">About Fonitas</p>
             <h1 className="font-display reveal-up reveal-delay-1 mt-7 max-w-6xl text-[clamp(4.2rem,9vw,9.5rem)] font-semibold leading-[.78] tracking-tight">The operating<br /><span className="text-white/25">system behind</span><br />the launch.</h1>
+            <div className="mt-10 flex items-center gap-3 text-xs uppercase tracking-[.2em] text-white/30">
+              <span className="h-px w-10 bg-[#ff5a1f]" />
+              Built around people, process and accountability
+            </div>
           </div>
-          <div className="border-l border-white/10 pl-7 lg:mb-2 lg:pl-10">
-            <p className="text-xl leading-8 text-white/55">Fonitas is an Application Publishing Operating System. We connect the work that surrounds an application launch so it can move through a defined, auditable path.</p>
-            <Link href="/how-it-works" className="mt-8 inline-flex items-center text-sm font-semibold text-[#ff6a2a]">See how it works <span className="ml-3">↗</span></Link>
+
+          <div className="relative mx-auto h-[430px] w-full max-w-[560px] lg:h-[520px]">
+            <div className="absolute left-1/2 top-1/2 h-[390px] w-[390px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.08]" />
+            <div className="absolute left-1/2 top-1/2 h-[285px] w-[285px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/25" />
+            <div className="absolute left-1/2 top-1/2 h-[175px] w-[175px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-2xl" />
+            <div className="absolute left-1/2 top-1/2 flex h-[118px] w-[118px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#ff5a1f]/50 bg-[#111]/90 shadow-[0_0_90px_rgba(255,90,31,.22)]">
+              <div className="text-center"><div className="text-[10px] font-semibold uppercase tracking-[.28em] text-[#ff5a1f]">FONITAS</div><div className="mt-2 text-[9px] uppercase tracking-[.18em] text-white/35">Operating System</div></div>
+            </div>
+
+            <div className="absolute left-[7%] top-[17%] rounded-2xl border border-white/10 bg-[#0d0d0d]/90 px-5 py-4 backdrop-blur-md">
+              <div className="text-[9px] uppercase tracking-[.22em] text-white/30">01</div>
+              <div className="mt-2 text-sm font-medium">People</div>
+              <div className="mt-1 text-[10px] text-white/35">Developers & partners</div>
+            </div>
+            <div className="absolute right-[2%] top-[30%] rounded-2xl border border-white/10 bg-[#0d0d0d]/90 px-5 py-4 backdrop-blur-md">
+              <div className="text-[9px] uppercase tracking-[.22em] text-[#ff5a1f]">02</div>
+              <div className="mt-2 text-sm font-medium">Process</div>
+              <div className="mt-1 text-[10px] text-white/35">One connected lifecycle</div>
+            </div>
+            <div className="absolute bottom-[12%] left-[15%] rounded-2xl border border-white/10 bg-[#0d0d0d]/90 px-5 py-4 backdrop-blur-md">
+              <div className="text-[9px] uppercase tracking-[.22em] text-white/30">03</div>
+              <div className="mt-2 text-sm font-medium">Accountability</div>
+              <div className="mt-1 text-[10px] text-white/35">Audit & financial traceability</div>
+            </div>
+            <div className="absolute bottom-[22%] right-[4%] flex h-3 w-3 rounded-full bg-[#ff5a1f] shadow-[0_0_24px_rgba(255,90,31,.9)]" />
+            <div className="absolute left-[49%] top-[8%] h-2 w-2 rounded-full bg-white/50" />
+            <div className="absolute bottom-[4%] right-[36%] h-px w-24 rotate-[-28deg] bg-gradient-to-r from-transparent via-[#ff5a1f]/60 to-transparent" />
           </div>
         </div>
       </section>
