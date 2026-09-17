@@ -1,3 +1,16 @@
-import { ContactSection } from "@/components/home/contact-section";
-export const metadata = { title: "Collaborate — Foonitas", description: "Start a collaboration with Foonitas." };
-export default function ContactPage(){return <main className="min-h-screen bg-[#070707] pt-24"><ContactSection /></main>}
+import { Header } from "@/components/layout/header";
+import { ContactPage } from "@/components/contact/contact-page";
+
+export const metadata = {
+  title: "Contact — Fonitas",
+  description: "Start a collaboration with Fonitas and move your application toward publishing.",
+};
+
+export default function Contact() {
+  return (
+    <>
+      <Header />
+      <ContactPage />
+    </>
+  );
+}
