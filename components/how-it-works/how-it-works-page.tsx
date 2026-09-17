@@ -10,20 +10,43 @@ const stages = [
 ];
 
 function OrbitVisual() {
+  const cards = [
+    ["01", "Application", "Submitted", "top-[3%] left-[4%]"],
+    ["02", "Review", "Evaluating", "top-[25%] right-[0%]"],
+    ["03", "Contract", "Defined", "bottom-[25%] right-[2%]"],
+    ["04", "QA", "Validated", "bottom-[3%] left-[7%]"],
+  ];
+
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[580px]">
-      <div className="absolute inset-[7%] rounded-full border border-white/[0.08]" />
-      <div className="absolute inset-[18%] rounded-full border border-dashed border-white/[0.09]" />
-      <div className="absolute inset-[31%] rounded-full border border-[#ff5a1f]/30" />
-      <div className="absolute inset-[38%] rounded-full bg-[#ff5a1f]/15 blur-3xl" />
-      <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f] shadow-[0_0_110px_rgba(255,90,31,.5)] sm:h-36 sm:w-36" />
-      <div className="absolute left-[2%] top-[22%] rounded-full border border-white/10 bg-[#0b0b0b] px-4 py-2 text-[9px] uppercase tracking-[.22em] text-white/45">Application</div>
-      <div className="absolute right-[0%] top-[42%] rounded-full border border-white/10 bg-[#0b0b0b] px-4 py-2 text-[9px] uppercase tracking-[.22em] text-white/45">Review</div>
-      <div className="absolute right-[13%] bottom-[12%] rounded-full border border-white/10 bg-[#0b0b0b] px-4 py-2 text-[9px] uppercase tracking-[.22em] text-white/45">Publishing</div>
-      <div className="absolute left-[10%] bottom-[7%] rounded-full border border-[#ff5a1f]/25 bg-[#0b0b0b] px-4 py-2 text-[9px] uppercase tracking-[.22em] text-[#ff6a2a]">Settlement</div>
-      <span className="absolute left-[24%] top-[12%] h-2 w-2 rounded-full bg-[#ff5a1f] shadow-[0_0_18px_#ff5a1f]" />
-      <span className="absolute right-[18%] top-[25%] h-1.5 w-1.5 rounded-full bg-white/60" />
-      <span className="absolute left-[22%] bottom-[26%] h-1.5 w-1.5 rounded-full bg-white/40" />
+    <div className="relative mx-auto h-[520px] w-full max-w-[580px]">
+      <div className="absolute left-1/2 top-1/2 h-[410px] w-[410px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.07]" />
+      <div className="absolute left-1/2 top-1/2 h-[310px] w-[310px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/[0.09]" />
+      <div className="absolute left-1/2 top-1/2 h-[215px] w-[215px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/25" />
+      <div className="absolute left-1/2 top-1/2 h-[170px] w-[170px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-3xl" />
+
+      <div className="absolute left-1/2 top-1/2 z-10 flex h-[118px] w-[118px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-[#ff8a55]/50 bg-[#ff5a1f] text-black shadow-[0_0_120px_rgba(255,90,31,.48)] sm:h-[138px] sm:w-[138px]">
+        <span className="text-[9px] font-semibold uppercase tracking-[.25em] text-black/55">Fonitas</span>
+        <span className="mt-2 text-lg font-semibold tracking-tight">Lifecycle</span>
+        <span className="mt-1 text-[8px] uppercase tracking-[.18em] text-black/50">06 stages</span>
+      </div>
+
+      <div className="absolute left-1/2 top-1/2 h-[410px] w-[410px] -translate-x-1/2 -translate-y-1/2 rotate-[18deg] rounded-full border border-[#ff5a1f]/15" />
+      <div className="absolute left-1/2 top-1/2 h-[310px] w-[310px] -translate-x-1/2 -translate-y-1/2 rotate-[-32deg] border-t border-[#ff5a1f]/50" />
+
+      {cards.map(([number, title, status, position]) => (
+        <div key={number} className={`absolute z-20 w-[158px] border border-white/10 bg-[#0b0b0b]/95 p-4 backdrop-blur-md ${position}`}>
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-[9px] text-[#ff5a1f]">{number}</span>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#ff5a1f] shadow-[0_0_12px_#ff5a1f]" />
+          </div>
+          <p className="mt-4 text-sm font-medium text-white">{title}</p>
+          <p className="mt-1 text-[9px] uppercase tracking-[.16em] text-white/25">{status}</p>
+        </div>
+      ))}
+
+      <div className="absolute left-[13%] top-1/2 h-px w-[74%] -translate-y-1/2 rotate-[25deg] bg-gradient-to-r from-transparent via-[#ff5a1f]/35 to-transparent" />
+      <div className="absolute left-[18%] top-[13%] text-[8px] uppercase tracking-[.22em] text-white/20">Structured workflow</div>
+      <div className="absolute bottom-[12%] right-[15%] text-[8px] uppercase tracking-[.22em] text-[#ff5a1f]/55">Auditable path</div>
     </div>
   );
 }
