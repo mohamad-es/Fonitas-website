@@ -3,6 +3,8 @@ import { HeroOrbit } from "@/components/home/hero-orbit";
 import { ProjectShowcase } from "@/components/home/project-showcase";
 import { AboutProcess } from "@/components/home/about-process";
 import { InsightsShowcase } from "@/components/home/insights-showcase";
+import { PublishingModels } from "@/components/home/publishing-models";
+import { FAQSection } from "@/components/home/faq-section";
 import { ContactSection } from "@/components/home/contact-section";
 
 const capabilities = [
@@ -85,6 +87,8 @@ export default function Home() {
 
       <AboutProcess />
 
+      <PublishingModels />
+
       <section id="platform" className="border-y border-white/[0.08] bg-[#0b0b0b]">
         <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
           <div className="mb-14 flex items-end justify-between gap-6">
@@ -94,6 +98,18 @@ export default function Home() {
             </div>
           </div>
           <InsightsShowcase />
+        </div>
+      </section>
+
+      <FAQSection />
+
+      <section className="border-b border-white/[0.08] bg-[#ff5a1f] text-black">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-6 py-16 sm:flex-row sm:items-end sm:justify-between lg:px-10 lg:py-20">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[.25em] text-black/55">Ready when the application is</p>
+            <h2 className="font-display mt-4 max-w-3xl text-4xl font-semibold leading-[.9] sm:text-6xl">Start with the application. We&apos;ll map the path.</h2>
+          </div>
+          <a href="#contact" className="inline-flex shrink-0 items-center justify-center rounded-full bg-black px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-black/80">Submit a collaboration request <span className="ml-3">↗</span></a>
         </div>
       </section>
 
@@ -108,7 +124,7 @@ export default function Home() {
             </div>
             <div>
               <p className="text-[10px] uppercase tracking-[.22em] text-white/25">Platform</p>
-              <div className="mt-5 grid gap-3 text-sm text-white/50"><a href="#how-it-works" className="transition hover:text-white">Lifecycle</a><a href="#publishing" className="transition hover:text-white">Publishing</a><a href="#about" className="transition hover:text-white">Principles</a><a href="#platform" className="transition hover:text-white">Roadmap</a></div>
+              <div className="mt-5 grid gap-3 text-sm text-white/50"><a href="#how-it-works" className="transition hover:text-white">Lifecycle</a><a href="#publishing" className="transition hover:text-white">Publishing</a><a href="#models" className="transition hover:text-white">Operating models</a><a href="#about" className="transition hover:text-white">Principles</a><a href="#platform" className="transition hover:text-white">Roadmap</a></div>
             </div>
             <div>
               <p className="text-[10px] uppercase tracking-[.22em] text-white/25">Future capabilities</p>
