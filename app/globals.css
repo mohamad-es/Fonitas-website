@@ -53,3 +53,46 @@ a {
 .glow-text {
   text-shadow: 0 0 40px rgba(255, 90, 31, 0.2);
 }
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes soft-float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-18deg); }
+  50% { transform: translate3d(0, -12px, 0) rotate(-14deg); }
+}
+
+@keyframes core-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 120px rgba(255, 90, 31, .42); }
+  50% { transform: translate(-50%, -50%) scale(1.055); box-shadow: 0 0 150px rgba(255, 90, 31, .58); }
+}
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: .55; transform: scale(.85); }
+  50% { opacity: 1; transform: scale(1.35); }
+}
+
+.reveal-up {
+  animation: reveal-up .9s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.reveal-delay-1 { animation-delay: .08s; }
+.reveal-delay-2 { animation-delay: .16s; }
+.reveal-delay-3 { animation-delay: .26s; }
+.reveal-delay-4 { animation-delay: .38s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
