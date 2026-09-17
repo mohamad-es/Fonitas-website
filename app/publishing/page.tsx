@@ -1,2 +1,11 @@
-import { MarketingPage } from "@/components/marketing/marketing-page";
-export default function PublishingPage(){return <MarketingPage eyebrow="Publishing" title="Release with a controlled path to market." intro="Publishing is a workflow, not a single button. Fonitas keeps store preparation, assets, builds, security, QA and submission connected." sections={[{number:"01",title:"Prepare the store package",text:"Select the store, complete the publishing checklist and provide the required store assets."},{number:"02",title:"Validate the build",text:"Controlled builds can be uploaded with recorded SHA-256 integrity data and security scan results."},{number:"03",title:"QA & compliance",text:"Manual QA and compliance checks establish whether the application is ready for the next publishing step."},{number:"04",title:"Submit & track",text:"The submission is recorded, store events are processed and the publication state remains auditable."},{number:"05",title:"Human-in-the-loop by design",text:"The MVP does not require deep automatic store publishing. A manual store publisher abstraction can later be replaced by store-specific adapters.",items:["Apple App Store","Google Play","Microsoft Store","Manual submission"]}]} />}
+import { Header } from "@/components/layout/header";
+import { PublishingPage } from "@/components/publishing/publishing-page";
+
+export default function Publishing() {
+  return (
+    <>
+      <Header />
+      <PublishingPage />
+    </>
+  );
+}
