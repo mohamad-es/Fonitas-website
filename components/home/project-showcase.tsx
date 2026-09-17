@@ -6,7 +6,7 @@ const stages = [
     description: "Register the application, its platforms, technology, markets, revenue model and ownership details before review.",
     label: "INTAKE / EVALUATION",
     visual: "application",
-    className: "md:col-span-2",
+    className: "",
   },
   {
     number: "02",
@@ -71,7 +71,7 @@ function StageVisual({ type }: { type: string }) {
 
 export function ProjectShowcase() {
   return (
-    <div className="grid gap-5 md:grid-cols-2">
+    <div className="grid gap-5 md:grid-cols-3">
       {stages.map((stage) => (
         <article key={stage.number} className={`project-card group relative min-h-[500px] overflow-hidden rounded-[28px] border border-white/[0.08] bg-[#111] ${stage.className}`}>
           <StageVisual type={stage.visual} />
