@@ -2,6 +2,13 @@
 
 import { useEffect, useRef } from "react";
 
+const flow = [
+  ["01", "APP"],
+  ["02", "REVIEW"],
+  ["03", "QA"],
+  ["04", "STORE"],
+];
+
 export function HeroOrbit() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -40,10 +47,36 @@ export function HeroOrbit() {
       <div className="hero-orbit-core absolute left-1/2 top-1/2 h-[38%] w-[38%] -translate-x-1/2 -translate-y-1/2 rotate-12 rounded-[28%] bg-[#ff5a1f]" />
       <div className="absolute left-1/2 top-1/2 h-[20%] w-[20%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#080808] shadow-[inset_0_0_40px_rgba(255,90,31,.15)]" />
 
-      <div className="hero-float absolute left-[8%] top-[30%] flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-[#101010]/80 text-[#ff6a2a] shadow-2xl backdrop-blur-xl">✦</div>
-      <div className="hero-float-delayed absolute bottom-[17%] right-[9%] flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-[#101010]/80 text-xs font-semibold text-white/70 shadow-2xl backdrop-blur-xl">FX</div>
-      <div className="hero-dot absolute right-[18%] top-[13%] h-2 w-2 rounded-full bg-[#ff5a1f] shadow-[0_0_25px_8px_rgba(255,90,31,.35)]" />
-      <div className="absolute bottom-[28%] left-[20%] h-1.5 w-1.5 rounded-full bg-white/60" />
+      <div className="absolute left-1/2 top-1/2 z-10 w-[58%] -translate-x-1/2 -translate-y-1/2 rounded-[22px] border border-white/10 bg-[#0b0b0b]/90 p-5 shadow-2xl backdrop-blur-xl transition-transform duration-500" style={{ transform: "translate(calc(-50% + var(--mx, 0px)), calc(-50% + var(--my, 0px)))" }}>
+        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <div>
+            <p className="text-[9px] uppercase tracking-[.25em] text-[#ff6a2a]">Publishing OS</p>
+            <p className="mt-1 text-sm font-medium text-white/80">Application lifecycle</p>
+          </div>
+          <span className="rounded-full border border-[#ff5a1f]/30 bg-[#ff5a1f]/10 px-2.5 py-1 text-[8px] uppercase tracking-[.18em] text-[#ff7a3d]">Active</span>
+        </div>
+        <div className="mt-5 space-y-3">
+          {flow.map(([number, label], index) => (
+            <div key={number} className="relative flex items-center gap-3">
+              {index < flow.length - 1 && <span className="absolute left-[11px] top-7 h-4 w-px bg-white/10" />}
+              <span className={`relative z-10 flex h-6 w-6 items-center justify-center rounded-full border text-[8px] ${index === 3 ? "border-[#ff5a1f]/50 bg-[#ff5a1f] text-black" : "border-white/10 bg-[#151515] text-white/40"}`}>{number}</span>
+              <span className="text-[10px] uppercase tracking-[.18em] text-white/55">{label}</span>
+              <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[#ff5a1f] shadow-[0_0_12px_3px_rgba(255,90,31,.3)]" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="hero-float absolute left-[4%] top-[20%] rounded-2xl border border-white/10 bg-[#101010]/85 px-4 py-3 shadow-2xl backdrop-blur-xl">
+        <p className="text-[8px] uppercase tracking-[.2em] text-white/25">Release</p>
+        <p className="mt-1 text-sm font-semibold text-white/75">v1.0.4</p>
+      </div>
+      <div className="hero-float-delayed absolute bottom-[14%] right-[5%] rounded-2xl border border-white/10 bg-[#101010]/85 px-4 py-3 shadow-2xl backdrop-blur-xl">
+        <p className="text-[8px] uppercase tracking-[.2em] text-white/25">Settlement</p>
+        <p className="mt-1 text-sm font-semibold text-white/75">Reconciled</p>
+      </div>
+      <div className="hero-dot absolute right-[16%] top-[12%] h-2 w-2 rounded-full bg-[#ff5a1f] shadow-[0_0_25px_8px_rgba(255,90,31,.35)]" />
+      <div className="absolute bottom-[27%] left-[16%] h-1.5 w-1.5 rounded-full bg-white/60" />
     </div>
   );
 }
