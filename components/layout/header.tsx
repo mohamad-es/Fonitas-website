@@ -5,7 +5,7 @@ import { useState } from "react";
 const links = [
   ["How it works", "#how-it-works"],
   ["Publishing", "#publishing"],
-  ["Principles", "#about"],
+  ["Models", "#models"],
   ["Platform", "#platform"],
 ];
 
@@ -40,6 +40,7 @@ export function Header() {
           {links.map(([label, href]) => (
             <a key={href} href={href} onClick={() => setOpen(false)} className="block border-b border-white/[0.07] py-4 text-lg text-white/75 last:border-0">{label}</a>
           ))}
+          <a href="#faq" onClick={() => setOpen(false)} className="block border-b border-white/[0.07] py-4 text-lg text-white/75">FAQ</a>
           <a href="#contact" onClick={() => setOpen(false)} className="mt-4 block rounded-full bg-[#ff5a1f] px-5 py-3 text-center text-sm font-semibold text-black">Submit a request ↗</a>
         </nav>
       )}
