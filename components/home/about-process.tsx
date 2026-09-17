@@ -14,6 +14,15 @@ const foundations = [
   "Audit & accountability",
 ];
 
+const lifecycleNodes = [
+  "Application",
+  "Review",
+  "Contract",
+  "QA",
+  "Publish",
+  "Settle",
+];
+
 export function AboutProcess() {
   return (
     <section id="about" className="border-b border-white/[0.08]">
@@ -28,7 +37,7 @@ export function AboutProcess() {
 
           <div className="relative overflow-hidden rounded-[28px] border border-white/[0.09] bg-[#0b0b0b] p-7 sm:p-10">
             <div className="absolute -right-28 -top-28 h-72 w-72 rounded-full bg-[#ff5a1f]/10 blur-[90px]" />
-            <div className="relative grid gap-10 sm:grid-cols-[1fr_auto] sm:items-end">
+            <div className="relative grid gap-10 sm:grid-cols-[1fr_210px] sm:items-end">
               <div>
                 <p className="max-w-2xl text-lg leading-8 text-white/55 sm:text-xl">
                   Fonitas is designed to make the operational path around an application explicit: who owns each step, what state it is in, what happens next and how the financial outcome is reconciled.
@@ -42,12 +51,27 @@ export function AboutProcess() {
                 </div>
               </div>
 
-              <div className="relative hidden h-40 w-40 shrink-0 sm:block">
-                <div className="absolute inset-0 rounded-full border border-white/10" />
-                <div className="absolute inset-[17%] rounded-full border border-[#ff5a1f]/25" />
-                <div className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f] shadow-[0_0_70px_rgba(255,90,31,.45)]" />
-                <div className="absolute left-1/2 top-1/2 h-full w-px origin-center -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white/10" />
-                <div className="absolute left-1/2 top-1/2 h-full w-px origin-center -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-white/10" />
+              <div className="relative hidden h-56 sm:block">
+                <div className="absolute left-2 top-1/2 h-px w-full bg-white/10" />
+                <div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/20" />
+                <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+                <div className="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-2xl rotate-45 bg-[#ff5a1f] shadow-[0_0_70px_rgba(255,90,31,.45)]" />
+                {lifecycleNodes.map((node, index) => {
+                  const positions = [
+                    "left-0 top-[13%]",
+                    "right-0 top-[4%]",
+                    "right-[-4%] top-[43%]",
+                    "right-0 bottom-[4%]",
+                    "left-0 bottom-[13%]",
+                    "left-[-4%] top-[43%]",
+                  ];
+                  return (
+                    <div key={node} className={`absolute ${positions[index]} flex items-center gap-2 rounded-full border border-white/10 bg-[#111]/90 px-2.5 py-1.5 backdrop-blur-xl`}>
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#ff5a1f]" />
+                      <span className="text-[8px] uppercase tracking-[.14em] text-white/45">{node}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
