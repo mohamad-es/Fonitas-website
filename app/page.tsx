@@ -3,6 +3,7 @@ import { HeroOrbit } from "@/components/home/hero-orbit";
 import { ProjectShowcase } from "@/components/home/project-showcase";
 import { AboutProcess } from "@/components/home/about-process";
 import { InsightsShowcase } from "@/components/home/insights-showcase";
+import { ContactSection } from "@/components/home/contact-section";
 
 const solutions = [
   ["01", "Strategy", "We turn ambitious ideas into clear digital direction, defining what to build and why it matters."],
@@ -16,7 +17,6 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <Header />
-
       <section className="relative min-h-screen border-b border-white/[0.08] pt-20">
         <div className="absolute inset-0 grid-bg opacity-35" />
         <div className="absolute -right-40 top-24 h-[520px] w-[520px] rounded-full bg-[#ff5a1f]/10 blur-[140px]" />
@@ -41,37 +41,18 @@ export default function Home() {
       </section>
 
       <section id="solutions" className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
-        <div className="grid gap-16 lg:grid-cols-[.8fr_1.2fr]">
-          <div><p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">What we do</p><h2 className="font-display max-w-xl text-5xl font-semibold leading-[.95] sm:text-7xl">Strategy-led design.</h2></div>
-          <div className="border-t border-white/10">{solutions.map(([number, title, description]) => <div key={number} className="group grid gap-6 border-b border-white/10 py-9 sm:grid-cols-[80px_1fr_1fr]"><span className="text-xs text-white/30">{number}</span><h3 className="text-2xl font-medium transition group-hover:text-[#ff6a2a]">{title}</h3><p className="max-w-md text-sm leading-6 text-white/45">{description}</p></div>)}</div>
-        </div>
+        <div className="grid gap-16 lg:grid-cols-[.8fr_1.2fr]"><div><p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">What we do</p><h2 className="font-display max-w-xl text-5xl font-semibold leading-[.95] sm:text-7xl">Strategy-led design.</h2></div><div className="border-t border-white/10">{solutions.map(([number, title, description]) => <div key={number} className="group grid gap-6 border-b border-white/10 py-9 sm:grid-cols-[80px_1fr_1fr]"><span className="text-xs text-white/30">{number}</span><h3 className="text-2xl font-medium transition group-hover:text-[#ff6a2a]">{title}</h3><p className="max-w-md text-sm leading-6 text-white/45">{description}</p></div>)}</div></div>
       </section>
 
-      <section id="work" className="border-y border-white/[0.08] bg-[#0b0b0b]">
-        <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
-          <div className="mb-16 flex items-end justify-between gap-6"><div><p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Selected work</p><h2 className="font-display text-5xl font-semibold sm:text-7xl">Real products.<br />Real impact.</h2></div><a href="#contact" className="hidden text-sm text-white/50 transition hover:text-white sm:block">View all work <Arrow /></a></div>
-          <ProjectShowcase />
-        </div>
-      </section>
+      <section id="work" className="border-y border-white/[0.08] bg-[#0b0b0b]"><div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40"><div className="mb-16 flex items-end justify-between gap-6"><div><p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Selected work</p><h2 className="font-display text-5xl font-semibold sm:text-7xl">Real products.<br />Real impact.</h2></div><a href="#contact" className="hidden text-sm text-white/50 transition hover:text-white sm:block">View all work <Arrow /></a></div><ProjectShowcase /></div></section>
 
       <AboutProcess />
 
-      <section id="insights" className="border-y border-white/[0.08] bg-[#0b0b0b]">
-        <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
-          <div className="mb-14 flex items-end justify-between gap-6">
-            <div>
-              <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Insights</p>
-              <h2 className="font-display text-5xl font-semibold leading-[.95] sm:text-7xl">Ideas worth<br />sharing.</h2>
-            </div>
-            <a href="#contact" className="hidden text-sm text-white/45 transition hover:text-white sm:block">All insights <Arrow /></a>
-          </div>
-          <InsightsShowcase />
-        </div>
-      </section>
+      <section id="insights" className="border-y border-white/[0.08] bg-[#0b0b0b]"><div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40"><div className="mb-14 flex items-end justify-between gap-6"><div><p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Insights</p><h2 className="font-display text-5xl font-semibold leading-[.95] sm:text-7xl">Ideas worth<br />sharing.</h2></div><a href="#contact" className="hidden text-sm text-white/45 transition hover:text-white sm:block">All insights <Arrow /></a></div><InsightsShowcase /></div></section>
 
-      <section id="contact" className="relative overflow-hidden px-6 py-32 text-center lg:py-48"><div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-[130px]" /><div className="relative"><p className="mb-7 text-xs uppercase tracking-[.3em] text-[#ff5a1f]">Have an idea?</p><h2 className="font-display text-[clamp(4rem,11vw,10rem)] font-semibold leading-[.82]">Let&apos;s build<br /><span className="text-white/30">what&apos;s next.</span></h2><a href="mailto:hello@foonitas.com" className="mt-12 inline-flex rounded-full bg-[#ff5a1f] px-7 py-4 text-sm font-semibold text-black transition hover:bg-[#ff7a3d] hover:shadow-[0_0_40px_rgba(255,90,31,.2)]">Start a project <span className="ml-2"><Arrow /></span></a></div></section>
+      <ContactSection />
 
-      <footer className="border-t border-white/[0.08]"><div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-6 py-10 sm:flex-row sm:items-center sm:justify-between lg:px-10"><div><span className="font-semibold">Foonitas<span className="text-[#ff5a1f]">.</span></span><p className="mt-2 text-xs text-white/30">Technology for a better tomorrow.</p></div><div className="flex gap-6 text-xs text-white/40"><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">Dribbble</a></div><p className="text-xs text-white/20">© 2026 Foonitas</p></div></footer>
+      <footer className="border-t border-white/[0.08] bg-[#070707]"><div className="mx-auto max-w-[1400px] px-6 py-14 lg:px-10 lg:py-16"><div className="grid gap-12 md:grid-cols-[1.3fr_.7fr_.7fr_.7fr]"><div><a href="#" className="text-2xl font-bold tracking-[-.05em]">Foonitas<span className="text-[#ff5a1f]">.</span></a><p className="mt-5 max-w-xs text-sm leading-6 text-white/35">Strategy, design and technology for ambitious digital products.</p></div><div><p className="text-[10px] uppercase tracking-[.22em] text-white/25">Explore</p><div className="mt-5 grid gap-3 text-sm text-white/50"><a href="#solutions" className="transition hover:text-white">Solutions</a><a href="#work" className="transition hover:text-white">Work</a><a href="#about" className="transition hover:text-white">About</a><a href="#insights" className="transition hover:text-white">Insights</a></div></div><div><p className="text-[10px] uppercase tracking-[.22em] text-white/25">Social</p><div className="mt-5 grid gap-3 text-sm text-white/50"><a href="#" className="transition hover:text-white">LinkedIn ↗</a><a href="#" className="transition hover:text-white">Instagram ↗</a><a href="#" className="transition hover:text-white">Dribbble ↗</a></div></div><div><p className="text-[10px] uppercase tracking-[.22em] text-white/25">Contact</p><div className="mt-5 grid gap-3 text-sm text-white/50"><a href="mailto:hello@foonitas.com" className="transition hover:text-[#ff6a2a]">hello@foonitas.com</a><a href="#contact" className="transition hover:text-white">Start a project ↗</a></div></div></div><div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-7 text-[10px] uppercase tracking-[.15em] text-white/20 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Foonitas. All rights reserved.</span><span>Technology for a better tomorrow.</span></div></div></footer>
     </main>
   );
 }
