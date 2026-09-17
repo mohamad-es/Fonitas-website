@@ -1,19 +1,17 @@
-const process = [
-  ["01", "Discover", "We frame the problem, understand the audience and align the product with a clear business direction."],
-  ["02", "Design", "We shape the experience through systems, interfaces and prototypes that make the product easy to understand."],
-  ["03", "Build", "We turn validated ideas into fast, reliable digital products with a strong technical foundation."],
-  ["04", "Evolve", "We measure, learn and improve continuously so the product keeps creating value after launch."],
+const principles = [
+  ["01", "One connected lifecycle", "Application, review, contract, QA, publishing and settlement are treated as one operational journey."],
+  ["02", "Clear domain ownership", "Each part of the platform has an explicit responsibility and source of truth instead of competing logic."],
+  ["03", "Human-in-the-loop publishing", "Fonitas supports controlled store preparation and submission rather than depending on deep automatic store publishing."],
+  ["04", "Financial traceability", "Revenue, reconciliation, settlement and payment are designed around auditability, idempotency and immutable history."],
 ];
 
-const capabilities = [
-  "Digital strategy",
-  "Product design",
-  "Web development",
-  "Design systems",
-  "E-commerce",
-  "Product platforms",
-  "Prototyping",
-  "Technical direction",
+const foundations = [
+  "Application lifecycle",
+  "Contract & publishing license",
+  "QA & compliance",
+  "Revenue & reconciliation",
+  "Settlement & payments",
+  "Audit & accountability",
 ];
 
 export function AboutProcess() {
@@ -22,9 +20,9 @@ export function AboutProcess() {
       <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
         <div className="grid gap-16 lg:grid-cols-[.72fr_1.28fr]">
           <div>
-            <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Why Foonitas</p>
+            <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Why Fonitas</p>
             <h2 className="font-display max-w-xl text-5xl font-semibold leading-[.92] sm:text-7xl">
-              Complexity is not the product. <span className="text-white/30">Clarity is.</span>
+              Built around the lifecycle. <span className="text-white/30">Not around a dashboard.</span>
             </h2>
           </div>
 
@@ -33,10 +31,10 @@ export function AboutProcess() {
             <div className="relative grid gap-10 sm:grid-cols-[1fr_auto] sm:items-end">
               <div>
                 <p className="max-w-2xl text-lg leading-8 text-white/55 sm:text-xl">
-                  Good digital products remove friction. We combine strategy, design and engineering in one connected process so every decision has a reason.
+                  Fonitas is designed to make the operational path around an application explicit: who owns each step, what state it is in, what happens next and how the financial outcome is reconciled.
                 </p>
                 <div className="mt-10 flex flex-wrap gap-2">
-                  {capabilities.map((item) => (
+                  {foundations.map((item) => (
                     <span key={item} className="rounded-full border border-white/10 px-3.5 py-2 text-xs text-white/45 transition hover:border-[#ff5a1f]/40 hover:text-white/75">
                       {item}
                     </span>
@@ -56,8 +54,8 @@ export function AboutProcess() {
         </div>
 
         <div className="mt-24 grid gap-0 border-t border-white/10 md:grid-cols-2 lg:grid-cols-4">
-          {process.map(([number, title, description]) => (
-            <article key={number} className="group border-b border-white/10 py-8 md:px-7 md:first:pl-0 md:nth-[3]:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0 lg:first:pl-0">
+          {principles.map(([number, title, description]) => (
+            <article key={number} className="group border-b border-white/10 py-8 md:px-7 lg:border-b-0 lg:border-r lg:last:border-r-0 lg:first:pl-0">
               <div className="flex items-center justify-between">
                 <span className="text-xs text-white/25">{number}</span>
                 <span className="text-sm text-[#ff5a1f] opacity-0 transition duration-300 group-hover:opacity-100">↗</span>
