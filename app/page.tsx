@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/header";
 import { HeroOrbit } from "@/components/home/hero-orbit";
 import { ProjectShowcase } from "@/components/home/project-showcase";
+import { AboutProcess } from "@/components/home/about-process";
 
 const solutions = [
   ["01", "Strategy", "We turn ambitious ideas into clear digital direction, defining what to build and why it matters."],
@@ -58,7 +59,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40"><div className="grid gap-16 lg:grid-cols-[.7fr_1.3fr]"><p className="text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Why Foonitas</p><div><h2 className="font-display max-w-5xl text-5xl font-semibold leading-[.95] sm:text-7xl">We make complex things feel <span className="text-white/30">simple.</span></h2><p className="mt-10 max-w-2xl text-lg leading-8 text-white/45">From the first strategic question to the final line of code, we bring clarity, design and technology into one focused process.</p></div></div></section>
+      <AboutProcess />
 
       <section id="insights" className="border-y border-white/[0.08] bg-[#0b0b0b]"><div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-32"><div className="mb-12"><p className="mb-4 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Insights</p><h2 className="font-display text-4xl font-semibold sm:text-6xl">Ideas worth sharing.</h2></div><div className="grid gap-5 md:grid-cols-3">{insights.map((title, i) => <article key={title} className="group border-t border-white/10 py-7"><p className="text-xs text-white/30">0{i + 1} / INSIGHT</p><h3 className="mt-16 text-xl leading-7 transition group-hover:text-[#ff6a2a]">{title}</h3><p className="mt-6 text-xs uppercase tracking-[.15em] text-white/25">Read article <Arrow /></p></article>)}</div></div></section>
 
