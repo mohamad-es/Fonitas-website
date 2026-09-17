@@ -7,7 +7,7 @@ const primaryLinks = [
   ["Publishing", "/publishing"],
   ["Platform", "/platform"],
   ["About", "/about"],
-  ["Contact", "/contact"],
+  ["Contact", "/#contact"],
 ];
 
 export function Header() {
