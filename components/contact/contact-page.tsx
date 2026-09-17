@@ -48,22 +48,42 @@ export function ContactPage() {
             </div>
           </div>
 
-          {/* Contact signal visual */}
-          <div className="relative mx-auto h-[480px] w-full max-w-[520px]">
-            <div className="absolute left-1/2 top-1/2 h-[390px] w-[390px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.08]" />
-            <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/20" />
-            <div className="absolute left-1/2 top-1/2 h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.07]" />
-            <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/80 shadow-[0_0_120px_rgba(255,90,31,.5)]" />
-            <div className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/30" />
-
-            <div className="absolute left-1/2 top-[18px] -translate-x-1/2 rounded-full border border-white/10 bg-[#0b0b0b] px-4 py-2 text-[9px] uppercase tracking-[.2em] text-white/45">Application</div>
-            <div className="absolute right-0 top-[145px] rounded-full border border-white/10 bg-[#0b0b0b] px-4 py-2 text-[9px] uppercase tracking-[.2em] text-white/45">Review</div>
-            <div className="absolute bottom-[55px] right-[38px] rounded-full border border-[#ff5a1f]/25 bg-[#0b0b0b] px-4 py-2 text-[9px] uppercase tracking-[.2em] text-[#ff6a2a]">Publishing</div>
-            <div className="absolute bottom-[55px] left-[28px] rounded-full border border-white/10 bg-[#0b0b0b] px-4 py-2 text-[9px] uppercase tracking-[.2em] text-white/45">Settlement</div>
-
-            <div className="absolute left-1/2 top-1/2 flex h-[390px] w-[390px] -translate-x-1/2 -translate-y-1/2 rotate-[-22deg] items-center justify-center">
-              <div className="h-px w-full bg-gradient-to-r from-transparent via-[#ff5a1f]/40 to-transparent" />
+          {/* Contact conversation visual */}
+          <div className="relative mx-auto h-[500px] w-full max-w-[540px]">
+            <div className="absolute inset-0 rounded-[2rem] border border-white/[0.07] bg-white/[0.015]" />
+            <div className="absolute left-8 right-8 top-8 flex items-center justify-between border-b border-white/10 pb-5">
+              <span className="font-mono text-[9px] uppercase tracking-[.2em] text-white/25">Conversation / 01</span>
+              <span className="flex items-center gap-2 text-[9px] uppercase tracking-[.18em] text-[#ff6a2a]"><i className="h-1.5 w-1.5 rounded-full bg-[#ff5a1f] shadow-[0_0_12px_rgba(255,90,31,.8)]" /> Open channel</span>
             </div>
+
+            <div className="absolute left-8 top-[105px] max-w-[230px] rounded-2xl rounded-tl-sm border border-white/10 bg-[#111111] p-5 shadow-2xl">
+              <p className="text-[9px] uppercase tracking-[.18em] text-white/25">You</p>
+              <p className="mt-3 text-sm leading-6 text-white/65">We have an application ready for publishing.</p>
+              <span className="mt-4 block text-[9px] text-white/20">12:41 PM</span>
+            </div>
+
+            <div className="absolute right-8 top-[225px] max-w-[255px] rounded-2xl rounded-tr-sm border border-[#ff5a1f]/20 bg-[#ff5a1f]/[0.08] p-5 shadow-[0_20px_80px_rgba(255,90,31,.08)]">
+              <p className="text-[9px] uppercase tracking-[.18em] text-[#ff6a2a]/60">Fonitas</p>
+              <p className="mt-3 text-sm leading-6 text-white/70">Let&apos;s map the publishing path around it.</p>
+              <span className="mt-4 block text-[9px] text-white/20">12:42 PM</span>
+            </div>
+
+            <div className="absolute bottom-8 left-8 right-8 rounded-xl border border-white/10 bg-[#0c0c0c] p-4">
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#ff5a1f]/10 text-[#ff6a2a]">
+                  <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true"><path d="M4 6.5 12 12l8-5.5M5.5 18h13A1.5 1.5 0 0 0 20 16.5v-9A1.5 1.5 0 0 0 18.5 6h-13A1.5 1.5 0 0 0 4 7.5v9A1.5 1.5 0 0 0 5.5 18Z" stroke="currentColor" strokeWidth="1.4" /></svg>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-[9px] uppercase tracking-[.18em] text-white/25">Your request</p>
+                  <p className="mt-1 truncate text-xs text-white/50">Application publishing · ready to review</p>
+                </div>
+                <span className="rounded-full border border-white/10 px-3 py-1.5 text-[8px] uppercase tracking-[.15em] text-white/25">Send</span>
+              </div>
+            </div>
+
+            <div className="absolute left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/[0.07]" />
+            <div className="absolute right-[12%] top-[18%] h-1.5 w-1.5 rounded-full bg-[#ff5a1f] shadow-[0_0_18px_rgba(255,90,31,.8)]" />
+            <div className="absolute bottom-[28%] left-[14%] h-1 w-1 rounded-full bg-white/30" />
           </div>
         </div>
       </section>
