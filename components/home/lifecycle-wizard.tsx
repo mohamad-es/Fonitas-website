@@ -111,14 +111,17 @@ export function LifecycleWizard() {
   const step = steps[active];
 
   return (
-    <div className="mt-14 lg:mt-16">
+    <div className="mt-14 lg:mt-16" aria-label="Fonitas application lifecycle wizard">
       <div className="overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="flex min-w-max gap-2">
           {steps.map((item, index) => (
             <button
               key={item.number}
               type="button"
-              onClick={() => setActive(index)}
+              onClick={(event) => {
+                event.preventDefault();
+                setActive(index);
+              }}
               aria-current={active === index ? "step" : undefined}
               className={`group flex items-center gap-3 rounded-full border px-4 py-2.5 text-left transition-all duration-300 ${
                 active === index
@@ -133,7 +136,7 @@ export function LifecycleWizard() {
         </div>
       </div>
 
-      <div className="grid overflow-hidden rounded-[28px] border border-white/10 bg-[#0d0d0d] lg:grid-cols-[.92fr_1.08fr]">
+      <div key={step.number} data-active-step={step.number} className="grid overflow-hidden rounded-[28px] border border-white/10 bg-[#0d0d0d] lg:grid-cols-[.92fr_1.08fr]">
         <div className="order-2 flex flex-col justify-between border-t border-white/10 p-7 sm:p-9 lg:order-1 lg:border-r lg:border-t-0 lg:p-11">
           <div>
             <div className="flex items-center gap-3 text-[10px] uppercase tracking-[.22em] text-[#ff5a1f]">
@@ -163,7 +166,10 @@ export function LifecycleWizard() {
         <button
           type="button"
           disabled={active === 0}
-          onClick={() => setActive((value) => value - 1)}
+          onClick={(event) => {
+            event.preventDefault();
+            setActive((value) => value - 1);
+          }}
           className="text-xs uppercase tracking-[.16em] text-white/35 transition hover:text-white disabled:pointer-events-none disabled:opacity-20"
         >
           ← Previous
@@ -172,7 +178,10 @@ export function LifecycleWizard() {
         <button
           type="button"
           disabled={active === steps.length - 1}
-          onClick={() => setActive((value) => value + 1)}
+          onClick={(event) => {
+            event.preventDefault();
+            setActive((value) => value + 1);
+          }}
           className="text-xs uppercase tracking-[.16em] text-white/55 transition hover:text-[#ff6a2a] disabled:pointer-events-none disabled:opacity-20"
         >
           Next →
