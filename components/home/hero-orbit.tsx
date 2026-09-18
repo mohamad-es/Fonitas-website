@@ -2,12 +2,16 @@
 
 import { useEffect, useRef } from "react";
 
-const flow = [
-  ["01", "APP"],
-  ["02", "REVIEW"],
-  ["03", "QA"],
-  ["04", "STORE"],
+const lifecycle = [
+  ["01", "Application", "Received"],
+  ["02", "Review", "Evaluating"],
+  ["03", "Contract", "Defined"],
+  ["04", "QA", "Validated"],
+  ["05", "Publishing", "Ready"],
+  ["06", "Settlement", "Tracked"],
 ];
+
+const stores = ["App Store", "Google Play", "Microsoft Store"];
 
 export function HeroOrbit() {
   const ref = useRef<HTMLDivElement>(null);
@@ -20,8 +24,8 @@ export function HeroOrbit() {
       const rect = element.getBoundingClientRect();
       const x = (event.clientX - rect.left) / rect.width - 0.5;
       const y = (event.clientY - rect.top) / rect.height - 0.5;
-      element.style.setProperty("--mx", `${x * 16}px`);
-      element.style.setProperty("--my", `${y * 16}px`);
+      element.style.setProperty("--mx", `${x * 12}px`);
+      element.style.setProperty("--my", `${y * 12}px`);
     };
 
     const reset = () => {
@@ -31,6 +35,7 @@ export function HeroOrbit() {
 
     element.addEventListener("pointermove", handleMove);
     element.addEventListener("pointerleave", reset);
+
     return () => {
       element.removeEventListener("pointermove", handleMove);
       element.removeEventListener("pointerleave", reset);
@@ -38,45 +43,96 @@ export function HeroOrbit() {
   }, []);
 
   return (
-    <div ref={ref} className="hero-orbit relative mx-auto aspect-square w-full max-w-[560px] select-none" aria-hidden="true">
-      <div className="absolute inset-[5%] rounded-full border border-white/[0.06]" />
-      <div className="hero-orbit-ring absolute inset-[14%] rounded-full border border-[#ff5a1f]/20" />
-      <div className="absolute inset-[24%] rounded-full border border-white/[0.06]" />
+    <div
+      ref={ref}
+      className="hero-orbit relative mx-auto aspect-square w-full max-w-[590px] select-none"
+      aria-hidden="true"
+    >
+      <div className="absolute inset-[4%] rounded-full border border-white/[0.05]" />
+      <div className="hero-orbit-ring absolute inset-[11%] rounded-full border border-[#ff5a1f]/20" />
+      <div className="absolute inset-[19%] rounded-full border border-dashed border-white/[0.07]" />
+      <div className="absolute -right-[2%] top-[8%] h-44 w-44 rounded-full bg-[#ff5a1f]/10 blur-[70px]" />
+      <div className="absolute bottom-[8%] left-[4%] h-36 w-36 rounded-full bg-[#ff5a1f]/[0.07] blur-[65px]" />
 
-      <div className="hero-orbit-shape absolute left-1/2 top-1/2 h-[58%] w-[58%] -translate-x-1/2 -translate-y-1/2 rotate-[-18deg] rounded-[30%] border border-[#ff6a2a]/50 bg-gradient-to-br from-[#ff7a3d]/80 via-[#ff5a1f]/30 to-transparent shadow-[0_0_100px_rgba(255,90,31,.24)] backdrop-blur-sm" />
-      <div className="hero-orbit-core absolute left-1/2 top-1/2 h-[38%] w-[38%] -translate-x-1/2 -translate-y-1/2 rotate-12 rounded-[28%] bg-[#ff5a1f]" />
-      <div className="absolute left-1/2 top-1/2 h-[20%] w-[20%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#080808] shadow-[inset_0_0_40px_rgba(255,90,31,.15)]" />
-
-      <div className="absolute left-1/2 top-1/2 z-10 w-[58%] -translate-x-1/2 -translate-y-1/2 rounded-[22px] border border-white/10 bg-[#0b0b0b]/90 p-5 shadow-2xl backdrop-blur-xl transition-transform duration-500" style={{ transform: "translate(calc(-50% + var(--mx, 0px)), calc(-50% + var(--my, 0px)))" }}>
-        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+      <div className="hero-orbit-shape absolute left-1/2 top-1/2 h-[66%] w-[66%] -translate-x-1/2 -translate-y-1/2 rotate-[-18deg] rounded-[32%] border border-[#ff6a2a]/30 bg-gradient-to-br from-[#ff7a3d]/25 via-[#ff5a1f]/[0.07] to-transparent" />
+      <div
+        className="absolute left-1/2 top-1/2 z-10 w-[79%] -translate-x-1/2 -translate-y-1/2 rounded-[28px] border border-white/10 bg-[#0b0b0b]/95 p-5 shadow-2xl backdrop-blur-2xl transition-transform duration-500 sm:p-6"
+        style={{
+          transform:
+            "translate(calc(-50% + var(--mx, 0px)), calc(-50% + var(--my, 0px)))",
+        }}
+      >
+        <div className="flex items-start justify-between border-b border-white/10 pb-5">
           <div>
-            <p className="text-[9px] uppercase tracking-[.25em] text-[#ff6a2a]">Publishing OS</p>
-            <p className="mt-1 text-sm font-medium text-white/80">Application lifecycle</p>
-          </div>
-          <span className="rounded-full border border-[#ff5a1f]/30 bg-[#ff5a1f]/10 px-2.5 py-1 text-[8px] uppercase tracking-[.18em] text-[#ff7a3d]">Active</span>
-        </div>
-        <div className="mt-5 space-y-3">
-          {flow.map(([number, label], index) => (
-            <div key={number} className="relative flex items-center gap-3">
-              {index < flow.length - 1 && <span className="absolute left-[11px] top-7 h-4 w-px bg-white/10" />}
-              <span className={`relative z-10 flex h-6 w-6 items-center justify-center rounded-full border text-[8px] ${index === 3 ? "border-[#ff5a1f]/50 bg-[#ff5a1f] text-black" : "border-white/10 bg-[#151515] text-white/40"}`}>{number}</span>
-              <span className="text-[10px] uppercase tracking-[.18em] text-white/55">{label}</span>
-              <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[#ff5a1f] shadow-[0_0_12px_3px_rgba(255,90,31,.3)]" />
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-[#ff5a1f] shadow-[0_0_12px_3px_rgba(255,90,31,.35)]" />
+              <p className="text-[9px] font-semibold uppercase tracking-[.25em] text-[#ff6a2a]">
+                Fonitas OS
+              </p>
             </div>
+            <p className="mt-2 text-lg font-medium tracking-[-.02em] text-white/90">
+              Application → market
+            </p>
+            <p className="mt-1 text-[10px] text-white/35">
+              One connected publishing lifecycle
+            </p>
+          </div>
+          <span className="rounded-full border border-[#ff5a1f]/25 bg-[#ff5a1f]/10 px-2.5 py-1.5 text-[8px] uppercase tracking-[.16em] text-[#ff7a3d]">
+            Live flow
+          </span>
+        </div>
+
+        <div className="mt-5 grid grid-cols-2 gap-2">
+          {lifecycle.map(([number, title, status], index) => (
+            <div
+              key={number}
+              className="group relative rounded-xl border border-white/[0.07] bg-white/[0.025] p-3 transition hover:border-[#ff5a1f]/25"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-[8px] font-medium text-white/20">{number}</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-[#ff5a1f]/80" />
+              </div>
+              <p className="mt-3 text-[10px] font-semibold uppercase tracking-[.13em] text-white/75">
+                {title}
+              </p>
+              <p className="mt-1 text-[9px] text-white/30">{status}</p>
+              {index < lifecycle.length - 1 && (
+                <span className="absolute -right-1.5 top-1/2 hidden h-1 w-1 rounded-full bg-[#ff5a1f]/60 sm:block" />
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-white/10 pt-4">
+          <span className="mr-1 text-[8px] uppercase tracking-[.18em] text-white/25">
+            Store-ready
+          </span>
+          {stores.map((store) => (
+            <span
+              key={store}
+              className="rounded-full border border-white/[0.08] bg-white/[0.025] px-2.5 py-1 text-[8px] text-white/45"
+            >
+              {store}
+            </span>
           ))}
         </div>
       </div>
 
-      <div className="hero-float absolute left-[4%] top-[20%] rounded-2xl border border-white/10 bg-[#101010]/85 px-4 py-3 shadow-2xl backdrop-blur-xl">
-        <p className="text-[8px] uppercase tracking-[.2em] text-white/25">Release</p>
-        <p className="mt-1 text-sm font-semibold text-white/75">v1.0.4</p>
+      <div className="hero-float absolute left-[0%] top-[16%] rounded-2xl border border-white/10 bg-[#101010]/90 px-4 py-3 shadow-2xl backdrop-blur-xl">
+        <p className="text-[8px] uppercase tracking-[.2em] text-white/25">QA</p>
+        <div className="mt-1 flex items-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#ff5a1f]" />
+          <p className="text-sm font-semibold text-white/75">Approved</p>
+        </div>
       </div>
-      <div className="hero-float-delayed absolute bottom-[14%] right-[5%] rounded-2xl border border-white/10 bg-[#101010]/85 px-4 py-3 shadow-2xl backdrop-blur-xl">
-        <p className="text-[8px] uppercase tracking-[.2em] text-white/25">Settlement</p>
-        <p className="mt-1 text-sm font-semibold text-white/75">Reconciled</p>
+
+      <div className="hero-float-delayed absolute bottom-[10%] right-[0%] rounded-2xl border border-white/10 bg-[#101010]/90 px-4 py-3 shadow-2xl backdrop-blur-xl">
+        <p className="text-[8px] uppercase tracking-[.2em] text-white/25">Finance</p>
+        <p className="mt-1 text-sm font-semibold text-white/75">Settlement tracked</p>
       </div>
-      <div className="hero-dot absolute right-[16%] top-[12%] h-2 w-2 rounded-full bg-[#ff5a1f] shadow-[0_0_25px_8px_rgba(255,90,31,.35)]" />
-      <div className="absolute bottom-[27%] left-[16%] h-1.5 w-1.5 rounded-full bg-white/60" />
+
+      <div className="hero-dot absolute right-[10%] top-[10%] h-2 w-2 rounded-full bg-[#ff5a1f] shadow-[0_0_25px_8px_rgba(255,90,31,.35)]" />
+      <div className="absolute bottom-[24%] left-[10%] h-1.5 w-1.5 rounded-full bg-white/50" />
     </div>
   );
 }
