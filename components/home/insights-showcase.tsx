@@ -29,16 +29,16 @@ function RoadmapVisual({ type }: { type: string }) {
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#ff5a1f]/15 blur-[70px]" />
         <div className="relative mx-auto mt-2 max-w-[310px] rounded-2xl border border-white/10 bg-[#0b0b0b]/90 p-5 shadow-2xl backdrop-blur-xl transition duration-700 group-hover:-translate-y-1">
           <div className="flex items-center justify-between border-b border-white/10 pb-4">
-            <div><p className="text-[8px] uppercase tracking-[.22em] text-white/25">Product</p><p className="mt-1 text-sm font-medium text-white/75">Application Pro</p></div>
-            <span className="rounded-full bg-[#ff5a1f]/10 px-2 py-1 text-[8px] text-[#ff7a3d]">ACTIVE</span>
+            <div><p className="text-[8px] uppercase tracking-[.22em] text-white/25">Product</p><p className="mt-1 text-sm font-medium text-white/75">Application lifecycle</p></div>
+            <span className="rounded-full bg-[#ff5a1f]/10 px-2 py-1 text-[8px] text-[#ff7a3d]">FUTURE</span>
           </div>
           <div className="mt-5 grid grid-cols-3 gap-2">
-            <div className="rounded-xl border border-white/10 p-3"><span className="text-[8px] text-white/25">PLAN</span><p className="mt-2 text-xs text-white/65">Growth</p></div>
-            <div className="rounded-xl border border-white/10 p-3"><span className="text-[8px] text-white/25">PRICE</span><p className="mt-2 text-xs text-white/65">$29</p></div>
-            <div className="rounded-xl border border-white/10 p-3"><span className="text-[8px] text-white/25">USAGE</span><p className="mt-2 text-xs text-white/65">12K</p></div>
+            <div className="rounded-xl border border-white/10 p-3"><span className="text-[8px] text-white/25">CAPABILITY</span><p className="mt-2 text-xs text-white/65">Products</p></div>
+            <div className="rounded-xl border border-white/10 p-3"><span className="text-[8px] text-white/25">CAPABILITY</span><p className="mt-2 text-xs text-white/65">Pricing</p></div>
+            <div className="rounded-xl border border-white/10 p-3"><span className="text-[8px] text-white/25">CAPABILITY</span><p className="mt-2 text-xs text-white/65">Entitlements</p></div>
           </div>
-          <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/5"><div className="h-full w-[68%] rounded-full bg-[#ff5a1f]/60" /></div>
-          <p className="mt-3 text-[8px] uppercase tracking-[.2em] text-white/25">Entitlement ready</p>
+          <div className="mt-4 grid grid-cols-3 gap-2"><span className="h-1.5 rounded-full bg-[#ff5a1f]/50" /><span className="h-1.5 rounded-full bg-white/10" /><span className="h-1.5 rounded-full bg-white/10" /></div>
+          <p className="mt-3 text-[8px] uppercase tracking-[.2em] text-white/25">Future commercial layer</p>
         </div>
       </div>
     );
@@ -49,12 +49,12 @@ function RoadmapVisual({ type }: { type: string }) {
       <div className="relative h-full min-h-72 overflow-hidden bg-[#0d0d0d] p-7">
         <div className="absolute inset-0 opacity-60 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:42px_42px]" />
         <div className="relative mx-auto mt-3 max-w-[310px] rounded-2xl border border-white/10 bg-[#101010]/95 p-5 shadow-2xl backdrop-blur-xl transition duration-700 group-hover:scale-[1.02]">
-          <div className="flex items-center justify-between"><span className="text-[8px] uppercase tracking-[.22em] text-[#ff6a2a]">Campaign</span><span className="text-[8px] text-white/25">LIVE</span></div>
-          <p className="mt-3 text-lg font-semibold tracking-tight text-white/80">Summer launch</p>
+          <div className="flex items-center justify-between"><span className="text-[8px] uppercase tracking-[.22em] text-[#ff6a2a]">Campaign</span><span className="text-[8px] text-white/25">FUTURE</span></div>
+          <p className="mt-3 text-lg font-semibold tracking-tight text-white/80">Promotion campaign</p>
           <div className="mt-5 flex items-end gap-2">
             {[34, 52, 43, 68, 58, 82, 72].map((height, index) => <span key={index} className="flex-1 rounded-t bg-[#ff5a1f]/30" style={{ height: `${height}px` }} />)}
           </div>
-          <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4"><span className="text-[8px] uppercase tracking-[.18em] text-white/25">Promotion reach</span><span className="text-sm text-white/70">+28.4%</span></div>
+          <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4"><span className="text-[8px] uppercase tracking-[.18em] text-white/25">Promotion signals</span><span className="text-sm text-white/70">Planned</span></div>
         </div>
       </div>
     );
@@ -65,7 +65,7 @@ function RoadmapVisual({ type }: { type: string }) {
       <div className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/20" />
       <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
       <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl bg-[#ff5a1f] text-[8px] font-semibold uppercase tracking-[.12em] text-black shadow-[0_0_60px_rgba(255,90,31,.4)]">API</div>
-      {[["AUTH", "left-[12%] top-[24%]"], ["STORAGE", "right-[8%] top-[26%]"], ["EVENTS", "left-[16%] bottom-[20%]"], ["ANALYTICS", "right-[10%] bottom-[18%]"]].map(([label, position]) => (
+      {[["AUTH", "left-[12%] top-[24%]"], ["STORAGE", "right-[8%] top-[26%]"], ["MESSAGING", "left-[16%] bottom-[20%]"], ["ANALYTICS", "right-[10%] bottom-[18%]"]].map(([label, position]) => (
         <div key={label} className={`absolute ${position} flex items-center gap-2 rounded-full border border-white/10 bg-[#111]/90 px-3 py-2 backdrop-blur-xl`}>
           <span className="h-1.5 w-1.5 rounded-full bg-[#ff5a1f]" />
           <span className="text-[8px] uppercase tracking-[.14em] text-white/45">{label}</span>
