@@ -33,29 +33,37 @@ export function PublishingModels() {
             <p className="mt-8 max-w-md text-sm leading-6 text-white/35">The architecture supports different levels of involvement without creating a separate publishing architecture for each model.</p>
           </div>
 
-          <div className="grid gap-5">
-            {models.map((model) => (
-              <article key={model.number} className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#101010] p-7 transition duration-500 hover:-translate-y-1 hover:border-[#ff5a1f]/30 sm:p-9">
-                <div className="absolute -right-24 -top-24 h-48 w-48 rounded-full bg-[#ff5a1f]/10 blur-[70px] opacity-0 transition duration-500 group-hover:opacity-100" />
-                <div className="relative grid gap-8 lg:grid-cols-[70px_1fr_1.05fr] lg:items-center">
-                  <span className="text-xs text-[#ff5a1f]">{model.number}</span>
-                  <div>
-                    <span className="text-[9px] uppercase tracking-[.22em] text-white/25">{model.tag}</span>
-                    <h3 className="mt-3 font-display text-3xl font-semibold tracking-[-.04em] sm:text-4xl">{model.title}</h3>
-                    <p className="mt-4 max-w-xl text-sm leading-6 text-white/40">{model.description}</p>
-                  </div>
-                  <div className="relative rounded-2xl border border-white/[0.08] bg-[#0a0a0a] p-5">
-                    {model.flow.map((step, index) => (
-                      <div key={step} className="flex items-center gap-3">
-                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#ff5a1f]/30 text-[9px] text-[#ff6a2a]">{String(index + 1).padStart(2, "0")}</span>
-                        <span className="text-xs leading-5 text-white/55">{step}</span>
-                        {index < model.flow.length - 1 && <span aria-hidden="true" className="ml-auto text-[#ff5a1f]/60">↓</span>}
+          <div className="relative">
+            <div className="hidden lg:block absolute left-6 top-6 bottom-6 border-l border-dashed border-white/10" />
+            <div className="space-y-0">
+              {models.map((model, index) => (
+                <article key={model.number} className="group relative border-t border-white/10 py-8 first:border-t-0 sm:py-10 lg:pl-16">
+                  <span className="absolute left-[2px] top-10 hidden h-3 w-3 rounded-full border border-[#ff5a1f]/50 bg-[#090909] lg:block" />
+                  {index < models.length - 1 && <span className="absolute left-[7px] top-[52px] hidden h-[calc(100%-25px)] border-l border-[#ff5a1f]/10 lg:block" />}
+                  <div className="grid gap-7 lg:grid-cols-[1fr_1.05fr] lg:items-center">
+                    <div>
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs text-[#ff5a1f]">{model.number}</span>
+                        <span className="text-[9px] uppercase tracking-[.22em] text-white/25">{model.tag}</span>
                       </div>
-                    ))}
+                      <h3 className="mt-3 font-display text-3xl font-semibold tracking-[-.04em] sm:text-4xl">{model.title}</h3>
+                      <p className="mt-4 max-w-xl text-sm leading-6 text-white/40">{model.description}</p>
+                    </div>
+                    <div className="border-l border-white/10 pl-5 sm:pl-6">
+                      <p className="mb-4 text-[9px] uppercase tracking-[.18em] text-white/20">Operating path</p>
+                      <div className="flex flex-wrap items-center gap-2">
+                        {model.flow.map((step, stepIndex) => (
+                          <div key={step} className="flex items-center gap-2">
+                            <span className="rounded-full border border-white/10 bg-white/[.02] px-3 py-2 text-[10px] text-white/50">{step}</span>
+                            {stepIndex < model.flow.length - 1 && <span className="text-[#ff5a1f]/60">→</span>}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </div>
