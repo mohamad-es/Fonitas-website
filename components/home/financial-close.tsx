@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const stages = [
   ["01", "Revenue", "Revenue facts enter the financial workflow after publication."],
   ["02", "Reconciliation", "External revenue is matched against costs and contractual rules."],
@@ -8,43 +12,70 @@ const stages = [
 ];
 
 export function FinancialClose() {
+  const [active, setActive] = useState(0);
+  const stage = stages[active];
+
   return (
     <section id="financial-close" className="border-y border-white/[0.08] bg-[#080808]">
       <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
         <div className="grid gap-14 lg:grid-cols-[.72fr_1.28fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <p className="mb-5 text-xs uppercase tracking-[.25em] text-[#ff5a1f]">Financial close</p>
-            <h2 className="font-display max-w-xl text-5xl font-semibold leading-[.9] sm:text-7xl">
-              Publishing doesn&apos;t end at the store.
-            </h2>
-            <p className="mt-8 max-w-md text-sm leading-7 text-white/40">
-              Fonitas carries the application beyond publication into revenue collection, reconciliation, settlement, statements and payment.
-            </p>
+            <h2 className="font-display max-w-xl text-5xl font-semibold leading-[.9] sm:text-7xl">Publishing doesn&apos;t end at the store.</h2>
+            <p className="mt-8 max-w-md text-sm leading-7 text-white/40">Fonitas carries the application beyond publication into revenue collection, reconciliation, settlement, statements and payment.</p>
+            <div className="mt-10 flex items-center gap-3 text-[9px] uppercase tracking-[.18em] text-white/20"><span>06 stages</span><span className="h-px w-8 bg-[#ff5a1f]/30"/><span>Immutable history</span></div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#101010]">
-            <div className="absolute inset-0 grid-bg opacity-25" />
-            <div className="relative p-7 sm:p-10">
-              <div className="flex items-center justify-between border-b border-white/10 pb-5">
-                <span className="text-[9px] uppercase tracking-[.22em] text-white/25">Financial lifecycle</span>
-                <span className="rounded-full border border-[#ff5a1f]/25 px-3 py-1 text-[8px] uppercase tracking-[.18em] text-[#ff6a2a]">Auditable</span>
+          <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#0d0d0d] shadow-[0_30px_100px_rgba(0,0,0,.3)]">
+            <div className="absolute inset-0 grid-bg opacity-20" />
+            <div className="relative">
+              <div className="flex items-center justify-between border-b border-white/10 px-6 py-5 sm:px-8">
+                <div><p className="text-[9px] uppercase tracking-[.22em] text-white/25">Finance / Application</p><p className="mt-1 text-sm font-medium">Revenue operations</p></div>
+                <span className="rounded-full border border-[#ff5a1f]/25 bg-[#ff5a1f]/[.05] px-3 py-1.5 text-[8px] uppercase tracking-[.16em] text-[#ff6a2a]">Recorded</span>
               </div>
-              <div className="mt-8">
-                {stages.map(([number, title, description], index) => (
-                  <div key={number} className="group grid grid-cols-[48px_1fr_auto] gap-4 border-b border-white/[.07] py-5 last:border-0 sm:grid-cols-[60px_170px_1fr_auto] sm:items-center">
-                    <span className="text-[10px] text-[#ff5a1f]">{number}</span>
-                    <span className="text-sm font-medium text-white/75">{title}</span>
-                    <span className="hidden text-xs leading-5 text-white/30 sm:block">{description}</span>
-                    <span className="text-white/20 transition group-hover:text-[#ff5a1f]">{index === stages.length - 1 ? "✓" : "↓"}</span>
+
+              <div className="grid lg:grid-cols-[190px_1fr]">
+                <nav className="border-b border-white/10 p-4 lg:border-b-0 lg:border-r">
+                  {stages.map(([number,title],index) => (
+                    <button key={number} type="button" onClick={()=>setActive(index)} className={`relative flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left transition ${active===index ? "bg-[#ff5a1f]/10 text-white" : "text-white/30 hover:bg-white/[.03] hover:text-white/60"}`}>
+                      <span className={`flex h-7 w-7 items-center justify-center rounded-full border text-[9px] ${active===index ? "border-[#ff5a1f]/40 text-[#ff6a2a]" : "border-white/10"}`}>{number}</span>
+                      <span className="text-[10px] uppercase tracking-[.13em]">{title}</span>
+                    </button>
+                  ))}
+                </nav>
+
+                <div className="relative min-h-[430px] p-7 sm:p-10">
+                  <div className="absolute right-8 top-8 h-44 w-44 rounded-full bg-[#ff5a1f]/10 blur-[75px]" />
+                  <div className="relative flex h-full flex-col">
+                    <div className="flex items-center justify-between text-[9px] uppercase tracking-[.2em]"><span className="text-[#ff6a2a]">{stage[0]} / {stage[1]}</span><span className="text-white/20">Financial fact</span></div>
+                    <div className="mt-12 flex flex-1 flex-col justify-center">
+                      <div className="flex h-24 w-24 items-center justify-center rounded-[26px] border border-[#ff5a1f]/30 bg-[#ff5a1f]/10 text-3xl font-semibold text-[#ff6a2a]">{active===0 ? "$" : active===1 ? "↔" : active===2 ? "%" : active===3 ? "∑" : active===4 ? "=" : "✓"}</div>
+                      <h3 className="font-display mt-8 text-5xl font-semibold leading-[.9] sm:text-6xl">{stage[1]}</h3>
+                      <p className="mt-5 max-w-xl text-sm leading-7 text-white/40 sm:text-base">{stage[2]}</p>
+                    </div>
+                    <div className="mt-10 grid grid-cols-3 gap-2 border-t border-white/10 pt-5">
+                      <div><p className="text-[8px] uppercase tracking-[.16em] text-white/20">Stage</p><p className="mt-2 text-xs text-white/60">{active+1} / 6</p></div>
+                      <div><p className="text-[8px] uppercase tracking-[.16em] text-white/20">State</p><p className="mt-2 text-xs text-[#ff6a2a]">Recorded</p></div>
+                      <div><p className="text-[8px] uppercase tracking-[.16em] text-white/20">History</p><p className="mt-2 text-xs text-white/60">Immutable</p></div>
+                    </div>
                   </div>
-                ))}
+                </div>
               </div>
-              <div className="mt-7 flex items-center justify-between rounded-2xl border border-[#ff5a1f]/15 bg-[#ff5a1f]/[.04] px-5 py-4">
-                <span className="text-[9px] uppercase tracking-[.2em] text-white/30">History</span>
-                <span className="text-sm text-white/65">Immutable financial record</span>
+
+              <div className="border-t border-white/10 px-6 py-5 sm:px-8">
+                <div className="flex items-center justify-between gap-5">
+                  <div className="flex-1"><div className="h-1 overflow-hidden rounded-full bg-white/10"><div className="h-full rounded-full bg-[#ff5a1f] transition-all duration-500" style={{width:`${((active+1)/stages.length)*100}%`}} /></div></div>
+                  <span className="text-[9px] uppercase tracking-[.16em] text-white/25">{active+1} / {stages.length}</span>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-14 grid gap-4 border-t border-white/10 pt-8 sm:grid-cols-3">
+          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Revenue</p><p className="mt-2 text-sm text-white/45">Imported facts enter the financial workflow.</p></div>
+          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Reconciliation</p><p className="mt-2 text-sm text-white/45">External facts meet costs and contract rules.</p></div>
+          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Settlement</p><p className="mt-2 text-sm text-white/45">The financial obligation becomes auditable.</p></div>
         </div>
       </div>
     </section>
