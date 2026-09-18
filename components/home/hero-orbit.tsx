@@ -41,9 +41,9 @@ export function HeroOrbit() {
   }, []);
 
   return (
-    <div ref={ref} className="hero-orbit relative mx-auto w-full max-w-[620px] select-none" aria-hidden="true">
-      <div className="absolute inset-[8%] rounded-full border border-white/[0.035]" />
-      <div className="absolute inset-[15%] rounded-full border border-[#ff5a1f]/15" />
+    <div ref={ref} className="hero-orbit group relative mx-auto w-full max-w-[620px] select-none [perspective:1200px]" aria-hidden="true">
+      <div className="absolute inset-[8%] animate-[spin_24s_linear_infinite] rounded-full border border-white/[0.035]" />
+      <div className="absolute inset-[15%] animate-[spin_18s_linear_infinite_reverse] rounded-full border border-[#ff5a1f]/15" />
 
       <div className="absolute left-[6%] top-[12%] h-56 w-56 rounded-full bg-[#ff5a1f]/[0.06] blur-[80px]" />
       <div className="absolute right-[2%] bottom-[10%] h-64 w-64 rounded-full bg-[#ff5a1f]/[0.08] blur-[90px]" />
@@ -70,9 +70,9 @@ export function HeroOrbit() {
             <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ff5a1f]/25 bg-[#ff5a1f]/[.06] text-sm text-[#ff6a2a]">↓</div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[30px] border border-[#ff5a1f]/30 bg-[#ff5a1f]/[0.045] p-7 shadow-[0_25px_90px_rgba(255,90,31,.09)] sm:p-8">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(255,90,31,.12),transparent_45%)]" />\n            <div className="relative flex flex-col items-center text-center">
-              <div className="flex h-24 w-24 items-center justify-center rounded-[26px] bg-[#ff5a1f] text-sm font-black tracking-[.12em] text-black shadow-[0_0_55px_rgba(255,90,31,.32)] ring-1 ring-white/20 sm:h-28 sm:w-28">FONITAS</div>
+          <div className="relative overflow-hidden rounded-[30px] border border-[#ff5a1f]/30 bg-[#ff5a1f]/[0.045] p-7 shadow-[0_25px_90px_rgba(255,90,31,.09)] transition-transform duration-700 group-hover:[transform:translateZ(14px)_rotateX(1deg)] sm:p-8">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(255,90,31,.12),transparent_45%)]" />\n            <div className="absolute left-1/2 top-1/2 h-36 w-36 -translate-x-1/2 -translate-y-1/2 animate-[ping_5s_ease-out_infinite] rounded-full border border-[#ff5a1f]/15" />\n            <div className="relative flex flex-col items-center text-center">
+              <div className="flex h-24 w-24 animate-[pulse_4s_ease-in-out_infinite] items-center justify-center rounded-[26px] bg-[#ff5a1f] text-sm font-black tracking-[.12em] text-black shadow-[0_0_55px_rgba(255,90,31,.32)] ring-1 ring-white/20 transition-transform duration-700 group-hover:scale-[1.04] sm:h-28 sm:w-28">FONITAS</div>
               <p className="mt-5 text-[11px] font-semibold uppercase tracking-[.22em] text-white/85">Publishing Operating System</p>
               <p className="mt-2 max-w-sm text-xs leading-6 text-white/35 sm:text-sm">Review · Contract · QA · Publishing · Revenue · Settlement</p>
             </div>
