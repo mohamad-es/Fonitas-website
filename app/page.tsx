@@ -27,15 +27,15 @@ export default function Home() {
     <main className="overflow-hidden">
       <Header />
 
-      <section className="relative min-h-screen border-b border-white/[0.08] pt-20">
+      <section className="relative min-h-[92vh] border-b border-white/[0.08] pt-20 sm:min-h-screen">
         <div className="absolute inset-0 grid-bg opacity-35" />
         <div className="absolute -right-40 top-24 h-[520px] w-[520px] rounded-full bg-[#ff5a1f]/10 blur-[140px]" />
-        <div className="relative mx-auto grid min-h-[calc(100vh-80px)] max-w-[1400px] items-center gap-10 px-6 py-16 lg:grid-cols-[1.05fr_.95fr] lg:px-10 lg:py-20">
+        <div className="relative mx-auto grid min-h-[calc(92vh-80px)] max-w-[1400px] items-center gap-12 px-6 py-14 sm:min-h-[calc(100vh-80px)] sm:py-16 lg:grid-cols-[1.05fr_.95fr] lg:gap-6 lg:px-10 lg:py-20">
           <div className="relative z-10">
             <p className="reveal-up mb-8 text-xs font-semibold uppercase tracking-[0.28em] text-[#ff6a2a]">Application publishing operating system</p>
             <h1 className="font-display glow-text reveal-up reveal-delay-1 max-w-5xl text-[clamp(4rem,9vw,9.5rem)] font-semibold leading-[0.84]">From<br />application<br /><span className="text-white/30">to market.</span></h1>
-            <div className="reveal-up reveal-delay-2 mt-10 flex max-w-2xl flex-col gap-6 sm:flex-row sm:items-end">
-              <p className="text-base leading-7 text-white/50">Fonitas connects application intake, evaluation, contracts, QA, publishing and the financial lifecycle in one operating system.</p>
+            <div className="reveal-up reveal-delay-2 mt-9 flex max-w-2xl flex-col gap-6 sm:mt-10 sm:flex-row sm:items-end">
+              <p className="max-w-xl text-[15px] leading-7 text-white/50 sm:text-base">Fonitas connects application intake, evaluation, contracts, QA, publishing and the financial lifecycle in one operating system.</p>
               <a href="#how-it-works" className="group flex shrink-0 items-center gap-3 text-sm font-medium transition hover:text-white/80">See how it works <span className="text-[#ff5a1f] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"><Arrow /></span></a>
             </div>
             <div className="reveal-up reveal-delay-3 mt-16 flex items-center gap-4 text-[10px] uppercase tracking-[0.24em] text-white/25"><span className="h-px w-10 bg-white/15" />Built around the application lifecycle</div>
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how-it-works" className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
+      <section id="how-it-works" className="mx-auto max-w-[1400px] px-6 py-24 sm:py-28 lg:px-10 lg:py-36">
         <div className="grid gap-16 lg:grid-cols-[.72fr_1.28fr]">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">The lifecycle</p>
@@ -66,10 +66,10 @@ export default function Home() {
           </div>
           <div className="border-t border-white/10">
             {capabilities.map(([number, title, description]) => (
-              <article key={number} className="group grid gap-5 border-b border-white/10 py-9 sm:grid-cols-[55px_1fr_1.1fr] sm:gap-6">
-                <span className="text-xs text-white/25">{number}</span>
-                <h3 className="text-2xl font-medium transition group-hover:text-[#ff6a2a]">{title}</h3>
-                <p className="max-w-md text-sm leading-6 text-white/40">{description}</p>
+              <article key={number} className="group grid gap-4 border-b border-white/10 py-8 transition-colors hover:bg-white/[0.015] sm:min-h-[142px] sm:grid-cols-[72px_1fr_1.05fr] sm:items-start sm:gap-7 sm:py-9">
+                <span className="font-display text-sm font-medium text-white/25 transition-colors group-hover:text-[#ff5a1f] sm:pt-1">{number}</span>
+                <h3 className="font-display text-[1.65rem] font-medium leading-none tracking-[-.035em] transition group-hover:text-[#ff6a2a] sm:text-3xl">{title}</h3>
+                <p className="max-w-lg text-[13px] leading-6 text-white/40 sm:text-[15px]">{description}</p>
               </article>
             ))}
           </div>
@@ -78,7 +78,7 @@ export default function Home() {
 
       <section id="publishing" className="border-y border-white/[0.08] bg-[#0b0b0b]">
         <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
-          <div className="mb-16 flex items-end justify-between gap-6">
+          <div className="mb-12 flex items-end justify-between gap-6 sm:mb-16">
             <div>
               <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">How publishing works</p>
               <h2 className="font-display max-w-4xl text-5xl font-semibold leading-[.9] sm:text-7xl">Controlled releases.<br /><span className="text-white/30">Clear responsibility.</span></h2>
@@ -95,7 +95,7 @@ export default function Home() {
 
       <section id="platform" className="border-y border-white/[0.08] bg-[#0b0b0b]">
         <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
-          <div className="mb-14 flex items-end justify-between gap-6">
+          <div className="mb-12 flex items-end justify-between gap-6 sm:mb-14">
             <div>
               <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Beyond publishing</p>
               <h2 className="font-display max-w-4xl text-5xl font-semibold leading-[.9] sm:text-7xl">A platform that can<br /><span className="text-white/30">grow around the core.</span></h2>
@@ -141,7 +141,7 @@ export default function Home() {
               <div className="mt-5 grid gap-3 text-sm text-white/50"><a href="mailto:hello@fonitas.com" className="transition hover:text-[#ff6a2a]">hello@fonitas.com</a><a href="#contact" className="transition hover:text-white">Submit a collaboration request ↗</a></div>
             </div>
           </div>
-          <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-7 text-[10px] uppercase tracking-[.15em] text-white/20 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Fonitas. All rights reserved.</span><span>Application publishing, growth &amp; financial operations.</span></div>
+          <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-7 text-[10px] uppercase tracking-[.15em] text-white/20 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Fonitas. All rights reserved.</span><span>Application publishing &amp; financial operations.</span></div>
         </div>
       </footer>
     </main>
