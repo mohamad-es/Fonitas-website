@@ -2,15 +2,15 @@ import Link from "next/link";
 import { AuthLayout } from "@/components/auth/auth-layout";
 
 export const metadata = {
-  title: "Sign in — Foonitas",
-  description: "Sign in to your Foonitas account.",
+  title: "Sign in — Fonitas",
+  description: "Sign in to your Fonitas account.",
 };
 
 export default function LoginPage() {
   return (
     <AuthLayout>
       <Link href="/" className="mb-10 inline-block text-xs font-semibold uppercase tracking-[0.28em] text-white/45 hover:text-white lg:hidden">
-        ← Foonitas
+        ← Fonitas
       </Link>
       <div className="mb-9">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[#ff5a1f]">Welcome back</p>
