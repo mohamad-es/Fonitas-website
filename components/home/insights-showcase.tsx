@@ -25,7 +25,7 @@ const roadmap = [
 function RoadmapVisual({ type }: { type: string }) {
   if (type === "commercial") {
     return (
-      <div className="relative h-full min-h-[420px] overflow-hidden bg-[#0d0d0d] p-7 lg:min-h-[560px]">
+      <div className="relative h-full min-h-[420px] overflow-hidden bg-[#0d0d0d] p-7 lg:min-h-[500px]">
         <div className="absolute inset-0 grid-bg opacity-35" />
         <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#ff5a1f]/15 blur-[90px]" />
         <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/20" />
@@ -67,7 +67,7 @@ export function InsightsShowcase() {
     <div className="grid gap-5 lg:grid-cols-[1.2fr_.8fr]">
       <article className="group relative overflow-hidden rounded-[30px] border border-white/10 bg-[#101010]">
         <RoadmapVisual type={roadmap[0].visual} />
-        <div className="relative -mt-24 p-7 sm:p-9 lg:p-11">
+        <div className="relative p-7 sm:p-9 lg:p-11">
           <div className="max-w-2xl rounded-[24px] border border-white/10 bg-[#0b0b0b]/90 p-7 backdrop-blur-xl sm:p-9">
             <div className="flex items-center justify-between text-[9px] uppercase tracking-[.22em] text-white/30"><span>{roadmap[0].category}</span><span>01 / FUTURE</span></div>
             <h3 className="font-display mt-7 text-4xl font-semibold leading-[.95] sm:text-6xl">{roadmap[0].title}</h3>
