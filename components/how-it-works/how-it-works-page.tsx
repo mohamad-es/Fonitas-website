@@ -68,7 +68,7 @@ export function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="sticky top-0 z-20 border-b border-white/[0.08] bg-[#070707]/95 backdrop-blur-md">
+      <section className="sticky top-20 z-20 border-b border-white/[0.08] bg-[#070707]/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1400px] overflow-x-auto px-6 lg:px-10">
           {stages.map((stage) => <a key={stage.number} href={`#stage-${stage.number}`} className="group flex min-w-[135px] flex-1 items-center gap-3 border-r border-white/[0.08] px-5 py-4 first:border-l sm:min-w-0"><span className="text-[10px] text-[#ff5a1f]">{stage.number}</span><span className="text-[11px] uppercase tracking-[.16em] text-white/35 transition group-hover:text-white">{stage.name}</span></a>)}
         </div>
@@ -90,6 +90,20 @@ export function HowItWorksPage() {
             <div className="grid gap-10 lg:grid-cols-[1fr_.75fr] lg:gap-16"><div><h2 className="font-display max-w-3xl text-5xl font-semibold leading-[.88] sm:text-7xl">{stage.title}</h2><p className="mt-8 max-w-2xl text-lg leading-8 text-white/45">{stage.text}</p></div><div className="self-end border-t border-white/10 pt-6"><p className="text-[10px] uppercase tracking-[.2em] text-white/25">What happens here</p><div className="mt-5 grid gap-3">{stage.details.map((detail, detailIndex) => <div key={detail} className="flex items-center justify-between border-b border-white/[0.08] pb-3 text-sm text-white/55"><span>{detail}</span><span className="text-[#ff5a1f]">{String(detailIndex + 1).padStart(2, "0")}</span></div>)}</div></div></div>
           </div>
         </article>)}
+      </section>
+
+      <section className="border-b border-white/[0.08] bg-[#0b0b0b]">
+        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
+          <div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr]">
+            <div><p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">Financial close</p><h2 className="font-display mt-6 max-w-xl text-5xl font-semibold leading-[.9] sm:text-7xl">Revenue becomes a record.</h2></div>
+            <div className="border-l border-white/10 pl-8 sm:pl-12">
+              <p className="max-w-2xl text-lg leading-8 text-white/45">Publication is not the end of the lifecycle. Revenue is imported, reconciled against external facts and contract rules, calculated into owner and Fonitas shares, then carried through settlement, statement and payment.</p>
+              <div className="mt-10 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-3">
+                {["Revenue import","Reconciliation","Settlement","Statement","Payment","Immutable history"].map((item, i) => <div key={item} className="bg-[#0b0b0b] p-5"><span className="text-[10px] text-[#ff5a1f]">{String(i+1).padStart(2,"0")}</span><p className="mt-5 text-sm font-medium">{item}</p></div>)}
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="border-b border-white/[0.08] bg-[#0b0b0b]">
