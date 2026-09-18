@@ -3,19 +3,21 @@
 import { useEffect, useRef } from "react";
 
 const fragments = [
-  [10, 29, 34, 16, -14],
-  [19, 18, 25, 12, 18],
-  [24, 42, 42, 42, -8],
-  [9, 53, 28, 25, 24],
-  [20, 65, 22, 11, -18],
-  [31, 68, 31, 17, 8],
-  [32, 12, 15, 15, 35],
+  [86, 176, 36, 22, -18],
+  [132, 112, 25, 15, 14],
+  [151, 246, 44, 42, -8],
+  [62, 318, 30, 26, 20],
+  [122, 394, 24, 13, -18],
+  [190, 430, 34, 19, 8],
+  [192, 76, 15, 15, 34],
+  [48, 228, 13, 13, -12],
+  [96, 450, 17, 10, 22],
 ];
 
 const stores = [
-  { label: "APP STORE", symbol: "A", y: 24 },
-  { label: "GOOGLE PLAY", symbol: "G", y: 48 },
-  { label: "MICROSOFT", symbol: "M", y: 72 },
+  { symbol: "A", y: 145 },
+  { symbol: "G", y: 300 },
+  { symbol: "M", y: 455 },
 ];
 
 export function HeroOrbit() {
@@ -29,17 +31,22 @@ export function HeroOrbit() {
       const rect = element.getBoundingClientRect();
       const x = (event.clientX - rect.left) / rect.width - 0.5;
       const y = (event.clientY - rect.top) / rect.height - 0.5;
-      element.style.setProperty("--mx", `${x * 10}px`);
-      element.style.setProperty("--my", `${y * 10}px`);
+      element.style.setProperty("--mx", `${x * 12}px`);
+      element.style.setProperty("--my", `${y * 12}px`);
+      element.style.setProperty("--rx", `${y * -2.5}deg`);
+      element.style.setProperty("--ry", `${x * 3deg`);
     };
 
     const reset = () => {
       element.style.setProperty("--mx", "0px");
       element.style.setProperty("--my", "0px");
+      element.style.setProperty("--rx", "0deg");
+      element.style.setProperty("--ry", "0deg");
     };
 
     element.addEventListener("pointermove", handleMove);
     element.addEventListener("pointerleave", reset);
+
     return () => {
       element.removeEventListener("pointermove", handleMove);
       element.removeEventListener("pointerleave", reset);
@@ -47,109 +54,136 @@ export function HeroOrbit() {
   }, []);
 
   return (
-    <div ref={ref} className="hero-orbit relative mx-auto aspect-square w-full max-w-[620px] select-none" aria-hidden="true">
-      <div className="absolute inset-[4%] rounded-full border border-white/[0.035]" />
-      <div className="hero-orbit-ring absolute inset-[11%] rounded-full border border-[#ff5a1f]/15" />
-      <div className="absolute inset-[21%] rounded-full border border-dashed border-white/[0.045]" />
+    <div
+      ref={ref}
+      className="hero-orbit relative mx-auto aspect-square w-full max-w-[640px] select-none"
+      aria-hidden="true"
+    >
+      <div className="absolute inset-[5%] rounded-full border border-white/[0.035]" />
+      <div className="hero-orbit-ring absolute inset-[12%] rounded-full border border-[#ff5a1f]/15" />
+      <div className="absolute inset-[20%] rounded-full border border-dashed border-white/[0.04]" />
+      <div className="absolute inset-[28%] rounded-full border border-[#ff7a3d]/[0.07]" />
 
-      <div className="absolute left-[5%] top-[20%] h-[58%] w-[50%] rounded-full bg-[#ff5a1f]/[0.045] blur-[85px]" />
-      <div className="absolute right-[2%] top-[22%] h-[48%] w-[35%] rounded-full bg-[#ff5a1f]/[0.08] blur-[80px]" />
+      <div className="absolute left-[5%] top-[18%] h-[62%] w-[48%] rounded-full bg-[#ff5a1f]/[0.05] blur-[90px]" />
+      <div className="absolute right-[3%] top-[21%] h-[58%] w-[34%] rounded-full bg-[#ff5a1f]/[0.075] blur-[90px]" />
 
-      <div className="absolute inset-0">
+      <div
+        className="absolute inset-[3%] transition-transform duration-700 ease-out"
+        style={{
+          transform:
+            "translate3d(var(--mx, 0px), var(--my, 0px), 0) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))",
+          transformStyle: "preserve-3d",
+        }}
+      >
         <svg viewBox="0 0 600 600" className="h-full w-full overflow-visible">
           <defs>
-            <linearGradient id="hero-flow" x1="0" x2="1">
+            <linearGradient id="hero-flow-in" x1="0" x2="1">
               <stop offset="0" stopColor="#ff5a1f" stopOpacity="0" />
-              <stop offset=".45" stopColor="#ff7a3d" stopOpacity=".7" />
+              <stop offset=".52" stopColor="#ff6a2a" stopOpacity=".55" />
               <stop offset="1" stopColor="#ffb08a" stopOpacity=".9" />
             </linearGradient>
-            <radialGradient id="hero-core">
-              <stop offset="0" stopColor="#ffd0bc" />
-              <stop offset=".18" stopColor="#ff8b52" />
-              <stop offset=".5" stopColor="#ff5a1f" />
-              <stop offset="1" stopColor="#8f250b" />
+            <linearGradient id="hero-flow-out" x1="0" x2="1">
+              <stop offset="0" stopColor="#ffb08a" stopOpacity=".9" />
+              <stop offset=".5" stopColor="#ff6a2a" stopOpacity=".5" />
+              <stop offset="1" stopColor="#ff5a1f" stopOpacity="0" />
+            </linearGradient>
+            <radialGradient id="hero-core" cx="38%" cy="35%">
+              <stop offset="0" stopColor="#ffe0d1" />
+              <stop offset=".13" stopColor="#ff9a6b" />
+              <stop offset=".42" stopColor="#ff5a1f" />
+              <stop offset=".78" stopColor="#c83e12" />
+              <stop offset="1" stopColor="#541607" />
             </radialGradient>
-            <filter id="hero-glow">
-              <feGaussianBlur stdDeviation="7" result="blur" />
+            <linearGradient id="hero-metal" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stopColor="#ffffff" stopOpacity=".24" />
+              <stop offset=".28" stopColor="#ffffff" stopOpacity=".04" />
+              <stop offset=".58" stopColor="#ff7a3d" stopOpacity=".13" />
+              <stop offset="1" stopColor="#000000" stopOpacity=".5" />
+            </linearGradient>
+            <linearGradient id="hero-tile" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stopColor="#303030" />
+              <stop offset=".5" stopColor="#111111" />
+              <stop offset="1" stopColor="#050505" />
+            </linearGradient>
+            <filter id="hero-glow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="6" result="blur" />
               <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+            <filter id="hero-soft-glow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="18" />
             </filter>
           </defs>
 
+          <ellipse cx="300" cy="300" rx="175" ry="238" fill="#ff5a1f" opacity=".055" filter="url(#hero-soft-glow)" />
+
           <g className="hero-energy-in" filter="url(#hero-glow)">
-            <path d="M 95 180 C 190 210, 205 270, 280 292" fill="none" stroke="url(#hero-flow)" strokeWidth="1.5" />
-            <path d="M 65 300 C 170 300, 205 302, 280 300" fill="none" stroke="url(#hero-flow)" strokeWidth="1.5" />
-            <path d="M 95 420 C 190 390, 205 330, 280 308" fill="none" stroke="url(#hero-flow)" strokeWidth="1.5" />
+            <path d="M 70 176 C 166 195, 210 246, 254 278" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.2" />
+            <path d="M 48 228 C 164 252, 205 275, 254 290" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.1" />
+            <path d="M 55 318 C 150 310, 205 306, 254 304" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.3" />
+            <path d="M 82 394 C 166 370, 211 335, 254 316" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.1" />
+            <path d="M 116 440 C 180 402, 220 350, 260 322" fill="none" stroke="url(#hero-flow-in)" strokeWidth=".9" />
           </g>
 
           <g className="hero-energy-out" filter="url(#hero-glow)">
-            <path d="M 320 300 C 390 285, 420 190, 505 145" fill="none" stroke="url(#hero-flow)" strokeWidth="1.5" />
-            <path d="M 320 300 C 395 300, 430 300, 510 300" fill="none" stroke="url(#hero-flow)" strokeWidth="1.5" />
-            <path d="M 320 300 C 390 315, 420 410, 505 455" fill="none" stroke="url(#hero-flow)" strokeWidth="1.5" />
+            <path d="M 346 280 C 405 253, 430 190, 492 155" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.2" />
+            <path d="M 346 300 C 410 300, 445 300, 495 300" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.25" />
+            <path d="M 346 320 C 405 348, 430 410, 492 445" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.2" />
           </g>
 
-          <g opacity=".32" fill="none" stroke="#fff">
-            <ellipse cx="300" cy="300" rx="120" ry="185" strokeWidth="1" />
-            <ellipse cx="300" cy="300" rx="92" ry="145" strokeWidth="1" />
-            <ellipse cx="300" cy="300" rx="66" ry="108" stroke="#ff7a3d" strokeWidth="1" />
+          <g opacity=".28" fill="none">
+            <ellipse cx="300" cy="300" rx="128" ry="196" stroke="#fff" strokeWidth="1" />
+            <ellipse cx="300" cy="300" rx="105" ry="164" stroke="#fff" strokeWidth="1" />
+            <ellipse cx="300" cy="300" rx="80" ry="130" stroke="#ff7a3d" strokeWidth="1" />
           </g>
 
           <g className="hero-core-assembly">
-            <ellipse cx="300" cy="300" rx="78" ry="126" fill="rgba(255,255,255,.025)" stroke="rgba(255,255,255,.15)" strokeWidth="1" />
-            <ellipse cx="300" cy="300" rx="62" ry="104" fill="rgba(255,90,31,.08)" stroke="rgba(255,122,61,.35)" strokeWidth="1.5" />
-            <ellipse cx="300" cy="300" rx="45" ry="80" fill="url(#hero-core)" opacity=".92" />
-            <ellipse cx="300" cy="300" rx="27" ry="52" fill="#090909" stroke="#ff9b70" strokeOpacity=".7" strokeWidth="1" />
-            <circle cx="300" cy="300" r="7" fill="#ffd0bc" filter="url(#hero-glow)" />
+            <ellipse cx="300" cy="300" rx="92" ry="148" fill="url(#hero-metal)" stroke="#fff" strokeOpacity=".17" strokeWidth="1.2" />
+            <ellipse cx="300" cy="300" rx="76" ry="126" fill="#080808" fillOpacity=".5" stroke="#ff9b70" strokeOpacity=".24" strokeWidth="1.5" />
+            <ellipse cx="300" cy="300" rx="59" ry="103" fill="url(#hero-metal)" stroke="#ff7a3d" strokeOpacity=".5" strokeWidth="2" />
+            <ellipse cx="300" cy="300" rx="43" ry="80" fill="url(#hero-core)" filter="url(#hero-glow)" />
+            <ellipse cx="300" cy="300" rx="26" ry="52" fill="#090909" stroke="#ffb08a" strokeOpacity=".8" strokeWidth="1.2" />
+            <circle cx="300" cy="300" r="8" fill="#fff0e8" filter="url(#hero-glow)" />
+            <circle cx="300" cy="300" r="15" fill="none" stroke="#ff7a3d" strokeOpacity=".65" strokeWidth="1" />
           </g>
 
-          <g fill="#111" stroke="rgba(255,255,255,.2)" strokeWidth="1.5">
+          <g fill="#0b0b0b" stroke="#fff" strokeOpacity=".17" strokeWidth="1.4">
             {fragments.map(([x, y, w, h, rotate], index) => (
-              <rect
-                key={index}
-                x={x * 6 - w / 2}
-                y={y * 6 - h / 2}
-                width={w}
-                height={h}
-                rx="7"
-                transform={`rotate(${rotate} ${x * 6} ${y * 6})`}
-                className="hero-fragment"
-                style={{ animationDelay: `${index * 0.18}s` }}
-              />
+              <g key={index} className="hero-fragment" style={{ animationDelay: `${index * 0.16}s` }}>
+                <rect
+                  x={x - w / 2}
+                  y={y - h / 2}
+                  width={w}
+                  height={h}
+                  rx="7"
+                  transform={`rotate(${rotate} ${x} ${y})`}
+                  fill="url(#hero-tile)"
+                />
+                <path
+                  d={`M ${x - w / 2 + 4} ${y - h / 2 + 4} L ${x + w / 2 - 4} ${y - h / 2 + 4}`}
+                  stroke="#fff"
+                  strokeOpacity=".12"
+                  strokeWidth="1"
+                  transform={`rotate(${rotate} ${x} ${y})`}
+                />
+              </g>
             ))}
           </g>
 
           {stores.map((store) => (
-            <g key={store.label} transform={`translate(505 ${store.y * 6 - 21})`}>
-              <rect width="70" height="42" rx="10" fill="#0d0d0d" stroke="rgba(255,255,255,.14)" />
-              <rect x="9" y="9" width="24" height="24" rx="7" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.08)" />
-              <text x="21" y="25" textAnchor="middle" fill="rgba(255,255,255,.7)" fontSize="10" fontWeight="600">{store.symbol}</text>
-              <circle cx="-5" cy="21" r="2.5" fill="#ff5a1f" />
+            <g key={store.symbol} transform={`translate(492 ${store.y - 25})`}>
+              <rect x="5" y="5" width="78" height="50" rx="12" fill="#ff5a1f" opacity=".08" filter="url(#hero-soft-glow)" />
+              <rect width="76" height="48" rx="11" fill="url(#hero-tile)" stroke="#fff" strokeOpacity=".16" strokeWidth="1.2" />
+              <rect x="8" y="8" width="28" height="32" rx="8" fill="#fff" fillOpacity=".045" stroke="#fff" strokeOpacity=".08" />
+              <text x="22" y="29" textAnchor="middle" fill="#fff" fillOpacity=".75" fontSize="12" fontWeight="600">{store.symbol}</text>
+              <circle cx="-6" cy="24" r="3" fill="#ff7a3d" filter="url(#hero-glow)" />
             </g>
           ))}
         </svg>
       </div>
 
-      <div className="absolute left-[3%] top-[48%] -translate-y-1/2 text-[8px] uppercase tracking-[.28em] text-white/20">
-        <span className="block">raw</span>
-        <span className="mt-1 block">inputs</span>
-      </div>
-
-      <div
-        className="absolute left-1/2 top-1/2 h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 rounded-full transition-transform duration-700"
-        style={{ transform: "translate(calc(-50% + var(--mx, 0px)), calc(-50% + var(--my, 0px)))" }}
-      >
-        <div className="absolute inset-0 rounded-full border border-[#ff5a1f]/20 shadow-[0_0_100px_rgba(255,90,31,.2)]" />
-      </div>
-
-      <div className="absolute right-[0%] top-[19%] text-[8px] uppercase tracking-[.22em] text-white/20">
-        <span className="block">market</span>
-        <span className="mt-1 block">ready</span>
-      </div>
-
-      <div className="absolute bottom-[13%] left-[13%] rounded-full border border-white/[0.08] bg-[#0b0b0b]/75 px-3 py-1.5 text-[8px] uppercase tracking-[.18em] text-white/35 backdrop-blur-xl">
-        One operating system
-      </div>
-
-      <div className="hero-dot absolute right-[17%] top-[10%] h-1.5 w-1.5 rounded-full bg-[#ff5a1f] shadow-[0_0_22px_7px_rgba(255,90,31,.3)]" />
+      <div className="hero-dot absolute right-[13%] top-[9%] h-1.5 w-1.5 rounded-full bg-[#ff7a3d] shadow-[0_0_22px_7px_rgba(255,90,31,.28)]" />
+      <div className="absolute left-[14%] bottom-[16%] h-1 w-1 rounded-full bg-white/40" />
+      <div className="absolute right-[18%] bottom-[18%] h-1 w-1 rounded-full bg-[#ff5a1f]/70 shadow-[0_0_12px_4px_rgba(255,90,31,.25)]" />
     </div>
   );
 }
