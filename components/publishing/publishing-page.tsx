@@ -91,7 +91,7 @@ export function PublishingPage() {
             {stores.map((store, index) => (
               <div key={store.name} className="group relative min-h-[260px] overflow-hidden rounded-[28px] border border-white/10 bg-[#111] p-7 transition hover:border-[#ff5a1f]/40">
                 <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[#ff5a1f]/10 blur-3xl transition group-hover:bg-[#ff5a1f]/20" />
-                <div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between"><span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 text-xl font-semibold">{store.mark}</span><span className="text-xs text-white/25">0{index + 1}</span></div><div><h3 className="text-xl font-medium">{store.name}</h3><p className="mt-2 text-sm text-white/35">{store.meta} · human-in-the-loop</p></div></div>
+                <div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between"><span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 text-xl font-semibold">{store.mark}</span><span className="text-xs text-white/25">0{index + 1}</span></div><div><h3 className="text-xl font-medium">{store.name}</h3><p className="mt-2 text-sm text-white/35">{store.meta} · future adapter</p></div></div>
               </div>
             ))}
           </div>
