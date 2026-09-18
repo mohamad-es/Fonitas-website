@@ -4,6 +4,7 @@ import { ProjectShowcase } from "@/components/home/project-showcase";
 import { AboutProcess } from "@/components/home/about-process";
 import { InsightsShowcase } from "@/components/home/insights-showcase";
 import { PublishingModels } from "@/components/home/publishing-models";
+import { PricingSection } from "@/components/home/pricing-section";
 import { FAQSection } from "@/components/home/faq-section";
 import { ContactSection } from "@/components/home/contact-section";
 
@@ -101,6 +102,8 @@ export default function Home() {
         </div>
       </section>
 
+      <PricingSection />
+
       <FAQSection />
 
       <section className="border-b border-white/[0.08] bg-[#ff5a1f] text-black">
@@ -119,7 +122,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1400px] px-6 py-14 lg:px-10 lg:py-16">
           <div className="grid gap-12 md:grid-cols-[1.3fr_.7fr_.7fr_.7fr]">
             <div>
-              <a href="#" className="text-2xl font-bold tracking-[-.05em]">Foonitas<span className="text-[#ff5a1f]">.</span></a>
+              <a href="#" className="text-2xl font-bold tracking-[-.05em]">Fonitas<span className="text-[#ff5a1f]">.</span></a>
               <p className="mt-5 max-w-xs text-sm leading-6 text-white/35">The operating system for application publishing, from intake to settlement.</p>
             </div>
             <div>
@@ -132,10 +135,10 @@ export default function Home() {
             </div>
             <div>
               <p className="text-[10px] uppercase tracking-[.22em] text-white/25">Contact</p>
-              <div className="mt-5 grid gap-3 text-sm text-white/50"><a href="mailto:hello@foonitas.com" className="transition hover:text-[#ff6a2a]">hello@foonitas.com</a><a href="#contact" className="transition hover:text-white">Submit a collaboration request ↗</a></div>
+              <div className="mt-5 grid gap-3 text-sm text-white/50"><a href="mailto:hello@fonitas.com" className="transition hover:text-[#ff6a2a]">hello@fonitas.com</a><a href="#contact" className="transition hover:text-white">Submit a collaboration request ↗</a></div>
             </div>
           </div>
-          <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-7 text-[10px] uppercase tracking-[.15em] text-white/20 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Foonitas. All rights reserved.</span><span>Application publishing, growth &amp; financial operations.</span></div>
+          <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-7 text-[10px] uppercase tracking-[.15em] text-white/20 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Fonitas. All rights reserved.</span><span>Application publishing, growth &amp; financial operations.</span></div>
         </div>
       </footer>
     </main>
