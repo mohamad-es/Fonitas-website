@@ -19,11 +19,13 @@ export function AuthLayout({ children }: { children: ReactNode }) {
 
           <div className="relative z-10 flex w-full flex-col justify-between p-10 xl:p-14">
             <Link href="/" className="block w-[180px]" aria-label="Foonitas home">
-              <img src="/foonitas-logo.svg" alt="Foonitas" className="h-auto w-full" />
+              <img src="/foonitas-logo.png" alt="Foonitas" className="h-auto w-full" />
             </Link>
 
             <div className="max-w-xl">
-              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#ff5a1f]">Application publishing operating system</p>
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#ff5a1f]">
+                Application publishing operating system
+              </p>
               <h2 className="font-display max-w-lg text-5xl font-semibold leading-[1.02] xl:text-7xl">
                 Move from application to market.
               </h2>
