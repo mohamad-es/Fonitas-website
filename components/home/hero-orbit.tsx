@@ -114,36 +114,36 @@ export function HeroOrbit() {
             </filter>
           </defs>
 
-          <ellipse cx="300" cy="300" rx="175" ry="238" fill="#ff5a1f" opacity=".055" filter="url(#hero-soft-glow)" />
+          <ellipse cx="320" cy="300" rx="205" ry="105" fill="#ff5a1f" opacity=".055" filter="url(#hero-soft-glow)" />
 
           <g className="hero-energy-in" filter="url(#hero-glow)">
-            <path d="M 70 176 C 166 195, 210 246, 254 278" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.2" />
-            <path d="M 48 228 C 164 252, 205 275, 254 290" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.1" />
-            <path d="M 55 318 C 150 310, 205 306, 254 304" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.3" />
-            <path d="M 82 394 C 166 370, 211 335, 254 316" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.1" />
-            <path d="M 116 440 C 180 402, 220 350, 260 322" fill="none" stroke="url(#hero-flow-in)" strokeWidth=".9" />
+            <path d="M 70 176 C 165 195, 210 265, 265 288" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.2" />
+            <path d="M 48 228 C 160 250, 215 282, 265 294" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.1" />
+            <path d="M 55 318 C 155 312, 215 304, 265 302" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.3" />
+            <path d="M 82 394 C 170 372, 215 338, 265 312" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.1" />
+            <path d="M 116 440 C 185 405, 225 350, 270 316" fill="none" stroke="url(#hero-flow-in)" strokeWidth=".9" />
           </g>
 
           <g className="hero-energy-out" filter="url(#hero-glow)">
-            <path d="M 346 280 C 405 253, 430 190, 492 155" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.2" />
-            <path d="M 346 300 C 410 300, 445 300, 495 300" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.25" />
-            <path d="M 346 320 C 405 348, 430 410, 492 445" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.2" />
+            <path d="M 375 280 C 420 252, 445 190, 492 155" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.2" />
+            <path d="M 375 300 C 420 300, 455 300, 495 300" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.25" />
+            <path d="M 375 320 C 420 348, 445 410, 492 445" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.2" />
           </g>
 
           <g opacity=".28" fill="none">
-            <ellipse cx="300" cy="300" rx="128" ry="196" stroke="#fff" strokeWidth="1" />
-            <ellipse cx="300" cy="300" rx="105" ry="164" stroke="#fff" strokeWidth="1" />
-            <ellipse cx="300" cy="300" rx="80" ry="130" stroke="#ff7a3d" strokeWidth="1" />
+            <ellipse cx="320" cy="300" rx="180" ry="92" stroke="#fff" strokeWidth="1" />
+            <ellipse cx="320" cy="300" rx="150" ry="76" stroke="#fff" strokeWidth="1" />
+            <ellipse cx="320" cy="300" rx="118" ry="60" stroke="#ff7a3d" strokeWidth="1" />
           </g>
 
           <g className="hero-core-assembly">
-            <ellipse cx="300" cy="300" rx="92" ry="148" fill="url(#hero-metal)" stroke="#fff" strokeOpacity=".17" strokeWidth="1.2" />
-            <ellipse cx="300" cy="300" rx="76" ry="126" fill="#080808" fillOpacity=".5" stroke="#ff9b70" strokeOpacity=".24" strokeWidth="1.5" />
-            <ellipse cx="300" cy="300" rx="59" ry="103" fill="url(#hero-metal)" stroke="#ff7a3d" strokeOpacity=".5" strokeWidth="2" />
-            <ellipse cx="300" cy="300" rx="43" ry="80" fill="url(#hero-core)" filter="url(#hero-glow)" />
-            <ellipse cx="300" cy="300" rx="26" ry="52" fill="#090909" stroke="#ffb08a" strokeOpacity=".8" strokeWidth="1.2" />
-            <circle cx="300" cy="300" r="8" fill="#fff0e8" filter="url(#hero-glow)" />
-            <circle cx="300" cy="300" r="15" fill="none" stroke="#ff7a3d" strokeOpacity=".65" strokeWidth="1" />
+            <ellipse cx="320" cy="300" rx="112" ry="74" fill="url(#hero-metal)" stroke="#fff" strokeOpacity=".17" strokeWidth="1.2" />
+            <ellipse cx="320" cy="300" rx="92" ry="62" fill="#080808" fillOpacity=".5" stroke="#ff9b70" strokeOpacity=".24" strokeWidth="1.5" />
+            <ellipse cx="320" cy="300" rx="72" ry="50" fill="url(#hero-metal)" stroke="#ff7a3d" strokeOpacity=".5" strokeWidth="2" />
+            <ellipse cx="320" cy="300" rx="53" ry="38" fill="url(#hero-core)" filter="url(#hero-glow)" />
+            <ellipse cx="320" cy="300" rx="31" ry="24" fill="#090909" stroke="#ffb08a" strokeOpacity=".8" strokeWidth="1.2" />
+            <circle cx="320" cy="300" r="8" fill="#fff0e8" filter="url(#hero-glow)" />
+            <circle cx="320" cy="300" r="16" fill="none" stroke="#ff7a3d" strokeOpacity=".65" strokeWidth="1" />
           </g>
 
           <g fill="#0b0b0b" stroke="#fff" strokeOpacity=".17" strokeWidth="1.4">
