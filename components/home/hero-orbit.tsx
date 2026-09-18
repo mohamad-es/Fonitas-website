@@ -34,7 +34,7 @@ export function HeroOrbit() {
       element.style.setProperty("--mx", `${x * 12}px`);
       element.style.setProperty("--my", `${y * 12}px`);
       element.style.setProperty("--rx", `${y * -2.5}deg`);
-      element.style.setProperty("--ry", `${x * 3deg`);
+      element.style.setProperty("--ry", `${x * 3}deg`);
     };
 
     const reset = () => {
