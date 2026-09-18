@@ -23,7 +23,8 @@ a { color: inherit; text-decoration: none; }
 @keyframes soft-float { 0%, 100% { transform: translate3d(0, 0, 0) rotate(-18deg); } 50% { transform: translate3d(0, -12px, 0) rotate(-14deg); } }
 @keyframes core-pulse { 0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 120px rgba(255, 90, 31, .42); } 50% { transform: translate(-50%, -50%) scale(1.055); box-shadow: 0 0 150px rgba(255, 90, 31, .58); } }
 @keyframes orbit-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes fragment-drift { 0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: .65; } 100% { transform: translate3d(12px, -8px, 0) rotate(12deg); opacity: 1; } }\n@keyframes dot-pulse { 0%, 100% { opacity: .55; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.35); } }
+@keyframes fragment-drift { 0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: .65; } 100% { transform: translate3d(12px, -8px, 0) rotate(12deg); opacity: 1; } }
+@keyframes dot-pulse { 0%, 100% { opacity: .55; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.35); } }
 @keyframes float-card { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
 
 .reveal-up { animation: reveal-up .9s cubic-bezier(.16, 1, .3, 1) both; }
@@ -39,6 +40,26 @@ a { color: inherit; text-decoration: none; }
 .hero-float { animation: float-card 5s ease-in-out infinite; }
 .hero-float-delayed { animation: float-card 6s ease-in-out 1.2s infinite; }
 .hero-dot { animation: dot-pulse 2.4s ease-in-out infinite; }
+.hero-fragment { animation: hero-fragment-drift 4.8s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
+.hero-energy-in path { stroke-dasharray: 9 18; animation: hero-flow-in 5s linear infinite; }
+.hero-energy-out path { stroke-dasharray: 5 20; animation: hero-flow-out 4s linear infinite; }
+.hero-core-assembly { transform-origin: 300px 300px; animation: hero-core-breathe 6s ease-in-out infinite; }
+@keyframes hero-fragment-drift {
+  0% { transform: translate3d(0, 0, 0); opacity: .45; }
+  100% { transform: translate3d(8px, -5px, 0); opacity: .9; }
+}
+@keyframes hero-flow-in {
+  from { stroke-dashoffset: 90; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes hero-flow-out {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -100; }
+}
+@keyframes hero-core-breathe {
+  0%, 100% { transform: scale(1); opacity: .9; }
+  50% { transform: scale(1.035); opacity: 1; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
