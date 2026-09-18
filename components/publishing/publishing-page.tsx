@@ -85,7 +85,7 @@ export function PublishingPage() {
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div><p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#ff6a2b]">02 — Store layer</p><h2 className="font-display mt-5 max-w-2xl text-5xl font-medium tracking-[-0.055em]">One publishing model.<br /><span className="text-white/30">Store-agnostic by design.</span></h2></div>
-            <p className="max-w-md leading-7 text-white/45">The MVP keeps store submission human-in-the-loop. The internal publishing model stays store-agnostic, with provider-specific adapters introduced later.</p>
+            <p className="max-w-md leading-7 text-white/45">The MVP keeps store submission human-in-the-loop. These providers represent the future adapter layer; the internal publishing model stays store-agnostic.</p>
           </div>
           <div className="mt-16 grid gap-4 md:grid-cols-3">
             {stores.map((store, index) => (
