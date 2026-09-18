@@ -26,7 +26,7 @@ export function ContactSection() {
 
             <div className="mt-14 border-t border-white/10 pt-7">
               <p className="text-[10px] uppercase tracking-[.2em] text-white/25">Email</p>
-              <a href="mailto:hello@foonitas.com" className="mt-2 inline-block text-lg transition hover:text-[#ff6a2a]">hello@foonitas.com</a>
+              <a href="mailto:hello@fonitas.com" className="mt-2 inline-block text-lg transition hover:text-[#ff6a2a]">hello@fonitas.com</a>
               <p className="mt-8 text-[10px] uppercase tracking-[.2em] text-white/25">What happens next</p>
               <p className="mt-2 text-sm leading-6 text-white/55">Application details → evaluation → commercial discussion → publishing path.</p>
             </div>
