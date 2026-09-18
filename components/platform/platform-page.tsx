@@ -7,6 +7,7 @@ const infrastructure = [
   { number: "04", name: "Analytics", text: "A future capability for application and operational insights." },
   { number: "05", name: "Messaging", text: "Communication primitives that can support application experiences." },
   { number: "06", name: "API Platform", text: "Explicit interfaces for connecting applications with platform capabilities." },
+  { number: "07", name: "Support", text: "Tickets, messages, attachments and operational follow-up around the publishing lifecycle." },
 ];
 
 const layers = [
@@ -83,7 +84,7 @@ export function PlatformPage() {
             <div>
               <p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">Infrastructure services</p>
               <h2 className="font-display mt-6 text-5xl font-semibold leading-[.88] sm:text-7xl">Capabilities around the core.</h2>
-              <p className="mt-7 max-w-md text-sm leading-7 text-white/35">These services describe the longer-term platform direction. They are not presented as requirements for the publishing MVP.</p>
+              <p className="mt-7 max-w-md text-sm leading-7 text-white/35">These services describe the longer-term platform direction. Support and notifications connect people to the workflow; the rest can expand around the publishing MVP.</p>
             </div>
             <div className="grid border-l border-t border-white/10 sm:grid-cols-2 lg:grid-cols-3">
               {infrastructure.map((item) => (
