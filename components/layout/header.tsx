@@ -48,12 +48,12 @@ export function Header() {
         <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-5 sm:px-6 lg:px-10">
           <Link
             href="/"
-            aria-label="Foonitas home"
+            aria-label="Fonitas home"
             className="relative z-10 block w-[148px] transition-opacity hover:opacity-85 sm:w-[175px]"
           >
             <img
               src="/foonitas-logo.png"
-              alt="Foonitas — application publishing operating system"
+              alt="Fonitas — application publishing operating system"
               className="h-auto w-full"
             />
           </Link>

@@ -18,8 +18,8 @@ export function AuthLayout({ children }: { children: ReactNode }) {
           <div className="absolute bottom-[-180px] right-[-100px] h-[520px] w-[520px] rounded-full bg-[#ff5a1f]/10 blur-[140px]" />
 
           <div className="relative z-10 flex w-full flex-col justify-between p-10 xl:p-14">
-            <Link href="/" className="block w-[180px]" aria-label="Foonitas home">
-              <img src="/foonitas-logo.svg" alt="Foonitas" className="h-auto w-full" />
+            <Link href="/" className="block w-[180px]" aria-label="Fonitas home">
+              <img src="/foonitas-logo.png" alt="Fonitas" className="h-auto w-full" />
             </Link>
 
             <div className="max-w-xl">
@@ -45,7 +45,7 @@ export function AuthLayout({ children }: { children: ReactNode }) {
             </div>
 
             <div className="flex items-center justify-between text-xs text-white/30">
-              <span>© {new Date().getFullYear()} Foonitas</span>
+              <span>© {new Date().getFullYear()} Fonitas</span>
               <span>Built around the lifecycle.</span>
             </div>
           </div>
