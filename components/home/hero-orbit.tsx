@@ -46,7 +46,6 @@ export function HeroOrbit() {
 
     element.addEventListener("pointermove", handleMove);
     element.addEventListener("pointerleave", reset);
-
     return () => {
       element.removeEventListener("pointermove", handleMove);
       element.removeEventListener("pointerleave", reset);
@@ -59,13 +58,12 @@ export function HeroOrbit() {
       className="hero-orbit relative mx-auto aspect-square w-full max-w-[640px] select-none"
       aria-hidden="true"
     >
-      <div className="absolute inset-[5%] rounded-full border border-white/[0.035]" />
-      <div className="hero-orbit-ring absolute inset-[12%] rounded-full border border-[#ff5a1f]/15" />
-      <div className="absolute inset-[20%] rounded-full border border-dashed border-white/[0.04]" />
-      <div className="absolute inset-[28%] rounded-full border border-[#ff7a3d]/[0.07]" />
+      <div className="absolute inset-[8%] border border-white/[0.035] [clip-path:polygon(18%_0,82%_0,100%_18%,100%_82%,82%_100%,18%_100%,0_82%,0_18%)]" />
+      <div className="hero-orbit-ring absolute inset-[15%] border border-[#ff5a1f]/15 [clip-path:polygon(14%_0,86%_0,100%_20%,100%_80%,86%_100%,14%_100%,0_80%,0_20%)]" />
+      <div className="absolute inset-[23%] border border-dashed border-white/[0.045] [clip-path:polygon(12%_0,88%_0,100%_25%,100%_75%,88%_100%,12%_100%,0_75%,0_25%)]" />
 
-      <div className="absolute left-[5%] top-[18%] h-[62%] w-[48%] rounded-full bg-[#ff5a1f]/[0.05] blur-[90px]" />
-      <div className="absolute right-[3%] top-[21%] h-[58%] w-[34%] rounded-full bg-[#ff5a1f]/[0.075] blur-[90px]" />
+      <div className="absolute left-[4%] top-[22%] h-[55%] w-[52%] bg-[#ff5a1f]/[0.045] blur-[85px] [clip-path:polygon(0_35%,55%_0,100%_25%,82%_75%,42%_100%,8%_72%)]" />
+      <div className="absolute right-[3%] top-[25%] h-[50%] w-[35%] bg-[#ff5a1f]/[0.07] blur-[80px] [clip-path:polygon(12%_0,100%_18%,82%_100%,0_78%)]" />
 
       <div
         className="absolute inset-[3%] transition-transform duration-700 ease-out"
@@ -79,71 +77,66 @@ export function HeroOrbit() {
           <defs>
             <linearGradient id="hero-flow-in" x1="0" x2="1">
               <stop offset="0" stopColor="#ff5a1f" stopOpacity="0" />
-              <stop offset=".52" stopColor="#ff6a2a" stopOpacity=".55" />
+              <stop offset=".55" stopColor="#ff6a2a" stopOpacity=".6" />
               <stop offset="1" stopColor="#ffb08a" stopOpacity=".9" />
             </linearGradient>
             <linearGradient id="hero-flow-out" x1="0" x2="1">
               <stop offset="0" stopColor="#ffb08a" stopOpacity=".9" />
-              <stop offset=".5" stopColor="#ff6a2a" stopOpacity=".5" />
+              <stop offset=".5" stopColor="#ff6a2a" stopOpacity=".55" />
               <stop offset="1" stopColor="#ff5a1f" stopOpacity="0" />
             </linearGradient>
-            <radialGradient id="hero-core" cx="38%" cy="35%">
-              <stop offset="0" stopColor="#ffe0d1" />
-              <stop offset=".13" stopColor="#ff9a6b" />
-              <stop offset=".42" stopColor="#ff5a1f" />
-              <stop offset=".78" stopColor="#c83e12" />
-              <stop offset="1" stopColor="#541607" />
-            </radialGradient>
-            <linearGradient id="hero-metal" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stopColor="#ffffff" stopOpacity=".24" />
-              <stop offset=".28" stopColor="#ffffff" stopOpacity=".04" />
-              <stop offset=".58" stopColor="#ff7a3d" stopOpacity=".13" />
-              <stop offset="1" stopColor="#000000" stopOpacity=".5" />
+            <linearGradient id="hero-core-face" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stopColor="#ff9a6b" />
+              <stop offset=".35" stopColor="#ff5a1f" />
+              <stop offset=".7" stopColor="#b7350f" />
+              <stop offset="1" stopColor="#531506" />
+            </linearGradient>
+            <linearGradient id="hero-glass" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stopColor="#fff" stopOpacity=".18" />
+              <stop offset=".35" stopColor="#fff" stopOpacity=".035" />
+              <stop offset=".65" stopColor="#ff7a3d" stopOpacity=".12" />
+              <stop offset="1" stopColor="#000" stopOpacity=".55" />
             </linearGradient>
             <linearGradient id="hero-tile" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0" stopColor="#303030" />
-              <stop offset=".5" stopColor="#111111" />
+              <stop offset=".5" stopColor="#111" />
               <stop offset="1" stopColor="#050505" />
             </linearGradient>
             <filter id="hero-glow" x="-80%" y="-80%" width="260%" height="260%">
-              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feGaussianBlur stdDeviation="5" result="blur" />
               <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
             </filter>
             <filter id="hero-soft-glow" x="-100%" y="-100%" width="300%" height="300%">
-              <feGaussianBlur stdDeviation="18" />
+              <feGaussianBlur stdDeviation="16" />
             </filter>
           </defs>
 
-          <ellipse cx="320" cy="300" rx="205" ry="105" fill="#ff5a1f" opacity=".055" filter="url(#hero-soft-glow)" />
-
           <g className="hero-energy-in" filter="url(#hero-glow)">
-            <path d="M 70 176 C 165 195, 210 265, 265 288" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.2" />
-            <path d="M 48 228 C 160 250, 215 282, 265 294" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.1" />
-            <path d="M 55 318 C 155 312, 215 304, 265 302" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.3" />
-            <path d="M 82 394 C 170 372, 215 338, 265 312" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.1" />
-            <path d="M 116 440 C 185 405, 225 350, 270 316" fill="none" stroke="url(#hero-flow-in)" strokeWidth=".9" />
+            <path d="M 62 176 L 214 246 L 273 281" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.25" />
+            <path d="M 42 230 L 205 274 L 273 292" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.15" />
+            <path d="M 54 300 L 205 300 L 273 300" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.4" />
+            <path d="M 70 394 L 210 330 L 273 309" fill="none" stroke="url(#hero-flow-in)" strokeWidth="1.15" />
+            <path d="M 112 444 L 220 354 L 276 318" fill="none" stroke="url(#hero-flow-in)" strokeWidth=".9" />
           </g>
 
           <g className="hero-energy-out" filter="url(#hero-glow)">
-            <path d="M 375 280 C 420 252, 445 190, 492 155" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.2" />
-            <path d="M 375 300 C 420 300, 455 300, 495 300" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.25" />
-            <path d="M 375 320 C 420 348, 445 410, 492 445" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.2" />
+            <path d="M 347 281 L 420 245 L 493 155" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.2" />
+            <path d="M 347 300 L 420 300 L 495 300" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.3" />
+            <path d="M 347 319 L 420 355 L 493 445" fill="none" stroke="url(#hero-flow-out)" strokeWidth="1.2" />
           </g>
 
-          <g opacity=".28" fill="none">
-            <ellipse cx="320" cy="300" rx="180" ry="92" stroke="#fff" strokeWidth="1" />
-            <ellipse cx="320" cy="300" rx="150" ry="76" stroke="#fff" strokeWidth="1" />
-            <ellipse cx="320" cy="300" rx="118" ry="60" stroke="#ff7a3d" strokeWidth="1" />
+          <g opacity=".25" fill="none">
+            <path d="M 212 210 L 270 174 L 382 174 L 440 210 L 440 390 L 382 426 L 270 426 L 212 390 Z" stroke="#fff" />
+            <path d="M 238 235 L 282 208 L 358 208 L 402 235 L 402 365 L 358 392 L 282 392 L 238 365 Z" stroke="#ff7a3d" />
+            <path d="M 260 252 L 292 233 L 348 233 L 380 252 L 380 348 L 348 367 L 292 367 L 260 348 Z" stroke="#fff" strokeOpacity=".5" />
           </g>
 
           <g className="hero-core-assembly">
-            <ellipse cx="320" cy="300" rx="112" ry="74" fill="url(#hero-metal)" stroke="#fff" strokeOpacity=".17" strokeWidth="1.2" />
-            <ellipse cx="320" cy="300" rx="92" ry="62" fill="#080808" fillOpacity=".5" stroke="#ff9b70" strokeOpacity=".24" strokeWidth="1.5" />
-            <ellipse cx="320" cy="300" rx="72" ry="50" fill="url(#hero-metal)" stroke="#ff7a3d" strokeOpacity=".5" strokeWidth="2" />
-            <ellipse cx="320" cy="300" rx="53" ry="38" fill="url(#hero-core)" filter="url(#hero-glow)" />
-            <ellipse cx="320" cy="300" rx="31" ry="24" fill="#090909" stroke="#ffb08a" strokeOpacity=".8" strokeWidth="1.2" />
-            <circle cx="320" cy="300" r="8" fill="#fff0e8" filter="url(#hero-glow)" />
-            <circle cx="320" cy="300" r="16" fill="none" stroke="#ff7a3d" strokeOpacity=".65" strokeWidth="1" />
+            <path d="M 222 255 L 278 218 L 382 218 L 438 255 L 438 345 L 382 382 L 278 382 L 222 345 Z" fill="url(#hero-glass)" stroke="#fff" strokeOpacity=".17" strokeWidth="1.2" />
+            <path d="M 245 267 L 290 238 L 370 238 L 415 267 L 415 333 L 370 362 L 290 362 L 245 333 Z" fill="#080808" fillOpacity=".68" stroke="#ff9b70" strokeOpacity=".28" strokeWidth="1.5" />
+            <path d="M 267 278 L 302 255 L 358 255 L 393 278 L 393 322 L 358 345 L 302 345 L 267 322 Z" fill="url(#hero-core-face)" filter="url(#hero-glow)" />
+            <path d="M 286 286 L 310 271 L 350 271 L 374 286 L 374 314 L 350 329 L 310 329 L 286 314 Z" fill="#090909" stroke="#ffb08a" strokeOpacity=".8" strokeWidth="1.2" />
+            <path d="M 306 291 L 316 285 L 344 285 L 354 291 L 354 309 L 344 315 L 316 315 L 306 309 Z" fill="#fff0e8" filter="url(#hero-glow)" />
           </g>
 
           <g fill="#0b0b0b" stroke="#fff" strokeOpacity=".17" strokeWidth="1.4">
@@ -154,28 +147,22 @@ export function HeroOrbit() {
                   y={y - h / 2}
                   width={w}
                   height={h}
-                  rx="7"
+                  rx="6"
                   transform={`rotate(${rotate} ${x} ${y})`}
                   fill="url(#hero-tile)"
                 />
-                <path
-                  d={`M ${x - w / 2 + 4} ${y - h / 2 + 4} L ${x + w / 2 - 4} ${y - h / 2 + 4}`}
-                  stroke="#fff"
-                  strokeOpacity=".12"
-                  strokeWidth="1"
-                  transform={`rotate(${rotate} ${x} ${y})`}
-                />
+                <path d={`M ${x - w / 2 + 4} ${y - h / 2 + 4} L ${x + w / 2 - 4} ${y - h / 2 + 4}`} stroke="#fff" strokeOpacity=".1" strokeWidth="1" transform={`rotate(${rotate} ${x} ${y})`} />
               </g>
             ))}
           </g>
 
           {stores.map((store) => (
             <g key={store.symbol} transform={`translate(492 ${store.y - 25})`}>
-              <rect x="5" y="5" width="78" height="50" rx="12" fill="#ff5a1f" opacity=".08" filter="url(#hero-soft-glow)" />
-              <rect width="76" height="48" rx="11" fill="url(#hero-tile)" stroke="#fff" strokeOpacity=".16" strokeWidth="1.2" />
-              <rect x="8" y="8" width="28" height="32" rx="8" fill="#fff" fillOpacity=".045" stroke="#fff" strokeOpacity=".08" />
-              <text x="22" y="29" textAnchor="middle" fill="#fff" fillOpacity=".75" fontSize="12" fontWeight="600">{store.symbol}</text>
-              <circle cx="-6" cy="24" r="3" fill="#ff7a3d" filter="url(#hero-glow)" />
+              <path d="M 5 5 L 78 5 L 83 11 L 83 44 L 78 50 L 5 50 L 0 44 L 0 11 Z" fill="#ff5a1f" opacity=".07" filter="url(#hero-soft-glow)" />
+              <path d="M 0 7 L 73 7 L 78 12 L 78 43 L 73 48 L 0 48 Z" fill="url(#hero-tile)" stroke="#fff" strokeOpacity=".16" strokeWidth="1.2" />
+              <path d="M 9 15 L 20 9 L 32 15 L 32 34 L 20 40 L 9 34 Z" fill="#fff" fillOpacity=".045" stroke="#fff" strokeOpacity=".08" />
+              <text x="20" y="28" textAnchor="middle" fill="#fff" fillOpacity=".75" fontSize="11" fontWeight="600">{store.symbol}</text>
+              <path d="M -7 24 L 0 24" stroke="#ff7a3d" strokeWidth="1.5" />
             </g>
           ))}
         </svg>
