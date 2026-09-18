@@ -65,3 +65,15 @@ a { color: inherit; text-decoration: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+
+/* Homepage refinement: preserve the editorial system while improving readability and rhythm. */
+::selection { background: var(--orange); color: #050505; }
+h1, h2, h3 { text-wrap: balance; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+@media (max-width: 639px) {
+  .font-display { letter-spacing: -0.06em; }
+}
+@media (min-width: 1024px) {
+  body { font-size: 15px; }
+}
