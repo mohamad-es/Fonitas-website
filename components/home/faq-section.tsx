@@ -5,6 +5,9 @@ const faqs = [
   ["Is publishing fully automated?", "The MVP keeps publishing human-in-the-loop. Fonitas supports store preparation, checklists, assets, builds and submission while keeping responsibility and state explicit."],
   ["Can we keep our own store account?", "Yes. The architecture supports customer-owned store accounts where Fonitas acts as release manager, as well as a Publisher of Record model where Fonitas controls the publishing relationship."],
   ["What happens to revenue after an application is published?", "The financial lifecycle can collect revenue, reconcile external transactions, calculate the applicable owner share from the active contract, create settlement records and complete payment and statement workflows."],
+  ["How does Fonitas handle higher-risk applications?", "Applications can be assessed across risk levels. Higher-risk categories may require enhanced QA, legal review, security assessment, source or audit rights, and additional contractual warranties."],
+  ["What does the publishing agreement define?", "The contract can define publishing scope, stores, geography, duration, revenue share, costs and other commercial terms. Signed versions are treated as immutable, with changes handled through amendments."],
+  ["Will Fonitas automate every store submission?", "No. The MVP is human-in-the-loop. Provider-specific store adapters are a later architecture path, while the internal publishing model remains store-agnostic."],
 ];
 
 export function FAQSection() {
