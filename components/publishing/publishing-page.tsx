@@ -84,14 +84,14 @@ export function PublishingPage() {
       <section className="border-y border-white/[0.07] bg-[#0a0a0a] py-28">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <div><p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#ff6a2b]">02 — Store destinations</p><h2 className="font-display mt-5 max-w-2xl text-5xl font-medium tracking-[-0.055em]">One publishing model.<br /><span className="text-white/30">Different stores.</span></h2></div>
-            <p className="max-w-md leading-7 text-white/45">The MVP keeps store submission human-in-the-loop. Store-specific automation can be introduced later behind explicit publishing adapters.</p>
+            <div><p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#ff6a2b]">02 — Store layer</p><h2 className="font-display mt-5 max-w-2xl text-5xl font-medium tracking-[-0.055em]">One publishing model.<br /><span className="text-white/30">Store-agnostic by design.</span></h2></div>
+            <p className="max-w-md leading-7 text-white/45">The MVP keeps store submission human-in-the-loop. The internal publishing model stays store-agnostic, with provider-specific adapters introduced later.</p>
           </div>
           <div className="mt-16 grid gap-4 md:grid-cols-3">
             {stores.map((store, index) => (
               <div key={store.name} className="group relative min-h-[260px] overflow-hidden rounded-[28px] border border-white/10 bg-[#111] p-7 transition hover:border-[#ff5a1f]/40">
                 <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[#ff5a1f]/10 blur-3xl transition group-hover:bg-[#ff5a1f]/20" />
-                <div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between"><span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 text-xl font-semibold">{store.mark}</span><span className="text-xs text-white/25">0{index + 1}</span></div><div><h3 className="text-xl font-medium">{store.name}</h3><p className="mt-2 text-sm text-white/35">{store.meta} · manual submission supported</p></div></div>
+                <div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between"><span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 text-xl font-semibold">{store.mark}</span><span className="text-xs text-white/25">0{index + 1}</span></div><div><h3 className="text-xl font-medium">{store.name}</h3><p className="mt-2 text-sm text-white/35">{store.meta} · human-in-the-loop</p></div></div>
               </div>
             ))}
           </div>
