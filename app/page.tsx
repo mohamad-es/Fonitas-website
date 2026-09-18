@@ -7,34 +7,7 @@ import { PublishingModels } from "@/components/home/publishing-models";
 import { PricingSection } from "@/components/home/pricing-section";
 import { FAQSection } from "@/components/home/faq-section";
 import { ContactSection } from "@/components/home/contact-section";
-
-const capabilities = [
-  [
-    "01",
-    "Collaboration request",
-    "Start the relationship with the information needed to understand the application and the publishing opportunity.",
-  ],
-  [
-    "02",
-    "Application registration",
-    "Register the application and establish the operational record that moves through the lifecycle.",
-  ],
-  ["03", "Evaluation", "Assess readiness, risk and the next step before publishing rights are activated."],
-  [
-    "04",
-    "Contract & license",
-    "Define publishing scope, stores, geography, duration and commercial terms before activation.",
-  ],
-  ["05", "QA & compliance", "Verify the release through integrity, security, manual QA and compliance checks."],
-  [
-    "06",
-    "Publishing",
-    "Prepare assets, builds and store submission while keeping the publishing operation accountable.",
-  ],
-  ["07", "Revenue collection", "Bring post-publication revenue into the financial workflow."],
-  ["08", "Reconciliation", "Reconcile external revenue facts against costs and the active contractual rules."],
-  ["09", "Settlement", "Create settlement, statement and payment records and close the financial loop."],
-];
+import { LifecycleWizard } from "@/components/home/lifecycle-wizard";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -105,34 +78,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how-it-works" className="mx-auto max-w-[1400px] px-6 py-24 sm:py-28 lg:px-10 lg:py-36">
-        <div className="grid gap-16 lg:grid-cols-[.72fr_1.28fr]">
-          <div className="lg:sticky lg:top-32 lg:self-start">
-            <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">The lifecycle</p>
-            <h2 className="font-display max-w-xl text-5xl font-semibold leading-[.92] sm:text-7xl">
-              One connected path from collaboration to settlement.
-            </h2>
-            <p className="mt-8 max-w-md text-sm leading-6 text-white/35">
-              The MVP is intentionally centered on publishing and settlement. Future capabilities expand around that
-              foundation.
-            </p>
+      <section id="how-it-works" className="border-b border-white/[0.08] bg-[#080808]">
+        <div className="mx-auto max-w-[1400px] px-6 py-24 sm:py-28 lg:px-10 lg:py-36">
+          <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">The lifecycle</p>
+              <h2 className="font-display max-w-3xl text-5xl font-semibold leading-[.9] sm:text-7xl">One path.<br /><span className="text-white/30">Nine stages.</span></h2>
+            </div>
+            <p className="max-w-sm text-sm leading-6 text-white/35 lg:pb-1">Explore the journey from collaboration to financial close. Each stage has a clear state, responsibility and next step.</p>
           </div>
-          <div className="border-t border-white/10">
-            {capabilities.map(([number, title, description]) => (
-              <article
-                key={number}
-                className="group grid gap-4 border-b border-white/10 py-8 transition-colors hover:bg-white/[0.015] sm:min-h-[142px] sm:grid-cols-[72px_1fr_1.05fr] sm:items-start sm:gap-7 sm:py-9"
-              >
-                <span className="font-display text-sm font-medium text-white/25 transition-colors group-hover:text-[#ff5a1f] sm:pt-1">
-                  {number}
-                </span>
-                <h3 className="font-display text-[1.65rem] font-medium leading-none tracking-[-.035em] transition group-hover:text-[#ff6a2a] sm:text-3xl">
-                  {title}
-                </h3>
-                <p className="max-w-lg text-[13px] leading-6 text-white/40 sm:text-[15px]">{description}</p>
-              </article>
-            ))}
-          </div>
+          <LifecycleWizard />
         </div>
       </section>
 
