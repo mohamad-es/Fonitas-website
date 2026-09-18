@@ -25,7 +25,7 @@ const roadmap = [
 function RoadmapVisual({ type }: { type: string }) {
   if (type === "commercial") {
     return (
-      <div className="relative h-full min-h-[420px] overflow-hidden bg-[#0d0d0d] p-7 lg:min-h-[500px]">
+      <div className="relative min-h-[420px] overflow-hidden bg-[#0d0d0d] p-7 lg:h-[500px]">
         <div className="absolute inset-0 grid-bg opacity-35" />
         <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#ff5a1f]/15 blur-[90px]" />
         <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/20" />
@@ -40,7 +40,7 @@ function RoadmapVisual({ type }: { type: string }) {
 
   if (type === "growth") {
     return (
-      <div className="relative h-full min-h-[230px] overflow-hidden bg-[#101010] p-6">
+      <div className="relative min-h-[230px] overflow-hidden bg-[#101010] p-6">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_35%,rgba(255,90,31,.09)_35%,rgba(255,90,31,.09)_55%,transparent_55%)]" />
         <div className="absolute inset-x-10 bottom-8 top-10 flex items-end gap-2 border-b border-l border-white/10 px-4">
           {[28,45,36,61,52,76,66,88].map((height,index)=><span key={index} className="flex-1 rounded-t bg-[#ff5a1f]/30 transition-all duration-500 group-hover:bg-[#ff5a1f]/50" style={{height:`${height}%`}} />)}
@@ -52,7 +52,7 @@ function RoadmapVisual({ type }: { type: string }) {
   }
 
   return (
-    <div className="relative h-full min-h-[230px] overflow-hidden bg-[#0d0d0d] p-6">
+    <div className="relative min-h-[230px] overflow-hidden bg-[#0d0d0d] p-6">
       <div className="absolute left-1/2 top-1/2 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/20 shadow-[0_0_80px_rgba(255,90,31,.12)]" />
       <div className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl bg-[#ff5a1f] text-[7px] font-semibold tracking-[.12em] text-black">API</div>
       {[["AUTH","left-[9%] top-[20%]"],["STORAGE","right-[8%] top-[23%]"],["MESSAGING","left-[11%] bottom-[18%]"],["ANALYTICS","right-[8%] bottom-[18%]"]].map(([label,pos])=>(
