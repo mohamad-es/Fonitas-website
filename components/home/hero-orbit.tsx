@@ -49,15 +49,15 @@ export function HeroOrbit() {
       <div className="absolute right-[2%] bottom-[10%] h-64 w-64 rounded-full bg-[#ff5a1f]/[0.08] blur-[90px]" />
 
       <div
-        className="relative z-10 mx-auto w-[92%] py-10 transition-transform duration-500 ease-out sm:py-14"
+        className="relative z-10 mx-auto w-[94%] py-8 transition-transform duration-500 ease-out sm:py-10"
         style={{
           transform: "translate3d(var(--mx,0px),var(--my,0px),0) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))",
           transformStyle: "preserve-3d",
         }}
       >
-        <div className="grid gap-4 sm:gap-5">
-          <div className="flex items-center gap-4 rounded-[22px] border border-white/10 bg-[#101010]/95 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#ff5a1f] text-xs font-bold tracking-[.08em] text-black sm:h-16 sm:w-16">APP</div>
+        <div className="grid gap-3 sm:gap-4">
+          <div className="flex items-center gap-4 rounded-[24px] border border-white/10 bg-[#0d0d0d]/90 p-5 shadow-[0_20px_80px_rgba(0,0,0,.35)] backdrop-blur-xl sm:p-6">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#ff5a1f] text-xs font-bold tracking-[.08em] text-black shadow-[0_0_35px_rgba(255,90,31,.2)] sm:h-16 sm:w-16">APP</div>
             <div className="min-w-0">
               <p className="text-[10px] font-semibold uppercase tracking-[.22em] text-[#ff6a2a]">Application</p>
               <p className="mt-1 text-base font-semibold text-white sm:text-lg">Build v2.4.1</p>
@@ -67,14 +67,14 @@ export function HeroOrbit() {
           </div>
 
           <div className="flex justify-center py-1 text-[#ff5a1f]">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#ff5a1f]/30 bg-[#ff5a1f]/10 text-lg">↓</div>
+            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ff5a1f]/25 bg-[#ff5a1f]/[.06] text-sm text-[#ff6a2a]">↓</div>
           </div>
 
-          <div className="relative rounded-[30px] border border-[#ff5a1f]/30 bg-[#ff5a1f]/[0.055] p-7 shadow-[0_0_80px_rgba(255,90,31,.12)] sm:p-8">
-            <div className="flex flex-col items-center text-center">
-              <div className="flex h-24 w-24 items-center justify-center rounded-[26px] bg-[#ff5a1f] text-sm font-black tracking-[.12em] text-black shadow-[0_0_70px_rgba(255,90,31,.35)] sm:h-28 sm:w-28">FONITAS</div>
-              <p className="mt-5 text-xs font-semibold uppercase tracking-[.25em] text-white">Publishing Operating System</p>
-              <p className="mt-2 max-w-sm text-sm leading-6 text-white/45">Review · Contract · QA · Publishing · Revenue · Settlement</p>
+          <div className="relative overflow-hidden rounded-[30px] border border-[#ff5a1f]/30 bg-[#ff5a1f]/[0.045] p-7 shadow-[0_25px_90px_rgba(255,90,31,.09)] sm:p-8">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(255,90,31,.12),transparent_45%)]" />\n            <div className="relative flex flex-col items-center text-center">
+              <div className="flex h-24 w-24 items-center justify-center rounded-[26px] bg-[#ff5a1f] text-sm font-black tracking-[.12em] text-black shadow-[0_0_55px_rgba(255,90,31,.32)] ring-1 ring-white/20 sm:h-28 sm:w-28">FONITAS</div>
+              <p className="mt-5 text-[11px] font-semibold uppercase tracking-[.22em] text-white/85">Publishing Operating System</p>
+              <p className="mt-2 max-w-sm text-xs leading-6 text-white/35 sm:text-sm">Review · Contract · QA · Publishing · Revenue · Settlement</p>
             </div>
           </div>
 
@@ -82,7 +82,7 @@ export function HeroOrbit() {
             <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#ff5a1f]/30 bg-[#ff5a1f]/10 text-lg">↓</div>
           </div>
 
-          <div className="rounded-[22px] border border-white/10 bg-[#101010]/95 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
+          <div className="rounded-[24px] border border-white/10 bg-[#0d0d0d]/90 p-5 shadow-[0_20px_80px_rgba(0,0,0,.35)] backdrop-blur-xl sm:p-6">
             <div className="mb-4 flex items-center justify-between">
               <p className="text-[10px] font-semibold uppercase tracking-[.22em] text-[#ff6a2a]">Publishing destinations</p>
               <span className="text-[9px] uppercase tracking-[.16em] text-white/25">Human-in-the-loop</span>
