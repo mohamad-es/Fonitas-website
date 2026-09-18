@@ -9,12 +9,15 @@ import { FAQSection } from "@/components/home/faq-section";
 import { ContactSection } from "@/components/home/contact-section";
 
 const capabilities = [
-  ["01", "Application intake", "Start with a collaboration request and register the application with the information needed for evaluation."],
-  ["02", "Evaluation & review", "A structured review process helps determine readiness, risk and the next step before publishing."],
-  ["03", "Contract & publishing license", "Define publishing scope, stores, geography, duration and commercial terms before activation."],
-  ["04", "QA & compliance", "Build integrity, security checks, manual QA and compliance reviews create a controlled path to submission."],
-  ["05", "Publishing", "Store preparation, assets, builds and human-in-the-loop submission keep the release process accountable."],
-  ["06", "Revenue & settlement", "Revenue collection, reconciliation, ledger, settlement, statements and payments complete the lifecycle."],
+  ["01", "Collaboration request", "Start the relationship with the information needed to understand the application and the publishing opportunity."],
+  ["02", "Application registration", "Register the application and establish the operational record that moves through the lifecycle."],
+  ["03", "Evaluation", "Assess readiness, risk and the next step before publishing rights are activated."],
+  ["04", "Contract & license", "Define publishing scope, stores, geography, duration and commercial terms before activation."],
+  ["05", "QA & compliance", "Verify the release through integrity, security, manual QA and compliance checks."],
+  ["06", "Publishing", "Prepare assets, builds and store submission while keeping the publishing operation accountable."],
+  ["07", "Revenue collection", "Bring post-publication revenue into the financial workflow."],
+  ["08", "Reconciliation", "Reconcile external revenue facts against costs and the active contractual rules."],
+  ["09", "Settlement", "Create settlement, statement and payment records and close the financial loop."],
 ];
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -49,7 +52,7 @@ export default function Home() {
           </div>
           <div className="max-w-3xl text-lg leading-8 text-white/45 sm:text-xl">
             <p>Fonitas is designed as an <span className="text-white/80">Application Publishing Operating System</span> — not just an app registration form, store publishing tool, dashboard or payment system.</p>
-            <p className="mt-6">It connects the operational steps around an application so developers and organizations can move from collaboration to publishing, growth and settlement through one accountable lifecycle.</p>
+            <p className="mt-6">It connects the operational steps around an application so developers and organizations can move from collaboration to publishing and financial close through one accountable lifecycle.</p>
           </div>
         </div>
       </section>
@@ -58,12 +61,12 @@ export default function Home() {
         <div className="grid gap-16 lg:grid-cols-[.72fr_1.28fr]">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">The lifecycle</p>
-            <h2 className="font-display max-w-xl text-5xl font-semibold leading-[.92] sm:text-7xl">One connected path from build to settlement.</h2>
-            <p className="mt-8 max-w-md text-sm leading-6 text-white/35">The MVP is intentionally centered on the publishing and financial core. Future capabilities expand around that foundation.</p>
+            <h2 className="font-display max-w-xl text-5xl font-semibold leading-[.92] sm:text-7xl">One connected path from collaboration to settlement.</h2>
+            <p className="mt-8 max-w-md text-sm leading-6 text-white/35">The MVP is intentionally centered on publishing and settlement. Future capabilities expand around that foundation.</p>
           </div>
           <div className="border-t border-white/10">
             {capabilities.map(([number, title, description]) => (
-              <article key={number} className="group grid gap-5 border-b border-white/10 py-9 sm:grid-cols-[70px_1fr_1.1fr] sm:gap-7">
+              <article key={number} className="group grid gap-5 border-b border-white/10 py-9 sm:grid-cols-[55px_1fr_1.1fr] sm:gap-6">
                 <span className="text-xs text-white/25">{number}</span>
                 <h3 className="text-2xl font-medium transition group-hover:text-[#ff6a2a]">{title}</h3>
                 <p className="max-w-md text-sm leading-6 text-white/40">{description}</p>
