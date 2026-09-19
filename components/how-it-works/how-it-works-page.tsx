@@ -45,7 +45,8 @@ export function HowItWorksPage() {
       <section className="relative min-h-[88vh] border-b border-white/[0.08] pt-20">
         <div className="absolute inset-0 grid-bg opacity-25" />
         <div className="absolute -right-48 top-16 h-[620px] w-[620px] rounded-full bg-[#ff5a1f]/10 blur-[150px]" />
-        <div className="relative mx-auto grid min-h-[calc(88vh-80px)] max-w-[1400px] items-center gap-12 px-6 py-20 lg:grid-cols-[.85fr_1.15fr] lg:px-10">\n          <Image src="/visuals/fonitas-lifecycle.svg" alt="" width={1200} height={700} priority className="pointer-events-none absolute -right-72 top-1/2 hidden w-[760px] -translate-y-1/2 opacity-[0.13] lg:block" aria-hidden="true" />
+        <div className="relative mx-auto grid min-h-[calc(88vh-80px)] max-w-[1400px] items-center gap-12 px-6 py-20 lg:grid-cols-[.85fr_1.15fr] lg:px-10">
+          <Image src="/visuals/fonitas-lifecycle.svg" alt="" width={1200} height={700} priority className="pointer-events-none absolute -right-72 top-1/2 hidden w-[760px] -translate-y-1/2 opacity-[0.13] lg:block" aria-hidden="true" />
           <div className="relative z-10">
             <p className="reveal-up text-xs font-semibold uppercase tracking-[.3em] text-[#ff6a2a]">How publishing works</p>
             <h1 className="font-display reveal-up reveal-delay-1 mt-7 max-w-4xl text-[clamp(4rem,8vw,8.5rem)] font-semibold leading-[.8] tracking-tight">From<br/><span className="text-white/30">application</span><br/>to settlement.</h1>
