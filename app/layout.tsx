@@ -12,7 +12,10 @@ export const metadata: Metadata = {
     "application lifecycle",
     "publishing operations",
   ],
-  icons: {\n    icon: "/foonitas-logo.svg",\n  },\n  openGraph: {
+  icons: {
+    icon: "/foonitas-logo.svg",
+  },
+  openGraph: {
     title: "Fonitas — Application Publishing Operating System",
     description:
       "From application intake to publishing and settlement, Fonitas connects the operational lifecycle around an application.",
