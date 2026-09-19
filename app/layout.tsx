@@ -21,6 +21,12 @@ export const metadata: Metadata = {
       "From application intake to publishing and settlement, Fonitas connects the operational lifecycle around an application.",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fonitas — Application Publishing Operating System",
+    description:
+      "From application intake to publishing and settlement, Fonitas connects the operational lifecycle around an application.",
+  },
 };
 
 export default function RootLayout({
