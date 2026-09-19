@@ -17,6 +17,7 @@ export default function LoginPage() {
         <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Sign in</h1>
         <p className="mt-4 max-w-md text-sm leading-6 text-white/50">Access your applications, publishing workflow, and collaboration activity.</p>
       </div>
+      <div className="mb-6 rounded-2xl border border-[#ff5a1f]/15 bg-[#ff5a1f]/[0.04] px-4 py-3 text-xs leading-5 text-white/40">Authentication is currently a front-end prototype. Backend account access will be connected in a later phase.</div>
       <form className="space-y-5" action="#" method="post">
         <label className="block text-sm text-white/70">Email<input name="email" type="email" autoComplete="email" required placeholder="you@company.com" className="mt-2 w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-white outline-none transition placeholder:text-white/25 focus:border-[#ff5a1f]/60" /></label>
         <label className="block text-sm text-white/70">Password<input name="password" type="password" autoComplete="current-password" required placeholder="••••••••" className="mt-2 w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-white outline-none transition placeholder:text-white/25 focus:border-[#ff5a1f]/60" /></label>
