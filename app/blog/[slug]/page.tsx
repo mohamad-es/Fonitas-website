@@ -35,7 +35,7 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   return (
-    <main className="bg-[#070707] text-[#f4f2ed]">
+    <main className="bg-[#070707] text-[#f4f2ed]">\n      <Header />
       <section className="relative overflow-hidden border-b border-white/[0.07] pt-36 pb-16 lg:pt-44 lg:pb-20">
         <div className="absolute inset-0 grid-bg opacity-20" />
         <div className="absolute right-[-180px] top-10 h-[500px] w-[500px] rounded-full bg-[#ff5a1f]/10 blur-[140px]" />
