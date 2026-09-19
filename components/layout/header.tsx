@@ -9,6 +9,7 @@ const primaryLinks = [
   ["Publishing", "/publishing"],
   ["Platform", "/platform"],
   ["About", "/about"],
+  ["Blog", "/blog"],
   ["Contact", "/contact"],
 ] as const;
 
