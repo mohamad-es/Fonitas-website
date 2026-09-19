@@ -16,7 +16,7 @@ const Arrow = () => <span aria-hidden="true">↗</span>;
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <main id="main-content" tabIndex={-1} className="overflow-hidden">
       <Header />
 
       <section className="relative border-b border-white/[0.08] pt-20">

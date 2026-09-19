@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -85,6 +86,7 @@ export function PlatformPage() {
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="absolute -left-40 top-20 h-[600px] w-[600px] rounded-full bg-[#ff5a1f]/10 blur-[150px]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-80px)] max-w-[1400px] items-center gap-12 px-6 py-20 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-28">
+          <Image src="/visuals/fonitas-platform.svg" alt="" width={1200} height={700} priority className="pointer-events-none absolute -right-56 top-1/2 hidden w-[760px] -translate-y-1/2 opacity-[0.14] lg:block" aria-hidden="true" />
           <div>
             <p className="reveal-up text-xs font-semibold uppercase tracking-[.3em] text-[#ff6a2a]">The platform</p>
             <h1 className="font-display reveal-up reveal-delay-1 mt-7 max-w-4xl text-[clamp(4rem,8vw,8.5rem)] font-semibold leading-[.82] tracking-tight">One core.<br/><span className="text-white/30">Many capabilities.</span></h1>

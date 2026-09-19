@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -52,9 +53,12 @@ export function Header() {
             aria-label="Fonitas home"
             className="relative z-10 block w-[148px] transition-opacity hover:opacity-85 sm:w-[175px]"
           >
-            <img
+            <Image
               src="/foonitas-logo.png"
               alt="Fonitas — application publishing operating system"
+              width={350}
+              height={92}
+              priority
               className="h-auto w-full"
             />
           </Link>

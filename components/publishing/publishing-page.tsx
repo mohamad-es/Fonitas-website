@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -66,6 +67,7 @@ export function PublishingPage() {
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="absolute -right-40 top-10 h-[600px] w-[600px] rounded-full bg-[#ff5a1f]/10 blur-[130px]" />
         <div className="relative mx-auto grid max-w-[1400px] items-center gap-16 px-6 py-24 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-32">
+          <Image src="/visuals/fonitas-publishing.svg" alt="" width={1200} height={700} priority className="pointer-events-none absolute -right-64 top-1/2 hidden w-[800px] -translate-y-1/2 opacity-[0.13] lg:block" aria-hidden="true" />
           <div>
             <p className="text-xs font-semibold uppercase tracking-[.28em] text-[#ff6a2b]">Publishing system</p>
             <h1 className="font-display mt-7 max-w-3xl text-[clamp(4rem,8vw,8.5rem)] font-semibold leading-[.8] tracking-[-.06em]">A release<br/><span className="text-white/30">with a record.</span></h1>

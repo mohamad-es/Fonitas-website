@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,11 +12,20 @@ export const metadata: Metadata = {
     "application lifecycle",
     "publishing operations",
   ],
+  icons: {
+    icon: "/foonitas-logo.svg",
+  },
   openGraph: {
     title: "Fonitas — Application Publishing Operating System",
     description:
       "From application intake to publishing and settlement, Fonitas connects the operational lifecycle around an application.",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fonitas — Application Publishing Operating System",
+    description:
+      "From application intake to publishing and settlement, Fonitas connects the operational lifecycle around an application.",
   },
 };
 
