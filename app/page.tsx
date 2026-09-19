@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Header } from "@/components/layout/header";
 import { HeroOrbit } from "@/components/home/hero-orbit";
 import { ProductSignal } from "@/components/home/product-signal";
@@ -99,13 +100,9 @@ export default function Home() {
       </section>
 
       <FinancialClose />
-
       <PublishingModels />
-
       <AudienceSection />
-
       <PricingSection />
-
       <FAQSection />
 
       <section className="border-b border-white/[0.08] bg-[#ff5a1f] text-black">
@@ -122,7 +119,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1400px] px-6 py-14 lg:px-10 lg:py-16">
           <div className="grid gap-12 md:grid-cols-[1.3fr_.7fr_.7fr_.7fr]">
             <div>
-              <a href="/" className="text-2xl font-bold tracking-[-.05em]">Fonitas<span className="text-[#ff5a1f]">.</span></a>
+              <Link href="/" className="text-2xl font-bold tracking-[-.05em]">Fonitas<span className="text-[#ff5a1f]">.</span></Link>
               <p className="mt-5 max-w-xs text-sm leading-6 text-white/35">The operating system for application publishing, from intake to settlement.</p>
             </div>
             <div>
