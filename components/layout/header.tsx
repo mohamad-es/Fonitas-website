@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const primaryLinks = [
   ["Product owners", "/product-owners"],
@@ -78,7 +79,7 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <Link href="/contact" className="hidden rounded-full bg-[#ff5a1f] px-4 py-2.5 text-[13px] font-semibold text-black shadow-[0_0_28px_rgba(255,90,31,0.12)] transition hover:bg-[#ff7a3d] sm:block">
-              Talk to Fonitas <span aria-hidden="true">↗</span>
+              Talk to Fonitas <ArrowUpRight aria-hidden="true" className="ml-1 inline-block h-3.5 w-3.5" strokeWidth={1.8} />
             </Link>
 
             <button
@@ -89,10 +90,7 @@ export function Header() {
               className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.025] text-white transition hover:border-white/20 hover:bg-white/[0.06] lg:hidden"
             >
               <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-              <span className="relative block h-4 w-4" aria-hidden="true">
-                <span className={`absolute left-0 top-[3px] h-px w-4 bg-white transition-transform duration-200 ${open ? "translate-y-[4px] rotate-45" : ""}`} />
-                <span className={`absolute left-0 top-[11px] h-px w-4 bg-white transition-transform duration-200 ${open ? "-translate-y-[4px] -rotate-45" : ""}`} />
-              </span>
+              {open ? <X className="h-4 w-4" strokeWidth={1.8} /> : <Menu className="h-4 w-4" strokeWidth={1.8} />}
             </button>
           </div>
         </div>
@@ -117,7 +115,7 @@ export function Header() {
                 >
                   <span>{label}</span>
                   <span className={active ? "text-sm text-[#ff5a1f]" : "text-sm text-white/25"}>
-                    {String(index + 1).padStart(2, "0")} ↗
+                    {String(index + 1).padStart(2, "0")} <ArrowUpRight className="inline-block h-3.5 w-3.5" strokeWidth={1.8} />
                   </span>
                 </Link>
               );
@@ -125,7 +123,7 @@ export function Header() {
           </div>
 
           <Link href="/contact" tabIndex={open ? 0 : -1} className="mt-5 flex items-center justify-center rounded-full bg-[#ff5a1f] px-5 py-3 text-sm font-semibold text-black transition hover:bg-[#ff7a3d]">
-            Talk to Fonitas ↗
+            Talk to Fonitas <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.8} />
           </Link>
         </nav>
       </div>
