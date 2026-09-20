@@ -1,4 +1,5 @@
 const principles = [
+import { ArrowUpRight } from "lucide-react";
   ["01", "One connected lifecycle", "Application, review, contract, QA, publishing and settlement are treated as one operational journey."],
   ["02", "Clear domain ownership", "Each part of the platform has an explicit responsibility and source of truth instead of competing logic."],
   ["03", "Human-in-the-loop publishing", "Fonitas supports controlled store preparation and submission rather than depending on deep automatic store publishing."],
@@ -82,7 +83,7 @@ export function AboutProcess() {
             <article key={number} className="group border-b border-white/10 py-8 md:px-7 lg:border-b-0 lg:border-r lg:last:border-r-0 lg:first:pl-0">
               <div className="flex items-center justify-between">
                 <span className="text-xs text-white/25">{number}</span>
-                <span className="text-sm text-[#ff5a1f] opacity-0 transition duration-300 group-hover:opacity-100">↗</span>
+                <ArrowUpRight aria-hidden="true" className="h-4 w-4 text-[#ff5a1f] opacity-0 transition duration-300 group-hover:opacity-100" strokeWidth={1.8} />
               </div>
               <h3 className="mt-14 text-2xl font-medium transition group-hover:text-[#ff6a2a]">{title}</h3>
               <p className="mt-4 max-w-xs text-sm leading-6 text-white/40">{description}</p>
