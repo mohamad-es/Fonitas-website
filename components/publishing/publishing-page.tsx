@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 
 const stages = [
@@ -49,9 +50,9 @@ function ReleaseConsole({ active, onSelect }: { active:number; onSelect:(index:n
             <div className="mt-10 grid gap-3 sm:grid-cols-3">{stage.items.map((item,i)=><div key={item} className="border border-white/10 bg-white/[.025] p-4"><span className="font-mono text-[9px] text-[#ff5a1f]">0{i+1}</span><p className="mt-5 text-xs text-white/55">{item}</p></div>)}</div>
           </div>
           <div className="absolute bottom-7 left-7 right-7 flex items-center justify-between border-t border-white/10 pt-5">
-            <button type="button" disabled={active===0} onClick={()=>onSelect(Math.max(active-1,0))} className="text-[9px] uppercase tracking-[.18em] text-white/30 disabled:opacity-20">← Previous</button>
+            <button type="button" disabled={active===0} onClick={()=>onSelect(Math.max(active-1,0))} className="text-[9px] uppercase tracking-[.18em] text-white/30 disabled:opacity-20"><ArrowLeft aria-hidden="true" className="mr-2 h-3 w-3" />Previous</button>
             <div className="flex gap-1.5">{stages.map((_,i)=><button aria-label={`Go to stage ${i+1}`} key={i} type="button" onClick={()=>onSelect(i)} className={`h-1 rounded-full transition-all ${i===active ? "w-8 bg-[#ff5a1f]" : "w-2 bg-white/15"}`} />)}</div>
-            <button type="button" disabled={active===stages.length-1} onClick={()=>onSelect(Math.min(active+1,stages.length-1))} className="text-[9px] uppercase tracking-[.18em] text-white/45 disabled:opacity-20">Next →</button>
+            <button type="button" disabled={active===stages.length-1} onClick={()=>onSelect(Math.min(active+1,stages.length-1))} className="text-[9px] uppercase tracking-[.18em] text-white/45 disabled:opacity-20">Next<ArrowRight aria-hidden="true" className="ml-2 h-3 w-3" /></button>
           </div>
         </div>
       </div>
@@ -72,7 +73,7 @@ export function PublishingPage() {
             <p className="text-xs font-semibold uppercase tracking-[.28em] text-[#ff6a2b]">Publishing system</p>
             <h1 className="font-display mt-7 max-w-3xl text-[clamp(4rem,8vw,8.5rem)] font-semibold leading-[.8] tracking-[-.06em]">A release<br/><span className="text-white/30">with a record.</span></h1>
             <p className="mt-10 max-w-xl text-lg leading-8 text-white/50">Fonitas turns publishing into a controlled sequence of preparation, security, validation and store submission — with every important transition recorded.</p>
-            <div className="mt-9 flex flex-wrap gap-3"><Link href="/contact" className="rounded-full bg-[#ff5a1f] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ff7a3d]">Prepare an application ↗</Link><a href="#release-control" className="rounded-full border border-white/10 px-6 py-3 text-sm text-white/65 transition hover:border-white/25 hover:text-white">Explore the release path ↓</a></div>
+            <div className="mt-9 flex flex-wrap gap-3"><Link href="/contact" className="rounded-full bg-[#ff5a1f] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ff7a3d]">Prepare an application<ArrowUpRight aria-hidden="true" className="ml-2 h-4 w-4" /></Link><a href="#release-control" className="rounded-full border border-white/10 px-6 py-3 text-sm text-white/65 transition hover:border-white/25 hover:text-white">Explore the release path ↓</a></div>
           </div>
           <ReleaseConsole active={active} onSelect={setActive}/>
         </div>
@@ -117,7 +118,7 @@ export function PublishingPage() {
         </div>
       </section>
 
-      <section className="bg-[#ff5a1f] px-6 py-24 text-black lg:px-10"><div className="mx-auto flex max-w-[1400px] flex-col justify-between gap-10 sm:flex-row sm:items-end"><div><p className="text-xs font-bold uppercase tracking-[.25em] text-black/55">Next release</p><h2 className="font-display mt-5 max-w-3xl text-5xl font-semibold leading-[.88] sm:text-7xl">Bring the application.<br/>We&apos;ll map the path.</h2></div><Link href="/contact" className="shrink-0 rounded-full bg-black px-7 py-4 text-sm font-semibold text-white transition hover:bg-black/80">Start a conversation ↗</Link></div></section>
+      <section className="bg-[#ff5a1f] px-6 py-24 text-black lg:px-10"><div className="mx-auto flex max-w-[1400px] flex-col justify-between gap-10 sm:flex-row sm:items-end"><div><p className="text-xs font-bold uppercase tracking-[.25em] text-black/55">Next release</p><h2 className="font-display mt-5 max-w-3xl text-5xl font-semibold leading-[.88] sm:text-7xl">Bring the application.<br/>We&apos;ll map the path.</h2></div><Link href="/contact" className="shrink-0 rounded-full bg-black px-7 py-4 text-sm font-semibold text-white transition hover:bg-black/80">Start a conversation<ArrowUpRight aria-hidden="true" className="ml-2 h-4 w-4" /></Link></div></section>
     </main>
   );
 }
