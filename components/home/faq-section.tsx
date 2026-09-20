@@ -13,22 +13,21 @@ const faqs = [
 export function FAQSection() {
   return (
     <section id="faq" className="border-b border-white/[0.08]">
-      <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
-        <div className="grid gap-16 lg:grid-cols-[.72fr_1.28fr]">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-28 lg:px-10 lg:py-40">
+        <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:gap-16">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">Questions</p>
-            <h2 className="font-display max-w-xl text-5xl font-semibold leading-[.92] sm:text-7xl">The important parts, <span className="text-white/30">made clear.</span></h2>
-            <p className="mt-8 max-w-md text-sm leading-6 text-white/35">A concise view of the publishing model, source-code boundary, store ownership and financial lifecycle.</p>
+            <h2 className="font-display max-w-xl text-4xl font-semibold leading-[.92] sm:text-6xl lg:text-7xl">The important parts, <span className="text-white/30">made clear.</span></h2>
+            <p className="mt-7 max-w-md text-sm leading-6 text-white/35 sm:mt-8">A concise view of the publishing model, source-code boundary, store ownership and financial lifecycle.</p>
           </div>
-
           <div className="border-t border-white/10">
             {faqs.map(([question, answer], index) => (
               <details key={question} className="group border-b border-white/10">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-8 py-7 text-lg font-medium text-white/80 transition hover:text-white sm:text-xl">
-                  <span><span className="mr-5 text-[10px] text-[#ff5a1f]">{String(index + 1).padStart(2, "0")}</span>{question}</span>
-                  <span className="text-xl font-light text-white/30 transition duration-300 group-open:rotate-45 group-open:text-[#ff5a1f]">+</span>
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-5 py-6 text-base font-medium text-white/80 transition hover:text-white sm:gap-8 sm:py-7 sm:text-xl">
+                  <span className="flex min-w-0 items-start gap-4"><span className="mt-1 shrink-0 text-[10px] text-[#ff5a1f]">{String(index + 1).padStart(2, "0")}</span><span>{question}</span></span>
+                  <span aria-hidden="true" className="shrink-0 text-xl font-light text-white/30 transition duration-300 group-open:rotate-45 group-open:text-[#ff5a1f]">+</span>
                 </summary>
-                <div className="max-w-3xl pb-8 pl-0 text-sm leading-7 text-white/40 sm:pl-12">{answer}</div>
+                <div className="max-w-3xl pb-7 pl-0 text-sm leading-7 text-white/40 sm:pb-8 sm:pl-12">{answer}</div>
               </details>
             ))}
           </div>
