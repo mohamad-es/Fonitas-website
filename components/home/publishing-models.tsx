@@ -1,4 +1,5 @@
 const models = [
+import { ArrowRight } from "lucide-react";
   {
     number: "01",
     title: "Publish only",
@@ -55,7 +56,7 @@ export function PublishingModels() {
                         {model.flow.map((step, stepIndex) => (
                           <div key={step} className="flex items-center gap-2">
                             <span className="rounded-full border border-white/10 bg-white/[.02] px-3 py-2 text-[10px] text-white/50">{step}</span>
-                            {stepIndex < model.flow.length - 1 && <span className="text-[#ff5a1f]/60">→</span>}
+                            {stepIndex < model.flow.length - 1 && <span className="text-[#ff5a1f]/60"><ArrowRight aria-hidden="true" className="inline h-3.5 w-3.5" strokeWidth={1.8} /></span>}
                           </div>
                         ))}
                       </div>
