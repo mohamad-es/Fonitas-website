@@ -1,5 +1,6 @@
-const audiences = [
 import { ArrowUpRight } from "lucide-react";
+
+const audiences = [
   ["01", "Developers", "Build the application. Fonitas operates the publishing path around it.", "BUILD"],
   ["02", "Product teams", "Move applications through review, contract, QA and publishing with explicit states.", "OPERATE"],
   ["03", "Application owners", "Keep visibility across publishing, revenue, reconciliation and settlement.", "OWN"],
