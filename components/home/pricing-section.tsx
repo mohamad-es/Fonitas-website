@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";\nimport { ArrowUpRight } from "lucide-react";
 
 const plans = [
   { number: "01", title: "Publish", description: "For teams that need a controlled publishing and release layer.", features: ["Application review", "QA & compliance", "Store preparation", "Publishing workflow"] },
@@ -13,9 +13,9 @@ export function PricingSection() {
         <div className="grid gap-10 lg:grid-cols-[.75fr_1.25fr]">
           <div>
             <p className="mb-5 text-xs uppercase tracking-[.25em] text-[#ff5a1f]">Engagement models</p>
-            <h2 className="font-display max-w-xl text-5xl font-semibold leading-[.9] sm:text-7xl">Start with publishing. <span className="text-white/30">Expand when it makes sense.</span></h2>
+            <h2 className="font-display max-w-xl text-4xl sm:text-5xl font-semibold leading-[.9] sm:text-7xl">Start with publishing. <span className="text-white/30">Expand when it makes sense.</span></h2>
             <p className="mt-8 max-w-md text-sm leading-7 text-white/35">Fonitas does not need one fixed package for every application. The operating model can expand with the responsibility you want Fonitas to carry.</p>
-            <a href="/contact" className="mt-9 inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white">Discuss your application <span className="text-[#ff5a1f]"><ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} /></span></a>
+            <Link href="/contact" className="mt-9 inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white">Discuss your application <span className="text-[#ff5a1f]"><ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} /></span></a>
           </div>
 
           <div className="relative">
