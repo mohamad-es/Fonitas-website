@@ -1,5 +1,6 @@
-const models = [
 import { ArrowRight } from "lucide-react";
+
+const models = [
   {
     number: "01",
     title: "Publish only",
