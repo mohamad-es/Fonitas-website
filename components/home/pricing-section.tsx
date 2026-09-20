@@ -1,5 +1,6 @@
-const plans = [
 import { ArrowUpRight } from "lucide-react";
+
+const plans = [
   { number: "01", title: "Publish", description: "For teams that need a controlled publishing and release layer.", features: ["Application review", "QA & compliance", "Store preparation", "Publishing workflow"] },
   { number: "02", title: "Publish + Infrastructure", description: "Publishing plus platform services that support the application lifecycle.", features: ["Everything in Publish", "Auth", "Storage", "Notifications", "Analytics"] },
   { number: "03", title: "Full Platform", description: "A broader operating model connecting publishing with future business capabilities.", features: ["Publishing core", "Infrastructure services", "Commercial", "Finance", "Future capabilities"] },
