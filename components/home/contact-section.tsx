@@ -1,6 +1,8 @@
 "use client";
+import { ArrowUpRight } from "lucide-react";
 
 import { FormEvent, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 const requestTypes = ["Publish an application", "Discuss a publishing partnership", "Ask about the platform", "Other"];
 
@@ -28,7 +30,7 @@ export function ContactSection() {
               <p className="text-[10px] uppercase tracking-[.2em] text-white/25">Email</p>
               <a href="mailto:hello@fonitas.com" className="mt-2 inline-block text-lg transition hover:text-[#ff6a2a]">hello@fonitas.com</a>
               <p className="mt-8 text-[10px] uppercase tracking-[.2em] text-white/25">What happens next</p>
-              <p className="mt-2 text-sm leading-6 text-white/55">Application details → evaluation → commercial discussion → publishing path.</p>
+              <p className="mt-2 text-sm leading-6 text-white/55">Application details <ArrowUpRight className="inline h-3.5 w-3.5" strokeWidth={1.8} /> evaluation <ArrowUpRight className="inline h-3.5 w-3.5" strokeWidth={1.8} /> commercial discussion <ArrowUpRight className="inline h-3.5 w-3.5" strokeWidth={1.8} /> publishing path.</p>
             </div>
           </div>
 
@@ -70,7 +72,7 @@ export function ContactSection() {
 
             <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
               <p className="max-w-xs text-xs leading-5 text-white/25">Submitting a request starts the collaboration conversation. Commercial and legal terms are defined separately through the appropriate Fonitas process.</p>
-              <button type="submit" className="group inline-flex shrink-0 items-center justify-center rounded-full bg-[#ff5a1f] px-7 py-4 text-sm font-semibold text-black transition hover:bg-[#ff7a3d] hover:shadow-[0_0_45px_rgba(255,90,31,.2)]">{submitted ? "Request received ✓" : "Submit request ↗"}</button>
+              <button type="submit" className="group inline-flex shrink-0 items-center justify-center rounded-full bg-[#ff5a1f] px-7 py-4 text-sm font-semibold text-black transition hover:bg-[#ff7a3d] hover:shadow-[0_0_45px_rgba(255,90,31,.2)]">{submitted ? "Request received ✓" : <>Submit request <ArrowUpRight className="ml-1 inline h-3.5 w-3.5" strokeWidth={1.8} /></>}</button>
             </div>
           </form>
         </div>
