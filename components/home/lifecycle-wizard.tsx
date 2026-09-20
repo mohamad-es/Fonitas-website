@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 
 const steps = [
@@ -149,7 +150,7 @@ export function LifecycleWizard() {
             <p className="text-[9px] uppercase tracking-[.2em] text-white/25">What happens here</p>
             <div className="mt-3 flex items-center justify-between gap-4">
               <span className="text-sm text-white/70">{step.signal}</span>
-              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ff5a1f]/25 text-[#ff6a2a]">↗</span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ff5a1f]/25 text-[#ff6a2a]"><ArrowUpRight aria-hidden="true" className="h-4 w-4" /></span>
             </div>
           </div>
         </div>
@@ -166,7 +167,7 @@ export function LifecycleWizard() {
           onClick={() => setActive((value) => Math.max(value - 1, 0))}
           className="text-xs uppercase tracking-[.16em] text-white/35 transition hover:text-white disabled:pointer-events-none disabled:opacity-20"
         >
-          ← Previous
+          <ArrowLeft aria-hidden="true" className="mr-2 h-3.5 w-3.5" />Previous
         </button>
         <span className="text-[10px] uppercase tracking-[.18em] text-white/20">Select a stage to explore</span>
         <button
@@ -175,7 +176,7 @@ export function LifecycleWizard() {
           onClick={() => setActive((value) => Math.min(value + 1, steps.length - 1))}
           className="text-xs uppercase tracking-[.16em] text-white/55 transition hover:text-[#ff6a2a] disabled:pointer-events-none disabled:opacity-20"
         >
-          Next →
+          Next<ArrowRight aria-hidden="true" className="ml-2 h-3.5 w-3.5" />
         </button>
       </div>
     </div>
