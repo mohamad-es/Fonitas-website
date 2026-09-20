@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BriefcaseBusiness } from "lucide-react";
 import { investmentOpportunities } from "@/data/investment-opportunities";
@@ -15,7 +16,7 @@ function OpportunityCard({ opportunity }: { opportunity: (typeof investmentOppor
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#ff5a1f]/10 blur-[90px] transition group-hover:bg-[#ff5a1f]/20" />
         <div className="absolute inset-0 flex items-center justify-center">
           {opportunity.logo ? (
-            <img src={opportunity.logo} alt="" className="h-20 w-20 rounded-[22px] object-cover shadow-2xl" />
+            <Image src={opportunity.logo} alt="" width={80} height={80} className="h-20 w-20 rounded-[22px] object-cover shadow-2xl" />
           ) : (
             <div className="flex h-20 w-20 items-center justify-center rounded-[22px] border border-[#ff5a1f]/20 bg-[#ff5a1f]/10 text-2xl text-[#ff6a2a]">
               {opportunity.name.slice(0, 1)}
