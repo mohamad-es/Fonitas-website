@@ -22,7 +22,7 @@ const layers = [
 
 function ArchitectureVisual() {
   return (
-    <div className="relative min-h-[590px] overflow-hidden rounded-[34px] border border-white/10 bg-[#090909] [perspective:1200px]">
+    <div className="relative min-h-[430px] sm:min-h-[590px] overflow-hidden rounded-[34px] border border-white/10 bg-[#090909] [perspective:1200px]">
       <div className="absolute inset-0 grid-bg opacity-25" />
       <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[.05]" />
       <div className="absolute left-1/2 top-1/2 h-[370px] w-[370px] -translate-x-1/2 -translate-y-1/2 animate-[spin_30s_linear_infinite] rounded-full border border-[#ff5a1f]/15" />
@@ -57,10 +57,10 @@ function ArchitectureVisual() {
 
 function ServiceConstellation() {
   return (
-    <div className="relative min-h-[620px] overflow-hidden border-y border-white/10 bg-[#090909]">
+    <div className="relative min-h-[500px] sm:min-h-[620px] overflow-hidden border-y border-white/10 bg-[#090909]">
       <div className="absolute left-1/2 top-1/2 h-[250px] w-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/15" />
       <div className="absolute left-1/2 top-1/2 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/[.07] blur-3xl" />
-      <div className="absolute left-1/2 top-1/2 z-10 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#ff5a1f]/30 bg-[#111] text-center shadow-[0_0_60px_rgba(255,90,31,.12)]">
+      <div className="absolute left-1/2 top-1/2 z-10 flex h-20 w-20 sm:h-28 sm:w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#ff5a1f]/30 bg-[#111] text-center shadow-[0_0_60px_rgba(255,90,31,.12)]">
         <span className="text-[9px] font-semibold uppercase tracking-[.18em] text-white">Platform<br/><span className="text-[#ff6a2a]">Services</span></span>
       </div>
       {infrastructure.map(([number,name,text],index)=>{
@@ -98,14 +98,14 @@ export function PlatformPage() {
       </section>
 
       <section className="border-b border-white/[.08]">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
+        <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-24 lg:px-10 lg:py-32">
           <div className="mb-14 max-w-3xl"><p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">Infrastructure services</p><h2 className="font-display mt-6 text-5xl font-semibold leading-[.88] sm:text-7xl">The services orbit the workflow.</h2><p className="mt-7 max-w-xl text-sm leading-7 text-white/35">These are reusable platform capabilities around the publishing core, not separate products competing for ownership of the lifecycle.</p></div>
           <ServiceConstellation/>
         </div>
       </section>
 
       <section className="border-b border-white/[.08] bg-[#0b0b0b]">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
+        <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-24 lg:px-10 lg:py-32">
           <div className="grid gap-12 lg:grid-cols-[.55fr_1.45fr] lg:items-start">
             <div className="lg:sticky lg:top-28"><p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">Built in layers</p><h2 className="font-display mt-6 text-5xl font-semibold leading-[.88] sm:text-7xl">Expand the platform.<br/><span className="text-white/25">Keep the boundaries.</span></h2></div>
             <div className="border-t border-white/10">
@@ -120,7 +120,7 @@ export function PlatformPage() {
       </section>
 
       <section className="border-b border-white/[.08]">
-        <div className="mx-auto grid max-w-[1400px] gap-12 px-6 py-24 lg:grid-cols-[.7fr_1.3fr] lg:px-10 lg:py-32 lg:items-center">
+        <div className="mx-auto grid max-w-[1400px] gap-12 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:px-10 lg:py-32 lg:items-center">
           <div><p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">Now → next</p><h2 className="font-display mt-6 text-5xl font-semibold leading-[.88] sm:text-7xl">Publishing first.<br/><span className="text-white/30">Platform next.</span></h2></div>
           <div className="relative border-l border-white/10 pl-8 sm:pl-12"><div className="absolute left-0 top-0 h-20 w-px bg-[#ff5a1f]" /><div className="grid gap-8 sm:grid-cols-2"><div><span className="text-[9px] uppercase tracking-[.2em] text-[#ff6a2a]">Now</span><h3 className="font-display mt-5 text-3xl font-semibold">Publishing & settlement core</h3><p className="mt-4 text-sm leading-7 text-white/35">Application, contract, QA, publishing, revenue, reconciliation and settlement are the foundation.</p></div><div><span className="text-[9px] uppercase tracking-[.2em] text-white/25">Next</span><h3 className="font-display mt-5 text-3xl font-semibold text-white/55">Platform expansion</h3><p className="mt-4 text-sm leading-7 text-white/30">Infrastructure and future business domains can be added as the core operating model proves itself.</p></div></div></div>
         </div>
