@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Header } from "@/components/layout/header";
 import { InvestorOpportunityPage } from "@/components/investors/investor-opportunity-page";
 
 export const metadata: Metadata = {
@@ -12,5 +13,11 @@ export default async function InvestorOpportunity({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  return <InvestorOpportunityPage slug={slug} />;
+
+  return (
+    <>
+      <Header />
+      <InvestorOpportunityPage slug={slug} />
+    </>
+  );
 }
