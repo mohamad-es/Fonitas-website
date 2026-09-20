@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -76,7 +76,7 @@ export function HowItWorksPage() {
               <h3 className="font-display text-4xl font-semibold leading-[.92] sm:text-5xl">{stage.title}</h3>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/40">{stage.text}</p>
               <div className="mt-10 grid gap-3 sm:grid-cols-2">{stage.details.map((detail,i)=><div key={detail} className="flex items-center justify-between border-b border-white/10 pb-3 text-sm text-white/55"><span>{detail}</span><span className="font-mono text-[9px] text-[#ff5a1f]">0{i+1}</span></div>)}</div>
-              <div className="mt-10 flex justify-between border-t border-white/10 pt-5"><button type="button" disabled={active===0} onClick={()=>setActive(v=>Math.max(0,v-1))} className="text-[10px] uppercase tracking-[.18em] text-white/30 transition hover:text-white disabled:opacity-20">← Previous</button><button type="button" disabled={active===stages.length-1} onClick={()=>setActive(v=>Math.min(stages.length-1,v+1))} className="text-[10px] uppercase tracking-[.18em] text-white/45 transition hover:text-[#ff6a2a] disabled:opacity-20">Next →</button></div>
+              <div className="mt-10 flex justify-between border-t border-white/10 pt-5"><button type="button" disabled={active===0} onClick={()=>setActive(v=>Math.max(0,v-1))} className="text-[10px] uppercase tracking-[.18em] text-white/30 transition hover:text-white disabled:opacity-20"><ArrowLeft aria-hidden="true" className="mr-2 h-3.5 w-3.5" />Previous</button><button type="button" disabled={active===stages.length-1} onClick={()=>setActive(v=>Math.min(stages.length-1,v+1))} className="text-[10px] uppercase tracking-[.18em] text-white/45 transition hover:text-[#ff6a2a] disabled:opacity-20">Next<ArrowRight aria-hidden="true" className="ml-2 h-3.5 w-3.5" /></button></div>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ export function HowItWorksPage() {
         <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-24 lg:px-10 lg:py-32"><div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr]"><div><p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">Financial close</p><h2 className="font-display mt-6 max-w-xl text-4xl font-semibold leading-[.9] sm:text-6xl lg:text-7xl">Revenue becomes a record.</h2></div><div className="border-l border-white/10 pl-8 sm:pl-12"><p className="max-w-2xl text-lg leading-8 text-white/45">After publication, revenue is collected and reconciled with external facts and contract rules, then carried through settlement, statement and payment.</p><div className="mt-10 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-3">{["Revenue import","Reconciliation","Settlement","Statement","Payment","Immutable history"].map((item,i)=><div key={item} className="bg-[#0b0b0b] p-5"><span className="text-[10px] text-[#ff5a1f]">0{i+1}</span><p className="mt-5 text-sm font-medium">{item}</p></div>)}</div></div></div></div>
       </section>
 
-      <section className="bg-[#ff5a1f] text-black"><div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-6 py-20 sm:flex-row sm:items-end sm:justify-between lg:px-10 lg:py-24"><div><p className="text-[10px] font-semibold uppercase tracking-[.25em] text-black/55">Ready to move?</p><h2 className="font-display mt-4 max-w-3xl text-5xl font-semibold leading-[.88] sm:text-7xl">Start with the application. We&apos;ll map the path.</h2></div><Link href="/contact" className="inline-flex shrink-0 items-center justify-center rounded-full bg-black px-7 py-4 text-sm font-semibold text-white transition hover:bg-black/80">Start a collaboration ↗</Link></div></section>
+      <section className="bg-[#ff5a1f] text-black"><div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-6 py-20 sm:flex-row sm:items-end sm:justify-between lg:px-10 lg:py-24"><div><p className="text-[10px] font-semibold uppercase tracking-[.25em] text-black/55">Ready to move?</p><h2 className="font-display mt-4 max-w-3xl text-5xl font-semibold leading-[.88] sm:text-7xl">Start with the application. We&apos;ll map the path.</h2></div><Link href="/contact" className="inline-flex shrink-0 items-center justify-center rounded-full bg-black px-7 py-4 text-sm font-semibold text-white transition hover:bg-black/80">Start a collaboration<ArrowUpRight aria-hidden="true" className="ml-2 h-4 w-4" /></Link></div></section>
     </main>
   );
 }
