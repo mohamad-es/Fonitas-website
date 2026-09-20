@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { investmentOpportunities } from "@/data/investment-opportunities";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
-const Arrow = () => <span aria-hidden="true">↗</span>;
+const Arrow = () => <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />;
 
 export function InvestorOpportunityPage({ slug }: { slug: string }) {
   const opportunity = investmentOpportunities.find((item) => item.slug === slug);
@@ -16,7 +17,7 @@ export function InvestorOpportunityPage({ slug }: { slug: string }) {
         <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-[#ff5a1f]/10 blur-[120px]" />
         <div className="relative mx-auto max-w-[1400px] px-6 pb-20 lg:px-10 lg:pb-28">
           <Link href="/investors" className="inline-flex items-center gap-3 text-xs text-white/35 transition hover:text-white/70">
-            <span>←</span> Back to opportunities
+            <ArrowLeft aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={1.8} /> Back to opportunities
           </Link>
 
           <div className="mt-12 grid items-end gap-12 lg:grid-cols-[1.1fr_.9fr]">
