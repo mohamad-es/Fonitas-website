@@ -1,4 +1,5 @@
 "use client";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { FormEvent, useState } from "react";
 
@@ -101,7 +102,7 @@ export function ContactPage() {
                   <h3 className="text-base font-medium text-white/80 transition group-hover:text-white">{title}</h3>
                   <p className="mt-1 text-sm leading-6 text-white/35">{text}</p>
                 </div>
-                <span className="text-lg text-white/20 transition group-hover:translate-x-1 group-hover:text-[#ff7a3d]">↗</span>
+                <span className="text-lg text-white/20 transition group-hover:translate-x-1 group-hover:text-[#ff7a3d]"><ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} /></span>
               </div>
             ))}
           </div>
@@ -171,7 +172,7 @@ export function ContactPage() {
           </div>
           <a href="mailto:hello@fonitas.com" className="group inline-flex items-center gap-3 text-sm text-white/60 transition hover:text-white">
             hello@fonitas.com
-            <span className="text-[#ff5a1f] transition group-hover:translate-x-1">↗</span>
+            <span className="text-[#ff5a1f] transition group-hover:translate-x-1"><ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} /></span>
           </a>
         </div>
       </section>
