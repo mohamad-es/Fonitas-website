@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const productLinks = [
   ["How it works", "/how-it-works"],
@@ -52,31 +52,25 @@ export function Header() {
           </Link>
 
           <nav aria-label="Primary navigation" className="hidden items-center gap-1 rounded-full border border-white/[0.07] bg-white/[0.025] p-1 lg:flex">
-            <div className="dropdown dropdown-hover">
-              <button
-                type="button"
-                tabIndex={0}
-                className={`flex items-center gap-1 rounded-full px-4 py-2 text-[13px] transition-all ${productActive ? "bg-white/[0.08] text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
+            <div className={`rounded-full transition-all ${productActive ? "bg-white/[0.08]" : "hover:bg-white/[0.04]"}`}>
+              <select
+                aria-label="Product owners navigation"
+                value={pathname === "/product-owners" ? "/product-owners" : productLinks.some(([, href]) => pathname === href) ? pathname : ""}
+                onChange={(event) => {
+                  if (event.target.value) window.location.href = event.target.value;
+                }}
+                className={`select select-sm min-h-0 h-9 w-[148px] rounded-full border-0 bg-transparent px-4 text-[13px] shadow-none outline-none focus:outline-none ${productActive ? "text-white" : "text-white/55"}`}
               >
-                Product owners <ChevronDown className="h-3.5 w-3.5" strokeWidth={1.8} />
-              </button>
-              <ul tabIndex={0} className="menu dropdown-content z-[60] mt-2 w-52 rounded-2xl border border-white/10 bg-[#111]/95 p-2 shadow-2xl backdrop-blur-2xl">
-                <li>
-                  <Link href="/product-owners" className={pathname === "/product-owners" ? "active" : ""}>Overview</Link>
-                </li>
-                {productLinks.map(([label, href]) => (
-                  <li key={href}>
-                    <Link href={href} className={isActive(href) ? "active" : ""}>{label}</Link>
-                  </li>
-                ))}
-              </ul>
+                <option value="" disabled>Product owners</option>
+                <option value="/product-owners">Overview</option>
+                {productLinks.map(([label, href]) => <option key={href} value={href}>{label}</option>)}
+              </select>
             </div>
 
             {primaryLinks.map(([label, href]) => {
               const active = isActive(href);
               return (
                 <Link key={href} href={href} aria-current={active ? "page" : undefined} className={`rounded-full px-4 py-2 text-[13px] transition-all ${active ? "bg-white/[0.08] text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}>
-                  {active && <span className="absolute left-1/2 top-1 h-0.5 w-4 -translate-x-1/2 rounded-full bg-[#ff5a1f]" />}
                   {label}
                 </Link>
               );
