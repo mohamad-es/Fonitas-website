@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { HeroOrbit } from "@/components/home/hero-orbit";
 import { ProductSignal } from "@/components/home/product-signal";
@@ -12,7 +13,7 @@ import { AudienceSection } from "@/components/home/audience-section";
 import { PricingSection } from "@/components/home/pricing-section";
 import { FAQSection } from "@/components/home/faq-section";
 
-const Arrow = () => <span aria-hidden="true">↗</span>;
+const Arrow = () => <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
 
 export function ProductOwnerPage() {
   return (
