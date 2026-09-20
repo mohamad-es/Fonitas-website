@@ -157,7 +157,7 @@ export function ContactPage() {
                   <label className="block text-sm text-white/65">Organization<input name="organization" className="mt-2 w-full rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/20 focus:border-[#ff5a1f]/60" placeholder="Company or team" /></label>
                 </div>
                 <label className="block text-sm text-white/65">Publishing needs<textarea name="message" rows={7} required className="mt-2 w-full resize-none rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3.5 text-sm leading-6 text-white outline-none transition placeholder:text-white/20 focus:border-[#ff5a1f]/60" placeholder="What are you building, where do you want to publish it, and what support do you need?" /></label>
-                <button type="submit" className="w-full rounded-full bg-[#ff5a1f] px-5 py-4 text-sm font-semibold text-black transition hover:bg-[#ff7a3d]">Send request ↗</button>
+                <button type="submit" className="w-full rounded-full bg-[#ff5a1f] px-5 py-4 text-sm font-semibold text-black transition hover:bg-[#ff7a3d]">Send request <ArrowUpRight aria-hidden="true" className="ml-2 inline h-4 w-4" /></button>
               </form>
             )}
           </div>
