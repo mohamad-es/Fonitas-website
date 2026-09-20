@@ -1,4 +1,5 @@
 const audiences = [
+import { ArrowUpRight } from "lucide-react";
   ["01", "Developers", "Build the application. Fonitas operates the publishing path around it.", "BUILD"],
   ["02", "Product teams", "Move applications through review, contract, QA and publishing with explicit states.", "OPERATE"],
   ["03", "Application owners", "Keep visibility across publishing, revenue, reconciliation and settlement.", "OWN"],
@@ -24,7 +25,7 @@ export function AudienceSection() {
                 <h3 className="font-display text-3xl font-semibold transition group-hover:text-[#ff6a2a] sm:text-4xl">{title}</h3>
                 <p className="max-w-2xl text-sm leading-6 text-white/40">{description}</p>
               </div>
-              <span className="flex items-center gap-3 text-[9px] uppercase tracking-[.2em] text-white/25 transition group-hover:text-[#ff6a2a]">{action}<span className="text-base">→</span></span>
+              <span className="flex items-center gap-3 text-[9px] uppercase tracking-[.2em] text-white/25 transition group-hover:text-[#ff6a2a]">{action}<ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={1.8} /></span>
               {index < audiences.length - 1 && <span className="pointer-events-none absolute bottom-0 left-[70px] hidden h-px w-20 bg-gradient-to-r from-[#ff5a1f]/30 to-transparent sm:block" />}
             </article>
           ))}
