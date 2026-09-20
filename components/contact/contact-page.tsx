@@ -33,7 +33,7 @@ export function ContactPage() {
 
   return (
     <main className="bg-[#070707] text-[#f4f2ed]">
-      <section className="relative overflow-hidden border-b border-white/[0.07] pt-36 pb-24 lg:pt-44 lg:pb-32">
+      <section className="relative overflow-hidden border-b border-white/[0.07] pt-28 pb-20 sm:pt-36 sm:pb-24 lg:pt-44 lg:pb-32">
         <div className="absolute inset-0 grid-bg opacity-25" />
         <div className="absolute -right-56 top-8 h-[620px] w-[620px] rounded-full bg-[#ff5a1f]/10 blur-[140px]" />
         <div className="absolute -left-48 bottom-[-280px] h-[520px] w-[520px] rounded-full bg-[#ff5a1f]/[0.05] blur-[130px]" />
@@ -45,7 +45,7 @@ export function ContactPage() {
               <span className="h-px w-10 bg-white/10" />
               <span>Open channel</span>
             </div>
-            <h1 className="reveal-up reveal-delay-1 font-display mt-7 max-w-5xl text-5xl font-semibold leading-[.94] sm:text-7xl lg:text-[8rem]">
+            <h1 className="reveal-up reveal-delay-1 font-display mt-7 max-w-5xl text-4xl font-semibold leading-[.94] sm:text-7xl lg:text-[8rem]">
               Bring your<br /><span className="text-white/35">application</span> to market.
             </h1>
             <p className="reveal-up reveal-delay-2 mt-8 max-w-2xl text-base leading-7 text-white/45 sm:text-lg">
@@ -87,7 +87,7 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
+      <section className="mx-auto max-w-[1400px] px-6 py-20 sm:py-24 lg:px-10 lg:py-32">
         <div className="grid gap-16 lg:grid-cols-[.55fr_1fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#ff5a1f]">Choose a route</p>
@@ -110,7 +110,7 @@ export function ContactPage() {
       </section>
 
       <section className="border-y border-white/[0.07] bg-white/[0.012]">
-        <div className="mx-auto grid max-w-[1400px] gap-14 px-6 py-24 lg:grid-cols-[.62fr_1fr] lg:px-10 lg:py-32">
+        <div className="mx-auto grid max-w-[1400px] gap-14 px-6 py-20 sm:py-24 lg:grid-cols-[.62fr_1fr] lg:px-10 lg:py-32">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#ff5a1f]">Request brief</p>
             <h2 className="font-display mt-5 max-w-md text-4xl font-semibold leading-tight sm:text-5xl">A little context goes a long way.</h2>
