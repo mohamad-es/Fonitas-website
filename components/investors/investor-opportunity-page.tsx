@@ -39,11 +39,11 @@ export function InvestorOpportunityPage({ slug }: { slug: string }) {
             </div>
 
             <div className="rounded-[28px] border border-white/10 bg-white/[0.025] p-7 sm:p-8">
-              <p className="text-[9px] uppercase tracking-[0.22em] text-white/25">Investment opportunity</p>
+              <p className="text-[9px] uppercase tracking-[0.22em] text-white/25">Demo opportunity</p>
               <p className="font-display mt-4 text-4xl font-semibold">{opportunity.investment.value}</p>
               <p className="mt-2 text-sm text-white/35">{opportunity.investment.label}</p>
               <Link href={`/contact?type=investment&opportunity=${opportunity.slug}`} className="mt-7 flex items-center justify-center rounded-full bg-[#ff5a1f] px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-[#ff7a3d]">
-                I&apos;m interested <span className="ml-3"><Arrow /></span>
+                Discuss with Fonitas <span className="ml-3"><Arrow /></span>
               </Link>
             </div>
           </div>
@@ -67,7 +67,7 @@ export function InvestorOpportunityPage({ slug }: { slug: string }) {
           </div>
 
           <div>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-[#ff5a1f]">Key metrics</p>
+            <p className="text-[10px] uppercase tracking-[0.25em] text-[#ff5a1f]">Product snapshot</p>
             <div className="mt-6 grid gap-3">
               {opportunity.metrics.map((metric) => (
                 <div key={metric.label} className="flex items-center justify-between rounded-2xl border border-white/[0.07] bg-white/[0.02] p-5">
