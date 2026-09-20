@@ -50,37 +50,33 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="border-b border-white/[0.07] bg-[#070707]/75 backdrop-blur-2xl">
         <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-5 sm:px-6 lg:px-10">
-          <Link href="/" aria-label="Fonitas home" className="relative z-10 block w-[148px] transition-opacity hover:opacity-85 sm:w-[175px]">
-            <Image
-              src="/foonitas-logo.png"
-              alt="Fonitas"
-              width={350}
-              height={92}
-              priority
-              className="h-auto w-full"
-            />
+          <Link
+            href="/"
+            aria-label="Fonitas home"
+            className="relative z-10 block w-[148px] transition-opacity hover:opacity-85 sm:w-[175px]"
+          >
+            <Image src="/foonitas-logo.png" alt="Fonitas" width={350} height={92} priority className="h-auto w-full" />
           </Link>
 
-          <nav aria-label="Primary navigation" className="hidden items-center gap-1 rounded-full border border-white/[0.07] bg-white/[0.025] p-1 lg:flex">
-            <div
-              id="fonitas-product-megamenu"
-              popover="auto"
-              className="megamenu w-[500px] border border-white/10 bg-[#0d0d0d]/[0.98] p-2 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
-            >
-              <span className="megamenu-active" />
+          <nav
+            aria-label="Primary navigation"
+            className="hidden items-center gap-1 rounded-full border border-white/[0.07] bg-white/[0.025] p-1 lg:flex"
+          >
+            <div id="fonitas-product-megamenu" popover="auto" className="megamenu">
+              <span className="megamenu-active rounded-full" />
 
               <button
                 type="button"
                 popoverTarget="fonitas-product-overview"
-                className={`rounded-full px-4 text-[13px] transition-all after:content-none ${productActive ? "bg-white/[0.08] text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
+                className={`rounded-full overflow-hidden px-4 text-[13px]! transition-all after:content-none ${productActive ? "bg-white/[0.08] text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
               >
                 Product owners
               </button>
 
               <div
                 id="fonitas-product-overview"
-                popover="auto"
-                className="w-full overflow-hidden rounded-[18px] border border-white/10 bg-[#0b0b0b] text-white shadow-2xl"
+                popover="hint"
+                className="overflow-hidden rounded-[18px] border border-white/10 bg-[#0b0b0b] text-white shadow-2xl"
               >
                 <div className="border-b border-white/[0.07] px-5 py-4">
                   <p className="text-[9px] uppercase tracking-[0.24em] text-[#ff6a2a]">Product owners</p>
@@ -92,14 +88,21 @@ export function Header() {
                     href="/product-owners"
                     className={`group flex items-center gap-4 rounded-xl px-3 py-3 transition ${pathname === "/product-owners" ? "bg-[#ff5a1f]/[0.08]" : "hover:bg-white/[0.04]"}`}
                   >
-                    <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border text-[#ff6a2a] ${pathname === "/product-owners" ? "border-[#ff5a1f]/30 bg-[#ff5a1f]/10" : "border-white/10 bg-white/[0.03]"}`}>
+                    <span
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border text-[#ff6a2a] ${pathname === "/product-owners" ? "border-[#ff5a1f]/30 bg-[#ff5a1f]/10" : "border-white/10 bg-white/[0.03]"}`}
+                    >
                       <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="block text-sm font-medium">Overview</span>
-                      <span className="mt-0.5 block truncate text-[10px] text-white/30">Start your journey with Fonitas</span>
+                      <span className="mt-0.5 block truncate text-[10px] text-white/30">
+                        Start your journey with Fonitas
+                      </span>
                     </span>
-                    <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-white/20 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.8} />
+                    <ArrowUpRight
+                      className="h-3.5 w-3.5 shrink-0 text-white/20 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      strokeWidth={1.8}
+                    />
                   </Link>
 
                   {productLinks.map(([label, href, description]) => (
@@ -108,14 +111,19 @@ export function Header() {
                       href={href}
                       className={`group flex items-center gap-4 rounded-xl px-3 py-3 transition ${isActive(href) ? "bg-[#ff5a1f]/[0.08]" : "hover:bg-white/[0.04]"}`}
                     >
-                      <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border text-[#ff6a2a] ${isActive(href) ? "border-[#ff5a1f]/30 bg-[#ff5a1f]/10" : "border-white/10 bg-white/[0.03]"}`}>
+                      <span
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border text-[#ff6a2a] ${isActive(href) ? "border-[#ff5a1f]/30 bg-[#ff5a1f]/10" : "border-white/10 bg-white/[0.03]"}`}
+                      >
                         <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="block text-sm font-medium">{label}</span>
                         <span className="mt-0.5 block truncate text-[10px] text-white/30">{description}</span>
                       </span>
-                      <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-white/20 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.8} />
+                      <ArrowUpRight
+                        className="h-3.5 w-3.5 shrink-0 text-white/20 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                        strokeWidth={1.8}
+                      />
                     </Link>
                   ))}
                 </div>
@@ -209,10 +217,18 @@ export function Header() {
           </div>
 
           <div className="mt-5 grid grid-cols-2 gap-3">
-            <Link href="/login" tabIndex={open ? 0 : -1} className="btn btn-outline rounded-full border-white/15 bg-transparent text-white/70 hover:border-white/30 hover:bg-white/[0.05]">
+            <Link
+              href="/login"
+              tabIndex={open ? 0 : -1}
+              className="btn btn-outline rounded-full border-white/15 bg-transparent text-white/70 hover:border-white/30 hover:bg-white/[0.05]"
+            >
               Sign in
             </Link>
-            <Link href="/register" tabIndex={open ? 0 : -1} className="btn rounded-full border-0 bg-[#ff5a1f] text-black hover:bg-[#ff7a3d]">
+            <Link
+              href="/register"
+              tabIndex={open ? 0 : -1}
+              className="btn rounded-full border-0 bg-[#ff5a1f] text-black hover:bg-[#ff7a3d]"
+            >
               Create account
             </Link>
           </div>
