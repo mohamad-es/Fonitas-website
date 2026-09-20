@@ -72,11 +72,11 @@ function StepVisual({ index }: { index: number }) {
   const progress = ((index + 1) / steps.length) * 100;
 
   return (
-    <div className="relative min-h-[290px] overflow-hidden rounded-[24px] border border-white/10 bg-[#0b0b0b] sm:min-h-[350px]">
+    <div className="relative min-h-[250px] overflow-hidden rounded-[24px] sm:min-h-[350px] border border-white/10 bg-[#0b0b0b] ">
       <div className="absolute inset-0 opacity-60 [background-image:linear-gradient(rgba(255,255,255,.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.045)_1px,transparent_1px)] [background-size:48px_48px]" />
-      <div className="absolute left-1/2 top-1/2 h-52 w-52 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/15 shadow-[0_0_90px_rgba(255,90,31,.08)]" />
-      <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-      <div className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 rotate-45 items-center justify-center rounded-[20px] bg-[#ff5a1f] shadow-[0_0_80px_rgba(255,90,31,.35)] transition-transform duration-500">
+      <div className="absolute left-1/2 top-1/2 h-40 w-40 sm:h-52 sm:w-52 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/15 shadow-[0_0_90px_rgba(255,90,31,.08)]" />
+      <div className="absolute left-1/2 top-1/2 h-24 w-24 sm:h-32 sm:w-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+      <div className="absolute left-1/2 top-1/2 flex h-16 w-16 sm:h-20 sm:w-20 -translate-x-1/2 -translate-y-1/2 rotate-45 items-center justify-center rounded-[20px] bg-[#ff5a1f] shadow-[0_0_80px_rgba(255,90,31,.35)] transition-transform duration-500">
         <span className="-rotate-45 text-[9px] font-semibold uppercase tracking-[.16em] text-black">OS</span>
       </div>
 
@@ -159,7 +159,7 @@ export function LifecycleWizard() {
         </div>
       </div>
 
-      <div className="relative z-20 mt-5 flex items-center justify-between pointer-events-auto">
+      <div className="relative z-20 mt-5 flex items-center justify-between gap-3 pointer-events-auto">
         <button
           type="button"
           disabled={active === 0}
