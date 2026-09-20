@@ -66,7 +66,7 @@ export function PublishingPage() {
       <section className="relative border-b border-white/[.07]">
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="absolute -right-40 top-10 h-[600px] w-[600px] rounded-full bg-[#ff5a1f]/10 blur-[130px]" />
-        <div className="relative mx-auto grid max-w-[1400px] items-center gap-16 px-6 py-24 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-32">
+        <div className="relative mx-auto grid max-w-[1400px] items-center gap-16 px-6 py-20 sm:py-24 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-32">
           <Image src="/visuals/fonitas-publishing.svg" alt="" width={1200} height={700} priority className="pointer-events-none absolute -right-64 top-1/2 hidden w-[800px] -translate-y-1/2 opacity-[0.13] lg:block" aria-hidden="true" />
           <div>
             <p className="text-xs font-semibold uppercase tracking-[.28em] text-[#ff6a2b]">Publishing system</p>
@@ -79,9 +79,9 @@ export function PublishingPage() {
       </section>
 
       <section id="release-control" className="border-b border-white/[.07] bg-[#0a0a0a]">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
+        <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-24 lg:px-10 lg:py-32">
           <div className="grid gap-12 lg:grid-cols-[.65fr_1.35fr]">
-            <div><p className="text-xs uppercase tracking-[.25em] text-[#ff5a1f]">01 — Release path</p><h2 className="font-display mt-5 max-w-xl text-5xl font-semibold leading-[.9] sm:text-7xl">Nothing important disappears between stages.</h2></div>
+            <div><p className="text-xs uppercase tracking-[.25em] text-[#ff5a1f]">01 — Release path</p><h2 className="font-display mt-5 max-w-xl text-4xl font-semibold leading-[.9] sm:text-6xl lg:text-7xl">Nothing important disappears between stages.</h2></div>
             <div className="relative">
               <div className="absolute left-3 top-4 hidden h-[calc(100%-32px)] border-l border-dashed border-[#ff5a1f]/20 sm:block" />
               {stages.map((stage,index)=><button key={stage.number} type="button" onClick={()=>setActive(index)} className="group relative grid w-full gap-5 border-t border-white/10 py-7 text-left sm:grid-cols-[48px_180px_1fr] sm:items-center sm:pl-12">
@@ -95,9 +95,9 @@ export function PublishingPage() {
       </section>
 
       <section className="border-b border-white/[.07]">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
+        <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-24 lg:px-10 lg:py-32">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
-            <div><p className="text-xs uppercase tracking-[.25em] text-[#ff5a1f]">02 — Store layer</p><h2 className="font-display mt-5 max-w-3xl text-5xl font-semibold leading-[.9] sm:text-7xl">One internal model.<br/><span className="text-white/30">Multiple store destinations.</span></h2></div>
+            <div><p className="text-xs uppercase tracking-[.25em] text-[#ff5a1f]">02 — Store layer</p><h2 className="font-display mt-5 max-w-3xl text-4xl font-semibold leading-[.9] sm:text-6xl lg:text-7xl">One internal model.<br/><span className="text-white/30">Multiple store destinations.</span></h2></div>
             <p className="max-w-md text-sm leading-7 text-white/35">The MVP keeps submission human-in-the-loop. Provider-specific adapters can be introduced later while the internal publishing model remains stable.</p>
           </div>
           <div className="mt-14 grid gap-3 border-y border-white/10 py-3 md:grid-cols-3">
@@ -111,8 +111,8 @@ export function PublishingPage() {
       </section>
 
       <section className="border-b border-white/[.07] bg-[#0a0a0a]">
-        <div className="mx-auto grid max-w-[1400px] gap-12 px-6 py-24 lg:grid-cols-[.7fr_1.3fr] lg:px-10 lg:py-32">
-          <div><p className="text-xs uppercase tracking-[.25em] text-[#ff5a1f]">03 — Human control</p><h2 className="font-display mt-5 max-w-xl text-5xl font-semibold leading-[.9] sm:text-7xl">Automation where it helps. <span className="text-white/30">Judgment where it matters.</span></h2></div>
+        <div className="mx-auto grid max-w-[1400px] gap-12 px-6 py-20 sm:py-24 lg:grid-cols-[.7fr_1.3fr] lg:px-10 lg:py-32">
+          <div><p className="text-xs uppercase tracking-[.25em] text-[#ff5a1f]">03 — Human control</p><h2 className="font-display mt-5 max-w-xl text-4xl font-semibold leading-[.9] sm:text-6xl lg:text-7xl">Automation where it helps. <span className="text-white/30">Judgment where it matters.</span></h2></div>
           <div className="relative overflow-hidden border-l border-[#ff5a1f]/30 pl-7 sm:pl-12"><div className="absolute left-0 top-0 h-16 w-px bg-[#ff5a1f]" /><p className="max-w-2xl text-2xl leading-10 text-white/75">Fonitas does not turn store publishing into a black box. The workflow around a release is structured and recorded; the final store operation remains human-in-the-loop in the MVP.</p><div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/10 pt-6 text-[10px] uppercase tracking-[.18em] text-white/30"><span>Build</span><span>Security</span><span>QA</span><span>Submission</span><span>Audit</span></div></div>
         </div>
       </section>
