@@ -1,4 +1,5 @@
 const stages = [
+import { ArrowRight } from "lucide-react";
   {
     number: "01",
     type: "Application",
@@ -101,7 +102,7 @@ export function ProjectShowcase() {
           <div key={stage.number} className="flex items-center gap-3">
             <span className={`flex h-7 w-7 items-center justify-center rounded-full border ${index === 0 ? "border-[#ff5a1f]/40 text-[#ff6a2a]" : "border-white/10 text-white/25"}`}>{stage.number}</span>
             <span>{stage.sublabel}</span>
-            {index < stages.length - 1 && <span className="mx-2 text-[#ff5a1f]/45">→</span>}
+            {index < stages.length - 1 && <span className="mx-2 text-[#ff5a1f]/45"><ArrowRight aria-hidden="true" className="inline h-3.5 w-3.5" strokeWidth={1.8} /></span>}
           </div>
         ))}
       </div>
@@ -141,7 +142,7 @@ export function ProjectShowcase() {
       </div>
 
       <div className="mt-6 flex items-center justify-center gap-3 text-[9px] uppercase tracking-[.18em] text-white/20">
-        <span>Release path</span><span className="text-[#ff5a1f]/60">Application</span><span>→</span><span className="text-[#ff5a1f]/60">Validate</span><span>→</span><span className="text-[#ff5a1f]/60">Publish</span>
+        <span>Release path</span><span className="text-[#ff5a1f]/60">Application</span><span><ArrowRight aria-hidden="true" className="inline h-3.5 w-3.5" strokeWidth={1.8} /></span><span className="text-[#ff5a1f]/60">Validate</span><span><ArrowRight aria-hidden="true" className="inline h-3.5 w-3.5" strokeWidth={1.8} /></span><span className="text-[#ff5a1f]/60">Publish</span>
       </div>
     </div>
   );
