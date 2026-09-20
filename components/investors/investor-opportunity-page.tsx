@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { investmentOpportunities } from "@/data/investment-opportunities";
@@ -24,7 +25,7 @@ export function InvestorOpportunityPage({ slug }: { slug: string }) {
             <div>
               <div className="flex items-center gap-4">
                 {opportunity.logo ? (
-                  <img src={opportunity.logo} alt="" className="h-16 w-16 rounded-2xl object-cover" />
+                  <Image src={opportunity.logo} alt="" width={64} height={64} className="h-16 w-16 rounded-2xl object-cover" />
                 ) : (
                   <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#ff5a1f]/20 bg-[#ff5a1f]/10 text-xl text-[#ff6a2a]">{opportunity.name.slice(0, 1)}</div>
                 )}
