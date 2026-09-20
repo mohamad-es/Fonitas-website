@@ -7,9 +7,9 @@ import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const productLinks = [
-  ["How it works", "/how-it-works"],
-  ["Platform", "/platform"],
-  ["Publishing", "/publishing"],
+  ["How it works", "/how-it-works", "Understand the full application lifecycle."],
+  ["Platform", "/platform", "See the infrastructure behind the Fonitas workflow."],
+  ["Publishing", "/publishing", "Explore how applications move toward distribution."],
 ] as const;
 
 const primaryLinks = [
@@ -28,12 +28,15 @@ export function Header() {
 
   useEffect(() => {
     if (!open) return;
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
+
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
+
     return () => {
       document.body.style.overflow = originalOverflow;
       window.removeEventListener("keydown", handleKeyDown);
@@ -48,29 +51,79 @@ export function Header() {
       <div className="border-b border-white/[0.07] bg-[#070707]/75 backdrop-blur-2xl">
         <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-5 sm:px-6 lg:px-10">
           <Link href="/" aria-label="Fonitas home" className="relative z-10 block w-[148px] transition-opacity hover:opacity-85 sm:w-[175px]">
-            <Image src="/foonitas-logo.png" alt="Fonitas" width={350} height={92} priority className="h-auto w-full" />
+            <Image
+              src="/foonitas-logo.png"
+              alt="Fonitas"
+              width={350}
+              height={92}
+              priority
+              className="h-auto w-full"
+            />
           </Link>
 
           <nav aria-label="Primary navigation" className="hidden items-center gap-1 rounded-full border border-white/[0.07] bg-white/[0.025] p-1 lg:flex">
-            <div className={`rounded-full transition-all ${productActive ? "bg-white/[0.08]" : "hover:bg-white/[0.04]"}`}>
-              <select
-                aria-label="Product owners navigation"
-                value={pathname === "/product-owners" ? "/product-owners" : productLinks.some(([, href]) => pathname === href) ? pathname : ""}
-                onChange={(event) => {
-                  if (event.target.value) window.location.href = event.target.value;
-                }}
-                className={`select select-sm min-h-0 h-9 w-[148px] rounded-full border-0 bg-transparent px-4 text-[13px] shadow-none outline-none focus:outline-none ${productActive ? "text-white" : "text-white/55"}`}
+            <div
+              id="fonitas-product-megamenu"
+              popover="auto"
+              className="megamenu megamenu-wide w-[720px] border border-white/10 bg-[#111]/[0.98] p-2 shadow-2xl backdrop-blur-2xl"
+            >
+              <span className="megamenu-active" />
+
+              <button
+                type="button"
+                popoverTarget="fonitas-product-overview"
+                className={`rounded-full px-4 text-[13px] transition-all after:content-none ${productActive ? "bg-white/[0.08] text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
               >
-                <option value="" disabled>Product owners</option>
-                <option value="/product-owners">Overview</option>
-                {productLinks.map(([label, href]) => <option key={href} value={href}>{label}</option>)}
-              </select>
+                Product owners
+              </button>
+
+              <div
+                id="fonitas-product-overview"
+                popover="auto"
+                className="w-full overflow-hidden rounded-[22px] border border-white/10 bg-[#0d0d0d] text-white shadow-2xl"
+              >
+                <div className="grid gap-2 p-3 sm:grid-cols-[1.05fr_1.95fr]">
+                  <Link
+                    href="/product-owners"
+                    className="group rounded-2xl border border-[#ff5a1f]/15 bg-[#ff5a1f]/[0.05] p-6 transition hover:border-[#ff5a1f]/30 hover:bg-[#ff5a1f]/[0.08]"
+                  >
+                    <span className="text-[9px] uppercase tracking-[0.22em] text-[#ff6a2a]">Product owners</span>
+                    <h3 className="font-display mt-3 text-2xl font-semibold">Move your application forward.</h3>
+                    <p className="mt-3 text-xs leading-5 text-white/35">Start with the complete Fonitas workflow, then explore the parts that matter to your product.</p>
+                    <span className="mt-6 inline-flex items-center text-xs font-medium text-white/70">
+                      Overview <ArrowUpRight className="ml-2 h-3.5 w-3.5 text-[#ff5a1f]" strokeWidth={1.8} />
+                    </span>
+                  </Link>
+
+                  <div className="grid gap-2 sm:grid-cols-3">
+                    {productLinks.map(([label, href, description]) => (
+                      <Link
+                        key={href}
+                        href={href}
+                        className={`group rounded-2xl border p-5 transition ${isActive(href) ? "border-[#ff5a1f]/25 bg-white/[0.05]" : "border-white/[0.07] bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04]"}`}
+                      >
+                        <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-[#ff6a2a]">
+                          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.8} />
+                        </span>
+                        <h3 className="font-display mt-5 text-lg font-semibold">{label}</h3>
+                        <p className="mt-2 text-[11px] leading-5 text-white/30">{description}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
 
             {primaryLinks.map(([label, href]) => {
               const active = isActive(href);
+
               return (
-                <Link key={href} href={href} aria-current={active ? "page" : undefined} className={`rounded-full px-4 py-2 text-[13px] transition-all ${active ? "bg-white/[0.08] text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}>
+                <Link
+                  key={href}
+                  href={href}
+                  aria-current={active ? "page" : undefined}
+                  className={`rounded-full px-4 py-2 text-[13px] transition-all ${active ? "bg-white/[0.08] text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
+                >
                   {label}
                 </Link>
               );
@@ -78,13 +131,25 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link href="/login" className="hidden rounded-full px-4 py-2.5 text-[13px] font-medium text-white/55 transition hover:bg-white/[0.05] hover:text-white sm:block">
+            <Link
+              href="/login"
+              className="btn btn-ghost hidden min-h-0 rounded-full px-4 py-2.5 text-[13px] font-medium text-white/55 hover:bg-white/[0.05] hover:text-white sm:flex"
+            >
               Sign in
             </Link>
-            <Link href="/register" className="btn hidden min-h-0 rounded-full border-0 bg-[#ff5a1f] px-4 py-2.5 text-[13px] font-semibold text-black shadow-[0_0_28px_rgba(255,90,31,0.12)] hover:bg-[#ff7a3d] sm:flex">
+            <Link
+              href="/register"
+              className="btn hidden min-h-0 rounded-full border-0 bg-[#ff5a1f] px-4 py-2.5 text-[13px] font-semibold text-black shadow-[0_0_28px_rgba(255,90,31,0.12)] hover:bg-[#ff7a3d] sm:flex"
+            >
               Create account
             </Link>
-            <button type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.025] text-white transition hover:border-white/20 hover:bg-white/[0.06] lg:hidden">
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              onClick={() => setOpen((value) => !value)}
+              className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.025] text-white transition hover:border-white/20 hover:bg-white/[0.06] lg:hidden"
+            >
               <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
               {open ? <X className="h-4 w-4" strokeWidth={1.8} /> : <Menu className="h-4 w-4" strokeWidth={1.8} />}
             </button>
@@ -92,29 +157,56 @@ export function Header() {
         </div>
       </div>
 
-      <div className={`overflow-hidden border-b border-white/[0.07] bg-[#070707]/95 backdrop-blur-2xl transition-all duration-300 lg:hidden ${open ? "max-h-[calc(100vh-72px)] opacity-100" : "pointer-events-none max-h-0 opacity-0"}`} aria-hidden={!open}>
+      <div
+        className={`overflow-hidden border-b border-white/[0.07] bg-[#070707]/95 backdrop-blur-2xl transition-all duration-300 lg:hidden ${open ? "max-h-[calc(100vh-72px)] opacity-100" : "pointer-events-none max-h-0 opacity-0"}`}
+        aria-hidden={!open}
+      >
         <nav aria-label="Mobile navigation" className="mx-auto max-w-[1400px] overflow-y-auto px-5 py-4 sm:px-6">
           <div className="divide-y divide-white/[0.07]">
-            <Link href="/product-owners" tabIndex={open ? 0 : -1} className={`flex items-center justify-between py-4 text-lg ${productActive ? "text-white" : "text-white/65"}`}>
-              <span>Product owners</span><ArrowUpRight className="h-4 w-4 text-[#ff5a1f]" strokeWidth={1.8} />
+            <Link
+              href="/product-owners"
+              tabIndex={open ? 0 : -1}
+              className={`flex items-center justify-between py-4 text-lg ${productActive ? "text-white" : "text-white/65"}`}
+            >
+              <span>Product owners</span>
+              <ArrowUpRight className="h-4 w-4 text-[#ff5a1f]" strokeWidth={1.8} />
             </Link>
+
             <div className="py-2">
               <p className="px-1 py-2 text-[9px] uppercase tracking-[0.22em] text-white/20">Product owner pages</p>
               {productLinks.map(([label, href]) => (
-                <Link key={href} href={href} tabIndex={open ? 0 : -1} className={`flex items-center justify-between rounded-xl px-3 py-3 text-sm ${isActive(href) ? "bg-white/[0.05] text-white" : "text-white/45 hover:text-white"}`}>
-                  {label}<ArrowUpRight className="h-3.5 w-3.5 text-white/20" strokeWidth={1.8} />
+                <Link
+                  key={href}
+                  href={href}
+                  tabIndex={open ? 0 : -1}
+                  className={`flex items-center justify-between rounded-xl px-3 py-3 text-sm ${isActive(href) ? "bg-white/[0.05] text-white" : "text-white/45 hover:text-white"}`}
+                >
+                  {label}
+                  <ArrowUpRight className="h-3.5 w-3.5 text-white/20" strokeWidth={1.8} />
                 </Link>
               ))}
             </div>
+
             {primaryLinks.map(([label, href]) => (
-              <Link key={href} href={href} tabIndex={open ? 0 : -1} className={`flex items-center justify-between py-4 text-lg ${isActive(href) ? "text-white" : "text-white/65"}`}>
-                <span>{label}</span><ArrowUpRight className="h-4 w-4 text-white/20" strokeWidth={1.8} />
+              <Link
+                key={href}
+                href={href}
+                tabIndex={open ? 0 : -1}
+                className={`flex items-center justify-between py-4 text-lg ${isActive(href) ? "text-white" : "text-white/65"}`}
+              >
+                <span>{label}</span>
+                <ArrowUpRight className="h-4 w-4 text-white/20" strokeWidth={1.8} />
               </Link>
             ))}
           </div>
+
           <div className="mt-5 grid grid-cols-2 gap-3">
-            <Link href="/login" tabIndex={open ? 0 : -1} className="btn btn-outline rounded-full border-white/15 bg-transparent text-white/70 hover:border-white/30 hover:bg-white/[0.05]">Sign in</Link>
-            <Link href="/register" tabIndex={open ? 0 : -1} className="btn rounded-full border-0 bg-[#ff5a1f] text-black hover:bg-[#ff7a3d]">Create account</Link>
+            <Link href="/login" tabIndex={open ? 0 : -1} className="btn btn-outline rounded-full border-white/15 bg-transparent text-white/70 hover:border-white/30 hover:bg-white/[0.05]">
+              Sign in
+            </Link>
+            <Link href="/register" tabIndex={open ? 0 : -1} className="btn rounded-full border-0 bg-[#ff5a1f] text-black hover:bg-[#ff7a3d]">
+              Create account
+            </Link>
           </div>
         </nav>
       </div>
