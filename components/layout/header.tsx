@@ -65,7 +65,7 @@ export function Header() {
             <div
               id="fonitas-product-megamenu"
               popover="auto"
-              className="megamenu megamenu-wide w-[720px] border border-white/10 bg-[#111]/[0.98] p-2 shadow-2xl backdrop-blur-2xl"
+              className="megamenu w-[500px] border border-white/10 bg-[#0d0d0d]/[0.98] p-2 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
             >
               <span className="megamenu-active" />
 
@@ -80,36 +80,44 @@ export function Header() {
               <div
                 id="fonitas-product-overview"
                 popover="auto"
-                className="w-full overflow-hidden rounded-[22px] border border-white/10 bg-[#0d0d0d] text-white shadow-2xl"
+                className="w-full overflow-hidden rounded-[18px] border border-white/10 bg-[#0b0b0b] text-white shadow-2xl"
               >
-                <div className="grid gap-2 p-3 sm:grid-cols-[1.05fr_1.95fr]">
+                <div className="border-b border-white/[0.07] px-5 py-4">
+                  <p className="text-[9px] uppercase tracking-[0.24em] text-[#ff6a2a]">Product owners</p>
+                  <p className="mt-1 text-xs text-white/30">Explore the Fonitas product journey.</p>
+                </div>
+
+                <div className="p-2">
                   <Link
                     href="/product-owners"
-                    className="group rounded-2xl border border-[#ff5a1f]/15 bg-[#ff5a1f]/[0.05] p-6 transition hover:border-[#ff5a1f]/30 hover:bg-[#ff5a1f]/[0.08]"
+                    className={`group flex items-center gap-4 rounded-xl px-3 py-3 transition ${pathname === "/product-owners" ? "bg-[#ff5a1f]/[0.08]" : "hover:bg-white/[0.04]"}`}
                   >
-                    <span className="text-[9px] uppercase tracking-[0.22em] text-[#ff6a2a]">Product owners</span>
-                    <h3 className="font-display mt-3 text-2xl font-semibold">Move your application forward.</h3>
-                    <p className="mt-3 text-xs leading-5 text-white/35">Start with the complete Fonitas workflow, then explore the parts that matter to your product.</p>
-                    <span className="mt-6 inline-flex items-center text-xs font-medium text-white/70">
-                      Overview <ArrowUpRight className="ml-2 h-3.5 w-3.5 text-[#ff5a1f]" strokeWidth={1.8} />
+                    <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border text-[#ff6a2a] ${pathname === "/product-owners" ? "border-[#ff5a1f]/30 bg-[#ff5a1f]/10" : "border-white/10 bg-white/[0.03]"}`}>
+                      <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
                     </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-sm font-medium">Overview</span>
+                      <span className="mt-0.5 block truncate text-[10px] text-white/30">Start your journey with Fonitas</span>
+                    </span>
+                    <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-white/20 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.8} />
                   </Link>
 
-                  <div className="grid gap-2 sm:grid-cols-3">
-                    {productLinks.map(([label, href, description]) => (
-                      <Link
-                        key={href}
-                        href={href}
-                        className={`group rounded-2xl border p-5 transition ${isActive(href) ? "border-[#ff5a1f]/25 bg-white/[0.05]" : "border-white/[0.07] bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04]"}`}
-                      >
-                        <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-[#ff6a2a]">
-                          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.8} />
-                        </span>
-                        <h3 className="font-display mt-5 text-lg font-semibold">{label}</h3>
-                        <p className="mt-2 text-[11px] leading-5 text-white/30">{description}</p>
-                      </Link>
-                    ))}
-                  </div>
+                  {productLinks.map(([label, href, description]) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className={`group flex items-center gap-4 rounded-xl px-3 py-3 transition ${isActive(href) ? "bg-[#ff5a1f]/[0.08]" : "hover:bg-white/[0.04]"}`}
+                    >
+                      <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border text-[#ff6a2a] ${isActive(href) ? "border-[#ff5a1f]/30 bg-[#ff5a1f]/10" : "border-white/10 bg-white/[0.03]"}`}>
+                        <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-sm font-medium">{label}</span>
+                        <span className="mt-0.5 block truncate text-[10px] text-white/30">{description}</span>
+                      </span>
+                      <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-white/20 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.8} />
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
