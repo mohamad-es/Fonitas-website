@@ -1,4 +1,5 @@
 const plans = [
+import { ArrowUpRight } from "lucide-react";
   { number: "01", title: "Publish", description: "For teams that need a controlled publishing and release layer.", features: ["Application review", "QA & compliance", "Store preparation", "Publishing workflow"] },
   { number: "02", title: "Publish + Infrastructure", description: "Publishing plus platform services that support the application lifecycle.", features: ["Everything in Publish", "Auth", "Storage", "Notifications", "Analytics"] },
   { number: "03", title: "Full Platform", description: "A broader operating model connecting publishing with future business capabilities.", features: ["Publishing core", "Infrastructure services", "Commercial", "Finance", "Future capabilities"] },
@@ -13,7 +14,7 @@ export function PricingSection() {
             <p className="mb-5 text-xs uppercase tracking-[.25em] text-[#ff5a1f]">Engagement models</p>
             <h2 className="font-display max-w-xl text-5xl font-semibold leading-[.9] sm:text-7xl">Start with publishing. <span className="text-white/30">Expand when it makes sense.</span></h2>
             <p className="mt-8 max-w-md text-sm leading-7 text-white/35">Fonitas does not need one fixed package for every application. The operating model can expand with the responsibility you want Fonitas to carry.</p>
-            <a href="/contact" className="mt-9 inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white">Discuss your application <span className="text-[#ff5a1f]">↗</span></a>
+            <a href="/contact" className="mt-9 inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-white">Discuss your application <span className="text-[#ff5a1f]"><ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} /></span></a>
           </div>
 
           <div className="relative">
@@ -29,7 +30,7 @@ export function PricingSection() {
                       <p className="mt-3 max-w-xl text-sm leading-6 text-white/40">{plan.description}</p>
                       <div className="mt-5 flex flex-wrap gap-2">{plan.features.map(f=><span key={f} className="rounded-full border border-white/10 px-3 py-1.5 text-[10px] text-white/40">{f}</span>)}</div>
                     </div>
-                    <span className="hidden text-white/15 transition group-hover:text-[#ff5a1f] lg:block">↗</span>
+                    <span className="hidden text-white/15 transition group-hover:text-[#ff5a1f] lg:block"><ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} /></span>
                   </div>
                 </article>
               ))}
