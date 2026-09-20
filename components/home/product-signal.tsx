@@ -1,5 +1,6 @@
-const signals = [
 import { ArrowRight } from "lucide-react";
+
+const signals = [
   "Application",
   "Contract",
   "QA",
