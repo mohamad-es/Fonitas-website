@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 
 const stages = [
@@ -73,7 +73,7 @@ export function PublishingPage() {
             <p className="text-xs font-semibold uppercase tracking-[.28em] text-[#ff6a2b]">Publishing system</p>
             <h1 className="font-display mt-7 max-w-3xl text-[clamp(4rem,8vw,8.5rem)] font-semibold leading-[.8] tracking-[-.06em]">A release<br/><span className="text-white/30">with a record.</span></h1>
             <p className="mt-10 max-w-xl text-lg leading-8 text-white/50">Fonitas turns publishing into a controlled sequence of preparation, security, validation and store submission — with every important transition recorded.</p>
-            <div className="mt-9 flex flex-wrap gap-3"><Link href="/contact" className="rounded-full bg-[#ff5a1f] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ff7a3d]">Prepare an application<ArrowUpRight aria-hidden="true" className="ml-2 h-4 w-4" /></Link><a href="#release-control" className="rounded-full border border-white/10 px-6 py-3 text-sm text-white/65 transition hover:border-white/25 hover:text-white">Explore the release path ↓</a></div>
+            <div className="mt-9 flex flex-wrap gap-3"><Link href="/contact" className="rounded-full bg-[#ff5a1f] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ff7a3d]">Prepare an application<ArrowUpRight aria-hidden="true" className="ml-2 h-4 w-4" /></Link><a href="#release-control" className="rounded-full border border-white/10 px-6 py-3 text-sm text-white/65 transition hover:border-white/25 hover:text-white">Explore the release path<ArrowDown aria-hidden="true" className="ml-2 h-4 w-4" /></a></div>
           </div>
           <ReleaseConsole active={active} onSelect={setActive}/>
         </div>
