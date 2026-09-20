@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Header } from "@/components/layout/header";
 import { InvestorsPage } from "@/components/investors/investors-page";
 
 export const metadata: Metadata = {
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function Investors() {
-  return <InvestorsPage />;
+  return (
+    <>
+      <Header />
+      <InvestorsPage />
+    </>
+  );
 }
