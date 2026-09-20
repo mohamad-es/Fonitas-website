@@ -72,7 +72,7 @@ export function ContactPage() {
                 </div>
                 <div className="mt-10 border-l border-[#ff5a1f]/30 pl-5">
                   <p className="text-[10px] uppercase tracking-[0.2em] text-[#ff7a3d]">First signal</p>
-                  <p className="mt-3 text-sm leading-6 text-white/60">Application → QA → Publishing → Settlement</p>
+                  <p className="mt-3 text-sm leading-6 text-white/60">Application <span className="text-[#ff5a1f]">→</span> QA <span className="text-[#ff5a1f]">→</span> Publishing <span className="text-[#ff5a1f]">→</span> Settlement</p>
                 </div>
               </div>
               <div className="grid grid-cols-2 border-t border-white/[0.08]">
