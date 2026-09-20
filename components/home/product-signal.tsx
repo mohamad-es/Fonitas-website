@@ -1,4 +1,5 @@
 const signals = [
+import { ArrowRight } from "lucide-react";
   "Application",
   "Contract",
   "QA",
@@ -15,7 +16,7 @@ export function ProductSignal() {
           {signals.map((signal, index) => (
             <div key={signal} className="flex items-center gap-8 sm:gap-12">
               <span className={index === 0 ? "text-[#ff6a2a]" : ""}>{signal}</span>
-              {index < signals.length - 1 && <span className="text-white/15">→</span>}
+              {index < signals.length - 1 && <span className="text-white/15"><ArrowRight aria-hidden="true" className="inline h-3.5 w-3.5" strokeWidth={1.8} /></span>}
             </div>
           ))}
         </div>
