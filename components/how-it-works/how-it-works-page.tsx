@@ -16,12 +16,12 @@ const stages = [
 
 function LifecycleMap({ active, onSelect }: { active:number; onSelect:(index:number)=>void }) {
   return (
-    <div className="relative mx-auto min-h-[520px] w-full max-w-[720px] overflow-hidden rounded-[32px] border border-white/10 bg-[#0a0a0a] p-6 sm:p-10 [perspective:1200px]">
+    <div className="relative mx-auto min-h-[420px] w-full max-w-[720px] overflow-hidden rounded-[24px] border border-white/10 bg-[#0a0a0a] p-4 sm:min-h-[520px] sm:rounded-[32px] sm:p-10 [perspective:1200px]">
       <div className="absolute inset-0 grid-bg opacity-25" />
-      <div className="absolute left-1/2 top-1/2 h-[390px] w-[390px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06]" />
-      <div className="absolute left-1/2 top-1/2 h-[270px] w-[270px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#ff5a1f]/20 animate-[spin_28s_linear_infinite]" />
-      <div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-3xl" />
-      <div className="absolute left-1/2 top-1/2 z-10 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 rotate-45 items-center justify-center rounded-[28px] border border-[#ff8a55]/50 bg-[#ff5a1f] shadow-[0_0_100px_rgba(255,90,31,.28)] transition-transform duration-700 hover:scale-105">
+      <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] sm:h-[390px] sm:w-[390px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06]" />
+      <div className="absolute left-1/2 top-1/2 h-[200px] w-[200px] sm:h-[270px] sm:w-[270px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#ff5a1f]/20 animate-[spin_28s_linear_infinite]" />
+      <div className="absolute left-1/2 top-1/2 h-32 w-32 sm:h-44 sm:w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-3xl" />
+      <div className="absolute left-1/2 top-1/2 z-10 flex h-20 w-20 sm:h-28 sm:w-28 -translate-x-1/2 -translate-y-1/2 rotate-45 items-center justify-center rounded-[28px] border border-[#ff8a55]/50 bg-[#ff5a1f] shadow-[0_0_100px_rgba(255,90,31,.28)] transition-transform duration-700 hover:scale-105">
         <span className="-rotate-45 text-center text-[9px] font-bold uppercase tracking-[.2em] text-black">FONITAS<br/><span className="font-normal tracking-[.14em]">LIFECYCLE</span></span>
       </div>
       <div className="absolute left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2 rotate-[-18deg] rounded-full border-t border-[#ff5a1f]/40" />
@@ -59,16 +59,16 @@ export function HowItWorksPage() {
       </section>
 
       <section className="border-b border-white/[0.08] bg-[#0b0b0b]">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
+        <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-24 lg:px-10 lg:py-32">
           <div className="grid gap-12 lg:grid-cols-[.55fr_1.45fr] lg:items-end">
-            <div><p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">The operating path</p><h2 className="font-display mt-6 text-5xl font-semibold leading-[.9] sm:text-7xl">Select a stage.<br/><span className="text-white/25">See what happens.</span></h2></div>
+            <div><p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">The operating path</p><h2 className="font-display mt-6 text-4xl font-semibold leading-[.9] sm:text-6xl lg:text-7xl">Select a stage.<br/><span className="text-white/25">See what happens.</span></h2></div>
             <div className="border-t border-white/10 pt-6"><div className="flex flex-wrap gap-2">{stages.map((item,index)=><button key={item.number} type="button" onClick={()=>setActive(index)} className={`rounded-full border px-4 py-2 text-[10px] uppercase tracking-[.16em] transition ${active===index ? "border-[#ff5a1f]/40 bg-[#ff5a1f]/10 text-[#ff6a2a]" : "border-white/10 text-white/30 hover:text-white/70"}`}>{item.number} {item.name}</button>)}</div></div>
           </div>
           <div className="mt-16 grid overflow-hidden rounded-[28px] border border-white/10 bg-[#080808] lg:grid-cols-[.9fr_1.1fr]">
             <div className="relative min-h-[360px] border-b border-white/10 p-8 sm:p-12 lg:border-b-0 lg:border-r">
               <div className="absolute inset-0 grid-bg opacity-15" />
               <div className="relative flex h-full flex-col justify-between">
-                <div><span className="font-display text-8xl font-semibold text-[#ff5a1f]/70">{stage.number}</span><p className="mt-3 text-[10px] uppercase tracking-[.25em] text-white/25">{stage.short} / {stage.name}</p></div>
+                <div><span className="font-display text-6xl font-semibold sm:text-8xl text-[#ff5a1f]/70">{stage.number}</span><p className="mt-3 text-[10px] uppercase tracking-[.25em] text-white/25">{stage.short} / {stage.name}</p></div>
                 <div className="flex items-end justify-between"><div><p className="text-[9px] uppercase tracking-[.18em] text-white/20">Current stage</p><p className="mt-2 text-2xl font-medium">{stage.name}</p></div><span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#ff5a1f]/30 text-[#ff6a2a]"><ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} /></span></div>
               </div>
             </div>
@@ -83,13 +83,13 @@ export function HowItWorksPage() {
       </section>
 
       <section className="border-b border-white/[0.08]">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32">
-          <div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr]"><div><p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">Publishing control</p><h2 className="font-display mt-6 max-w-xl text-5xl font-semibold leading-[.9] sm:text-7xl">Human where it matters.</h2></div><div className="relative overflow-hidden rounded-[2rem] border border-white/10 p-8 sm:p-12"><div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#ff5a1f]/10 blur-[80px]"/><p className="relative max-w-2xl text-lg leading-8 text-white/50">Store preparation, release assets, security checks, QA and submission are recorded steps. In the MVP, the final publishing operation remains human-in-the-loop so responsibility stays clear.</p><div className="relative mt-10 grid gap-3 sm:grid-cols-2">{["Build & assets","Security & compliance","QA approval","Store submission"].map((item,i)=><div key={item} className="flex items-center justify-between border border-white/10 bg-white/[.02] px-5 py-4 text-sm text-white/55"><span>{item}</span><span className="font-mono text-[9px] text-[#ff5a1f]">0{i+1}</span></div>)}</div></div></div>
+        <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-24 lg:px-10 lg:py-32">
+          <div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr]"><div><p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">Publishing control</p><h2 className="font-display mt-6 max-w-xl text-4xl font-semibold leading-[.9] sm:text-6xl lg:text-7xl">Human where it matters.</h2></div><div className="relative overflow-hidden rounded-[2rem] border border-white/10 p-8 sm:p-12"><div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#ff5a1f]/10 blur-[80px]"/><p className="relative max-w-2xl text-lg leading-8 text-white/50">Store preparation, release assets, security checks, QA and submission are recorded steps. In the MVP, the final publishing operation remains human-in-the-loop so responsibility stays clear.</p><div className="relative mt-10 grid gap-3 sm:grid-cols-2">{["Build & assets","Security & compliance","QA approval","Store submission"].map((item,i)=><div key={item} className="flex items-center justify-between border border-white/10 bg-white/[.02] px-5 py-4 text-sm text-white/55"><span>{item}</span><span className="font-mono text-[9px] text-[#ff5a1f]">0{i+1}</span></div>)}</div></div></div>
         </div>
       </section>
 
       <section className="border-b border-white/[0.08] bg-[#0b0b0b]">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-32"><div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr]"><div><p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">Financial close</p><h2 className="font-display mt-6 max-w-xl text-5xl font-semibold leading-[.9] sm:text-7xl">Revenue becomes a record.</h2></div><div className="border-l border-white/10 pl-8 sm:pl-12"><p className="max-w-2xl text-lg leading-8 text-white/45">After publication, revenue is collected and reconciled with external facts and contract rules, then carried through settlement, statement and payment.</p><div className="mt-10 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-3">{["Revenue import","Reconciliation","Settlement","Statement","Payment","Immutable history"].map((item,i)=><div key={item} className="bg-[#0b0b0b] p-5"><span className="text-[10px] text-[#ff5a1f]">0{i+1}</span><p className="mt-5 text-sm font-medium">{item}</p></div>)}</div></div></div></div>
+        <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-24 lg:px-10 lg:py-32"><div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr]"><div><p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">Financial close</p><h2 className="font-display mt-6 max-w-xl text-4xl font-semibold leading-[.9] sm:text-6xl lg:text-7xl">Revenue becomes a record.</h2></div><div className="border-l border-white/10 pl-8 sm:pl-12"><p className="max-w-2xl text-lg leading-8 text-white/45">After publication, revenue is collected and reconciled with external facts and contract rules, then carried through settlement, statement and payment.</p><div className="mt-10 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-3">{["Revenue import","Reconciliation","Settlement","Statement","Payment","Immutable history"].map((item,i)=><div key={item} className="bg-[#0b0b0b] p-5"><span className="text-[10px] text-[#ff5a1f]">0{i+1}</span><p className="mt-5 text-sm font-medium">{item}</p></div>)}</div></div></div></div>
       </section>
 
       <section className="bg-[#ff5a1f] text-black"><div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-6 py-20 sm:flex-row sm:items-end sm:justify-between lg:px-10 lg:py-24"><div><p className="text-[10px] font-semibold uppercase tracking-[.25em] text-black/55">Ready to move?</p><h2 className="font-display mt-4 max-w-3xl text-5xl font-semibold leading-[.88] sm:text-7xl">Start with the application. We&apos;ll map the path.</h2></div><Link href="/contact" className="inline-flex shrink-0 items-center justify-center rounded-full bg-black px-7 py-4 text-sm font-semibold text-white transition hover:bg-black/80">Start a collaboration ↗</Link></div></section>
