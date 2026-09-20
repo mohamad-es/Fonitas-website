@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -126,7 +127,7 @@ export function PlatformPage() {
         </div>
       </section>
 
-      <section className="bg-[#ff5a1f] text-black"><div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-6 py-20 sm:flex-row sm:items-end sm:justify-between lg:px-10 lg:py-24"><div><p className="text-[10px] font-semibold uppercase tracking-[.25em] text-black/55">Explore the operating model</p><h2 className="font-display mt-4 max-w-3xl text-5xl font-semibold leading-[.88] sm:text-7xl">See how the application moves through Fonitas.</h2></div><Link href="/how-it-works" className="inline-flex shrink-0 items-center justify-center rounded-full bg-black px-7 py-4 text-sm font-semibold text-white transition hover:bg-black/80">Explore the lifecycle ↗</Link></div></section>
+      <section className="bg-[#ff5a1f] text-black"><div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-6 py-20 sm:flex-row sm:items-end sm:justify-between lg:px-10 lg:py-24"><div><p className="text-[10px] font-semibold uppercase tracking-[.25em] text-black/55">Explore the operating model</p><h2 className="font-display mt-4 max-w-3xl text-5xl font-semibold leading-[.88] sm:text-7xl">See how the application moves through Fonitas.</h2></div><Link href="/how-it-works" className="inline-flex shrink-0 items-center justify-center rounded-full bg-black px-7 py-4 text-sm font-semibold text-white transition hover:bg-black/80">Explore the lifecycle<ArrowUpRight aria-hidden="true" className="ml-2 h-4 w-4" /></Link></div></section>
     </main>
   );
 }
