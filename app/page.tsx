@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, BriefcaseBusiness, TrendingUp } from "lucide-react";
 
-const Arrow = () => <span aria-hidden="true">↗</span>;
+const Arrow = () => <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />;
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
                 <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#ff5a1f]/10 blur-[70px] transition group-hover:bg-[#ff5a1f]/20" />
                 <div className="relative">
                   <div className="flex items-center justify-between">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#ff5a1f]/25 bg-[#ff5a1f]/10 text-lg text-[#ff6a2a]">↗</span>
+                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#ff5a1f]/25 bg-[#ff5a1f]/10 text-[#ff6a2a]"><BriefcaseBusiness className="h-5 w-5" strokeWidth={1.7} /></span>
                     <span className="text-[9px] uppercase tracking-[0.24em] text-white/20">01 / Product owners</span>
                   </div>
                   <h2 className="font-display mt-10 text-3xl font-semibold sm:text-4xl">I have an application.</h2>
@@ -45,7 +46,7 @@ export default function Home() {
               <Link href="/investors" className="group relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.025] p-7 text-left transition duration-500 hover:-translate-y-1 hover:border-[#ff5a1f]/35 hover:bg-white/[0.045] sm:p-9">
                 <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/[0.06] blur-[70px] transition group-hover:bg-[#ff5a1f]/10" />
                 <div className="relative">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-lg text-white/80">◈</div>
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-white/80"><TrendingUp className="h-5 w-5" strokeWidth={1.7} /></div>
                   <div className="mt-10 flex items-start justify-between gap-4">
                     <h2 className="font-display text-3xl font-semibold sm:text-4xl">I&apos;m an investor.</h2>
                     <span className="text-[9px] uppercase tracking-[0.24em] text-white/20">02 / Investors</span>
