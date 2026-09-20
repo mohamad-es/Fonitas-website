@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 const principles = [
@@ -188,7 +189,7 @@ export function AboutPage() {
             href="/platform"
             className="inline-flex shrink-0 items-center rounded-full bg-black px-7 py-4 text-sm font-semibold text-white"
           >
-            Explore platform ↗
+            Explore platform <ArrowUpRight aria-hidden="true" className="ml-2 h-4 w-4" />
           </Link>
         </div>
       </section>
