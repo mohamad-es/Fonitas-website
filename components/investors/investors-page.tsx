@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BriefcaseBusiness } from "lucide-react";
@@ -57,7 +59,6 @@ function OpportunityCard({ opportunity }: { opportunity: (typeof investmentOppor
   );
 }
 
-"use client";
 
 import { useMemo, useState } from "react";
 
