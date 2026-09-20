@@ -41,7 +41,7 @@ export function AboutPage() {
       <section className="relative min-h-[86vh] border-b border-white/[0.08] pt-20">
         <div className="absolute inset-0 grid-bg opacity-25" />
         <div className="absolute -right-40 top-10 h-[620px] w-[620px] rounded-full bg-[#ff5a1f]/10 blur-[150px]" />
-        <div className="relative mx-auto grid min-h-[calc(86vh-80px)] max-w-[1400px] items-center gap-12 px-6 pb-16 pt-20 lg:grid-cols-[1fr_.95fr] lg:px-10 lg:pb-24">
+        <div className="relative mx-auto grid min-h-[calc(86vh-80px)] max-w-[1400px] items-center gap-12 px-6 pb-14 pt-16 sm:pb-16 sm:pt-20 lg:grid-cols-[1fr_.95fr] lg:px-10 lg:pb-24">
           <div>
             <p className="reveal-up text-xs font-semibold uppercase tracking-[0.3em] text-[#ff5a1f]">About Fonitas</p>
             <h1 className="font-display reveal-up reveal-delay-1 mt-7 max-w-5xl text-[clamp(4rem,8vw,8.5rem)] font-semibold leading-[.8] tracking-tight">
@@ -57,12 +57,12 @@ export function AboutPage() {
             </div>
           </div>
 
-          <div className="relative mx-auto h-[430px] w-full max-w-[560px] lg:h-[520px]">
+          <div className="relative mx-auto h-[340px] w-full max-w-[560px] sm:h-[430px] lg:h-[520px]">
             <div className="absolute inset-0 opacity-60 [background-image:linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] [background-size:42px_42px]" />{" "}
-            <div className="absolute left-1/2 top-1/2 h-[390px] w-[390px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.08]" />
-            <div className="absolute left-1/2 top-1/2 h-[285px] w-[285px] -translate-x-1/2 -translate-y-1/2 animate-[spin_28s_linear_infinite] rounded-full border border-[#ff5a1f]/25" />
-            <div className="absolute left-1/2 top-1/2 h-[175px] w-[175px] animate-[pulse_5s_ease-in-out_infinite] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-2xl" />
-            <div className="absolute left-1/2 top-1/2 flex h-[118px] w-[118px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#ff5a1f]/50 bg-[#111]/90 shadow-[0_0_90px_rgba(255,90,31,.22)]">
+            <div className="absolute left-1/2 top-1/2 h-[270px] w-[270px] sm:h-[390px] sm:w-[390px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.08]" />
+            <div className="absolute left-1/2 top-1/2 h-[200px] w-[200px] sm:h-[285px] sm:w-[285px] -translate-x-1/2 -translate-y-1/2 animate-[spin_28s_linear_infinite] rounded-full border border-[#ff5a1f]/25" />
+            <div className="absolute left-1/2 top-1/2 h-[130px] w-[130px] sm:h-[175px] sm:w-[175px] animate-[pulse_5s_ease-in-out_infinite] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-2xl" />
+            <div className="absolute left-1/2 top-1/2 flex h-24 w-24 sm:h-[118px] sm:w-[118px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#ff5a1f]/50 bg-[#111]/90 shadow-[0_0_90px_rgba(255,90,31,.22)]">
               <div className="text-center">
                 <div className="text-[10px] font-semibold uppercase tracking-[.28em] text-[#ff5a1f]">FONITAS</div>
                 <div className="mt-2 text-[9px] uppercase tracking-[.18em] text-white/35">Operating System</div>
@@ -91,10 +91,10 @@ export function AboutPage() {
       </section>
 
       <section className="border-b border-white/[0.08]">
-        <div className="mx-auto grid max-w-[1400px] gap-16 px-6 py-24 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-36">
+        <div className="mx-auto grid max-w-[1400px] gap-16 px-6 py-20 sm:py-24 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-36">
           <div>
             <p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">Why Fonitas</p>
-            <h2 className="font-display mt-6 max-w-xl text-5xl font-semibold leading-[.88] sm:text-7xl">
+            <h2 className="font-display mt-6 max-w-xl text-4xl font-semibold leading-[.88] sm:text-7xl">
               A launch is a process, not a button.
             </h2>
           </div>
@@ -127,10 +127,10 @@ export function AboutPage() {
       </section>
 
       <section className="border-b border-white/[0.08] bg-[#0b0b0b]">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-10 lg:py-36">
+        <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-24 lg:px-10 lg:py-36">
           <div className="mb-16 max-w-3xl">
             <p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">What we believe</p>
-            <h2 className="font-display mt-6 text-5xl font-semibold leading-[.88] sm:text-7xl">
+            <h2 className="font-display mt-6 text-4xl font-semibold leading-[.88] sm:text-7xl">
               Clear systems create clear work.
             </h2>
           </div>
