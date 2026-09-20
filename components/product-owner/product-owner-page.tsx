@@ -134,9 +134,9 @@ export function ProductOwnerPage() {
             <div>
               <p className="text-[10px] uppercase tracking-[.22em] text-white/25">Fonitas</p>
               <div className="mt-5 grid gap-3 text-sm text-white/50">
-                <a href="/investors" className="transition hover:text-white">For investors</a>
+                <Link href="/investors" className="transition hover:text-white">For investors</Link>
                 <a href="/about" className="transition hover:text-white">About</a>
-                <a href="/blog" className="transition hover:text-white">Blog</a>
+                <Link href="/blog" className="transition hover:text-white">Blog</Link>
               </div>
             </div>
             <div>
