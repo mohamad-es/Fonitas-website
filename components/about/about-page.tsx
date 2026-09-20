@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const principles = [
   ["01", "Lifecycle first", "Fonitas is organized around the application lifecycle: collaboration, registration, evaluation, contract, QA, publishing, revenue and settlement."],
