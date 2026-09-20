@@ -35,8 +35,8 @@ export function FinancialClose() {
               <div className="grid lg:grid-cols-[190px_1fr]">
                 <nav className="grid grid-cols-2 gap-1 border-b border-white/10 p-3 sm:grid-cols-3 lg:block lg:border-b-0 lg:border-r lg:p-4">
                   {stages.map(([number,title],index) => (
-                    <button key={number} type="button" onClick={()=>setActive(index)} className={\`relative flex min-w-0 w-full items-center gap-2 rounded-xl px-2 py-2.5 text-left transition sm:gap-3 sm:px-3 sm:py-3 \${active===index ? "bg-[#ff5a1f]/10 text-white" : "text-white/30 hover:bg-white/[.03] hover:text-white/60"}\`}>
-                      <span className={\`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-[9px] \${active===index ? "border-[#ff5a1f]/40 text-[#ff6a2a]" : "border-white/10"}\`}>{number}</span>
+                    <button key={number} type="button" onClick={()=>setActive(index)} className={`relative flex min-w-0 w-full items-center gap-2 rounded-xl px-2 py-2.5 text-left transition sm:gap-3 sm:px-3 sm:py-3 ${active===index ? "bg-[#ff5a1f]/10 text-white" : "text-white/30 hover:bg-white/[.03] hover:text-white/60"}`}>
+                      <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-[9px] ${active===index ? "border-[#ff5a1f]/40 text-[#ff6a2a]" : "border-white/10"}`}>{number}</span>
                       <span className="truncate text-[9px] uppercase tracking-[.1em] sm:text-[10px] sm:tracking-[.13em]">{title}</span>
                     </button>
                   ))}
@@ -60,7 +60,7 @@ export function FinancialClose() {
               </div>
               <div className="border-t border-white/10 px-5 py-5 sm:px-8">
                 <div className="flex items-center justify-between gap-5">
-                  <div className="flex-1"><div className="h-1 overflow-hidden rounded-full bg-white/10"><div className="h-full rounded-full bg-[#ff5a1f] transition-all duration-500" style={{width:\`\${((active+1)/stages.length)*100}%\`}} /></div></div>
+                  <div className="flex-1"><div className="h-1 overflow-hidden rounded-full bg-white/10"><div className="h-full rounded-full bg-[#ff5a1f] transition-all duration-500" style={{width:`${((active+1)/stages.length)*100}%`}} /></div></div>
                   <span className="text-[9px] uppercase tracking-[.16em] text-white/25">{active+1} / {stages.length}</span>
                 </div>
               </div>
