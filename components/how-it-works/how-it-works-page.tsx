@@ -1,4 +1,5 @@
 "use client";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -68,7 +69,7 @@ export function HowItWorksPage() {
               <div className="absolute inset-0 grid-bg opacity-15" />
               <div className="relative flex h-full flex-col justify-between">
                 <div><span className="font-display text-8xl font-semibold text-[#ff5a1f]/70">{stage.number}</span><p className="mt-3 text-[10px] uppercase tracking-[.25em] text-white/25">{stage.short} / {stage.name}</p></div>
-                <div className="flex items-end justify-between"><div><p className="text-[9px] uppercase tracking-[.18em] text-white/20">Current stage</p><p className="mt-2 text-2xl font-medium">{stage.name}</p></div><span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#ff5a1f]/30 text-[#ff6a2a]">↗</span></div>
+                <div className="flex items-end justify-between"><div><p className="text-[9px] uppercase tracking-[.18em] text-white/20">Current stage</p><p className="mt-2 text-2xl font-medium">{stage.name}</p></div><span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#ff5a1f]/30 text-[#ff6a2a]"><ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} /></span></div>
               </div>
             </div>
             <div className="p-8 sm:p-12">
