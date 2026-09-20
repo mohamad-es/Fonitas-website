@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -19,7 +20,7 @@ export function AuthLayout({ children }: { children: ReactNode }) {
 
           <div className="relative z-10 flex w-full flex-col justify-between p-10 xl:p-14">
             <Link href="/" className="block w-[180px]" aria-label="Fonitas home">
-              <img src="/foonitas-logo.png" alt="Fonitas" className="h-auto w-full" />
+              <Image src="/foonitas-logo.png" alt="Fonitas" width={720} height={180} className="h-auto w-full" priority />
             </Link>
 
             <div className="max-w-xl">
