@@ -57,8 +57,29 @@ function OpportunityCard({ opportunity }: { opportunity: (typeof investmentOppor
   );
 }
 
+"use client";
+
+import { useMemo, useState } from "react";
+
 export function InvestorsPage() {
   const hasOpportunities = investmentOpportunities.length > 0;
+  const [category, setCategory] = useState("All");
+  const [stage, setStage] = useState("All");
+
+  const categories = ["All", ...new Set(investmentOpportunities.map((item) => item.category))];
+  const stages = ["All", ...new Set(investmentOpportunities.map((item) => item.stage))];
+
+  const filteredOpportunities = useMemo(
+    () =>
+      investmentOpportunities.filter(
+        (item) =>
+          (category === "All" || item.category === category) &&
+          (stage === "All" || item.stage === stage),
+      ),
+    [category, stage],
+  );
+
+  const featuredOpportunity = investmentOpportunities[0];
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#070707] text-white">
@@ -98,11 +119,64 @@ export function InvestorsPage() {
         </div>
 
         {hasOpportunities ? (
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {investmentOpportunities.map((opportunity) => (
-              <OpportunityCard key={opportunity.slug} opportunity={opportunity} />
-            ))}
-          </div>
+          <>
+            {featuredOpportunity && (
+              <Link
+                href={`/investors/${featuredOpportunity.slug}`}
+                className="group relative mb-8 grid overflow-hidden rounded-[34px] border border-[#ff5a1f]/20 bg-[#101010] lg:grid-cols-[1.15fr_.85fr]"
+              >
+                <div className="absolute inset-0 grid-bg opacity-15" />
+                <div className="relative p-7 sm:p-10 lg:p-12">
+                  <span className="text-[9px] font-semibold uppercase tracking-[0.25em] text-[#ff6a2a]">Featured application · Demo</span>
+                  <h3 className="font-display mt-5 text-4xl font-semibold sm:text-6xl">{featuredOpportunity.name}</h3>
+                  <p className="mt-4 max-w-xl text-base leading-7 text-white/40">{featuredOpportunity.tagline}</p>
+                  <div className="mt-8 flex flex-wrap gap-2">
+                    {featuredOpportunity.highlights.slice(0, 3).map((item) => (
+                      <span key={item} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-2 text-[9px] uppercase tracking-[0.14em] text-white/40">{item}</span>
+                    ))}
+                  </div>
+                  <span className="mt-9 inline-flex items-center rounded-full bg-[#ff5a1f] px-5 py-3 text-sm font-semibold text-black">
+                    Explore application <ArrowUpRight className="ml-3 h-4 w-4" strokeWidth={1.8} />
+                  </span>
+                </div>
+                <div className="relative min-h-[280px] overflow-hidden border-t border-white/[0.07] lg:border-l lg:border-t-0">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(255,90,31,.18),transparent_42%)]" />
+                  <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[32px] border border-[#ff5a1f]/25 bg-[#ff5a1f]/10 text-4xl font-semibold text-[#ff6a2a] shadow-[0_0_100px_rgba(255,90,31,.15)]">
+                    {featuredOpportunity.name.slice(0, 1)}
+                  </div>
+                </div>
+              </Link>
+            )}
+
+            <div className="mb-6 flex flex-col gap-4 rounded-[24px] border border-white/[0.07] bg-white/[0.02] p-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-wrap gap-2">
+                {categories.map((item) => (
+                  <button key={item} type="button" onClick={() => setCategory(item)} className={`rounded-full border px-4 py-2 text-[9px] uppercase tracking-[0.16em] transition ${
+                    category === item ? "border-[#ff5a1f]/50 bg-[#ff5a1f]/10 text-[#ff6a2a]" : "border-white/10 text-white/35 hover:text-white/70"
+                  }`}>{item}</button>
+                ))}
+              </div>
+              <select value={stage} onChange={(event) => setStage(event.target.value)} className="rounded-full border border-white/10 bg-[#111] px-4 py-2 text-[10px] uppercase tracking-[0.16em] text-white/50 outline-none">
+                {stages.map((item) => <option key={item} value={item}>{item === "All" ? "All stages" : item}</option>)}
+              </select>
+            </div>
+
+            <div className="mb-5 text-[9px] uppercase tracking-[0.2em] text-white/20">
+              Showing {filteredOpportunities.length.toString().padStart(2, "0")} of {investmentOpportunities.length.toString().padStart(2, "0")} applications
+            </div>
+
+            {filteredOpportunities.length > 0 ? (
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {filteredOpportunities.map((opportunity) => (
+                  <OpportunityCard key={opportunity.slug} opportunity={opportunity} />
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-[28px] border border-white/[0.07] bg-white/[0.02] px-6 py-16 text-center text-sm text-white/35">
+                No applications match these filters.
+              </div>
+            )}
+          </>
         ) : (
           <div className="relative overflow-hidden rounded-[34px] border border-white/10 bg-[#101010] px-7 py-20 text-center sm:px-12 sm:py-28">
             <div className="absolute inset-0 grid-bg opacity-15" />
@@ -123,6 +197,13 @@ export function InvestorsPage() {
       </section>
 
       <section className="border-y border-white/[0.08] bg-[#0b0b0b]">
+        <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-24">
+          <div className="max-w-3xl">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-[#ff5a1f]">What you get</p>
+            <h2 className="font-display mt-4 text-4xl font-semibold leading-[.95] sm:text-6xl">A clearer first look at the product and the opportunity.</h2>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-white/35">Each public listing is designed to give investors a concise starting point: what the product is, who it serves, what makes it interesting and what information is currently available.</p>
+          </div>
+        </div>
         <div className="mx-auto grid max-w-[1400px] gap-10 px-6 py-20 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-28">
           <div>
             <p className="text-[10px] uppercase tracking-[0.25em] text-[#ff5a1f]">Simple by design</p>
