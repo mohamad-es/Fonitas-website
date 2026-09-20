@@ -1,5 +1,6 @@
-const stages = [
 import { ArrowRight } from "lucide-react";
+
+const stages = [
   {
     number: "01",
     type: "Application",
