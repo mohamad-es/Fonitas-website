@@ -2,31 +2,35 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Fonitas — Application Publishing Operating System",
+  title: "Fonitas — Application Growth & Investment",
   description:
-    "Fonitas connects application intake, evaluation, contracts, QA, publishing, revenue and settlement in one application publishing operating system.",
+    "Fonitas helps application owners bring products to market and gives investors a simple way to discover selected application opportunities.",
   keywords: [
     "Fonitas",
     "application publishing",
-    "app publishing platform",
-    "application lifecycle",
-    "publishing operations",
+    "application growth",
+    "investment opportunities",
+    "app investment",
   ],
   icons: {
     icon: "/foonitas-logo.svg",
   },
   openGraph: {
-    title: "Fonitas — Application Publishing Operating System",
+    title: "Fonitas — Application Growth & Investment",
     description:
-      "From application intake to publishing and settlement, Fonitas connects the operational lifecycle around an application.",
+      "A simple place for application owners to grow and investors to discover selected opportunities.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fonitas — Application Publishing Operating System",
+    title: "Fonitas — Application Growth & Investment",
     description:
-      "From application intake to publishing and settlement, Fonitas connects the operational lifecycle around an application.",
+      "A simple place for application owners to grow and investors to discover selected opportunities.",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#070707",
 };
 
 export default function RootLayout({
