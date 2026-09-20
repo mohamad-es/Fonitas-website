@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { ArrowRight, ArrowUpRight, BriefcaseBusiness } from "lucide-react";
 import { investmentOpportunities } from "@/data/investment-opportunities";
 
-const Arrow = () => <span aria-hidden="true">↗</span>;
+const Arrow = () => <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />;
 
 function OpportunityCard({ opportunity }: { opportunity: (typeof investmentOpportunities)[number] }) {
   return (
@@ -48,7 +49,7 @@ function OpportunityCard({ opportunity }: { opportunity: (typeof investmentOppor
         </div>
 
         <div className="mt-7 border-t border-white/[0.07] pt-5 text-xs font-medium text-white/65">
-          View opportunity <span className="ml-2 text-[#ff5a1f]">→</span>
+          View opportunity <ArrowRight className="ml-2 inline-block h-3.5 w-3.5 text-[#ff5a1f]" strokeWidth={1.8} />
         </div>
       </div>
     </Link>
@@ -106,14 +107,14 @@ export function InvestorsPage() {
             <div className="absolute inset-0 grid-bg opacity-15" />
             <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-[100px]" />
             <div className="relative mx-auto max-w-2xl">
-              <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-[#ff5a1f]/20 bg-[#ff5a1f]/10 text-xl text-[#ff6a2a]">◈</span>
+              <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-[#ff5a1f]/20 bg-[#ff5a1f]/10 text-[#ff6a2a]"><BriefcaseBusiness className="h-6 w-6" strokeWidth={1.7} /></span>
               <p className="mt-7 text-[10px] uppercase tracking-[0.25em] text-[#ff6a2a]">Currently curating</p>
               <h2 className="font-display mt-4 text-4xl font-semibold sm:text-5xl">New opportunities are on the way.</h2>
               <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white/40">
                 Fonitas is preparing the first public set of investment opportunities. Once an application is approved for public presentation, it will appear here with its core story, metrics and investment information.
               </p>
               <Link href="/contact?type=investment" className="mt-9 inline-flex items-center rounded-full bg-[#ff5a1f] px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-[#ff7a3d]">
-                Talk to Fonitas <span className="ml-3">↗</span>
+                Talk to Fonitas <ArrowUpRight className="ml-3 h-4 w-4" strokeWidth={1.8} />
               </Link>
             </div>
           </div>
