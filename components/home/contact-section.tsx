@@ -2,7 +2,6 @@
 import { ArrowUpRight } from "lucide-react";
 
 import { FormEvent, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
 
 const requestTypes = ["Publish an application", "Discuss a publishing partnership", "Ask about the platform", "Other"];
 
