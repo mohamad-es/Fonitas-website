@@ -1,5 +1,6 @@
-const principles = [
 import { ArrowUpRight } from "lucide-react";
+
+const principles = [
   ["01", "One connected lifecycle", "Application, review, contract, QA, publishing and settlement are treated as one operational journey."],
   ["02", "Clear domain ownership", "Each part of the platform has an explicit responsibility and source of truth instead of competing logic."],
   ["03", "Human-in-the-loop publishing", "Fonitas supports controlled store preparation and submission rather than depending on deep automatic store publishing."],
