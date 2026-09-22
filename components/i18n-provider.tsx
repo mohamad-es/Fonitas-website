@@ -3,7 +3,13 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { localeNames, locales, translate, type Locale } from "@/lib/i18n";
 
-const rtlLocales: Locale[] = ["fa", "ar"];\n\nconst I18nContext = createContext<{ locale: Locale; setLocale: (locale: Locale) => void }>({ locale: "en", setLocale: () => {} });\n\nexport function useLocale() {\n  return useContext(I18nContext);\n}
+const rtlLocales: Locale[] = ["fa", "ar"];
+
+const I18nContext = createContext<{ locale: Locale; setLocale: (locale: Locale) => void }>({ locale: "en", setLocale: () => {} });
+
+export function useLocale() {
+  return useContext(I18nContext);
+}
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState<Locale>("en");
