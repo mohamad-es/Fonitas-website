@@ -46,3 +46,18 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     observer.observe(document.body, { childList: true, subtree: true });
     return () => observer.disconnect();
   }, [locale]);
+
+  return (
+    <>
+      {children}
+      <div className="fixed bottom-5 right-5 z-[100] flex items-center gap-1 rounded-full border border-white/10 bg-[#111]/90 p-1.5 shadow-2xl backdrop-blur-xl rtl:right-auto rtl:left-5" aria-label="Language selector">
+        {locales.map((item) => (
+          <button key={item} type="button" onClick={() => setLocale(item)} title={localeNames[item]} aria-label={localeNames[item]}
+            className={`rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.12em] transition ${locale === item ? "bg-[#ff5a1f] text-black" : "text-white/45 hover:text-white"}`}>
+            {item}
+          </button>
+        ))}
+      </div>
+    </>
+  );
+}
