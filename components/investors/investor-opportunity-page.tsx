@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -5,7 +6,7 @@ import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 import { investmentOpportunities } from "@/data/investment-opportunities";
 
 const Arrow = () => <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />;
-const SectionLabel = ({ children }: { children: React.ReactNode }) => <p className="text-[10px] uppercase tracking-[0.25em] text-[#ff5a1f]">{children}</p>;
+const SectionLabel = ({ children }: { children: ReactNode }) => <p className="text-[10px] uppercase tracking-[0.25em] text-[#ff5a1f]">{children}</p>;
 
 export function InvestorOpportunityPage({ slug }: { slug: string }) {
   const opportunity = investmentOpportunities.find((item) => item.slug === slug);
