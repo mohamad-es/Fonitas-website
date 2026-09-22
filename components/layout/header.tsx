@@ -7,9 +7,9 @@ import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const productLinks = [
-  ["How it works", "/how-it-works", "Understand the full application lifecycle."],
-  ["Platform", "/platform", "See the infrastructure behind the Fonitas workflow."],
-  ["Publishing", "/publishing", "Explore how applications move toward distribution."],
+  ["Lifecycle", "/product-owners#how-it-works", "See the application lifecycle."],
+  ["Publishing", "/product-owners#publishing", "See how releases move through Fonitas."],
+  ["Capabilities", "/product-owners#platform", "Explore the capabilities around the workflow."],
 ] as const;
 
 const primaryLinks = [
@@ -55,7 +55,7 @@ export function Header() {
             aria-label="Fonitas home"
             className="relative z-10 block w-[148px] transition-opacity hover:opacity-85 sm:w-[175px]"
           >
-            <Image src="/fonitas-logo.png" alt="Fonitas" width={350} height={92} priority className="h-auto w-full" />
+            <Image src="/fonitas-logo.svg" alt="Fonitas" width={350} height={92} priority className="h-auto w-full" />
           </Link>
 
           <nav
