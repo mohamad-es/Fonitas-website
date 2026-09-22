@@ -45,6 +45,19 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
         const translated = translate(locale, value);
         if (textNode.nodeValue !== translated) textNode.nodeValue = translated;
       }
+
+      const elements = document.querySelectorAll<HTMLElement>("[placeholder],[aria-label],[title]");
+      for (const element of elements) {
+        for (const attribute of ["placeholder", "aria-label", "title"] as const) {
+          const current = element.getAttribute(attribute);
+          if (!current) continue;
+          const key = `data-i18n-original-${attribute}`;
+          const original = element.getAttribute(key) ?? current;
+          if (!element.hasAttribute(key)) element.setAttribute(key, original);
+          element.setAttribute(attribute, translate(locale, original));
+        }
+      }
+
       applying = false;
     };
     applyTranslations();
