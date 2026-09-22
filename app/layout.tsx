@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "app investment",
   ],
   icons: {
-    icon: "/foonitas-logo.svg",
+    icon: "/fonitas-logo.svg",
   },
   openGraph: {
     title: "Fonitas — Application Growth & Investment",
