@@ -21,12 +21,12 @@ export default function Home() {
           </header>
 
           <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center justify-center pt-20 text-center">
-            <p className="reveal-up text-xs font-semibold uppercase tracking-[0.34em] text-[#ff6a2a]">Welcome to Fonitas</p>
-            <h1 className="font-display glow-text reveal-up reveal-delay-1 mt-7 max-w-5xl text-[clamp(3.8rem,8vw,8rem)] font-semibold leading-[0.86]">
-              Great applications<br /><span className="text-white/30">meet their next move.</span>
+            <p className="reveal-up text-xs font-semibold uppercase tracking-[0.34em] text-[#ff6a2a]">Application publishing, growth &amp; investment</p>
+            <h1 className="font-display glow-text reveal-up reveal-delay-1 mt-7 max-w-5xl text-[clamp(3.6rem,7.8vw,8rem)] font-semibold leading-[0.86]">
+              Bring your application<br /><span className="text-white/30">from build to growth.</span>
             </h1>
             <p className="reveal-up reveal-delay-2 mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg">
-              We help application owners bring products to market — and give investors a simple way to discover selected opportunities.
+              Fonitas gives application owners a controlled path from evaluation and publishing to growth, revenue and settlement — with every important step visible and accountable.
             </p>
 
             <div className="reveal-up reveal-delay-3 mt-12 grid w-full max-w-4xl gap-4 sm:grid-cols-2">
