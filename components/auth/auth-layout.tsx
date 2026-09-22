@@ -20,11 +20,20 @@ export function AuthLayout({ children }: { children: ReactNode }) {
 
           <div className="relative z-10 flex w-full flex-col justify-between p-10 xl:p-14">
             <Link href="/" className="block w-[180px]" aria-label="Fonitas home">
-              <Image src="/foonitas-logo.png" alt="Fonitas" width={720} height={180} className="h-auto w-full" priority />
+              <Image
+                src="/fonitas-logo.png"
+                alt="Fonitas"
+                width={720}
+                height={180}
+                className="h-auto w-full"
+                priority
+              />
             </Link>
 
             <div className="max-w-xl">
-              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#ff5a1f]">Application publishing operating system</p>
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#ff5a1f]">
+                Application publishing operating system
+              </p>
               <h2 className="font-display max-w-lg text-5xl font-semibold leading-[1.02] xl:text-7xl">
                 Move from application to market.
               </h2>

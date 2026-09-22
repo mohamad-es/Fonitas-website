@@ -15,7 +15,7 @@ export default function Home() {
         <div className="relative mx-auto flex w-full max-w-[1400px] flex-col px-6 py-12 lg:px-10">
           <header className="absolute left-6 right-6 top-6 flex items-center justify-between lg:left-10 lg:right-10">
             <Link href="/" aria-label="Fonitas home" className="w-[150px] sm:w-[180px]">
-              <Image src="/fonitas-logo.svg" alt="Fonitas" width={350} height={92} priority className="h-auto w-full" />
+              <Image src="/fonitas-logo.png" alt="Fonitas" width={350} height={92} priority className="h-auto w-full" />
             </Link>
             <span className="hidden text-[10px] uppercase tracking-[0.28em] text-white/25 sm:block">Application growth &amp; investment</span>
           </header>
