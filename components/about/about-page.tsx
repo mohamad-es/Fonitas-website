@@ -186,7 +186,7 @@ export function AboutPage() {
             </h2>
           </div>
           <Link
-            href="/platform"
+            href="/product-owners#platform"
             className="inline-flex shrink-0 items-center rounded-full bg-black px-7 py-4 text-sm font-semibold text-white"
           >
             Explore platform <ArrowUpRight aria-hidden="true" className="ml-2 h-4 w-4" />
