@@ -340,3 +340,36 @@ html[dir="rtl"] input,
 html[dir="rtl"] textarea,
 html[dir="rtl"] select { direction: rtl; text-align: right; }
 html[dir="rtl"] .rtl-mirror { transform: scaleX(-1); }
+
+
+/* RTL-safe layout primitives */
+html[dir="rtl"] body {
+  text-align: right;
+}
+html[dir="rtl"] .text-center {
+  text-align: center;
+}
+html[dir="rtl"] .rtl-start {
+  inset-inline-start: 0;
+}
+html[dir="rtl"] .rtl-end {
+  inset-inline-end: 0;
+}
+html[dir="rtl"] .rtl-border-start {
+  border-inline-start-width: 1px;
+}
+html[dir="rtl"] .rtl-border-end {
+  border-inline-end-width: 1px;
+}
+html[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+html[dir="rtl"] [data-ltr] {
+  direction: ltr;
+  text-align: left;
+}
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select {
+  text-align: right;
+}
