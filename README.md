@@ -1,6 +1,6 @@
-# Foonitas Website
+# Fonitas Website
 
-Premium marketing website for Foonitas, an **Application Publishing Operating System**.
+Premium marketing website for Fonitas, an **Application Publishing Operating System**.
 
 The website communicates the product lifecycle from collaboration and application registration through evaluation, contract, QA, publishing, revenue, reconciliation and settlement, while separating the MVP publishing/finance core from the longer-term platform roadmap.
 
@@ -15,7 +15,7 @@ The website communicates the product lifecycle from collaboration and applicatio
 ## Website structure
 
 - Hero / product positioning
-- What is Foonitas?
+- What is Fonitas?
 - Application lifecycle
 - Publishing workflow
 - Architecture principles
