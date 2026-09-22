@@ -73,6 +73,42 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <section className="border-t border-white/10 px-6 py-24 sm:px-10 lg:px-16">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#ff6a2a]">What is Fonitas?</p>
+            <h2 className="font-display mt-5 max-w-xl text-4xl font-semibold leading-tight sm:text-5xl">
+              One controlled lifecycle for your application.
+            </h2>
+          </div>
+          <div className="max-w-2xl space-y-6 text-base leading-8 text-white/50 sm:text-lg">
+            <p>
+              Fonitas connects the work that normally happens across separate publishing,
+              operational and financial processes.
+            </p>
+            <p>
+              We help application owners move from evaluation and agreement through QA,
+              publishing, growth and settlement — while keeping the important decisions,
+              records and responsibilities visible in one connected path.
+            </p>
+            <div className="grid gap-3 pt-4 sm:grid-cols-2">
+              {[
+                ["Publish", "Move an approved application through a controlled release path."],
+                ["Operate", "Keep ownership, responsibilities and important records clear."],
+                ["Grow", "Create a path from publishing to commercial growth."],
+                ["Settle", "Connect revenue, reconciliation and financial close."]
+              ].map(([title, body]) => (
+                <div key={title} className="border border-white/10 bg-white/[0.02] p-5">
+                  <p className="text-sm font-semibold text-white">{title}</p>
+                  <p className="mt-2 text-sm leading-6 text-white/40">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
