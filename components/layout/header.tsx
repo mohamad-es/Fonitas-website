@@ -121,7 +121,7 @@ export function Header() {
               className={`relative flex items-center justify-between py-4 text-lg ${productActive ? "text-white" : "text-white/65"}`}
             >
               <span>Product owners</span>
-              <ArrowUpRight className="h-4 w-4 text-[#ff5a1f]" strokeWidth={1.8} />
+              <ArrowUpRight className="h-4 w-4 text-[#ff5a1f] rtl:-scale-x-100" strokeWidth={1.8} />
               {productActive && <span className="absolute inset-x-0 bottom-1 h-0.5 rounded-full bg-[#ff5a1f]" />}
             </Link>
 
@@ -133,7 +133,7 @@ export function Header() {
                 className={`relative flex items-center justify-between py-4 text-lg ${isActive(href) ? "text-white" : "text-white/65"}`}
               >
                 <span>{label}</span>
-                <ArrowUpRight className="h-4 w-4 text-white/20" strokeWidth={1.8} />
+                <ArrowUpRight className="h-4 w-4 text-white/20 rtl:-scale-x-100" strokeWidth={1.8} />
                 {isActive(href) && <span className="absolute inset-x-0 bottom-1 h-0.5 rounded-full bg-[#ff5a1f]" />}
               </Link>
             ))}
