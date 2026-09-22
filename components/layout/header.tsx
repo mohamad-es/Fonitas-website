@@ -6,12 +6,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
-const productLinks = [
-  ["Lifecycle", "/product-owners#how-it-works", "See the application lifecycle."],
-  ["Publishing", "/product-owners#publishing", "See how releases move through Fonitas."],
-  ["Capabilities", "/product-owners#platform", "Explore the capabilities around the workflow."],
-] as const;
-
 const primaryLinks = [
   ["Investors", "/investors"],
   ["About", "/about"],
@@ -44,7 +38,7 @@ export function Header() {
   }, [open]);
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
-  const productActive = pathname.startsWith("/product-owners") || productLinks.some(([, href]) => isActive(href));
+  const productActive = pathname.startsWith("/product-owners");
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -65,9 +59,10 @@ export function Header() {
             <Link
               href="/product-owners"
               aria-current={productActive ? "page" : undefined}
-              className={`rounded-full px-4 py-2 text-[13px] transition-all ${productActive ? "bg-white/[0.08] text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
+              className={`relative rounded-full px-4 py-2 text-[13px] transition-all ${productActive ? "text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
             >
               Product owners
+              {productActive && <span className="absolute inset-x-4 -bottom-1 h-0.5 rounded-full bg-[#ff5a1f]" />}
             </Link>
 
             {primaryLinks.map(([label, href]) => {
@@ -78,9 +73,10 @@ export function Header() {
                   key={href}
                   href={href}
                   aria-current={active ? "page" : undefined}
-                  className={`rounded-full px-4 py-2 text-[13px] transition-all ${active ? "bg-white/[0.08] text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
+                  className={`relative rounded-full px-4 py-2 text-[13px] transition-all ${active ? "text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
                 >
                   {label}
+                  {active && <span className="absolute inset-x-4 -bottom-1 h-0.5 rounded-full bg-[#ff5a1f]" />}
                 </Link>
               );
             })}
@@ -122,36 +118,23 @@ export function Header() {
             <Link
               href="/product-owners"
               tabIndex={open ? 0 : -1}
-              className={`flex items-center justify-between py-4 text-lg ${productActive ? "text-white" : "text-white/65"}`}
+              className={`relative flex items-center justify-between py-4 text-lg ${productActive ? "text-white" : "text-white/65"}`}
             >
               <span>Product owners</span>
               <ArrowUpRight className="h-4 w-4 text-[#ff5a1f]" strokeWidth={1.8} />
+              {productActive && <span className="absolute inset-x-0 bottom-1 h-0.5 rounded-full bg-[#ff5a1f]" />}
             </Link>
-
-            <div className="py-2">
-              <p className="px-1 py-2 text-[9px] uppercase tracking-[0.22em] text-white/20">Product owner pages</p>
-              {productLinks.map(([label, href]) => (
-                <Link
-                  key={href}
-                  href={href}
-                  tabIndex={open ? 0 : -1}
-                  className={`flex items-center justify-between rounded-xl px-3 py-3 text-sm ${isActive(href) ? "bg-white/[0.05] text-white" : "text-white/45 hover:text-white"}`}
-                >
-                  {label}
-                  <ArrowUpRight className="h-3.5 w-3.5 text-white/20" strokeWidth={1.8} />
-                </Link>
-              ))}
-            </div>
 
             {primaryLinks.map(([label, href]) => (
               <Link
                 key={href}
                 href={href}
                 tabIndex={open ? 0 : -1}
-                className={`flex items-center justify-between py-4 text-lg ${isActive(href) ? "text-white" : "text-white/65"}`}
+                className={`relative flex items-center justify-between py-4 text-lg ${isActive(href) ? "text-white" : "text-white/65"}`}
               >
                 <span>{label}</span>
                 <ArrowUpRight className="h-4 w-4 text-white/20" strokeWidth={1.8} />
+                {isActive(href) && <span className="absolute inset-x-0 bottom-1 h-0.5 rounded-full bg-[#ff5a1f]" />}
               </Link>
             ))}
           </div>
