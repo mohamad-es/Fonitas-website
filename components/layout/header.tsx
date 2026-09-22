@@ -55,7 +55,7 @@ export function Header() {
             aria-label="Fonitas home"
             className="relative z-10 block w-[148px] transition-opacity hover:opacity-85 sm:w-[175px]"
           >
-            <Image src="/foonitas-logo.png" alt="Fonitas" width={350} height={92} priority className="h-auto w-full" />
+            <Image src="/fonitas-logo.svg" alt="Fonitas" width={350} height={92} priority className="h-auto w-full" />
           </Link>
 
           <nav
