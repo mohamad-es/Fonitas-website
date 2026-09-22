@@ -62,73 +62,13 @@ export function Header() {
             aria-label="Primary navigation"
             className="hidden items-center gap-1 rounded-full border border-white/[0.07] bg-white/[0.025] p-1 lg:flex"
           >
-            <div id="fonitas-product-megamenu" popover="auto" className="megamenu">
-              <span className="megamenu-active rounded-full" />
-
-              <button
-                type="button"
-                popoverTarget="fonitas-product-overview"
-                className={`rounded-full overflow-hidden px-4 text-[13px]! transition-all after:content-none ${productActive ? "bg-white/[0.08] text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
-              >
-                Product owners
-              </button>
-
-              <div
-                id="fonitas-product-overview"
-                popover="hint"
-                className="overflow-hidden rounded-[18px] border border-white/10 bg-[#0b0b0b] text-white shadow-2xl"
-              >
-                <div className="border-b border-white/[0.07] px-5 py-4">
-                  <p className="text-[9px] uppercase tracking-[0.24em] text-[#ff6a2a]">Product owners</p>
-                  <p className="mt-1 text-xs text-white/30">Explore the Fonitas product journey.</p>
-                </div>
-
-                <div className="p-2">
-                  <Link
-                    href="/product-owners"
-                    className={`group flex items-center gap-4 rounded-xl px-3 py-3 transition ${pathname === "/product-owners" ? "bg-[#ff5a1f]/[0.08]" : "hover:bg-white/[0.04]"}`}
-                  >
-                    <span
-                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border text-[#ff6a2a] ${pathname === "/product-owners" ? "border-[#ff5a1f]/30 bg-[#ff5a1f]/10" : "border-white/10 bg-white/[0.03]"}`}
-                    >
-                      <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block text-sm font-medium">Overview</span>
-                      <span className="mt-0.5 block truncate text-[10px] text-white/30">
-                        Start your journey with Fonitas
-                      </span>
-                    </span>
-                    <ArrowUpRight
-                      className="h-3.5 w-3.5 shrink-0 text-white/20 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                      strokeWidth={1.8}
-                    />
-                  </Link>
-
-                  {productLinks.map(([label, href, description]) => (
-                    <Link
-                      key={href}
-                      href={href}
-                      className={`group flex items-center gap-4 rounded-xl px-3 py-3 transition ${isActive(href) ? "bg-[#ff5a1f]/[0.08]" : "hover:bg-white/[0.04]"}`}
-                    >
-                      <span
-                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border text-[#ff6a2a] ${isActive(href) ? "border-[#ff5a1f]/30 bg-[#ff5a1f]/10" : "border-white/10 bg-white/[0.03]"}`}
-                      >
-                        <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
-                      </span>
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-sm font-medium">{label}</span>
-                        <span className="mt-0.5 block truncate text-[10px] text-white/30">{description}</span>
-                      </span>
-                      <ArrowUpRight
-                        className="h-3.5 w-3.5 shrink-0 text-white/20 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                        strokeWidth={1.8}
-                      />
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <Link
+              href="/product-owners"
+              aria-current={productActive ? "page" : undefined}
+              className={`rounded-full px-4 py-2 text-[13px] transition-all ${productActive ? "bg-white/[0.08] text-white" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
+            >
+              Product owners
+            </Link>
 
             {primaryLinks.map(([label, href]) => {
               const active = isActive(href);
