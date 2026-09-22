@@ -331,3 +331,12 @@ textarea {
     font-size: 15px;
   }
 }
+
+/* Fonitas multilingual direction support */
+html[dir="rtl"] body { direction: rtl; }
+html[dir="rtl"] .text-left { text-align: right; }
+html[dir="rtl"] .text-right { text-align: left; }
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select { direction: rtl; text-align: right; }
+html[dir="rtl"] .rtl-mirror { transform: scaleX(-1); }
