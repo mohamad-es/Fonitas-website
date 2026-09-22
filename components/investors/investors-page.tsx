@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ArrowRight, ArrowUpRight, BriefcaseBusiness, Check, Smartphone, TrendingUp, Coins } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Smartphone, TrendingUp, Coins, CircleDollarSign, LineChart } from "lucide-react";
 import { investmentOpportunities } from "@/data/investment-opportunities";
 
 const Arrow = () => <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />;
@@ -57,33 +57,52 @@ export function InvestorsPage() {
             </div>
             <div className="relative min-h-[360px] overflow-hidden rounded-[32px] border border-[#ff5a1f]/20 bg-[#0d0d0d] p-6 shadow-[0_0_90px_rgba(255,90,31,0.07)]">
               <div className="absolute inset-0 grid-bg opacity-20" />
-              <div className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-[70px]" />
+              <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-[75px]" />
               <div className="relative flex h-full min-h-[308px] flex-col justify-between">
                 <div className="flex items-center justify-between">
-                  <span className="text-[9px] uppercase tracking-[0.24em] text-[#ff6a2a]">Fonitas investment network</span>
-                  <span className="rounded-full border border-[#ff5a1f]/20 bg-[#ff5a1f]/10 px-3 py-1 text-[8px] uppercase tracking-[0.18em] text-[#ff6a2a]">Live opportunities</span>
+                  <span className="text-[9px] uppercase tracking-[0.24em] text-[#ff6a2a]">Fonitas investment</span>
+                  <span className="rounded-full border border-[#ff5a1f]/20 bg-[#ff5a1f]/10 px-3 py-1 text-[8px] uppercase tracking-[0.18em] text-[#ff6a2a]">Investment opportunities</span>
                 </div>
-                <div className="relative flex items-center justify-center py-5">
-                  <div className="absolute left-[7%] top-1/2 h-px w-[86%] bg-gradient-to-r from-transparent via-[#ff5a1f]/30 to-transparent" />
-                  <div className="relative z-10 grid grid-cols-3 items-center gap-5 sm:gap-8">
-                    {[
-                      ["Applications", Smartphone, "Products"],
-                      ["Growth", TrendingUp, "Traction"],
-                      ["Investment", Coins, "Capital"],
-                    ].map(([label, Icon, sub], index) => (
-                      <div key={label} className="flex w-[82px] flex-col items-center text-center sm:w-[105px]">
-                        <div className={`flex h-16 w-16 items-center justify-center rounded-[22px] border ${index === 1 ? "border-[#ff5a1f]/50 bg-[#ff5a1f]/15 shadow-[0_0_35px_rgba(255,90,31,0.18)]" : "border-white/10 bg-[#141414]"}`}>
-                          <Icon className={`h-6 w-6 ${index === 1 ? "text-[#ff6a2a]" : "text-white/60"}`} strokeWidth={1.7} />
-                        </div>
-                        <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/75">{label}</p>
-                        <p className="mt-1 text-[9px] text-white/25">{sub}</p>
+                <div className="relative flex flex-1 items-center justify-center py-5">
+                  <div className="absolute left-[8%] right-[8%] top-1/2 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                  <div className="relative z-10 flex items-center gap-2 sm:gap-4">
+                    <div className="flex w-[88px] flex-col items-center text-center sm:w-[110px]">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-[22px] border border-white/10 bg-[#141414]">
+                        <Smartphone className="h-6 w-6 text-white/65" strokeWidth={1.7} />
                       </div>
-                    ))}
+                      <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/75">Application</p>
+                      <p className="mt-1 text-[9px] text-white/25">Product</p>
+                    </div>
+                    <ArrowRight className="h-4 w-4 shrink-0 text-[#ff5a1f]/55" strokeWidth={1.5} />
+                    <div className="flex w-[100px] flex-col items-center text-center sm:w-[125px]">
+                      <div className="relative flex h-24 w-24 items-center justify-center rounded-[28px] border border-[#ff5a1f]/50 bg-[#ff5a1f]/12 shadow-[0_0_45px_rgba(255,90,31,0.18)]">
+                        <CircleDollarSign className="h-9 w-9 text-[#ff6a2a]" strokeWidth={1.5} />
+                        <span className="absolute -right-2 -top-2 rounded-full border border-[#ff5a1f]/30 bg-[#171717] px-2 py-1 text-[7px] uppercase tracking-[0.12em] text-[#ff6a2a]">Invest</span>
+                      </div>
+                      <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">Investment</p>
+                      <p className="mt-1 text-[9px] text-white/25">Capital</p>
+                    </div>
+                    <ArrowRight className="h-4 w-4 shrink-0 text-[#ff5a1f]/55" strokeWidth={1.5} />
+                    <div className="flex w-[88px] flex-col items-center text-center sm:w-[110px]">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-[22px] border border-white/10 bg-[#141414]">
+                        <LineChart className="h-6 w-6 text-white/65" strokeWidth={1.7} />
+                      </div>
+                      <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/75">Growth</p>
+                      <p className="mt-1 text-[9px] text-white/25">Revenue</p>
+                    </div>
                   </div>
                 </div>
-                <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] px-4 py-3 text-center">
-                  <p className="text-[9px] uppercase tracking-[0.18em] text-white/25">What happens here</p>
-                  <p className="mt-1 text-xs text-white/55">Selected applications → evaluated opportunities → investment conversations</p>
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    ["Application", "Evaluated"],
+                    ["Investment", "Opportunity"],
+                    ["Growth", "Potential"],
+                  ].map(([label, value]) => (
+                    <div key={label} className="rounded-2xl border border-white/[0.07] bg-white/[0.025] px-3 py-2.5 text-center">
+                      <p className="text-[8px] uppercase tracking-[0.16em] text-white/25">{label}</p>
+                      <p className="mt-1 text-[9px] text-white/55">{value}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
