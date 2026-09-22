@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ArrowRight, ArrowUpRight, BriefcaseBusiness, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BriefcaseBusiness, Check, Smartphone, TrendingUp, Coins } from "lucide-react";
 import { investmentOpportunities } from "@/data/investment-opportunities";
 
 const Arrow = () => <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />;
@@ -55,10 +55,36 @@ export function InvestorsPage() {
               <h1 className="font-display glow-text mt-6 text-[clamp(3.5rem,7vw,7.5rem)] font-semibold leading-[.86]">Invest in<br /><span className="text-white/30">applications with a path to growth.</span></h1>
               <p className="mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg">Fonitas evaluates applications, prepares them for growth, and presents selected investment opportunities with product, traction and financial information in one place.</p>
             </div>
-            <div className="rounded-[28px] border border-white/[0.07] bg-white/[0.02] p-7 text-sm leading-6 text-white/35">
-              <p className="mb-4 text-[9px] uppercase tracking-[0.22em] text-[#ff6a2a]">The Fonitas approach</p>
-              <div className="grid grid-cols-2 gap-4">
-                {[["Selection","Applications are reviewed before presentation."],["Transparency","Key information is shown before you start a conversation."],["Evaluation","Product, market and financial signals are organized for review."],["Conversation","Investment discussions happen directly with Fonitas."]].map(([t,x]) => <div key={t}><p className="text-white/70">{t}</p><p className="mt-1 text-xs text-white/30">{x}</p></div>)}
+            <div className="relative min-h-[360px] overflow-hidden rounded-[32px] border border-[#ff5a1f]/20 bg-[#0d0d0d] p-6 shadow-[0_0_90px_rgba(255,90,31,0.07)]">
+              <div className="absolute inset-0 grid-bg opacity-20" />
+              <div className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5a1f]/10 blur-[70px]" />
+              <div className="relative flex h-full min-h-[308px] flex-col justify-between">
+                <div className="flex items-center justify-between">
+                  <span className="text-[9px] uppercase tracking-[0.24em] text-[#ff6a2a]">Fonitas investment network</span>
+                  <span className="rounded-full border border-[#ff5a1f]/20 bg-[#ff5a1f]/10 px-3 py-1 text-[8px] uppercase tracking-[0.18em] text-[#ff6a2a]">Live opportunities</span>
+                </div>
+                <div className="relative flex items-center justify-center py-5">
+                  <div className="absolute left-[7%] top-1/2 h-px w-[86%] bg-gradient-to-r from-transparent via-[#ff5a1f]/30 to-transparent" />
+                  <div className="relative z-10 grid grid-cols-3 items-center gap-5 sm:gap-8">
+                    {[
+                      ["Applications", Smartphone, "Products"],
+                      ["Growth", TrendingUp, "Traction"],
+                      ["Investment", Coins, "Capital"],
+                    ].map(([label, Icon, sub], index) => (
+                      <div key={label} className="flex w-[82px] flex-col items-center text-center sm:w-[105px]">
+                        <div className={`flex h-16 w-16 items-center justify-center rounded-[22px] border ${index === 1 ? "border-[#ff5a1f]/50 bg-[#ff5a1f]/15 shadow-[0_0_35px_rgba(255,90,31,0.18)]" : "border-white/10 bg-[#141414]"}`}>
+                          <Icon className={`h-6 w-6 ${index === 1 ? "text-[#ff6a2a]" : "text-white/60"}`} strokeWidth={1.7} />
+                        </div>
+                        <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/75">{label}</p>
+                        <p className="mt-1 text-[9px] text-white/25">{sub}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] px-4 py-3 text-center">
+                  <p className="text-[9px] uppercase tracking-[0.18em] text-white/25">What happens here</p>
+                  <p className="mt-1 text-xs text-white/55">Selected applications → evaluated opportunities → investment conversations</p>
+                </div>
               </div>
             </div>
           </div>
