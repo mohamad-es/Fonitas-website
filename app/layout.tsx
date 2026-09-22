@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { I18nProvider } from "@/components/i18n-provider";
 
 export const metadata: Metadata = {
   title: "Fonitas — Application Growth & Investment",
@@ -39,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body suppressHydrationWarning>{children}</body>
+    <html lang="en" dir="ltr">
+      <body suppressHydrationWarning><I18nProvider>{children}</I18nProvider></body>
     </html>
   );
 }
