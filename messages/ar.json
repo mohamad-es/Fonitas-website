@@ -319,5 +319,13 @@
   "Questions": "الأسئلة",
   "The important parts,": "الأجزاء المهمة،",
   "made clear.": "بوضوح.",
-  "A concise view of the publishing model, source-code boundary, store ownership and financial lifecycle.": "نظرة موجزة على نموذج النشر وحدود الوصول إلى الشيفرة وملكية حساب المتجر ودورة الحياة المالية."
+  "A concise view of the publishing model, source-code boundary, store ownership and financial lifecycle.": "نظرة موجزة على نموذج النشر وحدود الوصول إلى الشيفرة وملكية حساب المتجر ودورة الحياة المالية.",
+  "Build v2.4.1": "إصدار البناء 2.4.1",
+  "Registered and ready for the release path": "تم تسجيله وجاهز لمسار النشر",
+  "Validate the release": "التحقق من الإصدار",
+  "Submit to the store": "الإرسال إلى المتجر",
+  "Immutable history": "سجل غير قابل للتغيير",
+  "Revenue operations": "عمليات الإيرادات",
+  "Revenue facts enter the financial workflow after publication.": "تدخل بيانات الإيرادات إلى سير العمل المالي بعد النشر.",
+  "External revenue is matched against costs and contractual rules.": "تتم مطابقة الإيرادات الخارجية مع التكاليف والقواعد التعاقدية."
 }
