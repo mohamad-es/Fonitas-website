@@ -73,7 +73,7 @@ export default async function Home() {
                     <TrendingUp className="h-5 w-5" strokeWidth={1.7} />
                   </div>
                   <div className="mt-10 flex items-start justify-between gap-4">
-                    <h2 className="font-display text-3xl font-semibold sm:text-4xl">{t("I&apos;m an investor.")}</h2>
+                    <h2 className="font-display text-3xl font-semibold sm:text-4xl">{t("I'm an investor.")}</h2>
                     <span className="text-[9px] uppercase tracking-[0.24em] text-white/20">{t("02 / Investors")}</span>
                   </div>
                   <p className="mt-4 max-w-md text-sm leading-6 text-white/40">
