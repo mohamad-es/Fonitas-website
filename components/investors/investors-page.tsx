@@ -49,7 +49,7 @@ export function InvestorsPage() {
       <section className="relative border-b border-white/[0.08] pt-28">
         <div className="absolute inset-0 grid-bg opacity-25" /><div className="absolute -right-40 top-20 h-[520px] w-[520px] rounded-full bg-[#ff5a1f]/10 blur-[140px]" />
         <div className="relative mx-auto max-w-[1400px] px-6 pb-20 lg:px-10 lg:pb-28">
-          <div className="grid gap-12 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
+          <div className="grid gap-12 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#ff6a2a]">For investors</p>
               <h1 className="font-display glow-text mt-6 text-[clamp(3.5rem,7vw,7.5rem)] font-semibold leading-[.86]">Invest in<br /><span className="text-white/30">applications with a path to growth.</span></h1>
