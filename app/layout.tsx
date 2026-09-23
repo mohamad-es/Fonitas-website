@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { I18nProvider } from "@/components/i18n-provider";
+import { NextIntlClientProvider } from "next-intl";
 
 export const metadata: Metadata = {
   title: "Fonitas — Application Growth & Investment",
@@ -41,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" dir="ltr">
-      <body suppressHydrationWarning><I18nProvider>{children}</I18nProvider></body>
+      <body suppressHydrationWarning><NextIntlClientProvider><I18nProvider>{children}</I18nProvider></NextIntlClientProvider></body>
     </html>
   );
 }
