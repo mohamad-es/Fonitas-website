@@ -202,5 +202,9 @@
   "Your product or release": "منتجك أو إصدارك",
   "Where it needs to ship": "أماكن النشر",
   "Where users will access it": "أماكن وصول المستخدمين",
-  "How the application earns": "كيفية تحقيق التطبيق للإيرادات"
+  "How the application earns": "كيفية تحقيق التطبيق للإيرادات",
+  "Primary navigation": "التنقل الرئيسي",
+  "Mobile navigation": "التنقل على الهاتف",
+  "Close menu": "إغلاق القائمة",
+  "Open menu": "فتح القائمة"
 }
