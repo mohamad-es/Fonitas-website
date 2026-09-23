@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 import { I18nProvider } from "@/components/i18n-provider";
 import { NextIntlClientProvider } from "next-intl";
@@ -35,13 +36,16 @@ export const viewport: Viewport = {
   themeColor: "#070707",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const dir = locale === "fa" || locale === "ar" ? "rtl" : "ltr";
+
   return (
-    <html lang="en" dir="ltr">
+    <html lang={locale} dir={dir}>
       <body suppressHydrationWarning><NextIntlClientProvider><I18nProvider>{children}</I18nProvider></NextIntlClientProvider></body>
     </html>
   );
