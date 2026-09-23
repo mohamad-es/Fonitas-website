@@ -67,7 +67,7 @@ export async function ProductOwnerPage() {
           <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">{t("The lifecycle")}</p>
-              <h2 className="font-display max-w-3xl text-5xl font-semibold leading-[.9] sm:text-7xl">One path.<br /><span className="text-white/30">{t("Nine stages.")}</span></h2>
+              <h2 className="font-display max-w-3xl text-5xl font-semibold leading-[.9] sm:text-7xl">{t("One path.")}<br /><span className="text-white/30">{t("Nine stages.")}</span></h2>
             </div>
             <p className="max-w-sm text-sm leading-6 text-white/35 lg:pb-1">{t("Explore the journey from collaboration to financial close. Each stage has a clear state, responsibility and next step.")}</p>
           </div>
@@ -80,7 +80,7 @@ export async function ProductOwnerPage() {
           <div className="mb-12 flex items-end justify-between gap-6 sm:mb-16">
             <div>
               <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">{t("How publishing works")}</p>
-              <h2 className="font-display max-w-4xl text-5xl font-semibold leading-[.9] sm:text-7xl">Controlled releases.<br /><span className="text-white/30">{t("Clear responsibility.")}</span></h2>
+              <h2 className="font-display max-w-4xl text-5xl font-semibold leading-[.9] sm:text-7xl">{t("Controlled releases.")}<br /><span className="text-white/30">{t("Clear responsibility.")}</span></h2>
             </div>
             <a href="/contact" className="hidden text-sm text-white/50 transition hover:text-white sm:block">{t("Start a collaboration")} <Arrow /></a>
           </div>
@@ -95,7 +95,7 @@ export async function ProductOwnerPage() {
           <div className="mb-12 flex items-end justify-between gap-6 sm:mb-14">
             <div>
               <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">{t("Beyond publishing")}</p>
-              <h2 className="font-display max-w-4xl text-5xl font-semibold leading-[.9] sm:text-7xl">One core.<br /><span className="text-white/30">{t("Many capabilities.")}</span></h2>
+              <h2 className="font-display max-w-4xl text-5xl font-semibold leading-[.9] sm:text-7xl">{t("One core.")}<br /><span className="text-white/30">{t("Many capabilities.")}</span></h2>
             </div>
           </div>
           <InsightsShowcase />
@@ -152,7 +152,7 @@ export async function ProductOwnerPage() {
           </div>
           <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-7 text-[10px] uppercase tracking-[.15em] text-white/20 sm:flex-row sm:items-center sm:justify-between">
             <span>{t("© 2026 Fonitas. All rights reserved.")}</span>
-            <span>{t("Application publishing &amp; financial operations.")}</span>
+            <span>{t("Application publishing & financial operations.")}</span>
           </div>
         </div>
       </footer>
