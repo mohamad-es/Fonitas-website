@@ -96,8 +96,7 @@ export function PricingSection() {
           </div>
         </div>
         <div className="mt-10 border-t border-white/10 pt-6 text-[10px] uppercase tracking-[.16em] text-white/20">
-          {t("Scope and commercial terms depend on the application, target stores, markets, publishing responsibilities and
-          agreed commercial model.")}
+          {t("Scope and commercial terms depend on the application, target stores, markets, publishing responsibilities and agreed commercial model.")}
         </div>
       </div>
     </section>
