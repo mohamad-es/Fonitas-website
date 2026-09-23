@@ -2,18 +2,27 @@
 @plugin "daisyui";
 
 @font-face {
-  font-family: "iransans-regular";
-  src: url("/font/IRANSansXFaNum-Regular.ttf");
+  font-family: "iransans";
+  src: url("/font/IRANSansXFaNum-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "iransans-medium";
-  src: url("/font/IRANSansXFaNum-Medium.ttf");
+  font-family: "iransans";
+  src: url("/font/IRANSansXFaNum-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "iransans-bold";
-  src: url("/font/IRANSansXFaNum-Bold.ttf");
+  font-family: "iransans";
+  src: url("/font/IRANSansXFaNum-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -43,6 +52,19 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+html[lang="fa"] body,
+html[lang="ar"] body,
+html[lang="fa"] button,
+html[lang="fa"] input,
+html[lang="fa"] select,
+html[lang="fa"] textarea,
+html[lang="ar"] button,
+html[lang="ar"] input,
+html[lang="ar"] select,
+html[lang="ar"] textarea {
+  font-family: "iransans", Arial, Helvetica, sans-serif;
 }
 
 a {
