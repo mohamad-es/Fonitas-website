@@ -319,5 +319,13 @@
   "Questions": "سؤالات",
   "The important parts,": "بخش‌های مهم،",
   "made clear.": "روشن و شفاف.",
-  "A concise view of the publishing model, source-code boundary, store ownership and financial lifecycle.": "مروری کوتاه بر مدل انتشار، مرز کد منبع، مالکیت حساب فروشگاه و چرخه مالی."
+  "A concise view of the publishing model, source-code boundary, store ownership and financial lifecycle.": "مروری کوتاه بر مدل انتشار، مرز کد منبع، مالکیت حساب فروشگاه و چرخه مالی.",
+  "Build v2.4.1": "نسخه ساخت ۲.۴.۱",
+  "Registered and ready for the release path": "ثبت شده و آماده ورود به مسیر انتشار",
+  "Validate the release": "اعتبارسنجی نسخه",
+  "Submit to the store": "ارسال به فروشگاه",
+  "Immutable history": "سابقه تغییرناپذیر",
+  "Revenue operations": "عملیات درآمد",
+  "Revenue facts enter the financial workflow after publication.": "داده‌های درآمد پس از انتشار وارد گردش‌کار مالی می‌شوند.",
+  "External revenue is matched against costs and contractual rules.": "درآمد خارجی با هزینه‌ها و قواعد قراردادی تطبیق داده می‌شود."
 }
