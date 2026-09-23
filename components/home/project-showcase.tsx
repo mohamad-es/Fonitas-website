@@ -90,7 +90,7 @@ function PublishingVisual() {
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="absolute left-1/2 top-1/2 h-52 w-52 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff5a1f]/20 shadow-[0_0_90px_rgba(255,90,31,.12)]" />
       <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-[24px] border border-[#ff5a1f]/35 bg-[#ff5a1f]/[.08] transition duration-700 group-hover:rotate-[65deg]" />
-      <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl bg-[#ff5a1f] text-[7px] font-semibold tracking-[.12em] text-black shadow-[0_0_60px_rgba(255,90,31,.4)]">SUBMIT</div>
+      <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl bg-[#ff5a1f] text-[7px] font-semibold tracking-[.12em] text-black shadow-[0_0_60px_rgba(255,90,31,.4)]">{t("Submit")}</div>
       <div className="absolute left-7 top-7 text-[8px] uppercase tracking-[.2em] text-white/25">{t("Human-in-the-loop")}</div>
       <div className="absolute bottom-7 left-7 right-7 flex flex-wrap justify-center gap-2">
         {["Apple App Store", "Google Play", "Microsoft Store"].map((store, index) => (
