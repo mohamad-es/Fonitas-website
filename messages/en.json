@@ -320,5 +320,13 @@
   "Questions": "Questions",
   "The important parts,": "The important parts,",
   "made clear.": "made clear.",
-  "A concise view of the publishing model, source-code boundary, store ownership and financial lifecycle.": "A concise view of the publishing model, source-code boundary, store ownership and financial lifecycle."
+  "A concise view of the publishing model, source-code boundary, store ownership and financial lifecycle.": "A concise view of the publishing model, source-code boundary, store ownership and financial lifecycle.",
+  "Build v2.4.1": "Build v2.4.1",
+  "Registered and ready for the release path": "Registered and ready for the release path",
+  "Validate the release": "Validate the release",
+  "Submit to the store": "Submit to the store",
+  "Immutable history": "Immutable history",
+  "Revenue operations": "Revenue operations",
+  "Revenue facts enter the financial workflow after publication.": "Revenue facts enter the financial workflow after publication.",
+  "External revenue is matched against costs and contractual rules.": "External revenue is matched against costs and contractual rules."
 }
