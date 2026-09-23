@@ -1,17 +1,14 @@
-import { useTranslations } from "next-intl";
-
 "use client";
 
 import { useEffect, useRef } from "react";
 
 const stores = [
-  { name: t("Apple App Store"), short: "APPLE" },
-  { name: t("Google Play"), short: "GOOGLE" },
-  { name: t("Microsoft Store"), short: "MICROSOFT" },
+  { name: "Apple App Store", short: "APPLE" },
+  { name: "Google Play", short: "GOOGLE" },
+  { name: "Microsoft Store", short: "MICROSOFT" },
 ];
 
 export function HeroOrbit() {
-  const t = useTranslations();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
