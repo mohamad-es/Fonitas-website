@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { useEffect, useRef } from "react";
 
 const stores = [
@@ -9,6 +11,7 @@ const stores = [
 ];
 
 export function HeroOrbit() {
+  const t = useTranslations();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -65,9 +68,9 @@ export function HeroOrbit() {
               APP
             </div>
             <div className="min-w-0">
-              <p className="text-[10px] font-semibold uppercase tracking-[.22em] text-[#ff6a2a]">Application</p>
-              <p className="mt-1 text-base font-semibold text-white sm:text-lg">Build v2.4.1</p>
-              <p className="mt-1 text-xs text-white/35">Registered and ready for the release path</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[.22em] text-[#ff6a2a]">{t("Application")}</p>
+              <p className="mt-1 text-base font-semibold text-white sm:text-lg">{t("Build v2.4.1")}</p>
+              <p className="mt-1 text-xs text-white/35">{t("Registered and ready for the release path")}</p>
             </div>
             <span className="ml-auto shrink-0 rounded-full border border-white/10 px-2.5 py-1.5 text-[8px] font-medium uppercase tracking-[.14em] text-white/45 sm:px-3 sm:text-[9px]">
               Ready
@@ -109,12 +112,12 @@ export function HeroOrbit() {
               <p className="text-[10px] font-semibold uppercase tracking-[.22em] text-[#ff6a2a]">
                 Publishing destinations
               </p>
-              <span className="text-[9px] uppercase tracking-[.16em] text-white/25">Human-in-the-loop</span>
+              <span className="text-[9px] uppercase tracking-[.16em] text-white/25">{t("Human-in-the-loop")}</span>
             </div>
             <div className="grid gap-2 sm:grid-cols-3">
               {stores.map((store, index) => (
                 <div
-                  key={store.name}
+                  key={t(store.name)}
                   className={`flex items-center gap-2 rounded-xl border px-3 py-3 ${index === 0 ? "border-[#ff5a1f]/30 bg-[#ff5a1f]/[.06]" : "border-white/10 bg-white/[.02]"}`}
                 >
                   <span
