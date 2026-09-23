@@ -99,7 +99,7 @@ function StepVisual({ index, steps, t }: { index: number; steps: ReturnType<type
       <div className="absolute left-[20%] right-[20%] top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-[#ff5a1f]/35 to-transparent" />
       <div className="absolute bottom-5 left-6 right-6">
         <div className="flex items-center justify-between text-[9px] uppercase tracking-[.18em] text-white/25">
-          <span>Lifecycle progress</span>
+          <span>{t("Lifecycle progress")}</span>
           <span>{String(index + 1).padStart(2, "0")} / {steps.length}</span>
         </div>
         <div className="mt-3 h-1 overflow-hidden rounded-full bg-white/10">
