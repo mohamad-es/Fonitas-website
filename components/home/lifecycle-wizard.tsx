@@ -2,74 +2,77 @@
 
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
-const steps = [
+function getSteps(t: ReturnType<typeof useTranslations>) {
+  return [
   {
     number: "01",
-    eyebrow: "Start",
-    title: "Collaboration request",
-    description: "Start with the application, organization and publishing opportunity.",
-    signal: "Request opened",
+    eyebrow: t("Start"),
+    title: t("Collaboration request"),
+    description: t("Start with the application, organization and publishing opportunity."),
+    signal: t("Request opened"),
   },
   {
     number: "02",
-    eyebrow: "Register",
-    title: "Application registration",
-    description: "Create the operational record that will move through the publishing lifecycle.",
-    signal: "Application recorded",
+    eyebrow: t("Register"),
+    title: t("Application registration"),
+    description: t("Create the operational record that will move through the publishing lifecycle."),
+    signal: t("Application recorded"),
   },
   {
     number: "03",
-    eyebrow: "Evaluate",
-    title: "Evaluation",
-    description: "Assess readiness, risk and the next operational step before publishing rights are activated.",
-    signal: "Readiness assessed",
+    eyebrow: t("Evaluate"),
+    title: t("Evaluation"),
+    description: t("Assess readiness, risk and the next operational step before publishing rights are activated."),
+    signal: t("Readiness assessed"),
   },
   {
     number: "04",
-    eyebrow: "Define",
-    title: "Contract & license",
-    description: "Set publishing scope, stores, geography, duration and commercial terms.",
-    signal: "Publishing terms defined",
+    eyebrow: t("Define"),
+    title: t("Contract & license"),
+    description: t("Set publishing scope, stores, geography, duration and commercial terms."),
+    signal: t("Publishing terms defined"),
   },
   {
     number: "05",
-    eyebrow: "Validate",
-    title: "QA & compliance",
-    description: "Verify build integrity, security, manual QA and compliance before submission.",
-    signal: "Release validated",
+    eyebrow: t("Validate"),
+    title: t("QA & compliance"),
+    description: t("Verify build integrity, security, manual QA and compliance before submission."),
+    signal: t("Release validated"),
   },
   {
     number: "06",
-    eyebrow: "Publish",
-    title: "Publishing",
-    description: "Prepare assets and builds, then record the human-led store submission.",
-    signal: "Submission recorded",
+    eyebrow: t("Publish"),
+    title: t("Publishing"),
+    description: t("Prepare assets and builds, then record the human-led store submission."),
+    signal: t("Submission recorded"),
   },
   {
     number: "07",
-    eyebrow: "Collect",
-    title: "Revenue collection",
-    description: "Bring post-publication revenue facts into the financial workflow.",
-    signal: "Revenue imported",
+    eyebrow: t("Collect"),
+    title: t("Revenue collection"),
+    description: t("Bring post-publication revenue facts into the financial workflow."),
+    signal: t("Revenue imported"),
   },
   {
     number: "08",
-    eyebrow: "Reconcile",
-    title: "Reconciliation",
-    description: "Match external revenue facts against costs and the active contractual rules.",
-    signal: "Financial facts reconciled",
+    eyebrow: t("Reconcile"),
+    title: t("Reconciliation"),
+    description: t("Match external revenue facts against costs and the active contractual rules."),
+    signal: t("Financial facts reconciled"),
   },
   {
     number: "09",
-    eyebrow: "Close",
-    title: "Settlement",
-    description: "Create settlement, statement and payment records to close the financial loop.",
-    signal: "Financial close",
+    eyebrow: t("Close"),
+    title: t("Settlement"),
+    description: t("Create settlement, statement and payment records to close the financial loop."),
+    signal: t("Financial close"),
   },
-];
+  ];
+}
 
-function StepVisual({ index }: { index: number }) {
+function StepVisual({ index, steps, t }: { index: number; steps: ReturnType<typeof getSteps>; t: ReturnType<typeof useTranslations> }) {
   const progress = ((index + 1) / steps.length) * 100;
 
   return (
@@ -85,7 +88,7 @@ function StepVisual({ index }: { index: number }) {
         ["Application", "left-[8%] top-[18%]"],
         ["Contract", "right-[8%] top-[20%]"],
         ["QA", "left-[12%] bottom-[18%]"],
-        ["Store", "right-[10%] bottom-[20%]"],
+        [t("Store"), "right-[10%] bottom-[20%]"],
       ].map(([label, position]) => (
         <div key={label} className={`absolute ${position} flex items-center gap-2 rounded-full border border-white/10 bg-[#101010]/90 px-3 py-2 backdrop-blur-xl`}>
           <span className="h-1.5 w-1.5 rounded-full bg-[#ff5a1f]" />
@@ -108,11 +111,13 @@ function StepVisual({ index }: { index: number }) {
 }
 
 export function LifecycleWizard() {
+  const t = useTranslations();
+  const steps = getSteps(t);
   const [active, setActive] = useState(0);
   const step = steps[active];
 
   return (
-    <div className="mt-14 lg:mt-16" aria-label="Fonitas application lifecycle wizard">
+    <div className="mt-14 lg:mt-16" aria-label=t("Fonitas application lifecycle wizard")>
       <div className="overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="flex min-w-max gap-2">
           {steps.map((item, index) => (
@@ -156,7 +161,7 @@ export function LifecycleWizard() {
         </div>
 
         <div className="order-1 p-3 sm:p-4 lg:order-2 lg:p-5">
-          <StepVisual index={active} />
+          <StepVisual index={active} steps={steps} t={t} />
         </div>
       </div>
 
