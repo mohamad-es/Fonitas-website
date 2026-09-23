@@ -134,7 +134,7 @@
   "The lifecycle": "دورة الحياة",
   "One path.": "مسار واحد.",
   "Nine stages.": "تسع مراحل.",
-  "Controlled releases.": "إصدارات محكومة.",
+  "Controlled releases.": "إصدارات منضبطة.",
   "Clear responsibility.": "مسؤولية واضحة.",
   "How publishing works": "كيف يعمل النشر",
   "Start a collaboration": "بدء التعاون",
@@ -215,5 +215,7 @@
   "Explore the journey from collaboration to financial close. Each stage has a clear state, responsibility and next step.": "استكشف الرحلة من التعاون إلى الإغلاق المالي. لكل مرحلة حالة ومسؤولية وخطوة تالية واضحة.",
   "Contact Fonitas ↗": "تواصل مع Fonitas ↗",
   "© 2026 Fonitas. All rights reserved.": "© 2026 Fonitas. جميع الحقوق محفوظة.",
-  "Application publishing & financial operations.": "نشر التطبيقات والعمليات المالية."
+  "Application publishing & financial operations.": "نشر التطبيقات والعمليات المالية.",
+  "From": "من",
+  "application": "التطبيق"
 }
