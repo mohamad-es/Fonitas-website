@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/layout/header";
 import { HeroOrbit } from "@/components/home/hero-orbit";
 import { ProductSignal } from "@/components/home/product-signal";
@@ -16,8 +16,8 @@ import { FAQSection } from "@/components/home/faq-section";
 
 const Arrow = () => <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
 
-export function ProductOwnerPage() {
-  const t = useTranslations();
+export async function ProductOwnerPage() {
+  const t = await getTranslations();
   return (
     <main id="main-content" tabIndex={-1} className="overflow-hidden">
       <Header />
@@ -29,18 +29,18 @@ export function ProductOwnerPage() {
           <div className="relative z-10">
             <p className="reveal-up mb-8 text-xs font-semibold uppercase tracking-[0.28em] text-[#ff6a2a]">{t("For product owners")}</p>
             <h1 className="font-display glow-text reveal-up reveal-delay-1 max-w-5xl text-[clamp(4rem,9vw,9.5rem)] font-semibold leading-[0.84]">
-              {t("From<br />application<br /><span className="text-white/30">to market.</span>")}
+              From<br />application<br /><span className="text-white/30">{t("to market.")}</span>
             </h1>
             <div className="reveal-up reveal-delay-2 mt-9 flex max-w-2xl flex-col gap-6 sm:mt-10 sm:flex-row sm:items-end">
               <p className="max-w-xl text-[15px] leading-7 text-white/50 sm:text-base">
-                Fonitas helps application owners move from intake and evaluation to QA, publishing, growth and financial operations through one accountable lifecycle.
+                {t("Fonitas helps application owners move from intake and evaluation to QA, publishing, growth and financial operations through one accountable lifecycle.")}
               </p>
               <a href="#how-it-works" className="group flex shrink-0 items-center gap-3 text-sm font-medium transition hover:text-white/80">
-                See how it works <span className="text-[#ff5a1f] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"><Arrow /></span>
+                {t("See how it works")} <span className="text-[#ff5a1f] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"><Arrow /></span>
               </a>
             </div>
             <div className="reveal-up reveal-delay-3 mt-16 flex items-center gap-4 text-[10px] uppercase tracking-[0.24em] text-white/25">
-              <span className="h-px w-10 bg-white/15" /> Built around the application lifecycle
+              <span className="h-px w-10 bg-white/15" /> {t("Built around the application lifecycle")}
             </div>
           </div>
           <div className="reveal-up reveal-delay-2"><HeroOrbit /></div>
@@ -67,7 +67,7 @@ export function ProductOwnerPage() {
           <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">{t("The lifecycle")}</p>
-              <h2 className="font-display max-w-3xl text-5xl font-semibold leading-[.9] sm:text-7xl">{t("One path.<br /><span className="text-white/30">Nine stages.</span>")}</h2>
+              <h2 className="font-display max-w-3xl text-5xl font-semibold leading-[.9] sm:text-7xl">One path.<br /><span className="text-white/30">{t("Nine stages.")}</span></h2>
             </div>
             <p className="max-w-sm text-sm leading-6 text-white/35 lg:pb-1">{t("Explore the journey from collaboration to financial close. Each stage has a clear state, responsibility and next step.")}</p>
           </div>
@@ -80,9 +80,9 @@ export function ProductOwnerPage() {
           <div className="mb-12 flex items-end justify-between gap-6 sm:mb-16">
             <div>
               <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">{t("How publishing works")}</p>
-              <h2 className="font-display max-w-4xl text-5xl font-semibold leading-[.9] sm:text-7xl">{t("Controlled releases.<br /><span className="text-white/30">Clear responsibility.</span>")}</h2>
+              <h2 className="font-display max-w-4xl text-5xl font-semibold leading-[.9] sm:text-7xl">Controlled releases.<br /><span className="text-white/30">{t("Clear responsibility.")}</span></h2>
             </div>
-            <a href="/contact" className="hidden text-sm text-white/50 transition hover:text-white sm:block">Start a collaboration <Arrow /></a>
+            <a href="/contact" className="hidden text-sm text-white/50 transition hover:text-white sm:block">{t("Start a collaboration")} <Arrow /></a>
           </div>
           <ProjectShowcase />
         </div>
@@ -95,7 +95,7 @@ export function ProductOwnerPage() {
           <div className="mb-12 flex items-end justify-between gap-6 sm:mb-14">
             <div>
               <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">{t("Beyond publishing")}</p>
-              <h2 className="font-display max-w-4xl text-5xl font-semibold leading-[.9] sm:text-7xl">{t("One core.<br /><span className="text-white/30">Many capabilities.</span>")}</h2>
+              <h2 className="font-display max-w-4xl text-5xl font-semibold leading-[.9] sm:text-7xl">One core.<br /><span className="text-white/30">{t("Many capabilities.")}</span></h2>
             </div>
           </div>
           <InsightsShowcase />
@@ -112,9 +112,9 @@ export function ProductOwnerPage() {
         <div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-6 py-16 sm:flex-row sm:items-end sm:justify-between lg:px-10 lg:py-20">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[.25em] text-black/55">{t("Ready when the application is")}</p>
-            <h2 className="font-display mt-4 max-w-3xl text-4xl font-semibold leading-[.9] sm:text-6xl">Ready to bring your application to market?</h2>
+            <h2 className="font-display mt-4 max-w-3xl text-4xl font-semibold leading-[.9] sm:text-6xl">{t("Ready to bring your application to market?")}</h2>
           </div>
-          <a href="/contact" className="inline-flex shrink-0 items-center justify-center rounded-full bg-black px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-black/80">Start a conversation <span className="ml-3">↗</span></a>
+          <a href="/contact" className="inline-flex shrink-0 items-center justify-center rounded-full bg-black px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-black/80">{t("Start a conversation")} <span className="ml-3">↗</span></a>
         </div>
       </section>
 
