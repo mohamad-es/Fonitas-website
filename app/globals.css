@@ -1,6 +1,21 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@font-face {
+  font-family: "iransans-regular";
+  src: url("/font/IRANSansXFaNum-Regular.ttf");
+}
+
+@font-face {
+  font-family: "iransans-medium";
+  src: url("/font/IRANSansXFaNum-Medium.ttf");
+}
+
+@font-face {
+  font-family: "iransans-bold";
+  src: url("/font/IRANSansXFaNum-Bold.ttf");
+}
+
 :root {
   --background: #070707;
   --foreground: #f4f2ed;
