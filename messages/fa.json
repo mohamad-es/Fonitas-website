@@ -202,5 +202,9 @@
   "Your product or release": "محصول یا نسخه شما",
   "Where it needs to ship": "مقصدهای انتشار",
   "Where users will access it": "محل دسترسی کاربران",
-  "How the application earns": "نحوه درآمدزایی اپلیکیشن"
+  "How the application earns": "نحوه درآمدزایی اپلیکیشن",
+  "Primary navigation": "ناوبری اصلی",
+  "Mobile navigation": "ناوبری موبایل",
+  "Close menu": "بستن منو",
+  "Open menu": "باز کردن منو"
 }
