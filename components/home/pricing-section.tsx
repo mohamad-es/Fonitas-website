@@ -36,8 +36,7 @@ export function PricingSection() {
               {t("Start with publishing.")} <span className="text-white/30">{t("Expand when it makes sense.")}</span>
             </h2>
             <p className="mt-8 max-w-md text-sm leading-7 text-white/35">
-              {t("Fonitas does not need one fixed package for every application. The operating model can expand with the
-              responsibility you want Fonitas to carry.")]
+              {t("Fonitas does not need one fixed package for every application. The operating model can expand with the responsibility you want Fonitas to carry.")}
             </p>
             <Link
               href="/contact"
