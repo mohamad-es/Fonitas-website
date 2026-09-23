@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const primaryLinks = [
@@ -14,6 +15,7 @@ const primaryLinks = [
 
 export function Header() {
   const pathname = usePathname();
+  const t = useTranslations();
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -46,14 +48,14 @@ export function Header() {
         <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-5 sm:px-6 lg:px-10">
           <Link
             href="/"
-            aria-label="Fonitas home"
+            aria-label={t("Fonitas home")}
             className="relative z-10 block w-[148px] transition-opacity hover:opacity-85 sm:w-[175px]"
           >
             <Image src="/fonitas-logo.png" alt="Fonitas" width={350} height={92} priority className="h-auto w-full" />
           </Link>
 
           <nav
-            aria-label="Primary navigation"
+            aria-label={t("Primary navigation")}
             className="hidden items-center gap-1 rounded-full border border-white/[0.07] bg-white/[0.025] p-1 lg:flex"
           >
             <Link
@@ -75,7 +77,7 @@ export function Header() {
                   aria-current={active ? "page" : undefined}
                   className={`relative rounded-full px-4 py-2 text-[13px] transition-all ${active ? "text-white bg-white/5" : "text-white/55 hover:bg-white/[0.04] hover:text-white"}`}
                 >
-                  {label}
+                  {t(label)}
                   {active && <span className="absolute inset-x-4 bottom-0 left-1/2 -translate-1/2 w-5 h-0.5 rounded-full bg-[#ff5a1f]" />}
                 </Link>
               );
@@ -97,7 +99,7 @@ export function Header() {
             </Link>
             <button
               type="button"
-              aria-label={open ? "Close menu" : "Open menu"}
+              aria-label={open ? t("Close menu") : t("Open menu")}
               aria-expanded={open}
               onClick={() => setOpen((value) => !value)}
               className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.025] text-white transition hover:border-white/20 hover:bg-white/[0.06] lg:hidden"
@@ -113,14 +115,14 @@ export function Header() {
         className={`overflow-hidden border-b border-white/[0.07] bg-[#070707]/95 backdrop-blur-2xl transition-all duration-300 lg:hidden ${open ? "max-h-[calc(100vh-72px)] opacity-100" : "pointer-events-none max-h-0 opacity-0"}`}
         aria-hidden={!open}
       >
-        <nav aria-label="Mobile navigation" className="mx-auto max-w-[1400px] overflow-y-auto px-5 py-4 sm:px-6">
+        <nav aria-label={t("Mobile navigation")} className="mx-auto max-w-[1400px] overflow-y-auto px-5 py-4 sm:px-6">
           <div className="divide-y divide-white/[0.07]">
             <Link
               href="/product-owners"
               tabIndex={open ? 0 : -1}
               className={`relative flex items-center justify-between py-4 text-lg ${productActive ? "text-white" : "text-white/65"}`}
             >
-              <span>Product owners</span>
+              <span>{t("Product owners")}</span>
               <ArrowUpRight className="h-4 w-4 text-[#ff5a1f] rtl:-scale-x-100" strokeWidth={1.8} />
               {productActive && <span className="absolute inset-x-0 bottom-1 h-0.5 rounded-full bg-[#ff5a1f]" />}
             </Link>
