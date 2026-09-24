@@ -28,10 +28,10 @@ export function LanguageSwitcher() {
         value={locale}
         onChange={changeLocale}
         aria-label={t("Language selector")}
-        className="select select-sm h-9 min-h-0 w-[92px] rounded-full border-white/10 bg-white/[0.025] px-3 text-[11px] font-medium tracking-[0.04em] text-white/80 outline-none transition hover:border-white/20 hover:bg-white/[0.06] focus:border-[#ff5a1f]/40 focus:outline-none"
+        className="select min-w-28 rounded-xl border-white/10 bg-white/[0.025]  font-medium text-white/80 outline-none transition hover:border-white/20 hover:bg-white/[0.06] focus:border-[#ff5a1f]/40 focus:outline-none cursor-pointer"
       >
         {locales.map((item) => (
-          <option key={item} value={item} className="bg-[#111] text-white">
+          <option key={item} value={item} className=" text-white">
             {names[item]}
           </option>
         ))}
