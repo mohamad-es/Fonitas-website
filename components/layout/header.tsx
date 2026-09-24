@@ -91,13 +91,13 @@ export function Header() {
               href="/login"
               className="btn btn-ghost hidden min-h-0 rounded-full px-4 py-2.5 text-[13px] font-medium text-white/55 hover:bg-white/[0.05] hover:text-white sm:flex"
             >
-              Sign in
+              {t("Sign in")}
             </Link>
             <Link
               href="/register"
               className="btn hidden min-h-0 rounded-full border-0 bg-[#ff5a1f] px-4 py-2.5 text-[13px] font-semibold text-black shadow-[0_0_28px_rgba(255,90,31,0.12)] hover:bg-[#ff7a3d] sm:flex"
             >
-              Create account
+              {t("Create account")}
             </Link>
             <button
               type="button"
@@ -136,7 +136,7 @@ export function Header() {
                 tabIndex={open ? 0 : -1}
                 className={`relative flex items-center justify-between py-4 text-lg ${isActive(href) ? "text-white" : "text-white/65"}`}
               >
-                <span>{label}</span>
+                <span>{t(label)}</span>
                 <ArrowUpRight className="h-4 w-4 text-white/20 rtl:-scale-x-100" strokeWidth={1.8} />
                 {isActive(href) && <span className="absolute inset-x-0 bottom-1 h-0.5 rounded-full bg-[#ff5a1f]" />}
               </Link>
