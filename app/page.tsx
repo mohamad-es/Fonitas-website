@@ -31,7 +31,7 @@ export default async function Home() {
             <h1 className="font-display glow-text reveal-up reveal-delay-1 mt-7 max-w-5xl text-[clamp(3.6rem,7.8vw,8rem)] font-semibold leading-[0.86]">
               {t("Bring your application")}
               <br />
-              <span className="text-white/30">{t("from build to growth.")}</span>
+              <span className="text-white/30">{t("from build to growth")}</span>
             </h1>
             <p className="reveal-up reveal-delay-2 mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg">
               {t("Fonitas gives application owners a controlled path from evaluation and publishing to growth, revenue and settlement — with every important step visible and accountable.")}
@@ -50,7 +50,7 @@ export default async function Home() {
                     </span>
                     <span className="text-[9px] uppercase tracking-[0.24em] text-white/20">{t("01 / Product owners")}</span>
                   </div>
-                  <h2 className="font-display mt-10 text-3xl font-semibold sm:text-4xl">{t("I have an application.")}</h2>
+                  <h2 className="font-display mt-10 text-3xl font-semibold sm:text-4xl">{t("I have an application")}</h2>
                   <p className="mt-4 max-w-md text-sm leading-6 text-white/40">
                     {t("Explore how Fonitas can help you publish, operate and grow your application.")}
                   </p>
@@ -73,7 +73,7 @@ export default async function Home() {
                     <TrendingUp className="h-5 w-5" strokeWidth={1.7} />
                   </div>
                   <div className="mt-10 flex items-start justify-between gap-4">
-                    <h2 className="font-display text-3xl font-semibold sm:text-4xl">{t("I'm an investor.")}</h2>
+                    <h2 className="font-display text-3xl font-semibold sm:text-4xl">{t("I'm an investor")}</h2>
                     <span className="text-[9px] uppercase tracking-[0.24em] text-white/20">{t("02 / Investors")}</span>
                   </div>
                   <p className="mt-4 max-w-md text-sm leading-6 text-white/40">
@@ -91,7 +91,7 @@ export default async function Home() {
 
             <div className="mt-10 flex items-center gap-4 text-[9px] uppercase tracking-[0.25em] text-white/20">
               <span className="h-px w-8 bg-white/10" />
-              {t("One ecosystem. Two paths.")}
+              {t("One ecosystem. Two paths")}
               <span className="h-px w-8 bg-white/10" />
             </div>
           </div>
