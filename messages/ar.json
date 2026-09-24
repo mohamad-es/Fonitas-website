@@ -638,5 +638,7 @@
   "Collection, reconciliation, settlement, statements and payments remain part of the operating story, with financial history treated as immutable.": "تظل عمليات التحصيل والمطابقة والتسوية والكشوف والمدفوعات جزءاً من الدورة التشغيلية، مع التعامل مع السجل المالي باعتباره غير قابل للتغيير.",
   "The operational path that makes the product work today.": "المسار التشغيلي الذي يجعل المنتج يعمل اليوم.",
   "Auth, storage, notifications, analytics, messaging and API capabilities that can grow around the core.": "قدرات المصادقة والتخزين والإشعارات والتحليلات والمراسلة وواجهات API التي يمكن أن تنمو حول النواة.",
-  "Commercial, marketing, infrastructure, legal and investment capabilities that can be added without breaking the core boundaries.": "قدرات تجارية وتسويقية وبنية تحتية وقانونية واستثمارية يمكن إضافتها دون كسر حدود النواة."
+  "Commercial, marketing, infrastructure, legal and investment capabilities that can be added without breaking the core boundaries.": "قدرات تجارية وتسويقية وبنية تحتية وقانونية واستثمارية يمكن إضافتها دون كسر حدود النواة.",
+  "An application can be technically ready long before the surrounding operation is ready. Collaboration requests, evaluation, agreements, release preparation, QA, store operations and financial reconciliation all have to connect.": "قد يكون التطبيق جاهزاً تقنياً قبل وقت طويل من جاهزية العمليات المحيطة به. يجب أن تتصل طلبات التعاون والتقييم والاتفاقيات وإعداد الإصدار وضمان الجودة وعمليات المتجر والمطابقة المالية معاً.",
+  "Fonitas is built around that reality. The product starts with the publishing lifecycle and creates explicit boundaries that can support a wider platform over time.": "بُنيت Fonitas حول هذه الحقيقة. يبدأ المنتج بدورة حياة النشر وينشئ حدوداً واضحة يمكنها دعم منصة أوسع مع مرور الوقت."
 }
