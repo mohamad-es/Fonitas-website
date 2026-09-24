@@ -30,7 +30,7 @@
     " Two paths": "منظومة واحدة، مساران."
   },
   "How investing works": "كيف يعمل الاستثمار",
-  "From discovery to investment": "من اكتشاف الفرصة إلى الاستثمار.",
+  "From discovery to investment": "من الاكتشاف إلى الاستثمار.",
   "Discover": "اكتشاف",
   "Evaluate": "التقييم",
   "Invest": "استثمار",
@@ -592,8 +592,6 @@
   "Invest in": "استثمر في",
   "applications with a path to growth": "تطبيقات ذات مسار للنمو",
   "Fonitas evaluates applications, prepares them for growth, and presents selected investment opportunities with product, traction and financial information in one place": "تقيّم Fonitas التطبيقات وتجهزها للنمو وتعرض فرص الاستثمار المختارة مع معلومات المنتج والتفاعل والبيانات المالية في مكان واحد.",
-  "From discovery to investment": "من الاكتشاف إلى الاستثمار.",
-  "Selection is part of the value": "الاختيار جزء من القيمة.",
   "Start with an opportunity Continue with the information": "ابدأ بفرصة وتابع بالمعلومات.",
   "Review an application, request additional information, and speak directly with Fonitas when an opportunity fits your interests": "راجع تطبيقاً، واطلب معلومات إضافية، وتحدث مباشرة مع Fonitas عندما تناسبك الفرصة.",
   "Productivity": "الإنتاجية",
@@ -610,5 +608,16 @@
   "Target valuation": "التقييم المستهدف",
   "Monthly active users": "المستخدمون النشطون شهرياً",
   "Active accounts": "الحسابات النشطة",
-  "of": "از"
+  "of": "از",
+  "Explore selected applications": "استكشف التطبيقات المختارة.",
+  "Review product, market and traction": "راجع المنتج والسوق ومدى التفاعل.",
+  "Discuss terms with Fonitas": "ناقش الشروط مع Fonitas.",
+  "Capital supports the next growth stage": "يدعم رأس المال مرحلة النمو التالية.",
+  "Follow the agreed financial outcome": "تابع النتيجة المالية المتفق عليها.",
+  "Clear problem, useful product and credible user value": "مشكلة واضحة، ومنتج مفيد، وقيمة موثوقة للمستخدم.",
+  "Defined market with room for meaningful growth": "سوق محدد مع مجال لنمو ملموس.",
+  "Evidence of usage, revenue or measurable engagement": "أدلة على الاستخدام أو الإيرادات أو التفاعل القابل للقياس.",
+  "Ability to execute, operate and scale the application": "القدرة على التنفيذ والتشغيل وتوسيع نطاق التطبيق.",
+  "A path to sustainable and repeatable revenue": "مسار واضح لإيرادات مستدامة ومتكررة.",
+  "A credible plan for where capital can create leverage": "خطة موثوقة لتحديد أين يمكن لرأس المال أن يحقق أثراً مضاعفاً."
 }
