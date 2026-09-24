@@ -117,7 +117,7 @@ export function LifecycleWizard() {
   const step = steps[active];
 
   return (
-    <div className="mt-14 lg:mt-16" aria-label=t("Fonitas application lifecycle wizard")>
+    <div className="mt-14 lg:mt-16" aria-label={t("Fonitas application lifecycle wizard")}>
       <div className="overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="flex min-w-max gap-2">
           {steps.map((item, index) => (
