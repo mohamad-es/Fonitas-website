@@ -84,11 +84,11 @@ export function ProjectShowcase() {
   return (
     <section className="border-y border-white/[0.08] bg-[#0a0a0a]">
       <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-28 lg:px-10 lg:py-40">
-        <div className="grid gap-8 lg:grid-cols-[.72fr_1.28fr] lg:items-start lg:gap-14">
+        <div className="grid gap-10">
           <div>
             <p className="mb-5 text-xs uppercase tracking-[.25em] text-[#ff5a1f]">{t("projectShowcase.sectionLabel")}</p>
             <h2 className="font-display max-w-3xl text-4xl font-semibold leading-[.92] sm:text-6xl lg:text-7xl">{t("projectShowcase.heading")} <span className="text-white/30">{t("projectShowcase.headingAccent")}</span></h2>
-            <p className="mt-7 max-w-md text-sm leading-6 text-white/35">{t("projectShowcase.summary")}</p>
+            <p className="mt-7 max-w-2xl text-sm leading-6 text-white/35">{t("projectShowcase.summary")}</p>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
             {stages.map((stage, index) => (
