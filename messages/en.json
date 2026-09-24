@@ -289,7 +289,30 @@
   "03 / Publishing": "03 / Publishing",
   "Release path": "Release path",
   "Built around": "Built around",
-  "accountability": "accountability.",
+  "accountability": {
+    "why": "Why Fonitas",
+    "heading": "Built around",
+    "headingAccent": "accountability.",
+    "summary": "A controlled publishing operation needs more than a workflow. It needs visible responsibility from release preparation through financial close.",
+    "principles": {
+      "control": {
+        "title": "Control",
+        "description": "Know what happens at every stage, with explicit state and a clear next step."
+      },
+      "security": {
+        "title": "Security",
+        "description": "Build integrity, security scanning, analysis and QA create a controlled release trail."
+      },
+      "accountability": {
+        "title": "Accountability",
+        "description": "Publishing and financial outcomes remain attributable, auditable and traceable."
+      },
+      "ownership": {
+        "title": "Ownership",
+        "description": "Each domain keeps its own responsibility and source of truth."
+      }
+    }
+  },
   "CORE": "CORE",
   "Promotion signals": "Promotion signals",
   "Future": "Future",
