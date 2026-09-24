@@ -4,11 +4,11 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 const stages = [
-  ["01", "Revenue", "Revenue facts enter the financial workflow after publication."],
-  ["02", "Reconciliation", "External revenue is matched against costs and contractual rules."],
-  ["03", "Owner share", "The applicable contractual share becomes a financial fact."],
+  ["01", "Revenue", "Revenue facts enter the financial workflow after publication"],
+  ["02", "Reconciliation", "External revenue is matched against costs and contractual rules"],
+  ["03", "Owner share", "The applicable contractual share becomes a financial fact"],
   ["04", "Settlement", "Settlement records close the financial obligation."],
-  ["05", "Statement", "The resulting statement keeps the financial history explicit."],
+  ["05", "Statement", "The resulting statement keeps the financial history explicit"],
   ["06", "Payment", "Payment completes the operational financial loop."],
 ];
 
@@ -23,8 +23,8 @@ export function FinancialClose() {
         <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <p className="mb-5 text-xs uppercase tracking-[.25em] text-[#ff5a1f]">{t("Financial close")}</p>
-            <h2 className="font-display max-w-xl text-4xl font-semibold leading-[.9] sm:text-6xl lg:text-7xl">{t("Publishing doesn&apos;t end at the store.")}</h2>
-            <p className="mt-7 max-w-md text-sm leading-7 text-white/40 sm:mt-8">{t("Fonitas carries the application beyond publication into revenue collection, reconciliation, settlement, statements and payment.")}</p>
+            <h2 className="font-display max-w-xl text-4xl font-semibold leading-[.9] sm:text-6xl lg:text-7xl">{t("Publishing doesn&apos;t end at the store")}</h2>
+            <p className="mt-7 max-w-md text-sm leading-7 text-white/40 sm:mt-8">{t("Fonitas carries the application beyond publication into revenue collection, reconciliation, settlement, statements and payment")}</p>
             <div className="mt-8 flex flex-wrap items-center gap-3 text-[9px] uppercase tracking-[.18em] text-white/20 sm:mt-10"><span>{t("06 stages")}</span><span className="h-px w-8 bg-[#ff5a1f]/30"/><span>{t("Immutable history")}</span></div>
           </div>
           <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-[#0d0d0d] shadow-[0_30px_100px_rgba(0,0,0,.3)] sm:rounded-[32px]">
@@ -70,9 +70,9 @@ export function FinancialClose() {
           </div>
         </div>
         <div className="mt-12 grid gap-5 border-t border-white/10 pt-8 sm:mt-14 sm:grid-cols-3 sm:gap-4">
-          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Revenue</p><p className="mt-2 text-sm text-white/45">{t("Imported facts enter the financial workflow.")}</p></div>
-          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Reconciliation</p><p className="mt-2 text-sm text-white/45">{t("External facts meet costs and contract rules.")}</p></div>
-          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Settlement</p><p className="mt-2 text-sm text-white/45">{t("The financial obligation becomes auditable.")}</p></div>
+          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Revenue</p><p className="mt-2 text-sm text-white/45">{t("Imported facts enter the financial workflow")}</p></div>
+          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Reconciliation</p><p className="mt-2 text-sm text-white/45">{t("External facts meet costs and contract rules")}</p></div>
+          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Settlement</p><p className="mt-2 text-sm text-white/45">{t("The financial obligation becomes auditable")}</p></div>
         </div>
       </div>
     </section>
