@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import { ArrowUpRight } from "lucide-react";
-import { useTranslations } from "next-intl";
 
 const audiences = [
   ["01", "Developers", "Build the application. Fonitas operates the publishing path around it.", "BUILD"],
