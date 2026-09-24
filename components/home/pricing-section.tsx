@@ -32,7 +32,7 @@ export function PricingSection() {
           <div>
             <p className="mb-5 text-xs uppercase tracking-[.25em] text-[#ff5a1f]">{t("Engagement models")}</p>
             <h2 className="font-display max-w-xl text-4xl sm:text-5xl font-semibold leading-[.9] sm:text-7xl">
-              {t("Start with publishing.")} <span className="text-white/30">{t("Expand when it makes sense.")}</span>
+              {t("Start with publishing")} <span className="text-white/30">{t("Expand when it makes sense")}</span>
             </h2>
             <p className="mt-8 max-w-md text-sm leading-7 text-white/35">
               {t("Fonitas does not need one fixed package for every application. The operating model can expand with the responsibility you want Fonitas to carry.")}
