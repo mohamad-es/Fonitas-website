@@ -29,7 +29,7 @@ export async function ProductOwnerPage() {
           <div className="relative z-10">
             <p className="reveal-up mb-8 text-xs font-semibold uppercase tracking-[0.28em] text-[#ff6a2a]">{t("For product owners")}</p>
             <h1 className="font-display glow-text reveal-up reveal-delay-1 max-w-5xl text-[clamp(4rem,9vw,9.5rem)] font-semibold leading-[0.84]">
-              From<br />application<br /><span className="text-white/30">{t("to market")}</span>
+              {t("From")}<br />{t("application")}<br /><span className="text-white/30">{t("to market")}</span>
             </h1>
             <div className="reveal-up reveal-delay-2 mt-9 flex max-w-2xl flex-col gap-6 sm:mt-10 sm:flex-row sm:items-end">
               <p className="max-w-xl text-[15px] leading-7 text-white/50 sm:text-base">
