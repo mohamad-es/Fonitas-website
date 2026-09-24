@@ -28,11 +28,11 @@ const principles = [
 const layers = [
   ["about_publishingCore", "about_publishingCoreDescription"],
   [
-    "Platform services",
+    "about_platformServices",
     "about_platformServicesDescription",
   ],
   [
-    "Business expansion",
+    "about_businessExpansion",
     "about_businessExpansionDescription",
   ],
 ];
