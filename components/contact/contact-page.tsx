@@ -21,6 +21,7 @@ const briefItems = [
 ] as const;
 
 export function ContactPage() {
+  const t = useTranslations();
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
