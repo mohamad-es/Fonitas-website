@@ -2,6 +2,7 @@
 import { ArrowUpRight } from "lucide-react";
 
 import { FormEvent, useState } from "react";
+import { useTranslations } from "next-intl";
 
 const requestTypes = [
   "Publish an application",
@@ -76,7 +77,7 @@ export function ContactPage() {
                 </div>
               </div>
               <div className="grid grid-cols-2 border-t border-white/[0.08]">
-                {["Application", "Target stores", "Markets", "Revenue model"].map((item, index) => (
+                {["contact_application", "contact_targetStores", "contact_markets", "contact_revenueModel"].map((item, index) => (
                   <div key={item} className={`border-white/[0.08] px-3 py-3 text-[10px] uppercase tracking-[0.14em] text-white/30 ${index % 2 === 0 ? "border-r" : ""} ${index < 2 ? "border-b" : ""}`}>
                     {item}
                   </div>
@@ -151,7 +152,7 @@ export function ContactPage() {
                   <label className="block text-sm text-white/65">Your name<input name="name" required className="mt-2 w-full rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/20 focus:border-[#ff5a1f]/60" placeholder="Your name" /></label>
                   <label className="block text-sm text-white/65">Work email<input name="email" type="email" required className="mt-2 w-full rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/20 focus:border-[#ff5a1f]/60" placeholder="you@company.com" /></label>
                 </div>
-                <label className="block text-sm text-white/65">Request type<select name="requestType" required defaultValue="" className="mt-2 w-full rounded-2xl border border-white/10 bg-[#101010] px-4 py-3.5 text-sm text-white outline-none transition focus:border-[#ff5a1f]/60"><option value="" disabled>Select a request</option>{requestTypes.map((type) => <option key={type}>{type}</option>)}</select></label>
+                <label className="block text-sm text-white/65">Request type<select name="requestType" required defaultValue="" className="mt-2 w-full rounded-2xl border border-white/10 bg-[#101010] px-4 py-3.5 text-sm text-white outline-none transition focus:border-[#ff5a1f]/60"><option value="" disabled>Select a request</option>{requestTypes.map((type) => <option key={type}>{t(type)}</option>)}</select></label>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <label className="block text-sm text-white/65">Application name<input name="application" className="mt-2 w-full rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/20 focus:border-[#ff5a1f]/60" placeholder="Application name" /></label>
                   <label className="block text-sm text-white/65">Organization<input name="organization" className="mt-2 w-full rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/20 focus:border-[#ff5a1f]/60" placeholder="Company or team" /></label>
