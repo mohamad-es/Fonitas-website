@@ -15,8 +15,8 @@ export function PublishingModels() {
         <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">{t("Ways to work with Fonitas")}</p>
-            <h2 className="font-display max-w-xl text-4xl font-semibold leading-[.92] sm:text-6xl lg:text-7xl">{t("One publishing core.")} <span className="text-white/30">{t("Different operating models.")}</span></h2>
-            <p className="mt-7 max-w-md text-sm leading-6 text-white/35 sm:mt-8">{t("The architecture supports different levels of involvement without creating a separate publishing architecture for each model.")}</p>
+            <h2 className="font-display max-w-xl text-4xl font-semibold leading-[.92] sm:text-6xl lg:text-7xl">{t("One publishing core")} <span className="text-white/30">{t("Different operating models")}</span></h2>
+            <p className="mt-7 max-w-md text-sm leading-6 text-white/35 sm:mt-8">{t("The architecture supports different levels of involvement without creating a separate publishing architecture for each model")}</p>
           </div>
           <div className="relative">
             <div className="absolute left-6 top-6 bottom-6 hidden border-l border-dashed border-white/10 lg:block" />
