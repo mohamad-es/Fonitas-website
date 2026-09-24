@@ -3,7 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 
 import { FormEvent, useState } from "react";
 import { useTranslations } from "next-intl";
-import { useTranslations } from "next-intl";
 
 const requestTypes = ["contact_requestPublish", "contact_requestPartnership", "contact_requestPlatform", "contact_requestOther"];
 
@@ -76,7 +75,7 @@ export function ContactPage() {
               <div className="grid grid-cols-2 border-t border-white/[0.08]">
                 {["contact_application", "contact_targetStores", "contact_markets", "contact_revenueModel"].map((item, index) => (
                   <div key={item} className={`border-white/[0.08] px-3 py-3 text-[10px] uppercase tracking-[0.14em] text-white/30 ${index % 2 === 0 ? "border-r" : ""} ${index < 2 ? "border-b" : ""}`}>
-                    {item}
+                    {t(item)}
                   </div>
                 ))}
               </div>
@@ -97,8 +96,8 @@ export function ContactPage() {
               <div key={number} className="group grid gap-5 border-b border-white/[0.08] py-7 sm:grid-cols-[60px_1fr_auto] sm:items-center">
                 <span className="text-xs text-[#ff5a1f]">{number}</span>
                 <div>
-                  <h3 className="text-base font-medium text-white/80 transition group-hover:text-white">{title}</h3>
-                  <p className="mt-1 text-sm leading-6 text-white/35">{text}</p>
+                  <h3 className="text-base font-medium text-white/80 transition group-hover:text-white">{t(title)}</h3>
+                  <p className="mt-1 text-sm leading-6 text-white/35">{t(text)}</p>
                 </div>
                 <span className="text-lg text-white/20 transition group-hover:translate-x-1 group-hover:text-[#ff7a3d]"><ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} /></span>
               </div>
@@ -116,8 +115,8 @@ export function ContactPage() {
             <div className="mt-10 space-y-0 border-t border-white/[0.08]">
               {briefItems.map(([label, detail]) => (
                 <div key={label} className="flex items-center justify-between gap-5 border-b border-white/[0.08] py-4">
-                  <span className="text-xs text-white/65">{label}</span>
-                  <span className="text-right text-[11px] text-white/25">{detail}</span>
+                  <span className="text-xs text-white/65">{t(label)}</span>
+                  <span className="text-right text-[11px] text-white/25">{t(detail)}</span>
                 </div>
               ))}
             </div>
