@@ -643,5 +643,19 @@
   "about_realityFollowup": "بُنيت Fonitas حول هذه الحقيقة. يبدأ المنتج بدورة حياة النشر وينشئ حدوداً واضحة يمكنها دعم منصة أوسع مع مرور الوقت.",
   "about_publishingCore": "نواة النشر",
   "about_platformServices": "خدمات المنصة",
-  "about_businessExpansion": "التوسع التجاري"
+  "about_businessExpansion": "التوسع التجاري",
+  "contact_requestPublish": "نشر تطبيق",
+  "contact_requestPartnership": "مناقشة شراكة نشر",
+  "contact_requestPlatform": "السؤال عن المنصة",
+  "contact_requestOther": "أخرى",
+  "contact_routePublishing": "نشر التطبيق",
+  "contact_routePublishingDesc": "الإعداد والمراجعة وضمان الجودة والنشر.",
+  "contact_routePartnership": "شراكة النشر",
+  "contact_routePartnershipDesc": "صمّم سير عمل للإصدار حول تطبيقك.",
+  "contact_routePlatform": "محادثة حول المنصة",
+  "contact_routePlatformDesc": "استكشف نموذج Fonitas التشغيلي الأوسع.",
+  "contact_briefApplicationDesc": "منتجك أو إصدارك",
+  "contact_briefStoresDesc": "المتاجر التي يجب النشر فيها",
+  "contact_briefMarketsDesc": "أماكن وصول المستخدمين",
+  "contact_briefRevenueDesc": "كيفية تحقيق التطبيق للإيرادات"
 }
