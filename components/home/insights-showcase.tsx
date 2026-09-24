@@ -23,7 +23,7 @@ const roadmap = [
   },
 ];
 
-function RoadmapVisual({ type }: { type: string }) {
+function RoadmapVisual({ type, t }: { type: string; t: ReturnType<typeof useTranslations> }) {
   if (type === "commercial") {
     return (
       <div className="relative min-h-[420px] overflow-hidden bg-[#0d0d0d] p-7 lg:h-[500px]">
@@ -68,7 +68,7 @@ export function InsightsShowcase() {
   return (
     <div className="grid gap-5 lg:grid-cols-[1.2fr_.8fr]">
       <article className="group relative overflow-hidden rounded-[30px] border border-white/10 bg-[#101010]">
-        <RoadmapVisual type={roadmap[0].visual} />
+        <RoadmapVisual type={roadmap[0].visual} t={t} />
         <div className="relative p-7 sm:p-9 lg:p-11">
           <div className="max-w-2xl rounded-[24px] border border-white/10 bg-[#0b0b0b]/90 p-7 backdrop-blur-xl sm:p-9">
             <div className="flex items-center justify-between text-[9px] uppercase tracking-[.22em] text-white/30"><span>{t(roadmap[0].category)}</span><span>{t("01 / FUTURE")}</span></div>
@@ -81,7 +81,7 @@ export function InsightsShowcase() {
       <div className="grid gap-5">
         {roadmap.slice(1).map((item) => (
           <article key={item.number} className="group grid overflow-hidden rounded-[30px] border border-white/10 bg-[#101010] sm:grid-cols-[.9fr_1.1fr] lg:grid-cols-1">
-            <RoadmapVisual type={item.visual} />
+            <RoadmapVisual type={item.visual} t={t} />
             <div className="flex flex-col justify-between p-7 sm:p-8 lg:min-h-[220px]">
               <div className="flex items-center justify-between text-[9px] uppercase tracking-[.2em] text-white/30"><span>{t(item.category)}</span><span>{item.number} / {t("FUTURE")}</span></div>
               <div className="mt-8"><h3 className="font-display text-3xl font-semibold leading-tight">{t(item.title)}</h3><p className="mt-4 text-sm leading-6 text-white/40">{t(item.description)}</p></div>
