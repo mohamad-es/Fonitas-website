@@ -73,13 +73,13 @@ export default async function Home() {
               >
                 <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/[0.06] blur-[70px] transition group-hover:bg-[#ff5a1f]/10" />
                 <div className="relative">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-white/80">
-                    <TrendingUp className="h-5 w-5" strokeWidth={1.7} />
-                  </div>
-                  <div className="mt-10 flex items-center justify-between gap-4">
-                    <h2 className="font-display text-3xl font-semibold sm:text-4xl">{t("I'm an investor")}</h2>
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-white/80">
+                      <TrendingUp className="h-5 w-5" strokeWidth={1.7} />
+                    </span>
                     <span className="text-[9px] uppercase tracking-[0.24em] text-white/20">{t("02 / Investors")}</span>
                   </div>
+                  <h2 className="font-display mt-10 text-3xl font-semibold sm:text-4xl">{t("I'm an investor")}</h2>
                   <p className="mt-4 max-w-md text-sm leading-6 text-white/40">
                     {t("Browse selected applications in Fonitas and explore the investment opportunities behind them")}
                   </p>
