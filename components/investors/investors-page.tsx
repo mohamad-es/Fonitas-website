@@ -54,8 +54,8 @@ export function InvestorsPage() {
           <div className="grid gap-12 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#ff6a2a]">{t("For investors")}</p>
-              <h1 className="font-display glow-text mt-6 text-[clamp(3.5rem,7vw,7.5rem)] font-semibold leading-[.86]">{t("Invest in")}<br /><span className="text-white/30">{t("applications with a path to growth.")}</span></h1>
-              <p className="mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg">{t("Fonitas evaluates applications, prepares them for growth, and presents selected investment opportunities with product, traction and financial information in one place.")}</p>
+              <h1 className="font-display glow-text mt-6 text-[clamp(3.5rem,7vw,7.5rem)] font-semibold leading-[.86]">{t("Invest in")}<br /><span className="text-white/30">{t("applications with a path to growth")}</span></h1>
+              <p className="mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg">{t("Fonitas evaluates applications, prepares them for growth, and presents selected investment opportunities with product, traction and financial information in one place")}</p>
             </div>
             <div className="relative min-h-[360px] overflow-hidden rounded-[32px] border border-[#ff5a1f]/20 bg-[#0d0d0d] p-6 shadow-[0_0_90px_rgba(255,90,31,0.07)]">
               <div className="absolute inset-0 grid-bg opacity-20" />
@@ -115,7 +115,7 @@ export function InvestorsPage() {
       <section className="border-b border-white/[0.08] bg-[#0b0b0b]">
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-24">
           <p className="text-[10px] uppercase tracking-[0.25em] text-[#ff5a1f]">{t("How investing works")}</p>
-          <h2 className="font-display mt-4 max-w-3xl text-4xl font-semibold leading-[.95] sm:text-6xl">{t("From discovery to investment.")}</h2>
+          <h2 className="font-display mt-4 max-w-3xl text-4xl font-semibold leading-[.95] sm:text-6xl">{t("From discovery to investment")}</h2>
           <div className="mt-10 grid gap-4 md:grid-cols-5">
             {[["01","Discover","Explore selected applications."],["02","Evaluate","Review product, market and traction."],["03","Invest","Discuss terms with Fonitas."],["04","Grow","Capital supports the next growth stage."],["05","Settlement","Follow the agreed financial outcome."]].map(([n,label,description]) => <div key={n} className="rounded-[24px] border border-white/[0.07] bg-white/[0.02] p-6"><span className="text-[9px] tracking-[0.2em] text-[#ff6a2a]">{n}</span><h3 className="font-display mt-7 text-2xl font-semibold">{t(label)}</h3><p className="mt-3 text-sm leading-6 text-white/35">{t(description)}</p></div>)}
           </div>
@@ -135,12 +135,12 @@ export function InvestorsPage() {
 
       <section className="border-y border-white/[0.08] bg-[#0b0b0b]">
         <div className="mx-auto grid max-w-[1400px] gap-12 px-6 py-20 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-24">
-          <div><p className="text-[10px] uppercase tracking-[0.25em] text-[#ff5a1f]">{t("What Fonitas looks for")}</p><h2 className="font-display mt-4 text-4xl font-semibold leading-[.95] sm:text-6xl">{t("Selection is part of the value.")}</h2></div>
+          <div><p className="text-[10px] uppercase tracking-[0.25em] text-[#ff5a1f]">{t("What Fonitas looks for")}</p><h2 className="font-display mt-4 text-4xl font-semibold leading-[.95] sm:text-6xl">{t("Selection is part of the value")}</h2></div>
           <div className="grid gap-4 sm:grid-cols-2">{[["Product","Clear problem, useful product and credible user value."],["Market","Defined market with room for meaningful growth."],["Traction","Evidence of usage, revenue or measurable engagement."],["Team","Ability to execute, operate and scale the application."],["Business model","A path to sustainable and repeatable revenue."],["Growth potential","A credible plan for where capital can create leverage."]].map(([label,description])=><div key={t} className="rounded-[24px] border border-white/[0.07] bg-white/[0.02] p-6"><h3 className="font-display text-2xl font-semibold">{t(label)}</h3><p className="mt-3 text-sm leading-6 text-white/35">{t(description)}</p></div>)}</div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-24"><div className="rounded-[34px] border border-[#ff5a1f]/20 bg-[#101010] p-8 sm:p-12 lg:p-16"><div className="max-w-3xl"><p className="text-[10px] uppercase tracking-[0.25em] text-[#ff5a1f]">{t("Ready to explore?")}</p><h2 className="font-display mt-4 text-4xl font-semibold sm:text-6xl">{t("Start with an opportunity. Continue with the information.")}</h2><p className="mt-5 text-sm leading-7 text-white/40">{t("Review an application, request additional information, and speak directly with Fonitas when an opportunity fits your interests.")}</p><Link href="/contact?type=investment" className="mt-8 inline-flex items-center rounded-full bg-[#ff5a1f] px-6 py-3.5 text-sm font-semibold text-black">{t("Request investment information")} <ArrowUpRight className="ml-3 h-4 w-4"/></Link></div></div></section>
+      <section className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-24"><div className="rounded-[34px] border border-[#ff5a1f]/20 bg-[#101010] p-8 sm:p-12 lg:p-16"><div className="max-w-3xl"><p className="text-[10px] uppercase tracking-[0.25em] text-[#ff5a1f]">{t("Ready to explore?")}</p><h2 className="font-display mt-4 text-4xl font-semibold sm:text-6xl">{t("Start with an opportunity. Continue with the information")}</h2><p className="mt-5 text-sm leading-7 text-white/40">{t("Review an application, request additional information, and speak directly with Fonitas when an opportunity fits your interests")}</p><Link href="/contact?type=investment" className="mt-8 inline-flex items-center rounded-full bg-[#ff5a1f] px-6 py-3.5 text-sm font-semibold text-black">{t("Request investment information")} <ArrowUpRight className="ml-3 h-4 w-4"/></Link></div></div></section>
 
       <footer className="bg-[#070707]"><div className="mx-auto flex max-w-[1400px] flex-col gap-5 px-6 py-12 text-[10px] uppercase tracking-[0.18em] text-white/20 sm:flex-row sm:items-center sm:justify-between lg:px-10"><Link href="/" className="text-lg font-bold normal-case tracking-[-.05em] text-white/80">Fonitas<span className="text-[#ff5a1f]">.</span></Link><div className="flex flex-wrap gap-5"><Link href="/product-owners">{t("Product owners")}</Link><Link href="/about">{t("About")}</Link><Link href="/contact">{t("Contact")}</Link></div><span>© 2026 Fonitas</span></div></footer>
     </main>
