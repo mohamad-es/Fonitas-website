@@ -586,5 +586,7 @@
   "Publishing destinations": "Publishing destinations",
   "Ready": "Ready",
   "Contract": "Contract",
-  "Statement": "Statement"
+  "Statement": "Statement",
+  "Settlement records close the financial obligation": "Settlement records close the financial obligation.",
+  "Payment completes the operational financial loop": "Payment completes the operational financial loop."
 }
