@@ -15,7 +15,7 @@ export function AudienceSection() {
         <div className="grid gap-8 lg:grid-cols-[.85fr_1.15fr] lg:items-end lg:gap-10">
           <div>
             <p className="mb-5 text-xs uppercase tracking-[.25em] text-[#ff5a1f]">{t("Who it is for")}</p>
-            <h2 className="font-display max-w-3xl text-4xl font-semibold leading-[.92] sm:text-6xl lg:text-7xl">{t("For teams that need")} <span className="text-white/30">{t("a controlled path.")}</span></h2>
+            <h2 className="font-display max-w-3xl text-4xl font-semibold leading-[.92] sm:text-6xl lg:text-7xl">{t("For teams that need")} <span className="text-white/30">{t("a controlled path")}</span></h2>
           </div>
           <p className="max-w-md text-sm leading-6 text-white/35 lg:justify-self-end">Different roles can work around the same application lifecycle without losing ownership between stages.</p>
         </div>
