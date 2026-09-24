@@ -7,9 +7,9 @@ const stages = [
   ["01", "Revenue", "Revenue facts enter the financial workflow after publication"],
   ["02", "Reconciliation", "External revenue is matched against costs and contractual rules"],
   ["03", "Owner share", "The applicable contractual share becomes a financial fact"],
-  ["04", "Settlement", "Settlement records close the financial obligation."],
+  ["04", "Settlement", "Settlement records close the financial obligation"],
   ["05", "Statement", "The resulting statement keeps the financial history explicit"],
-  ["06", "Payment", "Payment completes the operational financial loop."],
+  ["06", "Payment", "Payment completes the operational financial loop"],
 ];
 
 export function FinancialClose() {
