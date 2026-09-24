@@ -66,7 +66,7 @@ export function InsightsShowcase() {
         <RoadmapVisual type={roadmap[0].visual} t={t} />
         <div className="relative p-7 sm:p-9 lg:p-11">
           <div className="max-w-2xl rounded-[24px] border border-white/10 bg-[#0b0b0b]/90 p-7 backdrop-blur-xl sm:p-9">
-            <div className="flex items-center justify-between text-[9px] uppercase tracking-[.22em] text-white/30"><span>{t(`insights.roadmap.${roadmap[0].key}.category`)}</span><span>{t("insights.futureLabel","01 / FUTURE")}</span></div>
+            <div className="flex items-center justify-between text-[9px] uppercase tracking-[.22em] text-white/30"><span>{t(`insights.roadmap.${roadmap[0].key}.category`)}</span><span>{t("insights.futureLabel")}</span></div>
             <h3 className="font-display mt-7 text-4xl font-semibold leading-[.95] sm:text-6xl">{t(`insights.roadmap.${roadmap[0].key}.title`)}</h3>
             <p className="mt-6 max-w-xl text-sm leading-6 text-white/40">{t(`insights.roadmap.${roadmap[0].key}.description`)}</p>
             <div className="mt-8 flex items-center gap-3 text-[9px] uppercase tracking-[.2em] text-[#ff6a2a]"><span className="h-px w-8 bg-[#ff5a1f]/50" /> {t("insights.longTermDirection")}</div>
