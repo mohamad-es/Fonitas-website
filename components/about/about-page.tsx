@@ -138,8 +138,8 @@ export function AboutPage() {
                 className={`py-10 ${index % 2 === 1 ? "md:border-l md:pl-10" : "md:pr-10"} border-b border-white/10`}
               >
                 <span className="font-mono text-xs text-[#ff5a1f]">{number}</span>
-                <h3 className="font-display mt-8 text-3xl font-semibold">{title}</h3>
-                <p className="mt-4 max-w-xl text-sm leading-7 text-white/40">{text}</p>
+                <h3 className="font-display mt-8 text-3xl font-semibold">{t(title)}</h3>
+                <p className="mt-4 max-w-xl text-sm leading-7 text-white/40">{t(text)}</p>
               </article>
             ))}
           </div>
