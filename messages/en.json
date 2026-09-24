@@ -413,5 +413,149 @@
     "expandedBadge": "Expanded",
     "intro": "Fonitas does not need one fixed package for every application. The operating model can expand with the responsibility you want Fonitas to carry.",
     "scope": "Scope and commercial terms depend on the application, target stores, markets, publishing responsibilities and agreed commercial model."
+  },
+  "insights": {
+    "futureLabel": "01 / FUTURE",
+    "future": "FUTURE",
+    "longTermDirection": "Long-term platform direction",
+    "roadmap": {
+      "commercial": {
+        "category": "Commercial",
+        "title": "Products, pricing & entitlements",
+        "description": "A future commercial layer can manage products, pricing plans, subscriptions, entitlements and usage around applications."
+      },
+      "growth": {
+        "category": "Growth",
+        "title": "Marketing & promotion",
+        "description": "Marketing requests, campaigns, channels, promotions, discount codes and ASO can expand the lifecycle after publishing."
+      },
+      "platform": {
+        "category": "Platform",
+        "title": "Infrastructure services",
+        "description": "Auth, storage, notifications, analytics, messaging and API capabilities form the longer-term platform direction."
+      }
+    },
+    "visual": {
+      "commercial": {
+        "products": "Products",
+        "pricing": "Pricing",
+        "entitlements": "Entitlements",
+        "usage": "Usage"
+      },
+      "growth": {
+        "promotionSignals": "Promotion signals",
+        "future": "Future"
+      },
+      "platform": {
+        "auth": "Auth",
+        "storage": "Storage",
+        "messaging": "Messaging",
+        "analytics": "Analytics"
+      }
+    }
+  },
+  "publishingModels": {
+    "sectionLabel": "Ways to work with Fonitas",
+    "heading": "One publishing core",
+    "headingAccent": "Different operating models",
+    "intro": "The architecture supports different levels of involvement without creating a separate publishing architecture for each model.",
+    "operatingPath": "Operating path",
+    "models": {
+      "publishOnly": {
+        "tag": "PUBLISHING",
+        "title": "Publish only",
+        "description": "Use Fonitas as the publishing and release layer while your team keeps its own authentication, billing and infrastructure."
+      },
+      "publishInfrastructure": {
+        "tag": "PLATFORM SERVICES",
+        "title": "Publish + infrastructure",
+        "description": "Combine publishing with optional Fonitas services such as Auth, Storage, Notifications and Analytics."
+      },
+      "fullPlatform": {
+        "tag": "LONG-TERM",
+        "title": "Full platform",
+        "description": "A longer-term model connecting publishing with Commercial, Infrastructure, Legal, Marketing, Finance and Investment."
+      }
+    },
+    "flow": {
+      "developer": "Developer",
+      "publishingLicense": "Publishing License",
+      "fonitas": "Fonitas",
+      "store": "Store",
+      "fonitasPublishing": "Fonitas Publishing",
+      "platformServices": "Auth · Storage · Notifications · Analytics",
+      "fullPlatformServices": "Publishing · Commercial · Infrastructure · Legal · Marketing · Finance · Investment"
+    }
+  },
+  "audience": {
+    "sectionLabel": "Who it is for",
+    "heading": "For teams that need",
+    "headingAccent": "a controlled path",
+    "summary": "Different roles can work around the same application lifecycle without losing ownership between stages.",
+    "items": {
+      "developers": {
+        "title": "Developers",
+        "description": "Build the application. Fonitas operates the publishing path around it.",
+        "action": "BUILD"
+      },
+      "productTeams": {
+        "title": "Product teams",
+        "description": "Move applications through review, contract, QA and publishing with explicit states.",
+        "action": "OPERATE"
+      },
+      "applicationOwners": {
+        "title": "Application owners",
+        "description": "Keep visibility across publishing, revenue, reconciliation and settlement.",
+        "action": "OWN"
+      }
+    }
+  },
+  "projectShowcase": {
+    "sectionLabel": "Release path",
+    "heading": "Built around",
+    "headingAccent": "accountability",
+    "summary": "The release path keeps application state, validation and publishing responsibility visible from intake to store submission.",
+    "applicationRecord": "Application record",
+    "registered": "REGISTERED",
+    "intakeLabel": "01 / Intake",
+    "submit": "Submit",
+    "releasePath": "Release path",
+    "humanInLoop": "Human-in-the-loop",
+    "releaseValidation": "Release validation",
+    "readyGate": "Ready gate",
+    "qaStatus": "QA status",
+    "readyForSubmission": "READY FOR SUBMISSION",
+    "fields": {
+      "platform": "Platform",
+      "markets": "Markets",
+      "revenue": "Revenue"
+    },
+    "checks": {
+      "sha256": "SHA-256",
+      "securityScan": "Security scan",
+      "manifest": "Manifest",
+      "permissions": "Permissions",
+      "manualQa": "Manual QA"
+    },
+    "stages": {
+      "application": {
+        "type": "Application",
+        "sublabel": "INTAKE",
+        "title": "Register the application",
+        "description": "Create the operational record before the release enters review."
+      },
+      "qa": {
+        "type": "QA & Compliance",
+        "sublabel": "VALIDATE",
+        "title": "Validate the release",
+        "description": "Integrity, security, analysis and manual QA establish release readiness."
+      },
+      "publishing": {
+        "type": "Publishing",
+        "sublabel": "SUBMIT",
+        "title": "Submit to the store",
+        "description": "Prepare assets and builds, then record the human-led store submission."
+      }
+    }
   }
 }
