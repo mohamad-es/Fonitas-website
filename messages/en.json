@@ -643,5 +643,19 @@
   "about_realityFollowup": "Fonitas is built around that reality. The product starts with the publishing lifecycle and creates explicit boundaries that can support a wider platform over time.",
   "about_publishingCore": "Publishing core",
   "about_platformServices": "Platform services",
-  "about_businessExpansion": "Business expansion"
+  "about_businessExpansion": "Business expansion",
+  "contact_requestPublish": "Publish an application",
+  "contact_requestPartnership": "Discuss a publishing partnership",
+  "contact_requestPlatform": "Ask about the platform",
+  "contact_requestOther": "Other",
+  "contact_routePublishing": "Application publishing",
+  "contact_routePublishingDesc": "Prepare, review, QA and publish.",
+  "contact_routePartnership": "Publishing partnership",
+  "contact_routePartnershipDesc": "Shape a release workflow around your application.",
+  "contact_routePlatform": "Platform conversation",
+  "contact_routePlatformDesc": "Explore the wider Fonitas operating model.",
+  "contact_briefApplicationDesc": "Your product or release",
+  "contact_briefStoresDesc": "Where it needs to ship",
+  "contact_briefMarketsDesc": "Where users will access it",
+  "contact_briefRevenueDesc": "How the application earns"
 }
