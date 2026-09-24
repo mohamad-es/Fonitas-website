@@ -1,42 +1,44 @@
 import { ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 const principles = [
   [
     "01",
-    "Lifecycle first",
+    {t("Lifecycle first")},
     "Fonitas is organized around the application lifecycle: collaboration, registration, evaluation, contract, QA, publishing, revenue and settlement.",
   ],
   [
     "02",
-    "Explicit ownership",
+    {t("Explicit ownership")},
     "Each domain owns its state and responsibility. The platform makes operational handoffs visible instead of hiding them inside generic CRUD screens.",
   ],
   [
     "03",
-    "Human in the loop",
+    {t("Human in the loop")},
     "Publishing remains accountable in the MVP. Release preparation, security checks, QA and store submission are controlled operational steps.",
   ],
   [
     "04",
-    "Financially traceable",
+    {t("Financially traceable")},
     "Collection, reconciliation, settlement, statements and payments remain part of the operating story, with financial history treated as immutable.",
   ],
 ];
 
 const layers = [
-  ["Publishing core", "The operational path that makes the product work today."],
+  [{t("Publishing core")}, "The operational path that makes the product work today."],
   [
-    "Platform services",
+    {t("Platform services")},
     "Auth, storage, notifications, analytics, messaging and API capabilities that can grow around the core.",
   ],
   [
-    "Business expansion",
+    {t("Business expansion")},
     "Commercial, marketing, infrastructure, legal and investment capabilities that can be added without breaking the core boundaries.",
   ],
 ];
 
 export function AboutPage() {
+  const t = useTranslations();
   return (
     <main className="overflow-hidden bg-[#070707] text-[#f4f2ed]">
       <section className="relative min-h-[86vh] border-b border-white/[0.08] pt-20">
@@ -168,8 +170,8 @@ export function AboutPage() {
                   className="grid gap-6 border-b border-white/10 py-8 sm:grid-cols-[70px_1fr_1.3fr] sm:items-center"
                 >
                   <span className="font-mono text-xs text-[#ff5a1f]">0{index + 1}</span>
-                  <h3 className="text-xl font-medium">{title}</h3>
-                  <p className="text-sm leading-6 text-white/35">{text}</p>
+                  <h3 className="text-xl font-medium">{t(title)}</h3>
+                  <p className="text-sm leading-6 text-white/35">{t(text)}</p>
                 </div>
               ))}
             </div>
