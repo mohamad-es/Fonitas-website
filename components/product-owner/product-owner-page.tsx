@@ -76,16 +76,7 @@ export async function ProductOwnerPage() {
       </section>
 
       <section id="publishing" className="border-y border-white/[0.08] bg-[#0b0b0b]">
-        <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
-          <div className="mb-12 flex items-end justify-between gap-6 sm:mb-16">
-            <div>
-              <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#ff5a1f]">{t("How publishing works")}</p>
-              <h2 className="font-display max-w-4xl text-5xl font-semibold leading-[.9] sm:text-7xl">{t("Controlled releases")}<br /><span className="text-white/30">{t("Clear responsibility")}</span></h2>
-            </div>
-            <a href="/contact" className="hidden text-sm text-white/50 transition hover:text-white sm:block">{t("Start a collaboration")} <Arrow /></a>
-          </div>
           <ProjectShowcase />
-        </div>
       </section>
 
       <AccountabilitySection />

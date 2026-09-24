@@ -90,9 +90,9 @@ export function ProjectShowcase() {
             <h2 className="font-display max-w-3xl text-4xl font-semibold leading-[.92] sm:text-6xl lg:text-7xl">{t("projectShowcase.heading")} <span className="text-white/30">{t("projectShowcase.headingAccent")}</span></h2>
             <p className="mt-7 max-w-2xl text-sm leading-6 text-white/35">{t("projectShowcase.summary")}</p>
           </div>
-          <div className="grid gap-5 lg:grid-cols-2">
+          <div className="grid gap-5 lg:grid-cols-3">
             {stages.map((stage, index) => (
-              <article key={stage.number} className={`group overflow-hidden rounded-[30px] border border-white/10 bg-[#101010] ${index === 0 ? "lg:col-span-2" : ""}`}>
+              <article key={stage.number} className={`group overflow-hidden rounded-[30px] border border-white/10 bg-[#101010] `}>
                 {stage.visual === "application" ? <ApplicationVisual /> : stage.visual === "qa" ? <QAVisual /> : <PublishingVisual />}
                 <div className="p-7 sm:p-8">
                   <div className="flex items-center justify-between text-[9px] uppercase tracking-[.22em] text-white/25"><span>{t(`projectShowcase.stages.${stage.key}.type`)}</span><span>{stage.number} / {t(`projectShowcase.stages.${stage.key}.sublabel`)}</span></div>
