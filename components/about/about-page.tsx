@@ -26,7 +26,7 @@ const principles = [
 ];
 
 const layers = [
-  ["Publishing core", "about_publishingCoreDescription"],
+  ["about_publishingCore", "about_publishingCoreDescription"],
   [
     "Platform services",
     "about_platformServicesDescription",
