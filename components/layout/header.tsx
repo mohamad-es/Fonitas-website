@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "@/components/i18n-provider";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const primaryLinks = [
@@ -85,6 +86,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
+            <LanguageSwitcher />
             <Link
               href="/login"
               className="btn btn-ghost hidden min-h-0 rounded-full px-4 py-2.5 text-[13px] font-medium text-white/55 hover:bg-white/[0.05] hover:text-white sm:flex"
