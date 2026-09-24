@@ -34,7 +34,7 @@ export default async function Home() {
               <span className="text-white/30">{t("from build to growth")}</span>
             </h1>
             <p className="reveal-up reveal-delay-2 mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg">
-              {t("Fonitas gives application owners a controlled path from evaluation and publishing to growth, revenue and settlement — with every important step visible and accountable.")}
+              {t("Fonitas gives application owners a controlled path from evaluation and publishing to growth, revenue and settlement — with every important step visible and accountable")}
             </p>
 
             <div className="reveal-up reveal-delay-3 mt-12 grid w-full max-w-4xl gap-4 sm:grid-cols-2">
@@ -52,7 +52,7 @@ export default async function Home() {
                   </div>
                   <h2 className="font-display mt-10 text-3xl font-semibold sm:text-4xl">{t("I have an application")}</h2>
                   <p className="mt-4 max-w-md text-sm leading-6 text-white/40">
-                    {t("Explore how Fonitas can help you publish, operate and grow your application.")}
+                    {t("Explore how Fonitas can help you publish, operate and grow your application")}
                   </p>
                   <div className="mt-8 flex items-center gap-3 text-sm font-medium">
                     {t("Explore Fonitas")}{" "}
@@ -77,7 +77,7 @@ export default async function Home() {
                     <span className="text-[9px] uppercase tracking-[0.24em] text-white/20">{t("02 / Investors")}</span>
                   </div>
                   <p className="mt-4 max-w-md text-sm leading-6 text-white/40">
-                    {t("Browse selected applications in Fonitas and explore the investment opportunities behind them.")}
+                    {t("Browse selected applications in Fonitas and explore the investment opportunities behind them")}
                   </p>
                   <div className="mt-8 flex items-center gap-3 text-sm font-medium">
                     {t("Explore opportunities")}{" "}
