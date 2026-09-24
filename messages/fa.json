@@ -126,7 +126,7 @@
   "Problem": "مسئله",
   "Solution": "راهکار",
   "Target market": "بازار هدف",
-  "Why now": "چرا اکنون؟",
+  "Why now": "چرا حالا؟",
   "Traction & financials": "کشش بازار و مالی",
   "Annualized revenue": "درآمد سالانه‌شده",
   "Gross margin": "حاشیه سود ناخالص",
@@ -585,5 +585,6 @@
   "Publishing destinations": "مقصدهای انتشار",
   "Ready": "آماده",
   "Contract": "قرارداد",
-  "Statement": "صورت‌حساب"
+  "Statement": "صورت‌حساب",
+  "Why now?": "چرا حالا؟"
 }
