@@ -51,11 +51,27 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     const originals = new WeakMap<Text, string>();
     let applying = false;
 
-    const hasMessage = (value: string) =>
-      Object.prototype.hasOwnProperty.call(messages, value) &&
-      typeof messages[value] === "string";
+    const normalizeKey = (value: string) => value.endsWith(".") ? value.slice(0, -1) : value;
 
-    const translateValue = (value: string) => (hasMessage(value) ? t(value) : value);
+    const hasMessage = (value: string) => {
+      const key = normalizeKey(value);
+      const parts = key.split(".");
+      let current: unknown = messages;
+
+      for (const part of parts) {
+        if (!current || typeof current !== "object" || !Object.prototype.hasOwnProperty.call(current, part)) {
+          return false;
+        }
+        current = (current as Record<string, unknown>)[part];
+      }
+
+      return typeof current === "string";
+    };
+
+    const translateValue = (value: string) => {
+      const key = normalizeKey(value);
+      return hasMessage(value) ? t(key) : value;
+    };
 
     const applyTranslations = () => {
       if (applying) return;
