@@ -579,5 +579,9 @@
         "description": "جهّز الأصول وإصدارات البناء ثم سجّل عملية الإرسال إلى المتجر بإشراف بشري."
       }
     }
-  }
+  },
+  "Publishing Operating System": "نظام تشغيل النشر",
+  "Review · Contract · QA · Publishing · Revenue · Settlement": "مراجعة · عقد · ضمان الجودة · النشر · الإيرادات · التسوية",
+  "Publishing destinations": "وجهات النشر",
+  "Ready": "جاهز"
 }
