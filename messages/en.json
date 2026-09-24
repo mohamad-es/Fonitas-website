@@ -343,6 +343,75 @@
   "Revenue operations": "Revenue operations",
   "Revenue facts enter the financial workflow after publication": "Revenue facts enter the financial workflow after publication.",
   "External revenue is matched against costs and contractual rules": "External revenue is matched against costs and contractual rules.",
-  "Fonitas does not need one fixed package for every application. The operating model can expand with the responsibility you want Fonitas to carry.": "Fonitas does not need one fixed package for every application. The operating model can expand with the responsibility you want Fonitas to carry.",
-  "Scope and commercial terms depend on the application, target stores, markets, publishing responsibilities and agreed commercial model.": "Scope and commercial terms depend on the application, target stores, markets, publishing responsibilities and agreed commercial model."
+  "faq": {
+    "questions": [
+      "What is Fonitas?",
+      "Does Fonitas need my application's source code?",
+      "Who is Fonitas for?",
+      "Is publishing fully automated?",
+      "Can we keep our own store account?",
+      "What happens to revenue after an application is published?",
+      "How does Fonitas handle higher-risk applications?",
+      "What does the publishing agreement define?",
+      "Will Fonitas automate every store submission?"
+    ],
+    "answers": [
+      "Fonitas is an Application Publishing Operating System. It manages the lifecycle around an application from collaboration and registration through evaluation, contract, QA, publishing, revenue, reconciliation and settlement.",
+      "Normal publishing does not require source code. Fonitas works around the application, its releases, store assets and publishing workflow. Controlled repository access can be used when Fonitas is responsible for building a release.",
+      "The platform is designed around developers and organizations that need a structured path to publish and operate applications, with clear ownership across application, publishing, QA, commercial and financial workflows.",
+      "The MVP keeps publishing human-in-the-loop. Fonitas supports store preparation, checklists, assets, builds and submission while keeping responsibility and state explicit.",
+      "Yes. The architecture supports customer-owned store accounts where Fonitas acts as release manager, as well as a Publisher of Record model where Fonitas controls the publishing relationship.",
+      "The financial lifecycle can collect revenue, reconcile external transactions, calculate the applicable owner share from the active contract, create settlement records and complete payment and statement workflows.",
+      "Applications can be assessed across risk levels. Higher-risk categories may require enhanced QA, legal review, security assessment, source or audit rights, and additional contractual warranties.",
+      "The contract can define publishing scope, stores, geography, duration, revenue share, costs and other commercial terms. Signed versions are treated as immutable, with changes handled through amendments.",
+      "No. The MVP is human-in-the-loop. Provider-specific store adapters are a later architecture path, while the internal publishing model remains store-agnostic."
+    ],
+    "heading": "The important parts",
+    "headingAccent": "made clear",
+    "intro": "A concise view of the publishing model, source-code boundary, store ownership and financial lifecycle."
+  },
+  "productSignal": {
+    "signals": [
+      "Application",
+      "Contract",
+      "QA",
+      "Publishing",
+      "Revenue",
+      "Settlement"
+    ]
+  },
+  "pricing": {
+    "publishTitle": "Publish",
+    "publishDescription": "For teams that need a controlled publishing and release layer.",
+    "publishFeatures": [
+      "Application review",
+      "QA & compliance",
+      "Store preparation",
+      "Publishing workflow"
+    ],
+    "infraTitle": "Publish + Infrastructure",
+    "infraDescription": "Publishing plus platform services that support the application lifecycle.",
+    "infraFeatures": [
+      "Everything in Publish",
+      "Auth",
+      "Storage",
+      "Notifications",
+      "Analytics"
+    ],
+    "fullTitle": "Full Platform",
+    "fullDescription": "A broader operating model connecting publishing with future business capabilities.",
+    "fullFeatures": [
+      "Publishing core",
+      "Infrastructure services",
+      "Commercial",
+      "Finance",
+      "Future capabilities"
+    ],
+    "core": "CORE",
+    "expanded": "EXPANDED",
+    "longTerm": "LONG-TERM",
+    "expandedBadge": "Expanded",
+    "intro": "Fonitas does not need one fixed package for every application. The operating model can expand with the responsibility you want Fonitas to carry.",
+    "scope": "Scope and commercial terms depend on the application, target stores, markets, publishing responsibilities and agreed commercial model."
+  }
 }
