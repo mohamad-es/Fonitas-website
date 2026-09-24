@@ -2,7 +2,7 @@
 
 import { useLocale, useMessages, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const locales = ["en", "fa", "ar"] as const;
 
@@ -46,9 +46,9 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const locale = useLocale();
   const messages = useMessages() as Record<string, unknown>;
   const t = useTranslations();
+  const originalsRef = useRef(new WeakMap<Text, string>());
 
   useEffect(() => {
-    const originals = new WeakMap<Text, string>();
     let applying = false;
 
     const normalizeKey = (value: string) => value.endsWith(".") ? value.slice(0, -1) : value;
@@ -84,8 +84,11 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
       while ((node = walker.nextNode())) nodes.push(node as Text);
 
       for (const textNode of nodes) {
-        if (!originals.has(textNode)) originals.set(textNode, textNode.nodeValue ?? "");
-        const original = originals.get(textNode) ?? "";
+        if (!originalsRef.current.has(textNode)) {
+          originalsRef.current.set(textNode, textNode.nodeValue ?? "");
+        }
+
+        const original = originalsRef.current.get(textNode) ?? "";
         const value = original.trim();
         if (!value) continue;
 
