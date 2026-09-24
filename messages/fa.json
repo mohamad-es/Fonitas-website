@@ -643,5 +643,19 @@
   "about_realityFollowup": "Fonitas بر پایه همین واقعیت ساخته شده است. محصول با چرخه عمر انتشار شروع می‌کند و مرزهای مشخصی ایجاد می‌کند که در طول زمان می‌توانند از یک پلتفرم گسترده‌تر پشتیبانی کنند.",
   "about_publishingCore": "هسته انتشار",
   "about_platformServices": "خدمات پلتفرم",
-  "about_businessExpansion": "گسترش کسب‌وکار"
+  "about_businessExpansion": "گسترش کسب‌وکار",
+  "contact_requestPublish": "انتشار یک اپلیکیشن",
+  "contact_requestPartnership": "گفتگو درباره همکاری انتشار",
+  "contact_requestPlatform": "درباره پلتفرم بپرسید",
+  "contact_requestOther": "سایر",
+  "contact_routePublishing": "انتشار اپلیکیشن",
+  "contact_routePublishingDesc": "آماده‌سازی، بررسی، کنترل کیفیت و انتشار.",
+  "contact_routePartnership": "همکاری انتشار",
+  "contact_routePartnershipDesc": "فرآیند انتشار را متناسب با اپلیکیشن شما شکل می‌دهیم.",
+  "contact_routePlatform": "گفتگو درباره پلتفرم",
+  "contact_routePlatformDesc": "مدل عملیاتی گسترده‌تر Fonitas را بررسی کنید.",
+  "contact_briefApplicationDesc": "محصول یا نسخه شما",
+  "contact_briefStoresDesc": "محل‌هایی که باید منتشر شود",
+  "contact_briefMarketsDesc": "محل دسترسی کاربران",
+  "contact_briefRevenueDesc": "نحوه درآمدزایی اپلیکیشن"
 }
