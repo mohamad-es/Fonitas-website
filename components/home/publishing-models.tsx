@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
 
 const models = [
   { number: "01", title: "Publish only", description: "Use Fonitas as the publishing and release layer while your team keeps its own authentication, billing and infrastructure.", flow: ["Developer", "Publishing License", "Fonitas", "Store"], tag: "PUBLISHING" },
