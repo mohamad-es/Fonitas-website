@@ -379,6 +379,19 @@ html[dir="rtl"] select { direction: rtl; text-align: right; }
 html[dir="rtl"] .rtl-mirror { transform: scaleX(-1); }
 
 
+/* RTL typography: Latin-style negative tracking causes Persian/Arabic glyphs to collide. */
+html[dir="rtl"] .font-display {
+  letter-spacing: normal;
+  line-height: 1.15;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+  letter-spacing: normal;
+  line-height: 1.25;
+}
+
 /* RTL-safe layout primitives */
 html[dir="rtl"] body {
   text-align: right;
