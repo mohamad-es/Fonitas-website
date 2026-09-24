@@ -39,7 +39,7 @@ export function FinancialClose() {
                   {stages.map(([number,title],index) => (
                     <button key={number} type="button" onClick={()=>setActive(index)} className={`relative flex min-w-0 w-full items-center gap-2 rounded-xl px-2 py-2.5 text-left transition sm:gap-3 sm:px-3 sm:py-3 ${active===index ? "bg-[#ff5a1f]/10 text-white" : "text-white/30 hover:bg-white/[.03] hover:text-white/60"}`}>
                       <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-[9px] ${active===index ? "border-[#ff5a1f]/40 text-[#ff6a2a]" : "border-white/10"}`}>{number}</span>
-                      <span className="truncate text-[9px] uppercase tracking-[.1em] sm:text-[10px] sm:tracking-[.13em]">{title}</span>
+                      <span className="truncate text-[9px] uppercase tracking-[.1em] sm:text-[10px] sm:tracking-[.13em]">{t(title)}</span>
                     </button>
                   ))}
                 </nav>
@@ -55,24 +55,19 @@ export function FinancialClose() {
                     <div className="mt-8 grid grid-cols-3 gap-2 border-t border-white/10 pt-5 sm:mt-10">
                       <div><p className="text-[8px] uppercase tracking-[.16em] text-white/20">{t("Stage")}</p><p className="mt-2 text-xs text-white/60">{active+1} / 6</p></div>
                       <div><p className="text-[8px] uppercase tracking-[.16em] text-white/20">{t("State")}</p><p className="mt-2 text-xs text-[#ff6a2a]">{t("Recorded")}</p></div>
-                      <div><p className="text-[8px] uppercase tracking-[.16em] text-white/20">{t("History")}</p><p className="mt-2 text-xs text-white/60">Immutable</p></div>
+                      <div><p className="text-[8px] uppercase tracking-[.16em] text-white/20">{t("History")}</p><p className="mt-2 text-xs text-white/60">{t("Immutable")}</p></div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="border-t border-white/10 px-5 py-5 sm:px-8">
-                <div className="flex items-center justify-between gap-5">
-                  <div className="flex-1"><div className="h-1 overflow-hidden rounded-full bg-white/10"><div className="h-full rounded-full bg-[#ff5a1f] transition-all duration-500" style={{width:`${((active+1)/stages.length)*100}%`}} /></div></div>
-                  <span className="text-[9px] uppercase tracking-[.16em] text-white/25">{active+1} / {stages.length}</span>
-                </div>
-              </div>
+              <div className="border-t border-white/10 px-5 py-5 sm:px-8"><div className="flex items-center justify-between gap-5"><div className="flex-1"><div className="h-1 overflow-hidden rounded-full bg-white/10"><div className="h-full rounded-full bg-[#ff5a1f] transition-all duration-500" style={{width:`${((active+1)/stages.length)*100}%`}} /></div></div><span className="text-[9px] uppercase tracking-[.16em] text-white/25">{active+1} / {stages.length}</span></div></div>
             </div>
           </div>
         </div>
         <div className="mt-12 grid gap-5 border-t border-white/10 pt-8 sm:mt-14 sm:grid-cols-3 sm:gap-4">
-          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Revenue</p><p className="mt-2 text-sm text-white/45">{t("Imported facts enter the financial workflow")}</p></div>
-          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Reconciliation</p><p className="mt-2 text-sm text-white/45">{t("External facts meet costs and contract rules")}</p></div>
-          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">Settlement</p><p className="mt-2 text-sm text-white/45">{t("The financial obligation becomes auditable")}</p></div>
+          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">{t("Revenue")}</p><p className="mt-2 text-sm text-white/45">{t("Imported facts enter the financial workflow")}</p></div>
+          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">{t("Reconciliation")}</p><p className="mt-2 text-sm text-white/45">{t("External facts meet costs and contract rules")}</p></div>
+          <div><p className="text-[9px] uppercase tracking-[.2em] text-[#ff5a1f]">{t("Settlement")}</p><p className="mt-2 text-sm text-white/45">{t("The financial obligation becomes auditable")}</p></div>
         </div>
       </div>
     </section>
