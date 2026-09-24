@@ -12,16 +12,40 @@ const names = {
   ar: "العربية",
 } as const;
 
+export function LanguageSwitcher() {
+  const locale = useLocale();
+  const router = useRouter();
+  const t = useTranslations();
+
+  function changeLocale(event: React.ChangeEvent<HTMLSelectElement>) {
+    const nextLocale = event.target.value as (typeof locales)[number];
+    document.cookie = `fonitas-locale=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
+    router.refresh();
+  }
+
+  return (
+    <label className="sr-only">
+      {t("Language selector")}
+      <select
+        value={locale}
+        onChange={changeLocale}
+        aria-label={t("Language selector")}
+        className="select select-sm h-9 min-h-0 w-[92px] rounded-full border-white/10 bg-white/[0.025] px-3 text-[11px] font-medium uppercase tracking-[0.12em] text-white/65 outline-none transition hover:border-white/20 hover:bg-white/[0.06] focus:border-[#ff5a1f]/40 focus:outline-none"
+      >
+        {locales.map((item) => (
+          <option key={item} value={item} className="bg-[#111] text-white">
+            {item}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
 export function I18nProvider({ children }: { children: React.ReactNode }) {
   const locale = useLocale();
   const messages = useMessages() as Record<string, unknown>;
   const t = useTranslations();
-  const router = useRouter();
-
-  function changeLocale(nextLocale: (typeof locales)[number]) {
-    document.cookie = `fonitas-locale=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
-    router.refresh();
-  }
 
   useEffect(() => {
     const originals = new WeakMap<Text, string>();
@@ -79,27 +103,5 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     return () => observer.disconnect();
   }, [messages, t]);
 
-  return (
-    <>
-      {children}
-
-      <div
-        className="fixed bottom-5 right-5 z-[100] flex items-center gap-1 rounded-full border border-white/10 bg-[#111]/90 p-1.5 shadow-2xl backdrop-blur-xl rtl:right-auto rtl:left-5"
-        aria-label={t("Language selector")}
-      >
-        {locales.map((item) => (
-          <button
-            key={item}
-            type="button"
-            onClick={() => changeLocale(item)}
-            title={names[item]}
-            aria-label={names[item]}
-            className={`rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.12em] transition ${locale === item ? "bg-[#ff5a1f] text-black" : "text-white/45 hover:text-white"}`}
-          >
-            {item}
-          </button>
-        ))}
-      </div>
-    </>
-  );
+  return <>{children}</>;
 }
