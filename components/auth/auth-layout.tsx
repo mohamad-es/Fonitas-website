@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { LanguageSwitcher } from "@/components/i18n-provider";
 
 const stages = [
   ["01", "Application"],
@@ -62,6 +63,9 @@ export function AuthLayout({ children }: { children: ReactNode }) {
         </section>
 
         <section className="relative flex min-h-screen items-center justify-center px-6 py-12 sm:px-10 lg:px-14 xl:px-20">
+          <div className="absolute right-5 top-5 z-20 sm:right-8 sm:top-8">
+            <LanguageSwitcher />
+          </div>
           <div className="absolute right-[-140px] top-[-100px] h-72 w-72 rounded-full bg-[#ff5a1f]/[0.07] blur-[100px]" />
           <div className="relative z-10 w-full max-w-[460px]">{children}</div>
         </section>
