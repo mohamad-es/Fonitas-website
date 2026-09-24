@@ -1,7 +1,6 @@
 "use client";
 
 import { useLocale, useMessages, useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 
 const locales = ["en", "fa", "ar"] as const;
@@ -14,13 +13,12 @@ const names = {
 
 export function LanguageSwitcher() {
   const locale = useLocale();
-  const router = useRouter();
   const t = useTranslations();
 
   function changeLocale(event: React.ChangeEvent<HTMLSelectElement>) {
     const nextLocale = event.target.value as (typeof locales)[number];
     document.cookie = `fonitas-locale=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
-    router.refresh();
+    window.location.reload();
   }
 
   return (
