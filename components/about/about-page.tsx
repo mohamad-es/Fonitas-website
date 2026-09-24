@@ -6,34 +6,34 @@ const principles = [
   [
     "01",
     "Lifecycle first",
-    "Fonitas is organized around the application lifecycle: collaboration, registration, evaluation, contract, QA, publishing, revenue and settlement.",
+    "about_lifecycleDescription",
   ],
   [
     "02",
     "Explicit ownership",
-    "Each domain owns its state and responsibility. The platform makes operational handoffs visible instead of hiding them inside generic CRUD screens.",
+    "about_ownershipDescription",
   ],
   [
     "03",
     "Human in the loop",
-    "Publishing remains accountable in the MVP. Release preparation, security checks, QA and store submission are controlled operational steps.",
+    "about_humanLoopDescription",
   ],
   [
     "04",
     "Financially traceable",
-    "Collection, reconciliation, settlement, statements and payments remain part of the operating story, with financial history treated as immutable.",
+    "about_financialDescription",
   ],
 ];
 
 const layers = [
-  ["Publishing core", "The operational path that makes the product work today."],
+  ["Publishing core", "about_publishingCoreDescription"],
   [
     "Platform services",
-    "Auth, storage, notifications, analytics, messaging and API capabilities that can grow around the core.",
+    "about_platformServicesDescription",
   ],
   [
     "Business expansion",
-    "Commercial, marketing, infrastructure, legal and investment capabilities that can be added without breaking the core boundaries.",
+    "about_businessExpansionDescription",
   ],
 ];
 
@@ -95,7 +95,7 @@ export function AboutPage() {
         <div className="mx-auto grid max-w-[1400px] gap-16 px-6 py-20 sm:py-24 lg:grid-cols-[.8fr_1.2fr] lg:px-10 lg:py-36">
           <div>
             <p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">{t("Why Fonitas")}</p>
-            <h2 className="font-display mt-6 max-w-xl text-4xl font-semibold leading-[.88] sm:text-7xl">{t("A launch is a process, not a button.")}</h2>
+            <h2 className="font-display mt-6 max-w-xl text-4xl font-semibold leading-[.88] sm:text-7xl">{t("A launch is a process, not a button")}</h2>
           </div>
           <div className="space-y-8 text-lg leading-8 text-white/45 sm:text-xl">
             <p>
@@ -129,7 +129,7 @@ export function AboutPage() {
         <div className="mx-auto max-w-[1400px] px-6 py-20 sm:py-24 lg:px-10 lg:py-36">
           <div className="mb-16 max-w-3xl">
             <p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">{t("What we believe")}</p>
-            <h2 className="font-display mt-6 text-4xl font-semibold leading-[.88] sm:text-7xl">{t("Clear systems create clear work.")}</h2>
+            <h2 className="font-display mt-6 text-4xl font-semibold leading-[.88] sm:text-7xl">{t("about_clearSystems")}</h2>
           </div>
           <div className="grid border-t border-white/10 md:grid-cols-2">
             {principles.map(([number, title, text], index) => (
@@ -151,8 +151,8 @@ export function AboutPage() {
           <div className="grid gap-16 lg:grid-cols-[.6fr_1.4fr]">
             <div>
               <p className="text-xs uppercase tracking-[.28em] text-[#ff5a1f]">{t("Where it goes")}</p>
-              <h2 className="font-display mt-6 text-5xl font-semibold leading-[.88] sm:text-7xl">{t("Start focused.")}<br />
-                <span className="text-white/25">{t("Expand carefully.")}</span>
+              <h2 className="font-display mt-6 text-5xl font-semibold leading-[.88] sm:text-7xl">{t("about_startFocused")}<br />
+                <span className="text-white/25">{t("about_expandCarefully")}</span>
               </h2>
             </div>
             <div className="border-t border-white/10">
@@ -175,7 +175,7 @@ export function AboutPage() {
         <div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-6 py-20 sm:flex-row sm:items-end sm:justify-between lg:px-10 lg:py-24">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[.25em] text-black/50">{t("Explore the product")}</p>
-            <h2 className="font-display mt-4 max-w-3xl text-5xl font-semibold leading-[.85] sm:text-7xl">{t("See the lifecycle in action.")}</h2>
+            <h2 className="font-display mt-4 max-w-3xl text-5xl font-semibold leading-[.85] sm:text-7xl">{t("about_seeLifecycle")}</h2>
           </div>
           <Link
             href="/product-owners#platform"
