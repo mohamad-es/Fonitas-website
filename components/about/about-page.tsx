@@ -48,11 +48,11 @@ export function AboutPage() {
           <div>
             <p className="reveal-up text-xs font-semibold uppercase tracking-[0.3em] text-[#ff5a1f]">{t("About Fonitas")}</p>
             <h1 className="font-display reveal-up reveal-delay-1 mt-7 max-w-5xl text-[clamp(4rem,8vw,8.5rem)] font-semibold leading-[.8] tracking-tight">
-              The operating
+              {t("The operating")}
               <br />
-              <span className="text-white/25">system behind</span>
+              <span className="text-white/25">{t("system behind")}</span>
               <br />
-              the launch.
+              {t("about_theLaunch")}
             </h1>
             <div className="mt-10 flex items-center gap-3 text-xs uppercase tracking-[.2em] text-white/30">
               <span className="h-px w-10 bg-[#ff5a1f]" />{t("Built around people, process and accountability")}</div>
@@ -98,15 +98,8 @@ export function AboutPage() {
             <h2 className="font-display mt-6 max-w-xl text-4xl font-semibold leading-[.88] sm:text-7xl">{t("A launch is a process, not a button")}</h2>
           </div>
           <div className="space-y-8 text-lg leading-8 text-white/45 sm:text-xl">
-            <p>
-              An application can be technically ready long before the surrounding operation is ready. Collaboration
-              requests, evaluation, agreements, release preparation, QA, store operations and financial reconciliation
-              all have to connect.
-            </p>
-            <p>
-              Fonitas is built around that reality. The product starts with the publishing lifecycle and creates
-              explicit boundaries that can support a wider platform over time.
-            </p>
+            <p>{t("about_realityDescription")}</p>
+            <p>{t("about_realityFollowup")}</p>
             <div className="grid border-t border-white/10 pt-7 sm:grid-cols-3 sm:gap-8">
               <div>
                 <span className="text-3xl font-semibold text-white">01</span>
