@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, BriefcaseBusiness, TrendingUp } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { LanguageSwitcher } from "@/components/i18n-provider";
 
 const Arrow = () => <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />;
 
@@ -19,9 +20,12 @@ export default async function Home() {
             <Link href="/" aria-label={t("Fonitas home")} className="w-[150px] sm:w-[180px]">
               <Image src="/fonitas-logo.png" alt="Fonitas" width={350} height={92} priority className="h-auto w-full" />
             </Link>
-            <span className="hidden text-[10px] uppercase tracking-[0.28em] text-white/25 sm:block">
-              {t("Application growth & investment")}
-            </span>
+            <div className="flex items-center gap-4">
+              <span className="hidden text-[10px] uppercase tracking-[0.28em] text-white/25 sm:block">
+                {t("Application growth & investment")}
+              </span>
+              <LanguageSwitcher />
+            </div>
           </header>
 
           <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center justify-center pt-20 text-center">
