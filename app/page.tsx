@@ -35,7 +35,7 @@ export default async function Home() {
             <h1 className="font-display glow-text reveal-up reveal-delay-1 mt-7 max-w-5xl text-[clamp(3.6rem,7.8vw,8rem)] font-semibold leading-[0.86]">
               {t("Bring your application")}
               <br />
-              <span className="text-[#5a514d]">{t("from build to growth")}</span>
+              <span className="text-white/30">{t("from build to growth")}</span>
             </h1>
             <p className="reveal-up reveal-delay-2 mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg">
               {t("Fonitas gives application owners a controlled path from evaluation and publishing to growth, revenue and settlement — with every important step visible and accountable")}
