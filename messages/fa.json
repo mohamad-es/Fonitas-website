@@ -120,7 +120,7 @@
   "Target raise": "سرمایه هدف",
   "Minimum investment": "حداقل سرمایه‌گذاری",
   "Valuation": "ارزش‌گذاری",
-  "Instrument": "نوع سرمایه‌گذاری",
+  "Instrument": "ابزار سرمایه‌گذاری",
   "Round status": "وضعیت دور سرمایه‌گذاری",
   "Use of funds": "نحوه استفاده از سرمایه",
   "Problem": "مسئله",
@@ -600,5 +600,14 @@
   "HealthTech": "فناوری سلامت",
   "Logistics": "لجستیک",
   "Early growth": "رشد اولیه",
-  "Scale": "مقیاس"
+  "Scale": "مقیاس",
+  "Flowdesk tagline": "فضایی متمرکز برای تیم‌هایی که می‌خواهند شلوغی عملیاتی کمتری داشته باشند.",
+  "Medora tagline": "تجربه‌ای دیجیتال و ساده‌تر برای هماهنگی امور روزمره سلامت.",
+  "RoutePilot tagline": "برنامه‌ریزی هوشمندتر برای تیم‌هایی که افراد و کالاها را جابه‌جا می‌کنند.",
+  "Monthly revenue": "درآمد ماهانه",
+  "Revenue growth": "رشد درآمد",
+  "Current users": "کاربران فعلی",
+  "Target valuation": "ارزش‌گذاری هدف",
+  "Monthly active users": "کاربران فعال ماهانه",
+  "Active accounts": "حساب‌های فعال"
 }
