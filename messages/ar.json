@@ -341,5 +341,7 @@
   "Immutable history": "سجل غير قابل للتغيير",
   "Revenue operations": "عمليات الإيرادات",
   "Revenue facts enter the financial workflow after publication": "تدخل بيانات الإيرادات إلى سير العمل المالي بعد النشر.",
-  "External revenue is matched against costs and contractual rules": "تتم مطابقة الإيرادات الخارجية مع التكاليف والقواعد التعاقدية."
+  "External revenue is matched against costs and contractual rules": "تتم مطابقة الإيرادات الخارجية مع التكاليف والقواعد التعاقدية.",
+  "Fonitas does not need one fixed package for every application. The operating model can expand with the responsibility you want Fonitas to carry.": "لا تحتاج فونيتاس إلى حزمة ثابتة واحدة لكل تطبيق. يمكن للنموذج التشغيلي أن يتوسع بما يتناسب مع مستوى المسؤولية التي تريد من فونيتاس تولّيها.",
+  "Scope and commercial terms depend on the application, target stores, markets, publishing responsibilities and agreed commercial model.": "يعتمد نطاق العمل والشروط التجارية على التطبيق والمتاجر المستهدفة والأسواق ومسؤوليات النشر والنموذج التجاري المتفق عليه."
 }
