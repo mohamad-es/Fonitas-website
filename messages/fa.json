@@ -341,5 +341,7 @@
   "Immutable history": "سابقه تغییرناپذیر",
   "Revenue operations": "عملیات درآمد",
   "Revenue facts enter the financial workflow after publication": "داده‌های درآمد پس از انتشار وارد گردش‌کار مالی می‌شوند.",
-  "External revenue is matched against costs and contractual rules": "درآمد خارجی با هزینه‌ها و قواعد قراردادی تطبیق داده می‌شود."
+  "External revenue is matched against costs and contractual rules": "درآمد خارجی با هزینه‌ها و قواعد قراردادی تطبیق داده می‌شود.",
+  "Fonitas does not need one fixed package for every application. The operating model can expand with the responsibility you want Fonitas to carry.": "فونیتاس برای هر اپلیکیشن به یک بسته ثابت نیاز ندارد. مدل عملیاتی می‌تواند متناسب با میزان مسئولیتی که می‌خواهید فونیتاس بر عهده بگیرد، گسترش پیدا کند.",
+  "Scope and commercial terms depend on the application, target stores, markets, publishing responsibilities and agreed commercial model.": "دامنه خدمات و شرایط تجاری به اپلیکیشن، فروشگاه‌های هدف، بازارها، مسئولیت‌های انتشار و مدل تجاری مورد توافق بستگی دارد."
 }
