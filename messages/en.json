@@ -640,5 +640,8 @@
   "about_platformServicesDescription": "Auth, storage, notifications, analytics, messaging and API capabilities that can grow around the core.",
   "about_businessExpansionDescription": "Commercial, marketing, infrastructure, legal and investment capabilities that can be added without breaking the core boundaries.",
   "about_realityDescription": "An application can be technically ready long before the surrounding operation is ready. Collaboration requests, evaluation, agreements, release preparation, QA, store operations and financial reconciliation all have to connect.",
-  "about_realityFollowup": "Fonitas is built around that reality. The product starts with the publishing lifecycle and creates explicit boundaries that can support a wider platform over time."
+  "about_realityFollowup": "Fonitas is built around that reality. The product starts with the publishing lifecycle and creates explicit boundaries that can support a wider platform over time.",
+  "about_publishingCore": "Publishing core",
+  "about_platformServices": "Platform services",
+  "about_businessExpansion": "Business expansion"
 }
