@@ -110,7 +110,7 @@
   "Market": "السوق",
   "Traction": "الزخم",
   "Team": "الفريق",
-  "Business model": "نموذج العمل",
+  "Business model": "نموذج الأعمال",
   "Growth potential": "إمكانات النمو",
   "Investment thesis": "أطروحة الاستثمار",
   "Due diligence": "العناية الواجبة",
@@ -128,7 +128,7 @@
   "Target market": "السوق المستهدف",
   "Why now?": "لماذا الآن؟",
   "Traction & financials": "الزخم والبيانات المالية",
-  "Annualized revenue": "الإيرادات السنوية المقدرة",
+  "Annualized revenue": "الإيرادات السنوية",
   "Gross margin": "الهامش الإجمالي",
   "Risks": "المخاطر",
   "Diligence": "العناية الواجبة",
@@ -600,5 +600,14 @@
   "HealthTech": "HealthTech",
   "Logistics": "الخدمات اللوجستية",
   "Early growth": "النمو المبكر",
-  "Scale": "التوسع"
+  "Scale": "التوسع",
+  "Flowdesk tagline": "مساحة عمل مركزة للفرق التي تريد تقليل الضوضاء التشغيلية.",
+  "Medora tagline": "تجربة رقمية أبسط لتنسيق خدمات الصحة اليومية.",
+  "RoutePilot tagline": "تخطيط أكثر ذكاءً للفرق التي تنقل الأشخاص والبضائع.",
+  "Monthly revenue": "الإيرادات الشهرية",
+  "Revenue growth": "نمو الإيرادات",
+  "Current users": "المستخدمون الحاليون",
+  "Target valuation": "التقييم المستهدف",
+  "Monthly active users": "المستخدمون النشطون شهرياً",
+  "Active accounts": "الحسابات النشطة"
 }
