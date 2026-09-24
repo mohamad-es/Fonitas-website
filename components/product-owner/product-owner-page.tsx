@@ -122,7 +122,7 @@ export async function ProductOwnerPage() {
         <div className="mx-auto max-w-[1400px] px-6 py-14 lg:px-10 lg:py-16">
           <div className="grid gap-12 md:grid-cols-[1.3fr_.7fr_.7fr_.7fr]">
             <div>
-              <Link href="/" className="text-2xl font-bold tracking-[-.05em]">{t("Fonitas")}<span className="text-[#ff5a1f]">.</span></Link>
+              <Link href="/" className="text-2xl font-bold tracking-[-.05em]">Fonitas<span className="text-[#ff5a1f]">.</span></Link>
               <p className="mt-5 max-w-xs text-sm leading-6 text-white/35">{t("The operating system for application publishing, from intake to settlement")}</p>
             </div>
             <div>
@@ -135,7 +135,7 @@ export async function ProductOwnerPage() {
               </div>
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[.22em] text-white/25">{t("Fonitas")}</p>
+              <p className="text-[10px] uppercase tracking-[.22em] text-white/25">Fonitas</p>
               <div className="mt-5 grid gap-3 text-sm text-white/50">
                 <Link href="/investors" className="transition hover:text-white">{t("For investors")}</Link>
                 <a href="/about" className="transition hover:text-white">{t("About")}</a>
