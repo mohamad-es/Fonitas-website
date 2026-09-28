@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 type VerifiedUser = {
@@ -48,6 +48,7 @@ function getErrorMessage(payload: unknown): string {
 export function VerifyEmailContent() {
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
+  const requestStarted = useRef(false);
   const [status, setStatus] = useState<"loading" | "success" | "error">("loading");
   const [message, setMessage] = useState("");
 
@@ -58,6 +59,9 @@ export function VerifyEmailContent() {
       return;
     }
 
+    // Prevent React Strict Mode from submitting a one-time token twice in development.
+    if (requestStarted.current) return;
+    requestStarted.current = true;
     const controller = new AbortController();
 
     async function verifyEmail() {
