@@ -51,6 +51,46 @@ export function VerifyEmailContent() {
   const requestStarted = useRef(false);
   const [status, setStatus] = useState<"loading" | "success" | "error">("loading");
   const [message, setMessage] = useState("");
+  const [email, setEmail] = useState(searchParams.get("email") ?? "");
+  const [resendStatus, setResendStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [resendMessage, setResendMessage] = useState("");
+  const [cooldown, setCooldown] = useState(0);
+
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const timer = window.setTimeout(() => setCooldown((value) => Math.max(0, value - 1)), 1000);
+    return () => window.clearTimeout(timer);
+  }, [cooldown]);
+
+  async function resendVerification() {
+    const normalizedEmail = email.trim();
+    if (!normalizedEmail || cooldown > 0 || resendStatus === "sending") return;
+    setResendStatus("sending");
+    setResendMessage("");
+    try {
+      const response = await fetch("https://api.fonitas.com/api/v1/auth/verification/resend", {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({ tenant_slug: "fonitas", email: normalizedEmail }),
+      });
+      if (response.status === 204 || response.ok) {
+        setResendStatus("sent");
+        setResendMessage("If this email is eligible, a new verification message will be sent.");
+        setCooldown(120);
+      } else {
+        const payload: unknown = await response.json().catch(() => null);
+        setResendStatus("error");
+        setResendMessage(response.status === 429 ? "Too many requests. Please wait before trying again." : getErrorMessage(payload));
+        if (response.status === 429) {
+          const retryAfter = Number(response.headers.get("Retry-After"));
+          setCooldown(Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter : 120);
+        }
+      }
+    } catch {
+      setResendStatus("error");
+      setResendMessage("Unable to connect. Check your connection and try again.");
+    }
+  }
 
   useEffect(() => {
     if (!token?.trim()) {
@@ -121,11 +161,17 @@ export function VerifyEmailContent() {
       <p role={status === "error" ? "alert" : "status"} aria-live="polite" className="mx-auto mt-4 max-w-md text-sm leading-6 text-white/55">
         {status === "loading" ? "Please wait while we confirm your email address." : message}
       </p>
-      {status !== "loading" && (
-        <Link href={status === "success" ? "/login" : "/register"} className="mt-8 inline-flex rounded-full bg-[#ff5a1f] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ff7a3d]">
-          {status === "success" ? "Continue to sign in ↗" : "Back to registration"}
-        </Link>
+      {status !== "success" && (
+        <div className="mx-auto mt-8 max-w-sm text-left">
+          <label htmlFor="resend-email" className="mb-2 block text-sm font-medium text-white/75">Email address</label>
+          <input id="resend-email" type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" className="w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#ff5a1f]" />
+          <button type="button" onClick={resendVerification} disabled={!email.trim() || cooldown > 0 || resendStatus === "sending"} className="mt-3 inline-flex w-full items-center justify-center rounded-full border border-[#ff5a1f] px-6 py-3 text-sm font-semibold text-[#ff7a3d] transition hover:bg-[#ff5a1f]/10 disabled:cursor-not-allowed disabled:opacity-40">
+            {resendStatus === "sending" ? "Sending..." : cooldown > 0 ? `Resend available in ${Math.floor(cooldown / 60)}:${String(cooldown % 60).padStart(2, "0")}` : "Resend verification email"}
+          </button>
+          {resendMessage && <p role="status" aria-live="polite" className="mt-3 text-sm leading-6 text-white/55">{resendMessage}</p>}
+        </div>
       )}
+      {status === "success" && <Link href="/login" className="mt-8 inline-flex rounded-full bg-[#ff5a1f] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ff7a3d]">Continue to sign in ↗</Link>}
     </div>
   );
 }
