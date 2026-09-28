@@ -24,6 +24,13 @@ export default function LoginPage() {
         </p>
       </div>
       <LoginForm />
+      <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-white/55">
+        <p className="font-medium text-white/80">Haven&apos;t verified your email yet?</p>
+        <p className="mt-1">If you already registered but haven&apos;t received or can&apos;t find your verification email, open the verification page to request another message.</p>
+        <Link href="/verify" className="mt-3 inline-flex font-semibold text-[#ff7a3d] hover:text-[#ff9a70]">
+          Go to email verification ↗
+        </Link>
+      </div>
       <p className="mt-8 text-center text-sm text-white/45">
         Don&apos;t have an account?{" "}
         <Link href="/register" className="text-white hover:text-[#ff7a3d]">
