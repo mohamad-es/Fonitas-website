@@ -19,6 +19,13 @@ export default function RegisterPage() {
         <p className="mt-4 max-w-md text-sm leading-6 text-white/50">Create your account to manage applications and collaborate with the Fonitas publishing workflow.</p>
       </div>
       <RegisterForm />
+      <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-white/55">
+        <p className="font-medium text-white/80">Already registered but email verification is incomplete?</p>
+        <p className="mt-1">You can open the verification page, enter the email address you registered with, and request a new verification message. For your security, we show a general confirmation after a resend request.</p>
+        <Link href="/verify" className="mt-3 inline-flex font-semibold text-[#ff7a3d] hover:text-[#ff9a70]">
+          Verify email or resend message ↗
+        </Link>
+      </div>
       <p className="mt-8 text-center text-sm text-white/45">Already have an account? <Link href="/login" className="text-white hover:text-[#ff7a3d]">Sign in</Link></p>
     </AuthLayout>
   );
