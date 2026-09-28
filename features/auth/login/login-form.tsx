@@ -133,7 +133,7 @@ export function LoginForm() {
       </label>
 
       <div className="flex items-center justify-between text-sm">
-        <a href="/contact" className="text-[#ff7a3d] hover:text-white">Forgot password?</a>
+        <a href="/forgot-password" className="text-[#ff7a3d] hover:text-white">Forgot password?</a>
       </div>
 
       <button type="submit" disabled={isSubmitting} className="w-full rounded-full bg-[#ff5a1f] px-5 py-3.5 text-sm font-semibold text-black transition hover:bg-[#ff7a3d] disabled:cursor-not-allowed disabled:opacity-60">
