@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const inputClass = "mt-2 w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-white outline-none transition placeholder:text-white/25 focus:border-[#ff5a1f]/60";
 
@@ -20,9 +20,11 @@ export function ForgotPasswordForm() {
   const [message, setMessage] = useState("");
   const [cooldown, setCooldown] = useState(0);
 
-  useState(() => {
-    return undefined;
-  });
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const timer = window.setTimeout(() => setCooldown((value) => Math.max(0, value - 1)), 1000);
+    return () => window.clearTimeout(timer);
+  }, [cooldown]);
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
