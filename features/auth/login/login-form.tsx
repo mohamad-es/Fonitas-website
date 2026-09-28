@@ -133,7 +133,6 @@ export function LoginForm() {
       </label>
 
       <div className="flex items-center justify-between text-sm">
-        <label className="flex items-center gap-2 text-white/45"><input type="checkbox" name="remember" className="accent-[#ff5a1f]" /> Remember me</label>
         <a href="/contact" className="text-[#ff7a3d] hover:text-white">Forgot password?</a>
       </div>
 
