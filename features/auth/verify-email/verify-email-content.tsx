@@ -51,10 +51,15 @@ export function VerifyEmailContent() {
   const requestStarted = useRef(false);
   const [status, setStatus] = useState<"loading" | "success" | "error">("loading");
   const [message, setMessage] = useState("");
-  const [email, setEmail] = useState(searchParams.get("email") ?? "");
+  const [email, setEmail] = useState("");
   const [resendStatus, setResendStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [resendMessage, setResendMessage] = useState("");
   const [cooldown, setCooldown] = useState(0);
+
+  useEffect(() => {
+    const queryEmail = searchParams.get("email");
+    if (queryEmail) setEmail(queryEmail);
+  }, [searchParams]);
 
   useEffect(() => {
     if (cooldown <= 0) return;
@@ -164,7 +169,7 @@ export function VerifyEmailContent() {
       {status !== "success" && (
         <div className="mx-auto mt-8 max-w-sm text-left">
           <label htmlFor="resend-email" className="mb-2 block text-sm font-medium text-white/75">Email address</label>
-          <input id="resend-email" type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" className="w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#ff5a1f]" />
+          <input suppressHydrationWarning id="resend-email" type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" className="w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#ff5a1f]" />
           <button type="button" onClick={resendVerification} disabled={!email.trim() || cooldown > 0 || resendStatus === "sending"} className="mt-3 inline-flex w-full items-center justify-center rounded-full border border-[#ff5a1f] px-6 py-3 text-sm font-semibold text-[#ff7a3d] transition hover:bg-[#ff5a1f]/10 disabled:cursor-not-allowed disabled:opacity-40">
             {resendStatus === "sending" ? "Sending..." : cooldown > 0 ? `Resend available in ${Math.floor(cooldown / 60)}:${String(cooldown % 60).padStart(2, "0")}` : "Resend verification email"}
           </button>
